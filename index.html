@@ -690,6 +690,30 @@
             background: linear-gradient(135deg, #a21caf 0%, #701a75 100%);
             box-shadow: 0 4px 12px rgba(162, 28, 175, 0.3);
         }
+        /* Lecture 4 Specific themes */
+        .lecture-hero.hero-l4 {
+            background: linear-gradient(135deg, #be123c 0%, #e11d48 50%, #fca5a5 100%);
+        }
+        .mobile-nav-item.hero-l4.active-nav {
+            background: linear-gradient(135deg, #e11d48 0%, #be123c 100%);
+            box-shadow: 0 4px 10px rgba(225, 29, 72, 0.25);
+        }
+        .sidebar-item.hero-l4.active-nav {
+            background: linear-gradient(135deg, #e11d48 0%, #be123c 100%);
+            box-shadow: 0 4px 12px rgba(225, 29, 72, 0.3);
+        }
+        /* Lecture 5 Specific themes */
+        .lecture-hero.hero-l5 {
+            background: linear-gradient(135deg, #b45309 0%, #d97706 50%, #fcd34d 100%);
+        }
+        .mobile-nav-item.hero-l5.active-nav {
+            background: linear-gradient(135deg, #d97706 0%, #b45309 100%);
+            box-shadow: 0 4px 10px rgba(217, 119, 6, 0.25);
+        }
+        .sidebar-item.hero-l5.active-nav {
+            background: linear-gradient(135deg, #d97706 0%, #b45309 100%);
+            box-shadow: 0 4px 12px rgba(217, 119, 6, 0.3);
+        }
         .ar-equation {
             background: #fff;
             border: 2px dashed #10b981;
@@ -867,6 +891,32 @@
                     <div class="mt-4 flex justify-between items-center">
                         <span class="text-xs font-bold px-3 py-1 bg-purple-100 text-purple-800 rounded-full">الجديدة / متاح الآن</span>
                         <button class="text-purple-600 font-bold hover:text-purple-800"><i class="fa-solid fa-arrow-left"></i></button>
+                    </div>
+                </div>
+
+                <!-- Active Lecture 4 -->
+                <div data-target="lecture-4-content" data-locked="false" data-theme="rose" class="lecture-card bg-white rounded-2xl shadow-md p-6 flex flex-col border-2 border-slate-200 cursor-pointer transform hover:-translate-y-1 transition-all duration-200">
+                    <div class="w-14 h-14 bg-rose-100 text-rose-600 rounded-2xl flex items-center justify-center text-2xl mb-4">
+                        <i class="fa-solid fa-triangle-exclamation"></i>
+                    </div>
+                    <h4 class="text-xl font-bold mb-2">المحاضرة الرابعة</h4>
+                    <p class="text-slate-500 text-sm flex-grow">معالجة التالف والعيوب (Spoilage, Rework & Scrap - Part 1 Spoilage).</p>
+                    <div class="mt-4 flex justify-between items-center">
+                        <span class="text-xs font-bold px-3 py-1 bg-rose-100 text-rose-800 rounded-full">الجديدة / متاح الآن</span>
+                        <button class="text-rose-600 font-bold hover:text-rose-800"><i class="fa-solid fa-arrow-left"></i></button>
+                    </div>
+                </div>
+
+                <!-- Active Lecture 5 -->
+                <div data-target="lecture-5-content" data-locked="false" data-theme="amber" class="lecture-card bg-white rounded-2xl shadow-md p-6 flex flex-col border-2 border-slate-200 cursor-pointer transform hover:-translate-y-1 transition-all duration-200">
+                    <div class="w-14 h-14 bg-amber-100 text-amber-600 rounded-2xl flex items-center justify-center text-2xl mb-4">
+                        <i class="fa-solid fa-tools"></i>
+                    </div>
+                    <h4 class="text-xl font-bold mb-2">المحاضرة الخامسة</h4>
+                    <p class="text-slate-500 text-sm flex-grow">إعادة التشغيل والخردة (Rework, Scrap & Waste Management — Ch. 18).</p>
+                    <div class="mt-4 flex justify-between items-center">
+                        <span class="text-xs font-bold px-3 py-1 bg-amber-100 text-amber-800 rounded-full">الجديدة / متاح الآن</span>
+                        <button class="text-amber-600 font-bold hover:text-amber-800"><i class="fa-solid fa-arrow-left"></i></button>
                     </div>
                 </div>
             </div>
@@ -2172,6 +2222,536 @@
             </div>
           </section>
 
+            <!-- ==============================================
+                LECTURE 4 CONTENT (NEWLY ADDED)
+            ================================================ -->
+            <section id="lecture-4-content" class="lecture-content-section hidden grid-cols-1 fade-in scroll-mt-20">
+            <div class="col-span-1">
+                <div class="lecture-hero hero-l4">
+                    <button onclick="showHomeView()" class="back-btn"><i class="fa-solid fa-arrow-right"></i> قائمة المحاضرات</button>
+                    <h2 class="lecture-hero-title">المحاضرة الرابعة: معالجة التالف والعيوب</h2>
+                    <p class="lecture-hero-sub">Spoilage, Rework & Scrap (Part 1 - Spoilage)</p>
+                    <div class="lecture-stats">
+                        <div class="stat-pill"><i class="fa-solid fa-layer-group"></i> 4 أقسام رئيسية</div>
+                        <div class="stat-pill"><i class="fa-solid fa-clock"></i> ~35 دقيقة</div>
+                        <div class="stat-pill" id="l4-progress-label"><i class="fa-solid fa-chart-simple"></i> 0 / 4 مكتملين</div>
+                    </div>
+                    <div class="progress-bar-wrap" style="margin-top:14px;margin-bottom:0;background:rgba(255,255,255,0.2)">
+                        <div class="progress-bar-fill" id="l4-progress-bar" style="width:0%;background:#fff"></div>
+                    </div>
+                </div>
+
+                <!-- Mobile Navigation L4 -->
+                <div class="mobile-topics-nav">
+                    <button class="mobile-nav-item active-nav hero-l4" data-acc="l4-acc1" onclick="scrollToAcc('l4-acc1', this, 'l4')"><span class="m-num">1</span><span>المفاهيم</span></button>
+                    <button class="mobile-nav-item hero-l4" data-acc="l4-acc2" onclick="scrollToAcc('l4-acc2', this, 'l4')"><span class="m-num">2</span><span>قواعد القيود</span></button>
+                    <button class="mobile-nav-item hero-l4" data-acc="l4-acc3" onclick="scrollToAcc('l4-acc3', this, 'l4')"><span class="m-num">3</span><span>حالات أ، ب، ج</span></button>
+                    <button class="mobile-nav-item hero-l4" data-acc="l4-acc4" onclick="scrollToAcc('l4-acc4', this, 'l4')"><span class="m-num">4</span><span>حالات د، هـ، و</span></button>
+                </div>
+
+                <!-- Two-column layout -->
+                <div class="lecture-layout">
+                    <aside class="lecture-sidebar" style="border-color:#fca5a5">
+                        <h5 style="color:#be123c"><i class="fa-solid fa-list-ul ml-1"></i> أقسام المحاضرة 4</h5>
+                        <a class="sidebar-item active-nav hero-l4" data-acc="l4-acc1" onclick="scrollToAcc('l4-acc1', this, 'l4')">
+                            <span class="nav-num">1</span><span>مفاهيم التوالف والعيوب</span>
+                        </a>
+                        <a class="sidebar-item hero-l4" data-acc="l4-acc2" onclick="scrollToAcc('l4-acc2', this, 'l4')">
+                            <span class="nav-num">2</span><span>قواعد قيود اليومية</span>
+                        </a>
+                        <a class="sidebar-item hero-l4" data-acc="l4-acc3" onclick="scrollToAcc('l4-acc3', this, 'l4')">
+                            <span class="nav-num">3</span><span>تالف طبيعي (أ، ب، ج)</span>
+                        </a>
+                        <a class="sidebar-item hero-l4" data-acc="l4-acc4" onclick="scrollToAcc('l4-acc4', this, 'l4')">
+                            <span class="nav-num">4</span><span>تالف شائع وغير طبيعي</span>
+                        </a>
+                    </aside>
+
+                    <div class="lecture-content-col">
+
+                        <!-- L4 ACC 1 -->
+                        <div class="acc-card" id="l4-acc1">
+                            <button class="acc-header l4-toggle" data-index="0" data-lecture="l4">
+                                <div class="acc-icon" style="background:#ffe4e6;color:#e11d48"><i class="fa-solid fa-triangle-exclamation"></i></div>
+                                <span class="acc-title">أولاً: مفاهيم التوالف والعيوب <small style="color:#94a3b8;font-weight:600;font-size:12px;display:block">Spoilage Concepts</small></span>
+                                <i class="fa-solid fa-chevron-down acc-chevron"></i>
+                            </button>
+                            <div class="acc-body"><div class="acc-body-inner"><div class="acc-body-content">
+                                <div class="content-en">
+                                    <ul>
+                                        <li><strong>Spoilage:</strong> units of production that do not meet the specifications required by customers and that are discarded or sold for reduced prices.</li>
+                                        <li><strong>Rework:</strong> units of production that do not meet specifications but that are subsequently repaired and sold as good finished units.</li>
+                                        <li><strong>Scrap:</strong> leftover materials that have minimal sales value (e.g., wood shavings, fabric clippings).</li>
+                                        <li><strong>Normal Spoilage:</strong> inherent in a particular production process. Specific to job OR Common to all. Product cost.</li>
+                                        <li><strong>Abnormal Spoilage:</strong> avoidable, not inherent, results from operational inefficiency. Period Cost (Loss).</li>
+                                    </ul>
+                                </div>
+                                <div class="content-ar">
+                                    <div class="content-ar-header"><i class="fa-solid fa-lightbulb"></i> الشرح بالعامية المصرية (أصل الموضوع)</div>
+                                    <p>بص يا محمد يا بطل، أي مصنع وهو شغال خط إنتاج بيطلع منه 3 حاجات رئيسية لازم كـ محاسب تفرق بينهم محاسبياً بالملي:</p>
+                                    <ul>
+                                        <li><span class="ar-label text-rose-700 border-rose-200">التالف (Spoilage)</span> منتج طلع معيوب تماماً ومينفعش يتصلح خلاص، يا بنرميه في الزبالة يا بنبيعه كـ خردة برخص التراب.</li>
+                                        <li><span class="ar-label text-rose-700 border-rose-200">إعادة التشغيل (Rework)</span> منتج طلع معيوب بس "ينفع يتصلح"، وبنصرف عليه أجور وخامات إضافية ونبيعه سليم كأنه جديد.</li>
+                                        <li><span class="ar-label text-rose-700 border-rose-200">الخردة (Scrap)</span> قصاقيص القماش ونشارة الخشب، فواضل طبيعية بتتباع بقيمة تافهة.</li>
+                                    </ul>
+                                    <div class="mt-4 p-4 bg-white rounded-xl border border-rose-200">
+                                        <h6 class="font-bold text-rose-900 mb-2">أنواع التالف محاسبياً:</h6>
+                                        <p class="text-sm text-slate-700 mb-1"><strong>1. تالف طبيعي (Normal Spoilage):</strong> مسموح بيه ومتوقع. ده بنعتبره تكلفة منتج (Product Cost)، وممكن يكون خاص بشغلانة معينة (Job Specific) أو عيب عام في المصنع كله (Common to all jobs).</p>
+                                        <p class="text-sm text-slate-700"><strong>2. تالف غير طبيعي (Abnormal Spoilage):</strong> كارثة وإهمال من العمال! ده بنعتبره خسارة فترة (Period Cost) ويروح قائمة الدخل فوراً كـ خسارة (Loss From Abnormal Spoilage) ولا نحمله على المنتج.</p>
+                                    </div>
+                                </div>
+                            </div></div></div>
+                        </div>
+
+                        <!-- L4 ACC 2 -->
+                        <div class="acc-card" id="l4-acc2">
+                            <button class="acc-header l4-toggle" data-index="1" data-lecture="l4">
+                                <div class="acc-icon" style="background:#ffe4e6;color:#e11d48"><i class="fa-solid fa-list-check"></i></div>
+                                <span class="acc-title">ثانياً: قواعد قيود اليومية للتالف <small style="color:#94a3b8;font-weight:600;font-size:12px;display:block">Journal Entries Rules</small></span>
+                                <i class="fa-solid fa-chevron-down acc-chevron"></i>
+                            </button>
+                            <div class="acc-body"><div class="acc-body-inner"><div class="acc-body-content">
+                                <div class="content-en">
+                                    <strong>Normal Spoilage Journal Entries Rules:</strong>
+                                    <ul>
+                                        <li><strong>1. Normal &amp; Job-Specific:</strong>
+                                            <br>• If <em>Not Sold</em>: No Journal Entry.
+                                            <br>• If <em>Sold</em>: Dr. Spoiled Inventory (at scrap value) / Cr. WIP-Job X.
+                                        </li>
+                                        <li><strong>2. Normal &amp; Common to All Jobs:</strong>
+                                            <br>• If <em>Not Sold</em>: Dr. MOH Control (at cost value) / Cr. WIP-Job X.
+                                            <br>• If <em>Sold</em>: Dr. MOH Control (the loss) &amp; Dr. Spoiled Inventory (scrap value) / Cr. WIP-Job X (full cost).
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="content-ar">
+                                    <div class="content-ar-header"><i class="fa-solid fa-gears"></i> الشرح بالعامية وتوجيه القيود</div>
+                                    <p>هنا بنحدد القيد حسب نوع التالف ومصير بيعه:</p>
+                                    <ul>
+                                        <li><span class="ar-label text-rose-700 border-rose-200">طبيعي وخاص (Job specific)</span> لو مش هنبيعه ملوش قيد خالص! والوحدات السليمة بتشيل تكلفة البايظ تلقائياً. لو هنبيعه بنقلل تكلفة الشغلانة ونثبت الخردة في المخزن بالطرف الدائن لحساب الشغلانة <span class="text-indigo-600 font-bold">WIP</span>.</li>
+                                        <li><span class="ar-label text-rose-700 border-rose-200">طبيعي وشائع (Common)</span> الشغلانة ملهاش ذنب! فبنرمي التكلفة على المصنع كله في حساب <span class="text-indigo-600 font-bold">MOH Control</span> مدين، ونخفض الشغلانة في الدائن.</li>
+                                    </ul>
+                                </div>
+                            </div></div></div>
+                        </div>
+
+                        <!-- L4 ACC 3 -->
+                        <div class="acc-card" id="l4-acc3">
+                            <button class="acc-header l4-toggle" data-index="2" data-lecture="l4">
+                                <div class="acc-icon" style="background:#ffe4e6;color:#e11d48"><i class="fa-solid fa-square-root-variable"></i></div>
+                                <span class="acc-title">ثالثاً: تالف طبيعي خاص وشائع (الحالات أ، ب، ج) <small style="color:#94a3b8;font-weight:600;font-size:12px;display:block">Comprehensive Example - Cases A, B, &amp; C</small></span>
+                                <i class="fa-solid fa-chevron-down acc-chevron"></i>
+                            </button>
+                            <div class="acc-body"><div class="acc-body-inner"><div class="acc-body-content">
+                                <div class="content-en text-xs md:text-sm">
+                                    <strong>Example Data:</strong><br>
+                                    Job X has 10 WIP units, Total Cost of Job = $100 (Cost per unit = $10). 2 units are spoiled, leaving 8 good units.
+                                    <br><br>
+                                    <strong>Case A: Normal Specific, not Sold</strong><br>
+                                    • No Journal Entry. Total Cost of Job X remains $100.
+                                    <br>• Cost of good units = $100 / 8 = **$12.50 per unit**.
+                                    <br><br>
+                                    <strong>Case B: Normal Specific, sold each unit @ $3</strong><br>
+                                    • Dr. Spoiled Inventory $6 (2 × $3) / Cr. WIP-Job X $6.
+                                    <br>• Net Cost of Job X = $100 - $6 = $94.
+                                    <br>• Cost of good units = $94 / 8 = **$11.75 per unit**.
+                                    <br><br>
+                                    <strong>Case C: Normal &amp; Common, not Sold</strong><br>
+                                    • Dr. MOH Control $20 (2 × $10) / Cr. WIP-Job X $20.
+                                    <br>• Net Cost of Job X = $100 - $20 = $80.
+                                    <br>• Cost of good units = $80 / 8 = **$10.00 per unit**.
+                                </div>
+                                <div class="content-ar">
+                                    <div class="content-ar-header"><i class="fa-solid fa-calculator"></i> خطوات الحل بالتفصيل الرياضي والقيود</div>
+                                    <p>تعال نفصص الـ 3 حالات دول بالورقة والقلم:</p>
+                                    
+                                    <div class="space-y-4">
+                                        <div class="p-3 bg-white rounded-lg border border-rose-200">
+                                            <strong>الحالة أ (Normal Specific - Not Sold):</strong>
+                                            <p class="text-sm mt-1">مفيش قيد محاسبي خالص. الـ 100 دولار بتوع الشغلانة هيفضلوا زي ما هما بس هيتقسموا على الـ 8 السُلام بس، عشان كده الوحدة غليت علينا وبقت بـ 12.50 دولار:</p>
+                                            $$\text{Cost per Good Unit} = \frac{\text{Total Job Cost}}{\text{Good Units}} = \frac{\$100}{8\ \text{Units}} = \$12.50$$
+                                        </div>
+                                        <div class="p-3 bg-white rounded-lg border border-rose-200">
+                                            <strong>الحالة ب (Normal Specific - Sold @ $3):</strong>
+                                            <p class="text-sm mt-1">هنبيع الوحدتين بـ 6 دولار (2 × 3)، نثبتهم مخزون تالف ونخفض تكلفة الشغلانة بيهم:</p>
+                                            <div class="overflow-x-auto w-full my-3">
+                                                <table class="journal-table">
+                                                    <tr><th>العملية</th><th>المدين (Dr)</th><th>الدائن (Cr)</th></tr>
+                                                    <tr><td>قيد إثبات بيع التالف</td><td class="dr">Spoiled Inventory 6</td><td class="cr">WIP-Job X 6</td></tr>
+                                                </table>
+                                            </div>
+                                            $$\text{Cost per Good Unit} = \frac{\$100 - \$6\ (\text{Scrap value})}{8} = \frac{\$94}{8} = \$11.75$$
+                                        </div>
+                                        <div class="p-3 bg-white rounded-lg border border-rose-200">
+                                            <strong>الحالة ج (Normal Common - Not Sold):</strong>
+                                            <p class="text-sm mt-1">عيب عام في المصنع! الشغلانة ملهاش ذنب، هنشيل تكلفة الـ 2 البايظين (2 × 10 = 20 دولار) ونرميها على المصنع كله في حـ/ MOH Control ونخفض الشغلانة:</p>
+                                            <div class="overflow-x-auto w-full my-3">
+                                                <table class="journal-table">
+                                                    <tr><th>العملية</th><th>المدين (Dr)</th><th>الدائن (Cr)</th></tr>
+                                                    <tr><td>قيد معالجة التالف الشائع</td><td class="dr">MOH Control 20</td><td class="cr">WIP-Job X 20</td></tr>
+                                                </table>
+                                            </div>
+                                            $$\text{Cost per Good Unit} = \frac{\$100 - \$20}{8} = \frac{\$80}{8} = \$10.00$$
+                                        </div>
+                                    </div>
+                                </div>
+                            </div></div></div>
+                        </div>
+
+                        <!-- L4 ACC 4 -->
+                        <div class="acc-card" id="l4-acc4">
+                            <button class="acc-header l4-toggle" data-index="3" data-lecture="l4">
+                                <div class="acc-icon" style="background:#ffe4e6;color:#e11d48"><i class="fa-solid fa-radiation"></i></div>
+                                <span class="acc-title">رابعاً: تالف شائع وغير طبيعي (د، هـ، و) <small style="color:#94a3b8;font-weight:600;font-size:12px;display:block">Common &amp; Abnormal Spoilage Cases</small></span>
+                                <i class="fa-solid fa-chevron-down acc-chevron"></i>
+                            </button>
+                            <div class="acc-body"><div class="acc-body-inner"><div class="acc-body-content">
+                                <div class="content-en text-xs md:text-sm">
+                                    <strong>Case D: Normal Common &amp; Sold (2 units @ $3 each)</strong><br>
+                                    • J.E: Dr. MOH Control $14 (Loss) &amp; Dr. Spoiled Inventory $6 / Cr. WIP-Job X $20.
+                                    <br>• Net Cost of Job X = $100 - $20 = $80.
+                                    <br>• Cost of good units = $80 / 8 = **$10.00 per unit**.
+                                    <br><br>
+                                    <strong>Case E: Abnormal, 2 units not Sold</strong><br>
+                                    • J.E: Dr. Loss from Abnormal Spoilage $20 / Cr. WIP-Job X $20.
+                                    <br>• Net Cost of Job X = $100 - $20 = $80.
+                                    <br>• Cost of good units = $80 / 8 = **$10.00 per unit**.
+                                    <br><br>
+                                    <strong>Case F: Abnormal &amp; Sold @ $3 each</strong><br>
+                                    • J.E: Dr. Loss from Abnormal Spoilage $14 &amp; Dr. Spoiled Inventory $6 / Cr. WIP-Job X $20.
+                                    <br>• Net Cost of Job X = $100 - $20 = $80.
+                                    <br>• Cost of good units = $80 / 8 = **$10.00 per unit**.
+                                </div>
+                                <div class="content-ar">
+                                    <div class="content-ar-header"><i class="fa-solid fa-calculator"></i> خطوات الحل التفصيلية للمصنع والإهمال</div>
+                                    <p>تعال نفك قيود الحالات دي بالعامية المصرية:</p>
+                                    
+                                    <div class="space-y-4">
+                                        <div class="p-3 bg-white rounded-lg border border-rose-200">
+                                            <strong>الحالة د (Normal Common - Sold @ $3):</strong>
+                                            <p class="text-sm mt-1">الخسارة الكلية 20 دولار، عوضنا منها 6 دولار بالمخزن للبيع، والـ 14 دولار الباقية هي الخسارة اللي هيشيلها المصنع:</p>
+                                            <div class="overflow-x-auto w-full my-3">
+                                                <table class="journal-table">
+                                                    <tr><th>العملية</th><th>المدين (Dr)</th><th>الدائن (Cr)</th></tr>
+                                                    <tr><td>قيد التالف الشائع ومباع</td><td class="dr">MOH Control 14<br>Spoiled Inventory 6</td><td class="cr">WIP-Job X 20</td></tr>
+                                                </table>
+                                            </div>
+                                            $$\text{Cost per Good Unit} = \frac{\$80}{8} = \$10.00$$
+                                        </div>
+                                        <div class="p-3 bg-white rounded-lg border border-rose-200">
+                                            <strong>الحالة هـ (Abnormal - Not Sold):</strong>
+                                            <p class="text-sm mt-1">إهمال كارثي من العمال! هنرمي التكلفة بالكامل (20 دولار) في حـ/ خسارة مستقلة يروح قائمة الدخل:</p>
+                                            <div class="overflow-x-auto w-full my-3">
+                                                <table class="journal-table">
+                                                    <tr><th>العملية</th><th>المدين (Dr)</th><th>الدائن (Cr)</th></tr>
+                                                    <tr><td>قيد التالف غير الطبيعي</td><td class="dr">Loss from Abnormal Spoilage 20</td><td class="cr">WIP-Job X 20</td></tr>
+                                                </table>
+                                            </div>
+                                            $$\text{Cost per Good Unit} = \frac{\$80}{8} = \$10.00$$
+                                        </div>
+                                        <div class="p-3 bg-white rounded-lg border border-rose-200">
+                                            <strong>الحالة و (Abnormal - Sold @ $3):</strong>
+                                            <p class="text-sm mt-1">إهمال بس هنبيع التالف خردة بـ 6 دولار. صافي الخسارة اللي هتتسجل على الإدارة 14 دولار بس:</p>
+                                            <div class="overflow-x-auto w-full my-3">
+                                                <table class="journal-table">
+                                                    <tr><th>العملية</th><th>المدين (Dr)</th><th>الدائن (Cr)</th></tr>
+                                                    <tr><td>قيد الإهمال والبيع</td><td class="dr">Loss from Abnormal Spoilage 14<br>Spoiled Inventory 6</td><td class="cr">WIP-Job X 20</td></tr>
+                                                </table>
+                                            </div>
+                                            $$\text{Cost per Good Unit} = \frac{\$80}{8} = \$10.00$$
+                                        </div>
+                                    </div>
+
+                                    <div class="ar-tip mt-5">
+                                        <i class="fa-solid fa-triangle-exclamation animate-bounce"></i>
+                                        <div>
+                                            <strong class="text-red-700 block mb-1">ألاعيب وفخاخ الدكتور في المسائل دي:</strong>
+                                            <ul class="list-disc pr-4 text-sm text-red-900 space-y-1">
+                                                <li><strong>لعبة المقام:</strong> ركز دايماً إنك بتقسم في النهاية على <strong>8 وحدات سُلام بس</strong> مش 10، لأن الوحدتين البايظين طلعوا بره الخدمة.</li>
+                                                <li><strong>لعبة الحساب المدين:</strong> لما تسمع كلمة <strong>Common</strong>، عينك تدور على قيد فيه <strong>MOH Control</strong> في الجانب المدين. ولما تسمع كلمة <strong>Abnormal</strong>، عينك تدور على قيد فيه <strong>Loss from Abnormal Spoilage</strong> في الجانب المدين!</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div></div></div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            </section>
+
+            <!-- ==============================================
+                LECTURE 5 CONTENT (NEWLY ADDED)
+            ================================================ -->
+            <section id="lecture-5-content" class="lecture-content-section hidden grid-cols-1 fade-in scroll-mt-20">
+            <div class="col-span-1">
+                <div class="lecture-hero hero-l5">
+                    <button onclick="showHomeView()" class="back-btn"><i class="fa-solid fa-arrow-right"></i> قائمة المحاضرات</button>
+                    <h2 class="lecture-hero-title">المحاضرة الخامسة: إعادة التشغيل والخردة</h2>
+                    <p class="lecture-hero-sub">Rework, Scrap &amp; Waste Management — Ch. 18</p>
+                    <div class="lecture-stats">
+                        <div class="stat-pill"><i class="fa-solid fa-layer-group"></i> 4 أقسام رئيسية</div>
+                        <div class="stat-pill"><i class="fa-solid fa-clock"></i> ~30 دقيقة</div>
+                        <div class="stat-pill" id="l5-progress-label"><i class="fa-solid fa-chart-simple"></i> 0 / 4 مكتملين</div>
+                    </div>
+                    <div class="progress-bar-wrap" style="margin-top:14px;margin-bottom:0;background:rgba(255,255,255,0.2)">
+                        <div class="progress-bar-fill" id="l5-progress-bar" style="width:0%;background:#fff"></div>
+                    </div>
+                </div>
+
+                <!-- Mobile Navigation L5 -->
+                <div class="mobile-topics-nav">
+                    <button class="mobile-nav-item active-nav hero-l5" data-acc="l5-acc1" onclick="scrollToAcc('l5-acc1', this, 'l5')"><span class="m-num">1</span><span>إعادة التشغيل</span></button>
+                    <button class="mobile-nav-item hero-l5" data-acc="l5-acc2" onclick="scrollToAcc('l5-acc2', this, 'l5')"><span class="m-num">2</span><span>القيود والحسابات</span></button>
+                    <button class="mobile-nav-item hero-l5" data-acc="l5-acc3" onclick="scrollToAcc('l5-acc3', this, 'l5')"><span class="m-num">3</span><span>الخردة والعوادم</span></button>
+                    <button class="mobile-nav-item hero-l5" data-acc="l5-acc4" onclick="scrollToAcc('l5-acc4', this, 'l5')"><span class="m-num">4</span><span>قيود الخردة</span></button>
+                </div>
+
+                <!-- Two-column layout -->
+                <div class="lecture-layout">
+                    <aside class="lecture-sidebar" style="border-color:#fcd34d">
+                        <h5 style="color:#b45309"><i class="fa-solid fa-list-ul ml-1"></i> أقسام المحاضرة 5</h5>
+                        <a class="sidebar-item active-nav hero-l5" data-acc="l5-acc1" onclick="scrollToAcc('l5-acc1', this, 'l5')">
+                            <span class="nav-num">1</span><span>مفاهيم إعادة التشغيل</span>
+                        </a>
+                        <a class="sidebar-item hero-l5" data-acc="l5-acc2" onclick="scrollToAcc('l5-acc2', this, 'l5')">
+                            <span class="nav-num">2</span><span>حالات أجور وخامات التصليح</span>
+                        </a>
+                        <a class="sidebar-item hero-l5" data-acc="l5-acc3" onclick="scrollToAcc('l5-acc3', this, 'l5')">
+                            <span class="nav-num">3</span><span>الفرق بين الخردة والعوادم</span>
+                        </a>
+                        <a class="sidebar-item hero-l5" data-acc="l5-acc4" onclick="scrollToAcc('l5-acc4', this, 'l5')">
+                            <span class="nav-num">4</span><span>قيود إثبات وبيع الخردة</span>
+                        </a>
+                    </aside>
+
+                    <div class="lecture-content-col">
+
+                        <!-- L5 ACC 1 -->
+                        <div class="acc-card" id="l5-acc1">
+                            <button class="acc-header l5-toggle" data-index="0" data-lecture="l5">
+                                <div class="acc-icon" style="background:#fef3c7;color:#d97706"><i class="fa-solid fa-tools"></i></div>
+                                <span class="acc-title">أولاً: معالجة تكاليف إعادة التشغيل <small style="color:#94a3b8;font-weight:600;font-size:12px;display:block">Rework Concepts</small></span>
+                                <i class="fa-solid fa-chevron-down acc-chevron"></i>
+                            </button>
+                            <div class="acc-body"><div class="acc-body-inner"><div class="acc-body-content">
+                                <div class="content-en">
+                                    <ul>
+                                        <li><strong>Rework:</strong> refers to units of production that do not meet the specifications but are subsequently repaired and sold as good units.</li>
+                                        <li><strong>Rework Types:</strong>
+                                            <br>• <strong>Normal Rework:</strong> specific to job (WIP debited) OR common to all jobs (MOH Control debited).
+                                            <br>• <strong>Abnormal Rework:</strong> results from inefficiency. Period Loss (Loss from Abnormal Rework debited).
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="content-ar">
+                                    <div class="content-ar-header"><i class="fa-solid fa-lightbulb"></i> الشرح بالعامية المصرية المبسطة</div>
+                                    <p>هنا إحنا بنتكلم عن منتج طلع فيه عيب بس "ينفع نصلحه" ونرجعه سليم. عشان نصلحه، هنضطر نصرف عليه خامات وأجور وتكاليف إضافية (أوفر هيد محمل).</p>
+                                    <p>مين بقى اللي هيتحمل التكاليف الإضافية دي عشان نرجع المنتج سليم؟ ده اللي بنفهمه في الحالات الجاية بالملي.</p>
+                                    <div class="ar-ok text-emerald-800 border-emerald-300">
+                                        <i class="fa-solid fa-circle-check"></i>
+                                        <span><strong>قاعدة ذهبية:</strong> في إعادة التشغيل (Rework) إحنا بنصلح المنتج ويرجع سليم، يعني <strong>عدد الوحدات مبيقلش!</strong> لو بدأنا بـ 10 وحدات هنقسم دايماً على 10 لأنهم كلهم بقوا سلام في النهاية!</span>
+                                    </div>
+                                </div>
+                            </div></div></div>
+                        </div>
+
+                        <!-- L5 ACC 2 -->
+                        <div class="acc-card" id="l5-acc2">
+                            <button class="acc-header l5-toggle" data-index="1" data-lecture="l5">
+                                <div class="acc-icon" style="background:#fef3c7;color:#d97706"><i class="fa-solid fa-calculator"></i></div>
+                                <span class="acc-title">ثانياً: حالات إعادة التشغيل بالقيود والحسابات <small style="color:#94a3b8;font-weight:600;font-size:12px;display:block">Rework Cases &amp; Costing Examples</small></span>
+                                <i class="fa-solid fa-chevron-down acc-chevron"></i>
+                            </button>
+                            <div class="acc-body"><div class="acc-body-inner"><div class="acc-body-content">
+                                <div class="content-en text-xs md:text-sm">
+                                    <strong>Rework Example:</strong><br>
+                                    Job of 10 units with total initial cost of $1,000 (Cost per unit = $100). 2 units are reworked at $30 each. Total rework cost = $60 (Materials $30, Wages $20, Allocated OH $10).
+                                    <br><br>
+                                    <strong>Case 1: Normal &amp; Job-Specific</strong><br>
+                                    • J.E: Dr. WIP-Inventory $60 / Cr. Material Inv $30, Wage Payable $20, Allocated OH $10.
+                                    <br>• New Cost of the Job = $1,000 + $60 = $1,060.
+                                    <br>• Cost of good unit = $1,060 / 10 = **$106 per unit**.
+                                    <br><br>
+                                    <strong>Case 2: Normal &amp; Common to all Jobs</strong><br>
+                                    • J.E: Dr. MOH Control $60 / Cr. Material Inv $30, Wage Payable $20, Allocated OH $10.
+                                    <br>• Cost of the Job remains $1,000.
+                                    <br>• Cost of good unit = $1,000 / 10 = **$100 per unit**.
+                                    <br><br>
+                                    <strong>Case 3: Abnormal (operational error)</strong><br>
+                                    • J.E: Dr. Loss from Abnormal Rework $60 / Cr. Material Inv $30, Wage Payable $20, Allocated OH $10.
+                                    <br>• Cost of the Job remains $1,000.
+                                    <br>• Cost of good unit = $1,000 / 10 = **$100 per unit**.
+                                </div>
+                                <div class="content-ar">
+                                    <div class="content-ar-header"><i class="fa-solid fa-pen-to-square"></i> خطوات الحل التفصيلية للـ Rework</div>
+                                    <p>تعال نشوف إزاي المحاسب بيعالج الـ 60 دولار تكلفة تصليح الوحدتين:</p>
+                                    
+                                    <div class="space-y-4">
+                                        <div class="p-3 bg-white rounded-lg border border-amber-200">
+                                            <strong>1. حالة طبيعي وخاص بالشغلانة (Normal Specific):</strong>
+                                            <p class="text-sm mt-1">الشغلانة صعبة وبتطلع عيوب، يبقى هي اللي تشيل تكلفة التصليح بالكامل. WIP مدين:</p>
+                                            <div class="overflow-x-auto w-full my-3">
+                                                <table class="journal-table text-xs md:text-sm">
+                                                    <tr><th>الطرف المدين (Dr)</th><th>الطرف الدائن (Cr)</th></tr>
+                                                    <tr><td class="dr">WIP-Inventory 60</td><td class="cr">Material Inventory 30<br>Wages Payable 20<br>Allocated MOH 10</td></tr>
+                                                </table>
+                                            </div>
+                                            $$\text{Cost per unit} = \frac{\$1,000 + \$60}{10\ \text{Units}} = \$106.00$$
+                                        </div>
+                                        <div class="p-3 bg-white rounded-lg border border-amber-200">
+                                            <strong>2. حالة طبيعي وشائع للمصنع كله (Normal Common):</strong>
+                                            <p class="text-sm mt-1">الغلطة من المكنة أو المصنع، الشغلانة ملهاش ذنب! المصنع يشيل التكلفة في MOH Control مدين:</p>
+                                            <div class="overflow-x-auto w-full my-3">
+                                                <table class="journal-table text-xs md:text-sm">
+                                                    <tr><th>الطرف المدين (Dr)</th><th>الطرف الدائن (Cr)</th></tr>
+                                                    <tr><td class="dr">MOH Control 60</td><td class="cr">Material Inventory 30<br>Wages Payable 20<br>Allocated MOH 10</td></tr>
+                                                </table>
+                                            </div>
+                                            $$\text{Cost per unit} = \frac{\$1,000}{10\ \text{Units}} = \$100.00$$
+                                        </div>
+                                        <div class="p-3 bg-white rounded-lg border border-amber-200">
+                                            <strong>3. حالة غير طبيعي (إهمال جسيم):</strong>
+                                            <p class="text-sm mt-1">إهمال عامل أو عطل فادح. نرميها خسارة فترة على الإدارة في حساب Loss مدين:</p>
+                                            <div class="overflow-x-auto w-full my-3">
+                                                <table class="journal-table text-xs md:text-sm">
+                                                    <tr><th>الطرف المدين (Dr)</th><th>الطرف الدائن (Cr)</th></tr>
+                                                    <tr><td class="dr">Loss from Abnormal Rework 60</td><td class="cr">Material Inventory 30<br>Wages Payable 20<br>Allocated MOH 10</td></tr>
+                                                </table>
+                                            </div>
+                                            $$\text{Cost per unit} = \frac{\$1,000}{10\ \text{Units}} = \$100.00$$
+                                        </div>
+                                    </div>
+
+                                    <div class="ar-tip mt-5">
+                                        <i class="fa-solid fa-triangle-exclamation animate-bounce"></i>
+                                        <div>
+                                            <strong class="text-red-700 block mb-1">ألاعيب وفخاخ الدكتور في مسائل الـ Rework:</strong>
+                                            <ul class="list-disc pr-4 text-sm text-red-900 space-y-1">
+                                                <li><strong>فخ المقام:</strong> أوعى تقسم التكلفة هنا على 8! إحنا صلحنا الوحدات البايظة يعني رجعوا كلهم سلام، فالمقام بيفضل دايماً <strong>10 وحدات كاملة</strong>.</li>
+                                                <li><strong>ثبات الجانب الدائن (Credit):</strong> لاحظ إن الجانب الدائن ثابت في الـ 3 حالات وهو (خامات، أجور مستحقة، تكاليف إضافية محملة) لأن دي الحاجات اللي سحبناها للتصليح. اللعب كله في الجانب المدين (WIP أو MOH Control أو Loss).</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div></div></div>
+                        </div>
+
+                        <!-- L5 ACC 3 -->
+                        <div class="acc-card" id="l5-acc3">
+                            <button class="acc-header l5-toggle" data-index="2" data-lecture="l5">
+                                <div class="acc-icon" style="background:#fef3c7;color:#d97706"><i class="fa-solid fa-dumpster"></i></div>
+                                <span class="acc-title">ثالثاً: الفرق بين الخردة والعوادم <small style="color:#94a3b8;font-weight:600;font-size:12px;display:block">Scrap vs. Waste Concepts</small></span>
+                                <i class="fa-solid fa-chevron-down acc-chevron"></i>
+                            </button>
+                            <div class="acc-body"><div class="acc-body-inner"><div class="acc-body-content">
+                                <div class="content-en">
+                                    <ul>
+                                        <li><strong>Waste:</strong> leftover materials of a manufacturing process that have <strong>no sales value</strong> (e.g., dust, smoke). No journal entries are required.</li>
+                                        <li><strong>Scrap:</strong> leftover materials that have a <strong>positive but minimal sales value</strong> (e.g., fabric clippings, metal shavings, wood chips).</li>
+                                        <li><strong>Scrap Accounting:</strong>
+                                            <br>• If value is <strong>Small (Immaterial)</strong>: recognized only when sold.
+                                            <br>• If value is <strong>High (Material)</strong>: recognized immediately at production.
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="content-ar">
+                                    <div class="content-ar-header"><i class="fa-solid fa-lightbulb"></i> الخلاصة بالبلدي (الفروقات الجوهرية)</div>
+                                    <p>لما بنصنع أي حاجة في المصنع، بيتبقى مننا فواضل وبقايا خامات بنقسمها لنوعين رئيسيين:</p>
+                                    <div class="compare-grid">
+                                        <div class="compare-card" style="border-color:#b45309">
+                                            <h6 style="color:#b45309">🗑 العوادم (Waste)</h6>
+                                            <p>حاجات زي التراب أو الدخان أو نشارة خشب ناعمة جداً، ملهاش أي قيمة بيعية فمابنعملهاش قيود محاسبية خالص.</p>
+                                        </div>
+                                        <div class="compare-card" style="border-color:#d97706">
+                                            <h6 style="color:#d97706">🪵 الخردة (Scrap)</h6>
+                                            <p>بقايا ليها قيمة وممكن نبيعها زي قصاقيص القماش أو نشارة خشب خشنة بنبيعها لمزارع الفراخ. ودي بنقسمها لتافهة وقيمة.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div></div></div>
+                        </div>
+
+                        <!-- L5 ACC 4 -->
+                        <div class="acc-card" id="l5-acc4">
+                            <button class="acc-header l5-toggle" data-index="3" data-lecture="l5">
+                                <div class="acc-icon" style="background:#fef3c7;color:#d97706"><i class="fa-solid fa-file-invoice-dollar"></i></div>
+                                <span class="acc-title">رابعاً: قيود إثبات وبيع الخردة بالتفصيل <small style="color:#94a3b8;font-weight:600;font-size:12px;display:block">Scrap Journal Entries (Specific vs. Common)</small></span>
+                                <i class="fa-solid fa-chevron-down acc-chevron"></i>
+                            </button>
+                            <div class="acc-body"><div class="acc-body-inner"><div class="acc-body-content">
+                                <div class="content-en text-xs md:text-sm">
+                                    <strong>1. Small Value (Immaterial) Scrap:</strong><br>
+                                    • Only recorded at the time of sale:
+                                    <br>• Dr. Cash / AR xx / Cr. Scrap Revenue xx.
+                                    <br><br>
+                                    <strong>2. High Value (Material) Scrap:</strong><br>
+                                    • <strong>A. Specific to Job (Job-Specific):</strong>
+                                    <br>• <em>Recognizing:</em> Dr. Scrap Inventory xx / Cr. WIP-Job xx.
+                                    <br>• <em>Selling:</em> Dr. Cash xx / Cr. Scrap Inventory xx.
+                                    <br>• <strong>B. Common to all Jobs:</strong>
+                                    <br>• <em>Recognizing:</em> Dr. Scrap Inventory xx / Cr. MOH Control xx.
+                                    <br>• <em>Selling:</em> Dr. Cash xx / Cr. Scrap Inventory xx.
+                                </div>
+                                <div class="content-ar">
+                                    <div class="content-ar-header"><i class="fa-solid fa-scale-balanced"></i> قيود إثبات وبيع الخردة بالتفصيل</div>
+                                    <p>هنا بنقسم قيود الخردة المهمة لـ 3 حالات رئيسية بيجوا في الامتحانات:</p>
+                                    
+                                    <div class="space-y-4">
+                                        <div class="p-3 bg-white rounded-lg border border-amber-200">
+                                            <strong>أولاً: لو قيمة الخردة تافهة وصغيرة (Small Value):</strong>
+                                            <p class="text-sm mt-1">مش مستاهلة وجع دماغ جرد المخازن. يوم ما نبيعها نقبض الفلوس ونرميها إيراد خردة:</p>
+                                            <div class="overflow-x-auto w-full my-3">
+                                                <table class="journal-table text-xs md:text-sm">
+                                                    <tr><th>العملية</th><th>المدين (Dr)</th><th>الدائن (Cr)</th></tr>
+                                                    <tr><td>قيد بيع الخردة التافهة</td><td class="dr">Cash / AR xx</td><td class="cr">Scrap Revenue xx</td></tr>
+                                                </table>
+                                            </div>
+                                        </div>
+                                        <div class="p-3 bg-white rounded-lg border border-amber-200">
+                                            <strong>ثانياً: لو قيمة الخردة غالية وخاصة بطلب معين (High Value &amp; Specific):</strong>
+                                            <p class="text-sm mt-1">طالما غالية لازم نعترف بيها في المخزن فوراً. والشغلانة هي اللي تستفيد وتقل تكلفتها:</p>
+                                            <div class="overflow-x-auto w-full my-3">
+                                                <table class="journal-table text-xs md:text-sm">
+                                                    <tr><th>العملية</th><th>المدين (Dr)</th><th>الدائن (Cr)</th></tr>
+                                                    <tr><td>1. قيد الإثبات (Recognizing)</td><td class="dr">Scrap Inventory xx</td><td class="cr">WIP-Job xx</td></tr>
+                                                    <tr><td>2. قيد البيع بعدين (Selling)</td><td class="dr">Cash xx</td><td class="cr">Scrap Inventory xx</td></tr>
+                                                </table>
+                                            </div>
+                                        </div>
+                                        <div class="p-3 bg-white rounded-lg border border-amber-200">
+                                            <strong>ثالثاً: لو قيمة الخردة غالية وعامة للمصنع (High Value &amp; Common):</strong>
+                                            <p class="text-sm mt-1">المصنع كله يستفيد وتقل التكاليف غير المباشرة فيه:</p>
+                                            <div class="overflow-x-auto w-full my-3">
+                                                <table class="journal-table text-xs md:text-sm">
+                                                    <tr><th>العملية</th><th>المدين (Dr)</th><th>الدائن (Cr)</th></tr>
+                                                    <tr><td>1. قيد الإثبات (Recognizing)</td><td class="dr">Scrap Inventory xx</td><td class="cr">MOH Control xx</td></tr>
+                                                    <tr><td>2. قيد البيع بعدين (Selling)</td><td class="dr">Cash xx</td><td class="cr">Scrap Inventory xx</td></tr>
+                                                </table>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="ar-tip mt-5">
+                                        <i class="fa-solid fa-triangle-exclamation animate-bounce"></i>
+                                        <div>
+                                            <strong class="text-red-700 block mb-1">ألاعيب وفخاخ الدكتور في مسائل الخردة:</strong>
+                                            <ul class="list-disc pr-4 text-sm text-red-900 space-y-1">
+                                                <li><strong>لعبة توقيت القيد:</strong> الخردة التافهة (Immaterial) مابنعملهاش قيد خالص عند الإنتاج، الاعتراف والبيع بيحصلوا مع بعض يوم البيع الفعلي. أما الغالية (Material) بنعترف بيها في المخزن فوراً عند الإنتاج.</li>
+                                                <li><strong>لعبة الحساب الدائن:</strong> لو قالك الخردة خاصة بطلب معين (Job Specific)، الطرف الدائن للقيد بيكون <strong>WIP</strong>. أما لو قالك عيب شائع (Common to all jobs)، الطرف الدائن بيكون <strong>MOH Control</strong>!</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div></div></div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            </section>
+
     </main>
 
     <!-- Footer -->
@@ -2282,7 +2862,9 @@
         const progressData = {
             l1: { completed: new Set(), total: document.querySelectorAll('#lecture-1-content .acc-card').length },
             l2: { completed: new Set(), total: document.querySelectorAll('#lecture-2-content .acc-card').length },
-            l3: { completed: new Set(), total: document.querySelectorAll('#lecture-3-content .acc-card').length }
+            l3: { completed: new Set(), total: document.querySelectorAll('#lecture-3-content .acc-card').length },
+            l4: { completed: new Set(), total: document.querySelectorAll('#lecture-4-content .acc-card').length },
+            l5: { completed: new Set(), total: document.querySelectorAll('#lecture-5-content .acc-card').length }
         };
 
         function updateProgress(lec) {
@@ -2352,6 +2934,8 @@
         updateProgress('l1');
         updateProgress('l2');
         updateProgress('l3');
+        updateProgress('l4');
+        updateProgress('l5');
     </script>
 </body>
 </html>
