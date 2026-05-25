@@ -1,0 +1,1962 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>محاسبة التكاليف | المحاضرات</title>
+    
+    <!-- Google Fonts: Cairo -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- MathJax CDN for Beautiful Formulas -->
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Cairo', 'sans-serif'],
+                    },
+                    colors: {
+                        primary: '#059669', // emerald-600
+                        secondary: '#4f46e5', // indigo-600
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        /* Base & Typography */
+        body {
+            font-family: 'Cairo', sans-serif;
+            background-color: #f8fafc;
+            color: #1e293b;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* Animations */
+        .fade-in {
+            animation: fadeIn 0.4s ease-in-out forwards;
+            opacity: 0;
+            transform: translateY(10px);
+        }
+
+        @keyframes fadeIn {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Sticky Header Transitions */
+        .header-transition {
+            transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.35s ease;
+        }
+        .header-hidden {
+            transform: translateY(-120%);
+            opacity: 0;
+        }
+        .header-visible {
+            transform: translateY(0);
+            opacity: 1;
+        }
+
+        /* Accordion Transitions */
+        .accordion-content {
+            display: grid;
+            grid-template-rows: 0fr;
+            transition: grid-template-rows 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .accordion-content.open {
+            grid-template-rows: 1fr;
+        }
+        .accordion-inner {
+            overflow: hidden;
+        }
+        .chevron {
+            transition: transform 0.3s ease;
+        }
+        .chevron.open {
+            transform: rotate(180deg);
+        }
+
+        /* Custom Webkit Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #f1f5f9;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #cbd5e1;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #94a3b8;
+        }
+
+        /* English LTR styling inside Arabic layout */
+        .en-text {
+            direction: ltr;
+            text-align: left;
+            font-family: system-ui, -apple-system, sans-serif;
+        }
+
+        /* ===================== LECTURE VIEW REDESIGN ===================== */
+
+        /* Lecture page two-column wrapper */
+        .lecture-layout {
+            display: grid;
+            grid-template-columns: 260px 1fr;
+            gap: 28px;
+            align-items: start;
+        }
+        @media (max-width: 900px) {
+            .lecture-layout { grid-template-columns: 1fr; }
+            .lecture-sidebar { display: none; }
+        }
+
+        /* Sidebar */
+        .lecture-sidebar {
+            position: sticky;
+            top: 90px;
+            background: #fff;
+            border-radius: 20px;
+            box-shadow: 0 4px 24px rgba(0,0,0,0.08);
+            padding: 20px 16px;
+            border: 1px solid #e2e8f0;
+        }
+        .lecture-sidebar h5 {
+            font-size: 11px;
+            font-weight: 800;
+            color: #94a3b8;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            padding: 0 8px 10px;
+            border-bottom: 1px solid #f1f5f9;
+            margin-bottom: 10px;
+        }
+        .sidebar-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 9px 10px;
+            border-radius: 12px;
+            cursor: pointer;
+            transition: all 0.2s;
+            font-size: 13px;
+            font-weight: 600;
+            color: #475569;
+            text-decoration: none;
+            border: none;
+            background: transparent;
+            width: 100%;
+            text-align: right;
+        }
+        .sidebar-item:hover {
+            background: #f1f5f9;
+            color: #1e293b;
+        }
+        .sidebar-item.active-nav {
+            background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
+            color: #fff;
+            box-shadow: 0 4px 12px rgba(99,102,241,0.3);
+        }
+        .sidebar-item.active-nav .nav-num {
+            background: rgba(255,255,255,0.25);
+            color: #fff;
+        }
+        .nav-num {
+            width: 24px;
+            height: 24px;
+            background: #e2e8f0;
+            color: #64748b;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 11px;
+            font-weight: 800;
+            flex-shrink: 0;
+        }
+        .nav-done .nav-num {
+            background: #dcfce7;
+            color: #16a34a;
+        }
+
+        /* Progress bar */
+        .progress-bar-wrap {
+            background: #e2e8f0;
+            height: 6px;
+            border-radius: 99px;
+            overflow: hidden;
+            margin-bottom: 12px;
+        }
+        .progress-bar-fill {
+            height: 100%;
+            background: linear-gradient(90deg, #6366f1, #8b5cf6);
+            border-radius: 99px;
+            transition: width 0.5s cubic-bezier(0.4,0,0.2,1);
+        }
+
+        /* Enhanced Accordion */
+        .acc-card {
+            background: #fff;
+            border-radius: 20px;
+            box-shadow: 0 2px 16px rgba(0,0,0,0.06);
+            margin-bottom: 16px;
+            border: 1.5px solid #f1f5f9;
+            overflow: hidden;
+            transition: box-shadow 0.25s, border-color 0.25s;
+            scroll-margin-top: 100px;
+        }
+        .acc-card.acc-open {
+            box-shadow: 0 8px 32px rgba(99,102,241,0.12);
+            border-color: #c7d2fe;
+        }
+        .acc-header {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            padding: 18px 22px;
+            cursor: pointer;
+            transition: background 0.2s;
+            border: none;
+            background: transparent;
+            width: 100%;
+            text-align: right;
+        }
+        .acc-header:hover { background: #f8fafc; }
+        .acc-icon {
+            width: 44px;
+            height: 44px;
+            border-radius: 14px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 18px;
+            flex-shrink: 0;
+            transition: transform 0.2s;
+        }
+        .acc-card.acc-open .acc-icon { transform: scale(1.08); }
+        .acc-title {
+            flex: 1;
+            font-size: 16px;
+            font-weight: 800;
+            color: #1e293b;
+            line-height: 1.4;
+        }
+        .acc-badge {
+            font-size: 10px;
+            font-weight: 800;
+            padding: 3px 10px;
+            border-radius: 20px;
+            flex-shrink: 0;
+        }
+        .acc-chevron {
+            color: #94a3b8;
+            transition: transform 0.3s ease;
+            font-size: 14px;
+            flex-shrink: 0;
+        }
+        .acc-card.acc-open .acc-chevron { transform: rotate(180deg); }
+        .acc-body {
+            display: grid;
+            grid-template-rows: 0fr;
+            transition: grid-template-rows 0.38s cubic-bezier(0.4,0,0.2,1);
+        }
+        .acc-card.acc-open .acc-body { grid-template-rows: 1fr; }
+        .acc-body-inner {
+            overflow: hidden;
+        }
+        .acc-body-content {
+            padding: 0 22px 22px;
+            border-top: 1.5px solid #f1f5f9;
+        }
+
+        /* Content blocks inside accordion */
+        .content-en {
+            direction: ltr;
+            text-align: left;
+            font-family: 'Segoe UI', system-ui, sans-serif;
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+            color: #cbd5e1;
+            border-radius: 16px;
+            padding: 20px;
+            margin-top: 16px;
+            margin-bottom: 14px;
+            font-size: 13.5px;
+            line-height: 1.8;
+            position: relative;
+            overflow: hidden;
+        }
+        .content-en::before {
+            content: 'EN';
+            position: absolute;
+            top: 12px;
+            left: 14px;
+            font-size: 10px;
+            font-weight: 900;
+            color: #334155;
+            letter-spacing: 1px;
+        }
+        .content-en ul { padding-left: 20px; margin: 0; }
+        .content-en li { margin-bottom: 8px; }
+        .content-en strong { color: #fff; }
+        .content-en .highlight-rule {
+            background: rgba(239,68,68,0.15);
+            border: 1px solid rgba(239,68,68,0.3);
+            padding: 8px 12px;
+            border-radius: 10px;
+            margin-top: 8px;
+        }
+        .content-en .highlight-rule strong { color: #f87171; }
+        .content-en .highlight-ok {
+            background: rgba(34,197,94,0.15);
+            border: 1px solid rgba(34,197,94,0.3);
+            padding: 8px 12px;
+            border-radius: 10px;
+            margin-top: 8px;
+        }
+        .content-en .highlight-ok strong { color: #4ade80; }
+
+        .content-ar {
+            background: linear-gradient(135deg, #fffbeb 0%, #fef3c7 100%);
+            border: 2px solid #fcd34d;
+            border-radius: 16px;
+            padding: 20px;
+            margin-top: 14px;
+        }
+        .content-ar-header {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 15px;
+            font-weight: 900;
+            color: #92400e;
+            margin-bottom: 14px;
+        }
+        .content-ar p { color: #44403c; line-height: 1.9; margin-bottom: 10px; font-size: 14px; }
+        .content-ar ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        .content-ar ul li {
+            display: flex;
+            gap: 10px;
+            align-items: flex-start;
+            padding: 8px 0;
+            font-size: 14px;
+            font-weight: 600;
+            color: #1c1917;
+            line-height: 1.7;
+            border-bottom: 1px dashed #fde68a;
+        }
+        .content-ar ul li:last-child { border-bottom: none; }
+        .content-ar ul li::before {
+            content: '◆';
+            color: #f59e0b;
+            font-size: 9px;
+            margin-top: 5px;
+            flex-shrink: 0;
+        }
+        .ar-label {
+            background: #fff;
+            color: #6366f1;
+            font-weight: 800;
+            font-size: 12px;
+            padding: 2px 8px;
+            border-radius: 6px;
+            border: 1px solid #e0e7ff;
+            white-space: nowrap;
+        }
+        .ar-tip {
+            background: linear-gradient(135deg, #ede9fe 0%, #ddd6fe 100%);
+            border: 1.5px solid #a78bfa;
+            border-radius: 14px;
+            padding: 14px 18px;
+            margin-top: 10px;
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+            font-size: 14px;
+            font-weight: 700;
+            color: #4c1d95;
+            line-height: 1.7;
+        }
+        .ar-tip i { color: #7c3aed; margin-top: 2px; flex-shrink: 0; }
+        .ar-ok {
+            background: linear-gradient(135deg, #f0fdf4 0%, #dcfce7 100%);
+            border: 1.5px solid #86efac;
+            border-radius: 14px;
+            padding: 14px 18px;
+            margin-top: 10px;
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+            font-size: 14px;
+            font-weight: 700;
+            color: #14532d;
+            line-height: 1.7;
+        }
+        .ar-ok i { color: #16a34a; margin-top: 2px; flex-shrink: 0; }
+
+        /* Comparison grid inside accordion */
+        .compare-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 12px;
+            margin-top: 12px;
+        }
+        @media (max-width: 600px) { .compare-grid { grid-template-columns: 1fr; } }
+        .compare-card {
+            background: #fff;
+            border-radius: 14px;
+            padding: 16px;
+            border-right: 4px solid;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+            min-width: 0;
+            max-width: 100%;
+            width: 100%;
+            box-sizing: border-box;
+        }
+        .compare-card h6 { font-size: 14px; font-weight: 800; margin-bottom: 6px; }
+        .compare-card p { font-size: 13px; color: #475569; line-height: 1.7; margin: 0; }
+
+        /* Lecture hero header */
+        .lecture-hero {
+            background: linear-gradient(135deg, #312e81 0%, #4338ca 50%, #6366f1 100%);
+            border-radius: 20px;
+            padding: 28px 28px 24px;
+            margin-bottom: 20px;
+            color: #fff;
+            position: relative;
+            overflow: hidden;
+        }
+        .lecture-hero::before {
+            content: '';
+            position: absolute;
+            top: -40px; left: -40px;
+            width: 200px; height: 200px;
+            background: rgba(255,255,255,0.05);
+            border-radius: 50%;
+        }
+        .lecture-hero::after {
+            content: '';
+            position: absolute;
+            bottom: -60px; right: -20px;
+            width: 250px; height: 250px;
+            background: rgba(255,255,255,0.04);
+            border-radius: 50%;
+        }
+        .back-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 8px 16px;
+            background: rgba(255,255,255,0.15);
+            border: 1px solid rgba(255,255,255,0.2);
+            border-radius: 12px;
+            color: #fff;
+            font-weight: 700;
+            font-size: 13px;
+            cursor: pointer;
+            transition: all 0.2s;
+            margin-bottom: 16px;
+            backdrop-filter: blur(4px);
+        }
+        .back-btn:hover { background: rgba(255,255,255,0.25); }
+        .lecture-hero-title {
+            font-size: 26px;
+            font-weight: 900;
+            margin: 0;
+            line-height: 1.3;
+        }
+        .lecture-hero-sub {
+            font-size: 14px;
+            opacity: 0.75;
+            margin: 6px 0 0;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+        }
+        .lecture-stats {
+            display: flex;
+            gap: 16px;
+            margin-top: 18px;
+            flex-wrap: wrap;
+        }
+        .stat-pill {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            background: rgba(255,255,255,0.12);
+            border: 1px solid rgba(255,255,255,0.15);
+            border-radius: 20px;
+            padding: 5px 14px;
+            font-size: 12px;
+            font-weight: 700;
+        }
+
+        /* Mobile Topics Horizontal Navigation */
+        .mobile-topics-nav {
+            display: none;
+            gap: 8px;
+            overflow-x: auto;
+            padding: 4px 4px 12px;
+            margin-bottom: 16px;
+            -webkit-overflow-scrolling: touch;
+            scrollbar-width: none; /* Firefox */
+        }
+        .mobile-topics-nav::-webkit-scrollbar {
+            display: none; /* Safari and Chrome */
+        }
+        @media (max-width: 900px) {
+            .mobile-topics-nav {
+                display: flex;
+            }
+        }
+        .mobile-nav-item {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            padding: 8px 12px;
+            border-radius: 99px;
+            background: #fff;
+            border: 1.5px solid #e2e8f0;
+            font-size: 12px;
+            font-weight: 700;
+            color: #475569;
+            white-space: nowrap;
+            cursor: pointer;
+            transition: all 0.2s;
+            flex-shrink: 0;
+            text-decoration: none;
+        }
+        .mobile-nav-item:hover {
+            background: #f1f5f9;
+            border-color: #cbd5e1;
+        }
+        .mobile-nav-item.active-nav {
+            background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
+            color: #fff;
+            border-color: transparent;
+            box-shadow: 0 4px 10px rgba(99,102,241,0.25);
+        }
+        .mobile-nav-item.active-nav .m-num {
+            background: rgba(255, 255, 255, 0.25);
+            color: #fff;
+        }
+        .m-num {
+            width: 18px;
+            height: 18px;
+            background: #e2e8f0;
+            color: #64748b;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 10px;
+            font-weight: 800;
+            flex-shrink: 0;
+        }
+        .mobile-nav-item.nav-done {
+            border-color: #86efac;
+            background: #f0fdf4;
+            color: #166534;
+        }
+        .mobile-nav-item.nav-done .m-num {
+            background: #dcfce7;
+            color: #16a34a;
+        }
+        .mobile-nav-item.active-nav.nav-done {
+            background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
+            color: #fff;
+            border-color: transparent;
+        }
+
+        /* Responsiveness Tweaks */
+        @media (max-width: 640px) {
+            .lecture-hero {
+                padding: 20px 16px 16px;
+                margin-bottom: 16px;
+                border-radius: 16px;
+            }
+            .lecture-hero-title {
+                font-size: 20px;
+            }
+            .lecture-hero-sub {
+                font-size: 12px;
+            }
+            .lecture-stats {
+                gap: 8px;
+                margin-top: 12px;
+            }
+            .stat-pill {
+                padding: 4px 10px;
+                font-size: 11px;
+                gap: 4px;
+            }
+            .acc-card {
+                border-radius: 16px;
+                margin-bottom: 12px;
+            }
+            .acc-header {
+                padding: 12px 14px;
+                gap: 10px;
+            }
+            .acc-icon {
+                width: 36px;
+                height: 36px;
+                font-size: 15px;
+                border-radius: 10px;
+            }
+            .acc-title {
+                font-size: 14px;
+            }
+            .acc-title small {
+                font-size: 11px !important;
+            }
+            .acc-body-content {
+                padding: 0 14px 16px;
+            }
+            .content-en, .content-ar {
+                padding: 14px;
+                border-radius: 12px;
+                margin-top: 12px;
+            }
+            .content-en {
+                font-size: 12.5px;
+            }
+            .content-ar p, .content-ar ul li {
+                font-size: 13px;
+            }
+            .content-ar-header {
+                font-size: 14px;
+                margin-bottom: 8px;
+            }
+            .ar-tip, .ar-ok {
+                padding: 10px 12px;
+                font-size: 12.5px;
+                border-radius: 10px;
+            }
+            .compare-grid {
+                gap: 8px;
+            }
+            .compare-card {
+                padding: 12px;
+                border-radius: 10px;
+            }
+            .compare-card h6 {
+                font-size: 13px;
+            }
+            .compare-card p {
+                font-size: 12px;
+            }
+        }
+
+        /* Lecture 2 Specific themes */
+        .lecture-hero.hero-l2 {
+            background: linear-gradient(135deg, #0f766e 0%, #0d9488 50%, #14b8a6 100%);
+        }
+        .mobile-nav-item.hero-l2.active-nav {
+            background: linear-gradient(135deg, #0d9488 0%, #0f766e 100%);
+            box-shadow: 0 4px 10px rgba(13, 148, 136, 0.25);
+        }
+        .sidebar-item.hero-l2.active-nav {
+            background: linear-gradient(135deg, #0d9488 0%, #0f766e 100%);
+            box-shadow: 0 4px 12px rgba(13, 148, 136, 0.3);
+        }
+        .ar-equation {
+            background: #fff;
+            border: 2px dashed #10b981;
+            padding: 16px;
+            border-radius: 12px;
+            font-family: 'Segoe UI', sans-serif;
+            font-weight: bold;
+            direction: ltr;
+            text-align: center;
+            color: #065f46;
+            margin: 14px 0;
+            font-size: 16px;
+            word-break: break-word;
+            overflow-x: auto;
+            max-width: 100%;
+            box-sizing: border-box;
+        }
+        mjx-container {
+            max-width: 100% !important;
+            overflow-x: auto !important;
+            overflow-y: hidden !important;
+        }
+        /* Journal Entry Table Style */
+        .journal-table {
+            width: 100%;
+            border-collapse: separate;
+            border-spacing: 0;
+            border-radius: 12px;
+            overflow: hidden;
+            margin-top: 16px;
+            border: 1px solid #e2e8f0;
+            direction: ltr;
+            text-align: left;
+            font-family: 'Segoe UI', sans-serif;
+            font-size: 14px;
+        }
+        .journal-table th {
+            background: #f8fafc;
+            padding: 12px;
+            font-weight: 800;
+            color: #475569;
+            border-bottom: 2px solid #e2e8f0;
+        }
+        .journal-table td {
+            padding: 10px 12px;
+            border-bottom: 1px solid #f1f5f9;
+            background: #fff;
+        }
+        .journal-table tr:last-child td {
+            border-bottom: none;
+        }
+        .journal-table .dr {
+            color: #0284c7;
+            font-weight: 700;
+        }
+        .journal-table .cr {
+            color: #059669;
+            font-weight: 700;
+            padding-left: 30px;
+        }
+        /* English Content Tables Styling */
+        .content-en table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 12px 0;
+            font-size: 13px;
+            border: 1px solid #334155;
+        }
+        .content-en th {
+            background: #1e293b;
+            color: #f8fafc;
+            font-weight: 700;
+            padding: 8px 12px;
+            border: 1px solid #334155;
+            text-align: left;
+        }
+        .content-en td {
+            padding: 8px 12px;
+            border: 1px solid #334155;
+            color: #cbd5e1;
+        }
+        .content-en tr:nth-child(even) td {
+            background: rgba(255, 255, 255, 0.03);
+        }
+
+        /* Responsive additions for new styles */
+        @media (max-width: 640px) {
+            .ar-equation {
+                padding: 10px;
+                font-size: 13.5px;
+                margin: 8px 0;
+            }
+            .journal-table {
+                font-size: 11.5px;
+                margin-top: 10px;
+            }
+            .journal-table th, .journal-table td {
+                padding: 6px 8px;
+            }
+            .journal-table .cr {
+                padding-left: 14px;
+            }
+            .content-ar ul li {
+                display: block !important;
+                padding: 8px 0;
+            }
+            .content-ar ul li::before {
+                content: '◆ ';
+                color: #f59e0b;
+                font-size: 9px;
+                margin-left: 6px;
+                display: inline !important;
+            }
+            .ar-label {
+                display: inline-block;
+                white-space: normal !important;
+                margin-bottom: 4px;
+            }
+        }
+    </style>
+</head>
+<body class="bg-slate-50 overflow-x-hidden">
+
+    <!-- Sticky Header -->
+    <header id="navbar" class="bg-[#008e5c] text-white shadow-md fixed w-full top-0 z-50 header-transition header-visible">
+        <div class="max-w-6xl mx-auto px-6 py-3 flex justify-center items-center">
+            <span class="text-xs sm:text-sm md:text-base lg:text-lg font-bold tracking-wide text-center px-2">سبحان الله، والحمد لله، ولا إله إلا الله، والله أكبر.</span>
+        </div>
+    </header>
+
+     <!-- Main Content -->
+    <main class="max-w-6xl mx-auto px-4 py-8 mt-16 sm:mt-20 md:mt-24 fade-in">
+        
+        <!-- Home View (Hero + Grid) -->
+        <div id="home-view" class="fade-in">
+            <!-- Hero Section -->
+            <section class="bg-white rounded-2xl shadow-lg p-6 sm:p-8 mb-6 sm:mb-10 text-center relative overflow-hidden flex flex-col items-center">
+                <div class="absolute -top-10 -right-10 text-emerald-100 opacity-50 text-9xl z-0">
+                    <i class="fa-solid fa-chart-line"></i>
+                </div>
+                <h2 class="text-2xl sm:text-3xl md:text-4xl font-extrabold text-slate-800 mb-3 sm:mb-4 z-10">كورس محاسبة التكاليف الشامل</h2>
+                <p class="text-sm sm:text-base md:text-lg text-slate-500 mb-6 sm:mb-8 max-w-2xl z-10">منصة تعليمية متكاملة لتبسيط أعقد مفاهيم التكاليف لطلبة كليات التجارة. ابدأ رحلتك الآن واضمن الامتياز!</p>
+                <button onclick="document.querySelector('[data-target=\'lecture-1-content\']').click()" class="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white font-bold py-2.5 px-6 sm:py-3 sm:px-8 text-sm sm:text-base rounded-xl shadow-lg transform hover:-translate-y-1 transition-all duration-200 z-10">
+                    <i class="fa-solid fa-rocket ml-2"></i> استكمل المذاكرة
+                </button>
+            </section>
+
+            <!-- Lectures Grid -->
+            <h3 id="lectures" class="text-2xl sm:text-3xl font-bold text-slate-800 mb-5 sm:mb-6 border-r-4 border-emerald-600 pr-3 sm:pr-4">فهرس المحاضرات</h3>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 mb-8 sm:mb-12">
+                
+                <!-- Active Lecture 1 -->
+                <div data-target="lecture-1-content" data-locked="false" data-theme="indigo" class="lecture-card bg-white rounded-2xl shadow-md p-6 flex flex-col border-2 border-slate-200 cursor-pointer transform hover:-translate-y-1 transition-all duration-200">
+                    <div class="w-14 h-14 bg-indigo-100 text-indigo-600 rounded-2xl flex items-center justify-center text-2xl mb-4">
+                        <i class="fa-solid fa-book-open"></i>
+                    </div>
+                    <h4 class="text-xl font-bold mb-2">المحاضرة الأولى</h4>
+                    <p class="text-slate-500 text-sm flex-grow">أساسيات محاسبة التكاليف والمصطلحات الرئيسية (Cost Accounting Basics).</p>
+                    <div class="mt-4 flex justify-between items-center">
+                        <span class="text-xs font-bold px-3 py-1 bg-indigo-100 text-indigo-800 rounded-full">مكتملة</span>
+                        <button class="text-indigo-600 font-bold hover:text-indigo-800"><i class="fa-solid fa-arrow-left"></i></button>
+                    </div>
+                </div>
+
+                <!-- Active Lecture 2 -->
+                <div data-target="lecture-2-content" data-locked="false" data-theme="teal" class="lecture-card bg-white rounded-2xl shadow-md p-6 flex flex-col border-2 border-slate-200 cursor-pointer transform hover:-translate-y-1 transition-all duration-200">
+                    <div class="w-14 h-14 bg-teal-100 text-teal-600 rounded-2xl flex items-center justify-center text-2xl mb-4">
+                        <i class="fa-solid fa-clipboard-list"></i>
+                    </div>
+                    <h4 class="text-xl font-bold mb-2">المحاضرة الثانية</h4>
+                    <p class="text-slate-500 text-sm flex-grow">نظام تكاليف الأوامر الإنتاجية (Job Costing) - شرح المسائل وقيود اليومية.</p>
+                    <div class="mt-4 flex justify-between items-center">
+                        <span class="text-xs font-bold px-3 py-1 bg-teal-100 text-teal-800 rounded-full">الجديدة / متاح الآن</span>
+                        <button class="text-teal-600 font-bold hover:text-teal-800"><i class="fa-solid fa-arrow-left"></i></button>
+                    </div>
+                </div>
+
+                <!-- Locked Lecture 3 -->
+                <div data-target="lecture-3-content" data-locked="true" class="lecture-card bg-slate-50 rounded-2xl shadow-md p-6 flex flex-col border-2 border-slate-200 opacity-70 cursor-pointer transform hover:-translate-y-1 transition-all duration-200">
+                    <div class="w-14 h-14 bg-slate-200 text-slate-500 rounded-2xl flex items-center justify-center text-2xl mb-4">
+                        <i class="fa-solid fa-lock"></i>
+                    </div>
+                    <h4 class="text-xl font-bold mb-2 text-slate-700">المحاضرة الثالثة</h4>
+                    <p class="text-slate-500 text-sm flex-grow">نظام تكاليف المراحل (Process Costing) وطرق التقييم.</p>
+                    <div class="mt-4 flex justify-between items-center">
+                        <span class="text-xs font-bold px-3 py-1 bg-slate-200 text-slate-600 rounded-full">قريباً</span>
+                        <button class="text-slate-500 font-bold hover:text-slate-700"><i class="fa-solid fa-arrow-left"></i></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- FULL WIDTH FEATURED LECTURE CONTENT -->
+        <section id="lecture-1-content" class="lecture-content-section hidden grid-cols-1 fade-in scroll-mt-20">
+          <div class="col-span-1">
+
+            <!-- Lecture Hero -->
+            <div class="lecture-hero">
+                <button onclick="showHomeView()" class="back-btn">
+                    <i class="fa-solid fa-arrow-right"></i>
+                    قائمة المحاضرات
+                </button>
+                <h2 class="lecture-hero-title">المحاضرة الأولى: أساسيات محاسبة التكاليف</h2>
+                <p class="lecture-hero-sub">Cost Accounting Basics — Ch. 1</p>
+                <div class="lecture-stats">
+                    <div class="stat-pill"><i class="fa-solid fa-layer-group"></i> 7 أقسام</div>
+                    <div class="stat-pill"><i class="fa-solid fa-clock"></i> ~25 دقيقة</div>
+                    <div class="stat-pill" id="l1-progress-label"><i class="fa-solid fa-chart-simple"></i> 0 / 7 مكتملين</div>
+                </div>
+                <div class="progress-bar-wrap" style="margin-top:14px;margin-bottom:0">
+                    <div class="progress-bar-fill" id="l1-progress-bar" style="width:0%"></div>
+                </div>
+            </div>
+
+            <!-- Mobile Navigation (shown on mobile, hidden on desktop) -->
+            <div class="mobile-topics-nav">
+                <button class="mobile-nav-item active-nav" data-acc="l1-acc1" onclick="scrollToAcc('l1-acc1', this)">
+                    <span class="m-num">1</span>
+                    <span>المصطلحات</span>
+                </button>
+                <button class="mobile-nav-item" data-acc="l1-acc2" onclick="scrollToAcc('l1-acc2', this)">
+                    <span class="m-num">2</span>
+                    <span>مباشرة</span>
+                </button>
+                <button class="mobile-nav-item" data-acc="l1-acc3" onclick="scrollToAcc('l1-acc3', this)">
+                    <span class="m-num">3</span>
+                    <span>السلوك</span>
+                </button>
+                <button class="mobile-nav-item" data-acc="l1-acc4" onclick="scrollToAcc('l1-acc4', this)">
+                    <span class="m-num">4</span>
+                    <span>المحرك</span>
+                </button>
+                <button class="mobile-nav-item" data-acc="l1-acc5" onclick="scrollToAcc('l1-acc5', this)">
+                    <span class="m-num">5</span>
+                    <span>الوعاء</span>
+                </button>
+                <button class="mobile-nav-item" data-acc="l1-acc6" onclick="scrollToAcc('l1-acc6', this)">
+                    <span class="m-num">6</span>
+                    <span>النظم</span>
+                </button>
+                <button class="mobile-nav-item" data-acc="l1-acc7" onclick="scrollToAcc('l1-acc7', this)">
+                    <span class="m-num">7</span>
+                    <span>المداخل</span>
+                </button>
+            </div>
+
+            <!-- Two-column layout: Sidebar + Content -->
+            <div class="lecture-layout">
+
+                <!-- Sidebar -->
+                <aside class="lecture-sidebar">
+                    <h5><i class="fa-solid fa-list-ul ml-1"></i> أقسام المحاضرة</h5>
+                    <a class="sidebar-item active-nav" data-acc="l1-acc1" onclick="scrollToAcc('l1-acc1', this)">
+                        <span class="nav-num">1</span>
+                        <span>مصطلحات التكاليف</span>
+                    </a>
+                    <a class="sidebar-item" data-acc="l1-acc2" onclick="scrollToAcc('l1-acc2', this)">
+                        <span class="nav-num">2</span>
+                        <span>مباشرة وغير مباشرة</span>
+                    </a>
+                    <a class="sidebar-item" data-acc="l1-acc3" onclick="scrollToAcc('l1-acc3', this)">
+                        <span class="nav-num">3</span>
+                        <span>سلوك التكلفة</span>
+                    </a>
+                    <a class="sidebar-item" data-acc="l1-acc4" onclick="scrollToAcc('l1-acc4', this)">
+                        <span class="nav-num">4</span>
+                        <span>محرك التكلفة والوحدة</span>
+                    </a>
+                    <a class="sidebar-item" data-acc="l1-acc5" onclick="scrollToAcc('l1-acc5', this)">
+                        <span class="nav-num">5</span>
+                        <span>وعاء وأساس التحميل</span>
+                    </a>
+                    <a class="sidebar-item" data-acc="l1-acc6" onclick="scrollToAcc('l1-acc6', this)">
+                        <span class="nav-num">6</span>
+                        <span>نظم التكاليف</span>
+                    </a>
+                    <a class="sidebar-item" data-acc="l1-acc7" onclick="scrollToAcc('l1-acc7', this)">
+                        <span class="nav-num">7</span>
+                        <span>فعلي مقابل طبيعي</span>
+                    </a>
+                </aside>
+
+                <!-- Main Content Column -->
+                <div class="lecture-content-col">
+
+                <!-- ======= ACCORDION 1 ======= -->
+                <div class="acc-card" id="l1-acc1">
+                    <button class="acc-header l1-toggle" data-index="0">
+                        <div class="acc-icon" style="background:#ede9fe;color:#7c3aed">
+                            <i class="fa-solid fa-book"></i>
+                        </div>
+                        <span class="acc-title">مصطلحات التكاليف الأساسية <small style="color:#94a3b8;font-weight:600;font-size:12px;display:block">Basic Cost Terminology</small></span>
+                        <i class="fa-solid fa-chevron-down acc-chevron"></i>
+                    </button>
+                    <div class="acc-body">
+                        <div class="acc-body-inner">
+                            <div class="acc-body-content">
+                                <div class="content-en">
+                                    <ul>
+                                        <li><strong>Cost:</strong> is a resource sacrificed or forgone to achieve a specific objective.</li>
+                                        <li><strong>Actual cost:</strong> is the cost that has occurred (a historical or past cost).</li>
+                                        <li><strong>Budgeted cost:</strong> is a predicted, or forecasted, cost (a future cost).</li>
+                                        <li><strong>Cost object:</strong> is anything of interest for which a cost measure is desired (e.g., Product, Service, Customer).</li>
+                                        <li><strong>Cost accumulation:</strong> is a collection of cost data in an organized manner.</li>
+                                        <li><strong>Cost assignment includes:</strong> a) Tracing accumulated costs with a direct relationship, and b) Allocating accumulated costs with an indirect relationship.</li>
+                                    </ul>
+                                </div>
+                                <div class="content-ar">
+                                    <div class="content-ar-header"><i class="fa-solid fa-lightbulb"></i> الخلاصة بالبلدي</div>
+                                    <p>بص يا بطل، أي محاسب تكاليف لازم يكون عارف المصطلحات دي زي اسمه:</p>
+                                    <ul>
+                                        <li><span class="ar-label">التكلفة</span> دي الفلوس اللي ضحيت بيها عشان توصل لهدف (زي شراء خشب لترابيزة).</li>
+                                        <li><span class="ar-label">الفعلية vs التقديرية</span> الفعلية خلصت وراحت (تاريخية). التقديرية اللي هتدفعها مستقبل.</li>
+                                        <li><span class="ar-label">هدف التكلفة</span> ده الشيء اللي عايز تحسب تكلفته (منتج، خدمة، قسم).</li>
+                                        <li><span class="ar-label">تجميع وتخصيص</span> بنجمع الفواتير (Accumulation) وبعدين نوزعها (Assignment). لو واضحة = تتبع. لو غير مباشرة = تحميل.</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ======= ACCORDION 2 ======= -->
+                <div class="acc-card" id="l1-acc2">
+                    <button class="acc-header l1-toggle" data-index="1">
+                        <div class="acc-icon" style="background:#dcfce7;color:#16a34a">
+                            <i class="fa-solid fa-code-branch"></i>
+                        </div>
+                        <span class="acc-title">التكاليف المباشرة وغير المباشرة <small style="color:#94a3b8;font-weight:600;font-size:12px;display:block">Direct &amp; Indirect Costs</small></span>
+                        <i class="fa-solid fa-chevron-down acc-chevron"></i>
+                    </button>
+                    <div class="acc-body">
+                        <div class="acc-body-inner">
+                            <div class="acc-body-content">
+                                <div class="content-en">
+                                    <ul>
+                                        <li><strong>Direct costs</strong> can be conveniently and economically traced to a cost object (e.g., parts, assembly line wages).</li>
+                                        <li><strong>Indirect costs</strong> cannot be conveniently or economically traced. They are allocated in a rational and systematic manner (e.g., Electricity, rent).</li>
+                                        <li><strong>Factors affecting classification:</strong> The materiality of the cost, Available information-gathering technology, and Design of operations.</li>
+                                    </ul>
+                                </div>
+                                <div class="content-ar">
+                                    <div class="content-ar-header"><i class="fa-solid fa-lightbulb"></i> الخلاصة بالبلدي</div>
+                                    <p>بنقسم التكاليف بناءً على قدرتنا إننا نربطها بالمنتج:</p>
+                                    <div class="compare-grid">
+                                        <div class="compare-card" style="border-color:#16a34a">
+                                            <h6 style="color:#16a34a">✅ المباشرة (Direct)</h6>
+                                            <p>شايفها بعيني جوه المنتج وأقدر أحسبها بسهولة (زي الخشب، أو أجر النجار).</p>
+                                        </div>
+                                        <div class="compare-card" style="border-color:#dc2626">
+                                            <h6 style="color:#dc2626">❌ غير المباشرة (Indirect)</h6>
+                                            <p>بتخدم المصنع كله ومش قادر تقول المنتج أخد منها كام (إيجار، كهربا) → بنوزعها بنسبة.</p>
+                                        </div>
+                                    </div>
+                                    <ul style="margin-top:12px">
+                                        <li><span class="ar-label">عوامل التحديد</span> الأهمية النسبية (مسمار تمنه تافه = غير مباشر)، التكنولوجيا (باركود يسهل التتبع)، وتصميم المصنع.</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ======= ACCORDION 3 ======= -->
+                <div class="acc-card" id="l1-acc3">
+                    <button class="acc-header l1-toggle" data-index="2">
+                        <div class="acc-icon" style="background:#fee2e2;color:#dc2626">
+                            <i class="fa-solid fa-chart-line"></i>
+                        </div>
+                        <span class="acc-title">سلوك التكلفة
+                            <span style="background:#fef2f2;color:#dc2626;font-size:10px;font-weight:900;padding:2px 8px;border-radius:20px;margin-right:8px;border:1px solid #fca5a5">⚠ هام جداً للمسائل</span>
+                            <small style="color:#94a3b8;font-weight:600;font-size:12px;display:block;margin-top:2px">Cost Behavior</small>
+                        </span>
+                        <i class="fa-solid fa-chevron-down acc-chevron"></i>
+                    </button>
+                    <div class="acc-body">
+                        <div class="acc-body-inner">
+                            <div class="acc-body-content">
+                                <div class="content-en">
+                                    <ul>
+                                        <li><strong>Variable costs:</strong> change in total in proportion to changes in the related level of activity, but are constant on a per-unit basis.</li>
+                                        <li><strong>Fixed costs:</strong> remain unchanged in total regardless of changes in activity, but change inversely with the level of production on a per-unit basis.</li>
+                                    </ul>
+                                </div>
+                                <div class="content-ar">
+                                    <div class="content-ar-header"><i class="fa-solid fa-lightbulb"></i> الخلاصة بالبلدي</div>
+                                    <p>الجزء ده هو "روح" التكاليف وأساس المسائل! إزاي التكلفة بتتغير لما الإنتاج يتغير؟</p>
+                                    <div class="compare-grid">
+                                        <div class="compare-card" style="border-color:#6366f1">
+                                            <h6 style="color:#6366f1">📈 المتغيرة (Variable)</h6>
+                                            <p>الإجمالي بيتغير مع الإنتاج، لكن <strong>تكلفة الوحدة ثابتة</strong> (خشب كرسي = 50 جنيه سواء عملت كرسي أو ألف).</p>
+                                        </div>
+                                        <div class="compare-card" style="border-color:#059669">
+                                            <h6 style="color:#059669">📌 الثابتة (Fixed)</h6>
+                                            <p>الإجمالي ثابت زي الإيجار، لكن <strong>تكلفة الوحدة بتقل</strong> كل ما تنتج أكتر (علاقة عكسية).</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ======= ACCORDION 4 ======= -->
+                <div class="acc-card" id="l1-acc4">
+                    <button class="acc-header l1-toggle" data-index="3">
+                        <div class="acc-icon" style="background:#e0f2fe;color:#0369a1">
+                            <i class="fa-solid fa-gear"></i>
+                        </div>
+                        <span class="acc-title">محرك التكلفة وتكلفة الوحدة <small style="color:#94a3b8;font-weight:600;font-size:12px;display:block">Cost Driver &amp; Unit Costs</small></span>
+                        <i class="fa-solid fa-chevron-down acc-chevron"></i>
+                    </button>
+                    <div class="acc-body">
+                        <div class="acc-body-inner">
+                            <div class="acc-body-content">
+                                <div class="content-en">
+                                    <ul>
+                                        <li><strong>Cost Driver:</strong> is a variable that causally affects costs over a given time span.</li>
+                                        <li><strong>Relevant Range:</strong> is the band of normal activity level in which fixed costs are considered fixed.</li>
+                                        <li><strong>Unit Costs:</strong> are calculated by dividing the total cost by the related number of units. Unit costs should be used cautiously.</li>
+                                        <li class="highlight-rule"><strong>Rule:</strong> first calculate total costs, then compute the unit cost.</li>
+                                    </ul>
+                                </div>
+                                <div class="content-ar">
+                                    <div class="content-ar-header"><i class="fa-solid fa-lightbulb"></i> الخلاصة بالبلدي</div>
+                                    <ul>
+                                        <li><span class="ar-label">محرك التكلفة</span> ده "السبب" اللي بيخلي الفلوس تتصرف (إيه اللي بيزود فاتورة الكهربا؟ ساعات تشغيل المكن).</li>
+                                        <li><span class="ar-label">المدى الملائم</span> الإيجار ثابت، بس لو أنتجت مليون وحدة واضطريت تأجر مصنع تاني؟ الثبات ده فقط في حدود طاقة المصنع الحالية.</li>
+                                    </ul>
+                                    <div class="ar-tip">
+                                        <i class="fa-solid fa-triangle-exclamation"></i>
+                                        <span><strong>القاعدة الذهبية في المسائل:</strong> دايماً احسب "إجمالي التكاليف" الأول، وبعدين ابقى اقسم على عدد الوحدات عشان ماتتخدعش.</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ======= ACCORDION 5 ======= -->
+                <div class="acc-card" id="l1-acc5">
+                    <button class="acc-header l1-toggle" data-index="4">
+                        <div class="acc-icon" style="background:#fef9c3;color:#a16207">
+                            <i class="fa-solid fa-piggy-bank"></i>
+                        </div>
+                        <span class="acc-title">وعاء التكلفة وأساس التحميل <small style="color:#94a3b8;font-weight:600;font-size:12px;display:block">Cost Pool &amp; Allocation Base</small></span>
+                        <i class="fa-solid fa-chevron-down acc-chevron"></i>
+                    </button>
+                    <div class="acc-body">
+                        <div class="acc-body-inner">
+                            <div class="acc-body-content">
+                                <div class="content-en">
+                                    <ul>
+                                        <li><strong>Cost Pool:</strong> is any logical grouping of related cost objects.</li>
+                                        <li><strong>Cost-allocation base:</strong> is a cost driver used as a basis to build a systematic method of distributing indirect costs.</li>
+                                        <li><strong>Ideal base:</strong> The ideal cost-allocation base is the cost driver because there is a cause-and-effect relationship.</li>
+                                        <li><strong>Alternatives:</strong> When cause-and-effect is not clear, use: Benefits received or Cost object's ability to bear.</li>
+                                    </ul>
+                                </div>
+                                <div class="content-ar">
+                                    <div class="content-ar-header"><i class="fa-solid fa-lightbulb"></i> الخلاصة بالبلدي</div>
+                                    <p>لما بنيجي نوزع التكاليف "غير المباشرة" اللي مغلبانا دي، بنعمل إيه؟</p>
+                                    <ul>
+                                        <li><span class="ar-label">Cost Pool</span> حصالة كبيرة بنجمع فيها كل التكاليف الشبه بعض.</li>
+                                        <li><span class="ar-label">Allocation Base</span> عشان نوزع الحصالة بالعدل، بنستخدم أساس التحميل. أحسن أساس فيه علاقة "سبب ونتيجة".</li>
+                                        <li><span class="ar-label">لو مفيش سبب؟</span> نوزع بأسلوب المنفعة (اللي استفاد أكتر يشيل أكتر)، أو القدرة على التحمل.</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ======= ACCORDION 6 ======= -->
+                <div class="acc-card" id="l1-acc6">
+                    <button class="acc-header l1-toggle" data-index="5">
+                        <div class="acc-icon" style="background:#fce7f3;color:#9d174d">
+                            <i class="fa-solid fa-diagram-project"></i>
+                        </div>
+                        <span class="acc-title">نظم التكاليف <small style="color:#94a3b8;font-weight:600;font-size:12px;display:block">Costing Systems</small></span>
+                        <i class="fa-solid fa-chevron-down acc-chevron"></i>
+                    </button>
+                    <div class="acc-body">
+                        <div class="acc-body-inner">
+                            <div class="acc-body-content">
+                                <div class="content-en">
+                                    <ul>
+                                        <li><strong>Job-Costing:</strong> system accounting for distinct units of a product or service. Each job may be different and consumes different resources (e.g., aircraft, advertising, wedding announcements).</li>
+                                        <li><strong>Process-Costing:</strong> system accounting for mass production of identical or similar products (e.g., Oil refining, soda pop).</li>
+                                        <li><em style="color:#64748b">Note: These two systems lie at opposite ends of a continuum.</em></li>
+                                    </ul>
+                                </div>
+                                <div class="content-ar">
+                                    <div class="content-ar-header"><i class="fa-solid fa-lightbulb"></i> الخلاصة بالبلدي</div>
+                                    <p>الشركات في الدنيا بتشتغل بواحد من النظامين دول:</p>
+                                    <div class="compare-grid">
+                                        <div class="compare-card" style="border-color:#0ea5e9">
+                                            <h6 style="color:#0369a1">🎯 تكاليف الأوامر (Job)</h6>
+                                            <p>شغل "التفصيل". كل طلبية مختلفة ومخصوصة (بناء طيارة، كروت فرح).</p>
+                                        </div>
+                                        <div class="compare-card" style="border-color:#a855f7">
+                                            <h6 style="color:#7e22ce">🏭 تكاليف المراحل (Process)</h6>
+                                            <p>إنتاج مستمر بالملايين "نسخة طبق الأصل" (ازايز البيبسي، تكرير البترول).</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ======= ACCORDION 7 ======= -->
+                <div class="acc-card" id="l1-acc7">
+                    <button class="acc-header l1-toggle" data-index="6">
+                        <div class="acc-icon" style="background:#ecfdf5;color:#059669">
+                            <i class="fa-solid fa-scale-balanced"></i>
+                        </div>
+                        <span class="acc-title">مداخل التكاليف <small style="color:#94a3b8;font-weight:600;font-size:12px;display:block">Actual vs. Normal Costing</small></span>
+                        <i class="fa-solid fa-chevron-down acc-chevron"></i>
+                    </button>
+                    <div class="acc-body">
+                        <div class="acc-body-inner">
+                            <div class="acc-body-content">
+                                <div class="content-en">
+                                    <ul>
+                                        <li><strong>Actual Costing:</strong> allocates indirect costs based on the actual indirect-cost rates times the actual activity consumption.</li>
+                                        <li><strong>Normal Costing:</strong> allocates indirect costs based on the budgeted indirect-cost rates times the actual activity consumption.</li>
+                                        <li class="highlight-ok"><strong>Important:</strong> Both methods allocate Direct costs the same way: actual direct-cost rates times actual quantities.</li>
+                                    </ul>
+                                </div>
+                                <div class="content-ar">
+                                    <div class="content-ar-header"><i class="fa-solid fa-lightbulb"></i> الخلاصة بالبلدي (أهم جزء لقيود اليومية)</div>
+                                    <p>التكلفة = مواد مباشرة + أجور مباشرة + تكاليف غير مباشرة. المحاسبين طلعوا بطريقتين:</p>
+                                    <ul>
+                                        <li><span class="ar-label">الفعلية (Actual)</span> بنستنى لآخر السنة لما الفواتير كلها تيجي. عيبها: الإدارة مش عارفة التكلفة طول السنة!</li>
+                                        <li><span class="ar-label">الطبيعية (Normal)</span> بنشتغل بالمعدل التقديري بتاع أول السنة × الساعات الفعلية عشان نحمل أول بأول.</li>
+                                    </ul>
+                                    <div class="ar-ok">
+                                        <i class="fa-solid fa-check-circle"></i>
+                                        <span><strong>تريكة الصح والغلط:</strong> الطريقتين متفقين إن "التكاليف المباشرة" دايماً بتتحسب بـ (السعر الفعلي × الكمية الفعلية). الاختلاف بس في غير المباشرة!</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                </div><!-- end .lecture-content-col -->
+            </div><!-- end .lecture-layout -->
+          </div>
+        </section>
+
+
+        <!-- Lecture 2 Content -->
+        <section id="lecture-2-content" class="lecture-content-section hidden grid-cols-1 fade-in scroll-mt-20">
+            <div class="col-span-1">
+                <!-- Lecture 2 Hero -->
+                <div class="lecture-hero hero-l2">
+                    <button onclick="showHomeView()" class="back-btn"><i class="fa-solid fa-arrow-right"></i> قائمة المحاضرات</button>
+                    <h2 class="lecture-hero-title">المحاضرة الثانية: الأوامر الإنتاجية</h2>
+                    <p class="lecture-hero-sub">Job Costing System — Ch. 4 (Part 2 & Exercises)</p>
+                    <div class="lecture-stats">
+                        <div class="stat-pill"><i class="fa-solid fa-layer-group"></i> 4 أقسام رئيسية</div>
+                        <div class="stat-pill"><i class="fa-solid fa-clock"></i> ~30 دقيقة</div>
+                        <div class="stat-pill" id="l2-progress-label"><i class="fa-solid fa-chart-simple"></i> 0 / 4 مكتملين</div>
+                    </div>
+                    <div class="progress-bar-wrap" style="margin-top:14px;margin-bottom:0;background:rgba(255,255,255,0.2)">
+                        <div class="progress-bar-fill" id="l2-progress-bar" style="width:0%;background:#fff"></div>
+                    </div>
+                </div>
+
+                <!-- Mobile Navigation L2 -->
+                <div class="mobile-topics-nav">
+                    <button class="mobile-nav-item active-nav hero-l2" data-acc="l2-acc1" onclick="scrollToAcc('l2-acc1', this, 'l2')"><span class="m-num">1</span><span>القواعد الذهبية</span></button>
+                    <button class="mobile-nav-item hero-l2" data-acc="l2-acc2" onclick="scrollToAcc('l2-acc2', this, 'l2')"><span class="m-num">2</span><span>معدل واحد (Fox)</span></button>
+                    <button class="mobile-nav-item hero-l2" data-acc="l2-acc3" onclick="scrollToAcc('l2-acc3', this, 'l2')"><span class="m-num">3</span><span>معدلات الأقسام (Hill)</span></button>
+                    <button class="mobile-nav-item hero-l2" data-acc="l2-acc4" onclick="scrollToAcc('l2-acc4', this, 'l2')"><span class="m-num">4</span><span>قيود اليومية</span></button>
+                </div>
+
+                <!-- Two-column layout: Sidebar + Content -->
+                <div class="lecture-layout">
+                    <aside class="lecture-sidebar" style="border-color:#ccfbf1">
+                        <h5 style="color:#0f766e"><i class="fa-solid fa-list-ul ml-1"></i> أقسام المحاضرة 2</h5>
+                        <a class="sidebar-item active-nav hero-l2" data-acc="l2-acc1" onclick="scrollToAcc('l2-acc1', this, 'l2')">
+                            <span class="nav-num">1</span><span>القواعد الذهبية للحساب</span>
+                        </a>
+                        <a class="sidebar-item hero-l2" data-acc="l2-acc2" onclick="scrollToAcc('l2-acc2', this, 'l2')">
+                            <span class="nav-num">2</span><span>مسألة شركة Fox</span>
+                        </a>
+                        <a class="sidebar-item hero-l2" data-acc="l2-acc3" onclick="scrollToAcc('l2-acc3', this, 'l2')">
+                            <span class="nav-num">3</span><span>مسألة شركة Hill</span>
+                        </a>
+                        <a class="sidebar-item hero-l2" data-acc="l2-acc4" onclick="scrollToAcc('l2-acc4', this, 'l2')">
+                            <span class="nav-num">4</span><span>مسألة Dougherty Furniture</span>
+                        </a>
+                    </aside>
+
+                    <div class="lecture-content-col">
+
+                        <!-- ======= ACCORDION 1: Fundamentals ======= -->
+                        <div class="acc-card" id="l2-acc1">
+                            <button class="acc-header l2-toggle" data-index="0" data-lecture="l2">
+                                <div class="acc-icon" style="background:#ccfbf1;color:#0f766e">
+                                    <i class="fa-solid fa-star"></i>
+                                </div>
+                                <span class="acc-title">أولاً: القواعد الذهبية لحساب التكلفة <small style="color:#94a3b8;font-weight:600;font-size:12px;display:block">Job Costing Fundamentals</small></span>
+                                <i class="fa-solid fa-chevron-down acc-chevron"></i>
+                            </button>
+                            <div class="acc-body">
+                                <div class="acc-body-inner">
+                                    <div class="acc-body-content">
+                                        <div class="content-en">
+                                            <ul>
+                                                <li><strong>Actual Cost</strong> = Direct Materials (DM) + Direct Labor (DL) + Allocated Overhead (OH).</li>
+                                                <li><strong>Budgeted OH Rate</strong> = Budgeted OH / Budgeted Base.</li>
+                                                <li><strong>Allocated OH</strong> = Budgeted Rate × Actual Used Base For the Job.</li>
+                                            </ul>
+                                        </div>
+                                        <div class="content-ar">
+                                            <div class="content-ar-header"><i class="fa-solid fa-lightbulb"></i> الشرح بالتفصيل الممل</div>
+                                            <p>أي شغلانة (Job) بتدخل المصنع عشان تحسب تكلفتها الفعلية بتجمع 3 حاجات مفيش غيرهم:</p>
+                                            <ul>
+                                                <li><span class="ar-label text-teal-600 border-teal-200">المواد المباشرة (DM)</span> الخامات اللي سحبتها.</li>
+                                                <li><span class="ar-label text-teal-600 border-teal-200">الأجور المباشرة (DL)</span> فلوس العمال اللي اشتغلوا بإيديهم فيها.</li>
+                                                <li><span class="ar-label text-teal-600 border-teal-200">التكاليف المحملة (Allocated OH)</span> ودي المشكلة كلها! بنحسبها إزاي؟</li>
+                                            </ul>
+                                            <div class="mt-4 p-4 bg-white rounded-xl border border-amber-200">
+                                                <p class="font-bold text-slate-800 mb-2">خطوات حساب الـ OH:</p>
+                                                <ol class="list-decimal pr-5 space-y-2 text-sm text-slate-700 font-semibold">
+                                                    <li>بنجيب <strong>"معدل التحميل"</strong> أول السنة: بنقسم إجمالي التكاليف التقديرية (Budgeted OH) على أساس التحميل التقديري (Budgeted Base) سواء كان ساعات عمل أو آلات.</li>
+                                                    <li>لما الشغلانة تخلص، بنضرب <strong>"المعدل"</strong> اللي حسبناه ده في <strong>"الساعات الفعلية"</strong> اللي الشغلانة استهلكتها (Actual Used Base). الرقم اللي بيطلع هو ده نصيبها من الإيجار والكهربا وغيرها.</li>
+                                                </ol>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- ======= ACCORDION 2: Fox Manufacturing ======= -->
+                        <div class="acc-card" id="l2-acc2">
+                            <button class="acc-header l2-toggle" data-index="1" data-lecture="l2">
+                                <div class="acc-icon" style="background:#e0e7ff;color:#4f46e5">
+                                    <i class="fa-solid fa-industry"></i>
+                                </div>
+                                <span class="acc-title">ثانياً: مسألة شركة Fox Manufacturing <small style="color:#94a3b8;font-weight:600;font-size:12px;display:block">معدل تحميل واحد للمصنع (Single Rate)</small></span>
+                                <i class="fa-solid fa-chevron-down acc-chevron"></i>
+                            </button>
+                            <div class="acc-body">
+                                <div class="acc-body-inner">
+                                    <div class="acc-body-content">
+                                        <div class="content-en text-xs md:text-sm">
+                                            <strong>Question 1: Full Statement</strong><br>
+                                            Fox Manufacturing is a small textile manufacturer using machine-hours as the single indirect-cost rate to allocate manufacturing overhead costs to the various jobs contracted during the year. The following estimates are provided for the coming year for the company and for the Maize High School Science Olympiad Jacket job:
+                                            <div class="overflow-x-auto w-full my-3">
+                                                <table>
+                                                    <tr>
+                                                        <th>Item</th>
+                                                        <th>Company</th>
+                                                        <th>Maize High School Job</th>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Direct Materials</td>
+                                                        <td>$50,000</td>
+                                                        <td>$500</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Direct Manufacturing Labor</td>
+                                                        <td>$10,000</td>
+                                                        <td>$100</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Manufacturing Overhead costs</td>
+                                                        <td>$40,000</td>
+                                                        <td>[To be computed]</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Machine hours</td>
+                                                        <td>100,000 mh</td>
+                                                        <td>800 mh</td>
+                                                    </tr>
+                                                </table>
+                                            </div>
+                                            <br>
+                                            <strong>Required:</strong>
+                                            <ol class="list-decimal pl-5 mt-1 space-y-1">
+                                                <li>For Fox Manufacturing, determine the annual manufacturing overhead cost-allocation rate.</li>
+                                                <li>Determine the amount of manufacturing overhead costs allocated to the Maize High School job.</li>
+                                                <li>Determine the estimated total manufacturing costs for the Maize High School job.</li>
+                                            </ol>
+                                        </div>
+                                        <div class="content-ar">
+                                            <div class="content-ar-header"><i class="fa-solid fa-pen-to-square"></i> خطوات الحل بالتفصيل الممل</div>
+                                            <p>الشركة دي بتستخدم "معدل واحد" للمصنع كله مبني على ساعات تشغيل المكن.</p>
+
+                                            <div class="compare-grid" style="grid-template-columns:1fr">
+                                                <div class="compare-card" style="border-color:#4f46e5">
+                                                    <h6 style="color:#4f46e5">1. حساب المعدل (Budgeted OH Rate) - المطلوب الأول (a)</h6>
+                                                    <p>الشركة متوقعة تصرف 40,000 دولار وتشغل المكن 100,000 ساعة.</p>
+                                                    <div class="ar-equation">
+                                                        $$\text{Budgeted Rate} = \frac{\text{Budgeted MOH}}{\text{Budgeted Machine-hours}} = \frac{\$40,000}{100,000\ mh} = \$0.40\ \text{per mh}$$
+                                                    </div>
+                                                </div>
+                                                <div class="compare-card" style="border-color:#0ea5e9">
+                                                    <h6 style="color:#0369a1">2. التكاليف المحملة لشغلانة المدرسة (Allocated OH) - المطلوب الثاني (b)</h6>
+                                                    <p>مدرسة "ميز" طلبت جواكت، المكن اشتغل عشانهم 800 ساعة فعلية.</p>
+                                                    <div class="ar-equation">
+                                                        $$\text{Allocated MOH} = \text{Budgeted Rate} \times \text{Actual mh used} = \$0.40 \times 800\ mh = \$320$$
+                                                    </div>
+                                                </div>
+                                                <div class="compare-card" style="border-color:#10b981">
+                                                    <h6 style="color:#059669">3. التكلفة الكلية للشغلانة (Total Cost) - المطلوب الثالث (c)</h6>
+                                                    <p>هنجمع المواد + الأجور + التكاليف المحملة اللي حسبناها.</p>
+                                                    <div class="ar-equation">
+                                                        $$\text{Total Cost} = \text{DM} + \text{DL} + \text{Allocated MOH} = \$500 + \$100 + \$320 = \$920$$
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="ar-tip mt-4">
+                                                <i class="fa-solid fa-triangle-exclamation animate-bounce"></i>
+                                                <div>
+                                                    <strong class="text-red-700 block mb-1">ألاعيب الدكتور في المسألة دي:</strong>
+                                                    ممكن يلخبطك ويديك في المعطيات (Direct Labor Cost) للشركة كلها أو أي بيانات تانية ملهاش لازمة (زي الـ 50,000 والـ 10,000 بتوع الـ Company Total في الجدول). خليك مركز دايماً مع <strong>"أساس التحميل"</strong> اللي الشركة اختارته (هنا كان Machine hours) وتجاهل الباقي تماماً!
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- ======= ACCORDION 3: Hill Manufacturing ======= -->
+                        <div class="acc-card" id="l2-acc3">
+                            <button class="acc-header l2-toggle" data-index="2" data-lecture="l2">
+                                <div class="acc-icon" style="background:#fce7f3;color:#be185d">
+                                    <i class="fa-solid fa-building-user"></i>
+                                </div>
+                                <span class="acc-title">ثالثاً: مسألة شركة Hill Manufacturing <small style="color:#94a3b8;font-weight:600;font-size:12px;display:block">معدلات تحميل الأقسام (Departmental Rates)</small></span>
+                                <i class="fa-solid fa-chevron-down acc-chevron"></i>
+                            </button>
+                            <div class="acc-body">
+                                <div class="acc-body-inner">
+                                    <div class="acc-body-content">
+                                        <div class="content-en text-xs md:text-sm">
+                                            <strong>Question 2: Full Statement</strong><br>
+                                            Hill Manufacturing uses departmental cost driver rates to apply manufacturing overhead costs to products. Manufacturing overhead costs are applied on the basis of machine-hours in the Machining Department and on the basis of direct labor-hours in the Assembly Department. At the beginning of 20X5, the following estimates were provided for the coming year:
+                                            <div class="overflow-x-auto w-full my-3">
+                                                <table>
+                                                    <tr>
+                                                        <th>Item</th>
+                                                        <th>Machining Dept</th>
+                                                        <th>Assembly Dept</th>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Direct Labor Hours</td>
+                                                        <td>10,000 DLH</td>
+                                                        <td>90,000 DLH</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Machine Hours</td>
+                                                        <td>100,000 MH</td>
+                                                        <td>5,000 MH</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Direct Labor Cost</td>
+                                                        <td>$80,000</td>
+                                                        <td>$720,000</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Manufacturing Overhead Cost</td>
+                                                        <td>$250,000</td>
+                                                        <td>$360,000</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Direct Materials Cost</td>
+                                                        <td>$100,000</td>
+                                                        <td>$150,000</td>
+                                                    </tr>
+                                                </table>
+                                            </div>
+                                            <br>
+                                            <strong>The actual data for Job #846 are as follows:</strong>
+                                            <ul>
+                                                <li><strong>Machining Department:</strong> Machine-hours = 170 MH; DM = $2,700; DL = $400</li>
+                                                <li><strong>Assembly Department:</strong> Direct labor-hours = 120 DLH; DM = $1,600; DL = $900</li>
+                                            </ul>
+                                            <br>
+                                            <strong>Required:</strong>
+                                            <ol class="list-decimal pl-5 space-y-1">
+                                                <li>Compute the manufacturing overhead allocation rate for each department.</li>
+                                                <li>Compute the total cost of Job #846.</li>
+                                                <li>Provide possible reasons why Hill Manufacturing uses two different cost allocation rates.</li>
+                                            </ol>
+                                        </div>
+                                        <div class="content-ar">
+                                            <div class="content-ar-header"><i class="fa-solid fa-pen-to-square"></i> خطوات الحل بالتفصيل الممل</div>
+                                            <p>الشركة دي أكبر شوية فمقسمة المصنع قسمين، وكل قسم بيحسب تكلفته بمزاجه. قسم Machining شغال بساعات المكن، وقسم Assembly شغال بساعات العمال.</p>
+
+                                            <div class="space-y-6">
+                                                <!-- 1 -->
+                                                <div class="border-b border-dashed border-amber-200 pb-4">
+                                                    <div class="flex items-start gap-2 mb-3">
+                                                        <span class="text-amber-500 text-xs mt-1.5 flex-shrink-0">◆</span>
+                                                        <span class="font-bold text-slate-800 text-sm md:text-base leading-relaxed">1. حساب المعدلات لكل قسم (المطلوب أ):</span>
+                                                    </div>
+                                                    <div class="bg-white p-4 rounded-xl border border-pink-200">
+                                                        <strong>معدل قسم Machining (على أساس ساعات المكن MH):</strong>
+                                                        <div class="ar-equation">
+                                                            $$\text{Machining Rate} = \frac{\text{Budgeted MOH}}{\text{Budgeted MH}} = \frac{\$250,000}{100,000\ MH} = \$2.50\ \text{per MH}$$
+                                                        </div>
+                                                        <strong>معدل قسم Assembly (على أساس ساعات العمل DLH):</strong>
+                                                        <div class="ar-equation">
+                                                            $$\text{Assembly Rate} = \frac{\text{Budgeted MOH}}{\text{Budgeted DLH}} = \frac{\$360,000}{90,000\ DLH} = \$4.00\ \text{per DLH}$$
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                
+                                                <!-- 2 -->
+                                                <div class="border-b border-dashed border-amber-200 pb-4">
+                                                    <div class="flex items-start gap-2 mb-3">
+                                                        <span class="text-amber-500 text-xs mt-1.5 flex-shrink-0">◆</span>
+                                                        <span class="font-bold text-slate-800 text-sm md:text-base leading-relaxed">2. التكاليف المحملة لـ Job #846 (المطلوب ب):</span>
+                                                    </div>
+                                                    <div class="bg-white p-4 rounded-xl border border-pink-200">
+                                                        <strong>قسم Machining (اقتطع 170 ساعة مكن فعلية):</strong>
+                                                        <div class="ar-equation">
+                                                            $$\text{Allocated MOH (Machining)} = 170\ MH \times \$2.50 = \$425$$
+                                                        </div>
+                                                        <strong>قسم Assembly (اقتطع 120 ساعة عمل فعلية):</strong>
+                                                        <div class="ar-equation">
+                                                            $$\text{Allocated MOH (Assembly)} = 120\ DLH \times \$4.00 = \$480$$
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <!-- 3 -->
+                                                <div class="border-b border-dashed border-amber-200 pb-4">
+                                                    <div class="flex items-start gap-2 mb-3">
+                                                        <span class="text-amber-500 text-xs mt-1.5 flex-shrink-0">◆</span>
+                                                        <span class="font-bold text-slate-800 text-sm md:text-base leading-relaxed">3. حساب التكلفة الكلية لـ Job #846 (المطلوب ب):</span>
+                                                    </div>
+                                                    <p class="text-sm text-slate-600 font-semibold mb-3">نجمع المواد والأجور والتكاليف المحملة في القسمين معاً:</p>
+                                                    <div class="bg-white p-4 rounded-xl border border-pink-200">
+                                                        <strong>تكاليف قسم Machining:</strong>
+                                                        $$\text{Total Machining Cost} = \$2,700\ (\text{DM}) + \$400\ (\text{DL}) + \$425\ (\text{MOH}) = \$3,525$$
+                                                        <div class="my-3 border-t border-slate-100"></div>
+                                                        <strong>تكاليف قسم Assembly:</strong>
+                                                        $$\text{Total Assembly Cost} = \$1,600\ (\text{DM}) + \$900\ (\text{DL}) + \$480\ (\text{MOH}) = \$2,980$$
+                                                        <div class="my-3 border-t border-slate-100"></div>
+                                                        <strong>التكلفة الكلية للأمر #846:</strong>
+                                                        <div class="ar-equation">
+                                                            $$\text{Grand Total Cost} = \$3,525 + \$2,980 = \$6,505$$
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <!-- 4 -->
+                                                <div class="pb-2">
+                                                    <div class="flex items-start gap-2 mb-3">
+                                                        <span class="text-amber-500 text-xs mt-1.5 flex-shrink-0">◆</span>
+                                                        <span class="font-bold text-slate-800 text-sm md:text-base leading-relaxed">4. مبررات استخدام معدلين مختلفين (المطلوب ج):</span>
+                                                    </div>
+                                                    <p class="text-sm text-slate-700 leading-relaxed font-semibold">لأن قسم Machining آلي للغاية (Capital Intensive)، بينما قسم Assembly يعتمد بشكل كامل على العمالة البشرية (Labor Intensive). لو استخدمنا معدلاً واحداً للمصنع ككل (Plant-wide rate) لتعرضت الأوامر لتشوهات في التكلفة (Overcosting / Undercosting) لأن محركات التكلفة (Cost Drivers) مختلفة في كل قسم.</p>
+                                                </div>
+                                            </div>
+
+                                            <div class="ar-tip mt-5">
+                                                <i class="fa-solid fa-triangle-exclamation animate-bounce"></i>
+                                                <div>
+                                                    <strong class="text-red-700 block mb-1">ألاعيب وفخاخ الدكتور:</strong>
+                                                    <ul class="list-disc pr-4 mt-1 space-y-1 text-sm text-red-900">
+                                                        <li>في جدول المعطيات مديك <strong>Direct Labor Cost</strong> للقسمين. إياك تستخدم الأرقام دي وإنت بتحسب المعدل! إنت بتقسم الـ Overhead على الـ Hours (الساعات) بس، دي محطوطة عشان توترك.</li>
+                                                        <li>ممكن يديك في المعطيات (Direct Materials Cost) للمصنع ككل، ودي برضه ملهاش أي لازمة للحل.</li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- ======= ACCORDION 4: Journal Entries ======= -->
+                        <div class="acc-card" id="l2-acc4">
+                            <button class="acc-header l2-toggle" data-index="3" data-lecture="l2">
+                                <div class="acc-icon" style="background:#fef3c7;color:#d97706">
+                                    <i class="fa-solid fa-book-journal-whills"></i>
+                                </div>
+                                <span class="acc-title">رابعاً: مسألة Dougherty Furniture <small style="color:#94a3b8;font-weight:600;font-size:12px;display:block">قيود اليومية والتكلفة الكلية (Journal Entries & Total Cost)</small></span>
+                                <i class="fa-solid fa-chevron-down acc-chevron"></i>
+                            </button>
+                            <div class="acc-body">
+                                <div class="acc-body-inner">
+                                    <div class="acc-body-content">
+                                        <div class="content-en text-xs md:text-sm">
+                                            <strong>Question 3: Full Statement</strong><br>
+                                            The Dougherty Furniture Company manufactures tables. In March, the two production departments had budgeted allocation bases of 4,000 machine-hours in Department 100 and 8,000 direct manufacturing labor-hours in Department 200. The budgeted manufacturing overheads for the month were $57,500 and $62,500, respectively. For Job A, the actual costs incurred in the two departments were as follows:
+                                            <div class="overflow-x-auto w-full my-3">
+                                                <table>
+                                                    <tr>
+                                                        <th>Transaction / Cost Item</th>
+                                                        <th>Department 100</th>
+                                                        <th>Department 200</th>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Direct materials purchased on account</td>
+                                                        <td>$110,000</td>
+                                                        <td>$177,500</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Direct materials used</td>
+                                                        <td>$32,500</td>
+                                                        <td>$13,500</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Direct manufacturing labor</td>
+                                                        <td>$52,500</td>
+                                                        <td>$53,500</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Indirect manufacturing labor</td>
+                                                        <td>$11,000</td>
+                                                        <td>$9,000</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Indirect materials used</td>
+                                                        <td>$7,500</td>
+                                                        <td>$4,750</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Lease on equipment</td>
+                                                        <td>$16,250</td>
+                                                        <td>$3,750</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Utilities</td>
+                                                        <td>$1,000</td>
+                                                        <td>$1,250</td>
+                                                    </tr>
+                                                </table>
+                                            </div>
+                                            <br>
+                                            Job A incurred 800 machine-hours in Department 100 and 300 manufacturing labor-hours in Department 200. The company uses a budgeted overhead rate for applying overhead to production.
+                                            <br><br>
+                                            <strong>Required:</strong>
+                                            <ol class="list-decimal pl-5 space-y-1">
+                                                <li>Determine the budgeted manufacturing overhead rate for each department.</li>
+                                                <li>Prepare the necessary journal entries to summarize the March transactions for Department 100.</li>
+                                                <li>What is the total cost of Job A?</li>
+                                            </ol>
+                                        </div>
+                                        <div class="content-ar">
+                                             <div class="content-ar-header"><i class="fa-solid fa-scale-balanced"></i> قيود اليومية بالتفصيل (Dept 100)</div>
+
+                                             <div class="mb-6">
+                                                 <div class="flex items-start gap-2 mb-3">
+                                                     <span class="text-amber-500 text-xs mt-1.5 flex-shrink-0">◆</span>
+                                                     <span class="font-bold text-slate-800 text-sm md:text-base leading-relaxed">1. حساب معدل التحميل التقديري لقسم 100 وقسم 200 (المطلوب أ):</span>
+                                                 </div>
+                                                 <div class="bg-white p-4 rounded-xl border border-amber-200">
+                                                     <div class="ar-equation">
+                                                         $$\text{Dept 100 Rate} = \frac{\$57,500}{4,000\ MH} = \$14.375\ \text{per MH}$$
+                                                     </div>
+                                                     <div class="ar-equation">
+                                                         $$\text{Dept 200 Rate} = \frac{\$62,500}{8,000\ DLH} = \$7.8125\ \text{per DLH}$$
+                                                     </div>
+                                                 </div>
+                                             </div>
+
+                                             <div class="mb-6">
+                                                 <div class="flex items-start gap-2 mb-2">
+                                                     <span class="text-amber-500 text-xs mt-1.5 flex-shrink-0">◆</span>
+                                                     <span class="font-bold text-slate-800 text-sm md:text-base leading-relaxed">2. قيود اليومية لشهر مارس لقسم 100 (المطلوب ب):</span>
+                                                 </div>
+                                                 <p class="text-sm text-slate-600 font-semibold mb-3">ترجمة الأرقام لدفتر اليومية (مدين ودائن) لقسم 100 بس:</p>
+
+                                                 <div class="overflow-x-auto w-full my-3">
+                                                     <table class="journal-table">
+                                                         <tr>
+                                                             <th>العملية (Transaction)</th>
+                                                             <th>المدين (Debit)</th>
+                                                             <th>الدائن (Credit)</th>
+                                                         </tr>
+                                                         <!-- 1 -->
+                                                         <tr>
+                                                             <td class="font-bold text-slate-700 text-xs">1. شراء خامات ع الحساب بقيمة 110 ألف</td>
+                                                             <td class="dr">Material Inventory Control (110,000)</td>
+                                                             <td class="cr">Accounts Payable Control (110,000)</td>
+                                                         </tr>
+                                                         <!-- 2 -->
+                                                         <tr>
+                                                             <td class="font-bold text-slate-700 text-xs">2. سحب خامات للإنتاج بقيمة 32,500</td>
+                                                             <td class="dr">WIP Control - Dept 100 (32,500)</td>
+                                                             <td class="cr">Material Inventory Control (32,500)</td>
+                                                         </tr>
+                                                         <!-- 3 -->
+                                                         <tr>
+                                                             <td class="font-bold text-slate-700 text-xs">3. إثبات أجور العمال المباشرة بقيمة 52,500</td>
+                                                             <td class="dr">WIP Control - Dept 100 (52,500)</td>
+                                                             <td class="cr">Wages Payable Control (52,500)</td>
+                                                         </tr>
+                                                         <!-- 4 -->
+                                                         <tr>
+                                                             <td class="font-bold text-slate-700 text-xs">4. التكاليف غير المباشرة الفعلية لقسم 100<br><span class="text-slate-400 font-normal">(بنجمع كل المصاريف العك دي في حصالة واحدة)</span></td>
+                                                             <td class="dr">MOH Control - Dept 100 (35,750)<br><span style="font-size:10px;color:#64748b">(11k+7.5k+16.25k+1k)</span></td>
+                                                             <td class="cr" style="line-height:1.2;font-size:12px">
+                                                                 Wages Payable Control (11,000)<br>
+                                                                 Material Inventory Control (7,500)<br>
+                                                                 Lease on equipment Control (16,250)<br>
+                                                                 Utilities Payable (1,000)
+                                                             </td>
+                                                         </tr>
+                                                         <!-- 5 -->
+                                                         <tr>
+                                                             <td class="font-bold text-emerald-700 text-xs bg-emerald-50">5. قيد التحميل (الأهم)<br><span class="text-slate-500 font-normal">(800 ساعة مكن × 14.375 المعدل)</span></td>
+                                                             <td class="dr bg-emerald-50">WIP Control - Dept 100 (11,500)</td>
+                                                             <td class="cr bg-emerald-50">Manufacturing Overhead Allocated - Dept 100 (11,500)</td>
+                                                         </tr>
+                                                     </table>
+                                                 </div>
+                                             </div>
+
+                                             <div class="mt-5">
+                                                 <div class="flex items-start gap-2 mb-3">
+                                                     <span class="text-amber-500 text-xs mt-1.5 flex-shrink-0">◆</span>
+                                                     <span class="font-bold text-slate-800 text-sm md:text-base leading-relaxed">3. حساب التكلفة الكلية لـ Job A (المطلوب ج):</span>
+                                                 </div>
+                                                 <div class="bg-white p-4 rounded-xl border border-emerald-200">
+                                                     <p class="text-sm text-slate-600 font-semibold mb-3">عشان نحسب تكلفة الأمر A بالكامل، بنجمع تكاليف قسم 100 وقسم 200 معاً:</p>
+
+                                                     <div class="space-y-3 text-sm text-slate-700 font-semibold">
+                                                         <div class="p-3 bg-slate-50 rounded-lg">
+                                                             <strong>تكلفة قسم 100:</strong><br>
+                                                             $$\text{Total Dept 100} = \text{DM used} + \text{DL} + \text{Allocated MOH}$$
+                                                             $$\text{Total Dept 100} = \$32,500 + \$52,500 + \$11,500 = \$96,500$$
+                                                         </div>
+                                                         <div class="p-3 bg-slate-50 rounded-lg">
+                                                             <strong>تكلفة قسم 200:</strong><br>
+                                                             نحسب الأول الـ Allocated MOH لقسم 200 (الأمر استهلك 300 ساعة عمل فعلية والمعدل 7.8125):
+                                                             $$\text{Allocated MOH (Dept 200)} = 300\ DLH \times \$7.8125 = \$2,343.75$$
+                                                             $$\text{Total Dept 200} = \text{DM used} + \text{DL} + \text{Allocated MOH}$$
+                                                             $$\text{Total Dept 200} = \$13,500 + \$53,500 + \$2,343.75 = \$69,343.75$$
+                                                         </div>
+                                                         <div class="p-3 bg-emerald-50 text-emerald-900 rounded-lg border border-emerald-200">
+                                                             <strong>التكلفة الإجمالية للأمر A:</strong><br>
+                                                             <div class="ar-equation">
+                                                                 $$\text{Total Job A Cost} = \$96,500 + \$69,343.75 = \$165,843.75$$
+                                                             </div>
+                                                         </div>
+                                                     </div>
+                                                 </div>
+                                             </div>
+
+                                             <div class="ar-tip mt-5">
+                                                 <i class="fa-solid fa-triangle-exclamation animate-bounce"></i>
+                                                 <div>
+                                                     <strong class="text-red-700 block mb-1">ألاعيب الدكتور في القيود والمسائل:</strong>
+                                                     <br>• <strong>المواد المشتراة (Direct Materials Purchased):</strong> إياك تحط الـ 110,000 في قيد الاستخدام! الـ 110,000 دي قيد شراء للمخزن، لكن اللي دخل الإنتاج فعلياً واستخدمناه هو الـ 32,500 بس.
+                                                     <br>• <strong>التكلفة الإجمالية:</strong> الطلبة بتنسى تجمع تكاليف القسمين مع بعض أو بتنسى تحسب الـ Allocated MOH لقسم 200، ركز إنك تجمع القسمين بالكامل عشان تجيب التكلفة الإجمالية للأمر.
+                                                 </div>
+                                             </div>
+                                         </div>
+                                     </div>
+                                 </div>
+                             </div>
+                        </div>
+
+                    </div><!-- end .lecture-content-col -->
+                </div><!-- end .lecture-layout -->
+            </div>
+        </section>
+
+        <!-- Lecture 3 Content -->
+        <section id="lecture-3-content" class="lecture-content-section hidden grid-cols-1 gap-6 fade-in pt-8 border-t-2 border-slate-200 scroll-mt-28">
+            <div class="col-span-1 md:col-span-2 lg:col-span-3">
+                <!-- Back Button -->
+                <button onclick="showHomeView()" class="mb-6 inline-flex items-center gap-2 px-4 py-2 bg-slate-100 hover:bg-slate-200 text-slate-700 hover:text-slate-900 rounded-xl font-bold transition-all duration-200 shadow-sm border border-slate-200">
+                    <i class="fa-solid fa-arrow-right"></i>
+                    العودة إلى قائمة المحاضرات
+                </button>
+
+                <div class="flex items-center gap-4 mb-6">
+                    <div class="w-16 h-16 bg-emerald-600 text-white rounded-2xl flex items-center justify-center text-3xl shadow-lg">
+                        <i class="fa-solid fa-chart-pie"></i>
+                    </div>
+                    <div>
+                        <h2 class="text-3xl font-black text-slate-800">المحاضرة الثالثة: نظام تكاليف المراحل</h2>
+                        <p class="text-emerald-600 font-bold">Process Costing System</p>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-2xl shadow-lg p-8 text-center border border-slate-100">
+                    <div class="w-20 h-20 bg-emerald-100 text-emerald-600 rounded-full flex items-center justify-center text-4xl mx-auto mb-4 animate-pulse">
+                        <i class="fa-solid fa-clock"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-slate-800 mb-2">المحتوى قريباً!</h3>
+                    <p class="text-slate-500 max-w-md mx-auto mb-6">هذه المحاضرة قيد التحضير حالياً وسوف يتم إضافتها قريباً جداً. ترقبوا التفاصيل!</p>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-slate-800 text-slate-400 py-8 text-center mt-12">
+        <p class="font-semibold text-slate-300">أكاديمية التكاليف &copy; 2026</p>
+        <p class="text-sm mt-2">تصميم وتطوير بواسطة ذكائك الاصطناعي المفضل 🚀</p>
+    </footer>
+
+    <!-- JavaScript for interactivity -->
+    <script>
+        // Sticky Header scroll effect
+        let lastScroll = 0;
+        const header = document.getElementById('navbar');
+        
+        window.addEventListener('scroll', () => {
+            const currentScroll = window.pageYOffset;
+            
+            // If scrolling down and passed the header height, hide it
+            if (currentScroll > lastScroll && currentScroll > 100) {
+                header.classList.add('header-hidden');
+                header.classList.remove('header-visible');
+            } 
+            // If scrolling up, show it
+            else {
+                header.classList.remove('header-hidden');
+                header.classList.add('header-visible');
+            }
+            lastScroll = currentScroll;
+        });
+
+        // Tab system for lectures
+        const lectureCards = document.querySelectorAll('.lecture-card');
+        const contentSections = document.querySelectorAll('.lecture-content-section');
+
+        function showHomeView() {
+            // Show home view
+            const homeView = document.getElementById('home-view');
+            homeView.classList.remove('hidden');
+            
+            // Hide all content sections
+            contentSections.forEach(section => {
+                section.classList.add('hidden');
+                section.classList.remove('grid');
+            });
+            
+            // Reset card styling to neutral
+            resetCardStyles();
+            
+            // Scroll to top of the page smoothly
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        function resetCardStyles() {
+            lectureCards.forEach(c => {
+                const theme = c.getAttribute('data-theme') || 'emerald';
+                c.classList.remove(`border-${theme}-600`, 'border-b-4', 'bg-white', 'shadow-lg');
+                if (c.getAttribute('data-locked') === 'true') {
+                    c.classList.add('border-slate-200', 'border-2', 'bg-slate-50', 'opacity-70', 'shadow-md');
+                } else {
+                    c.classList.add('border-slate-200', 'border-2', 'bg-white', 'shadow-md');
+                    c.classList.remove('opacity-70', 'bg-slate-50');
+                }
+            });
+        }
+
+        lectureCards.forEach(card => {
+            card.addEventListener('click', () => {
+                if (card.getAttribute('data-locked') === 'true') return;
+
+                const targetId = card.getAttribute('data-target');
+                const targetSection = document.getElementById(targetId);
+
+                if (targetSection) {
+                    // Hide home view
+                    const homeView = document.getElementById('home-view');
+                    homeView.classList.add('hidden');
+
+                    resetCardStyles();
+                    
+                    // Highlight the clicked card as active
+                    const theme = card.getAttribute('data-theme') || 'emerald';
+                    card.classList.remove('border-slate-200', 'border-2', 'bg-slate-50', 'opacity-70', 'shadow-md');
+                    card.classList.add(`border-${theme}-600`, 'border-b-4', 'bg-white', 'shadow-lg');
+
+                    // Hide all content sections
+                    contentSections.forEach(section => {
+                        section.classList.add('hidden');
+                        section.classList.remove('grid');
+                    });
+
+                    // Show target section
+                    targetSection.classList.remove('hidden');
+                    targetSection.classList.add('grid');
+
+                    // Scroll to top of the page smoothly
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
+
+                    // Auto-open first accordion of the active lecture if not opened
+                    const firstHeader = targetSection.querySelector('.acc-header');
+                    if (firstHeader && !firstHeader.closest('.acc-card').classList.contains('acc-open')) {
+                        setTimeout(() => firstHeader.click(), 100);
+                    }
+                }
+            });
+        });
+
+        // ======= DYNAMIC ACCORDION SYSTEM FOR ALL LECTURES =======
+        const progressData = {
+            l1: { completed: new Set(), total: document.querySelectorAll('#lecture-1-content .acc-card').length },
+            l2: { completed: new Set(), total: document.querySelectorAll('#lecture-2-content .acc-card').length }
+        };
+
+        function updateProgress(lec) {
+            const count = progressData[lec].completed.size;
+            const total = progressData[lec].total;
+            if (total === 0) return;
+            const pct = Math.round((count / total) * 100);
+
+            const bar = document.getElementById(`${lec}-progress-bar`);
+            const label = document.getElementById(`${lec}-progress-label`);
+
+            if (bar) bar.style.width = pct + '%';
+            if (label) label.innerHTML = `<i class="fa-solid fa-chart-simple"></i> ${count} / ${total} مكتملين`;
+        }
+
+        document.querySelectorAll('.acc-header').forEach((btn) => {
+            btn.addEventListener('click', function(e) {
+                e.stopPropagation();
+                const card = btn.closest('.acc-card');
+                const isOpen = card.classList.contains('acc-open');
+                const accId = card.id;
+                const lec = accId.split('-')[0]; // "l1" or "l2"
+                const idx = btn.getAttribute('data-index');
+
+                // Toggle card
+                card.classList.toggle('acc-open');
+
+                // Sync active state on navigation
+                if (!isOpen) {
+                    document.querySelectorAll(`.sidebar-item[data-acc^="${lec}"], .mobile-nav-item[data-acc^="${lec}"]`).forEach(i => {
+                        i.classList.remove('active-nav');
+                    });
+                    document.querySelectorAll(`[data-acc="${accId}"]`).forEach(item => item.classList.add('active-nav'));
+                }
+
+                // Track completion
+                if (lec && progressData[lec]) {
+                    if (!isOpen) {
+                        progressData[lec].completed.add(idx);
+                        document.querySelectorAll(`[data-acc="${accId}"]`).forEach(item => item.classList.add('nav-done'));
+                    } else {
+                        progressData[lec].completed.delete(idx);
+                    }
+                    updateProgress(lec);
+                }
+            });
+        });
+
+        // Quick-navigation (works for both Sidebar and Mobile pills)
+        function scrollToAcc(accId, navEl) {
+            const el = document.getElementById(accId);
+            if (!el) return;
+            const lec = accId.split('-')[0]; // "l1" or "l2"
+            // Open it if closed
+            if (!el.classList.contains('acc-open')) {
+                el.querySelector('.acc-header').click();
+            }
+            setTimeout(() => {
+                el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }, 80);
+            // Update active state in both navigation components
+            document.querySelectorAll(`.sidebar-item[data-acc^="${lec}"], .mobile-nav-item[data-acc^="${lec}"]`).forEach(i => i.classList.remove('active-nav'));
+            document.querySelectorAll(`[data-acc="${accId}"]`).forEach(item => item.classList.add('active-nav'));
+        }
+
+        // Initialize progress
+        updateProgress('l1');
+        updateProgress('l2');
+    </script>
+</body>
+</html>

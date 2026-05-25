@@ -1,0 +1,788 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>محاسبة التكاليف | المحاضرات</title>
+
+    <!-- Google Fonts: Cairo -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Cairo', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        /* Base & Typography */
+        body {
+            font-family: 'Cairo', sans-serif;
+            background-color: #f8fafc;
+            color: #1e293b;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* Animations */
+        .fade-in {
+            animation: fadeIn 0.4s ease-in-out forwards;
+            opacity: 0;
+            transform: translateY(10px);
+        }
+
+        @keyframes fadeIn {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Sticky Header Transitions */
+        .header-transition {
+            transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.35s ease;
+        }
+
+        .header-hidden {
+            transform: translateY(-120%);
+            opacity: 0;
+        }
+
+        .header-visible {
+            transform: translateY(0);
+            opacity: 1;
+        }
+
+        /* Accordion Transitions */
+        .accordion-content {
+            display: grid;
+            grid-template-rows: 0fr;
+            transition: grid-template-rows 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .accordion-content.open {
+            grid-template-rows: 1fr;
+        }
+
+        .accordion-inner {
+            overflow: hidden;
+        }
+
+        .chevron {
+            transition: transform 0.3s ease;
+        }
+
+        .chevron.open {
+            transform: rotate(180deg);
+        }
+
+        /* Custom Webkit Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #f1f5f9;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: #cbd5e1;
+            border-radius: 4px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: #94a3b8;
+        }
+
+        /* English LTR styling inside Arabic layout */
+        .en-text {
+            direction: ltr;
+            text-align: left;
+            font-family: system-ui, -apple-system, sans-serif;
+        }
+    </style>
+</head>
+
+<body class="bg-slate-50 overflow-x-hidden">
+
+    <!-- Sticky Header -->
+    <header id="navbar"
+        class="bg-[#008e5c] text-white shadow-md fixed w-full top-0 z-50 header-transition header-visible">
+        <div class="max-w-6xl mx-auto px-6 py-3 flex justify-center items-center">
+            <span class="text-lg md:text-xl font-bold tracking-wide">سبحان الله، والحمد لله، ولا إله إلا الله، والله
+                أكبر.</span>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="max-w-6xl mx-auto px-4 py-8 mt-24 fade-in">
+
+        <!-- Home View (Hero + Grid) -->
+        <div id="home-view" class="fade-in">
+            <!-- Hero Section -->
+            <section
+                class="bg-white rounded-2xl shadow-lg p-8 mb-10 text-center relative overflow-hidden flex flex-col items-center">
+                <div class="absolute -top-10 -right-10 text-emerald-100 opacity-50 text-9xl z-0">
+                    <i class="fa-solid fa-chart-line"></i>
+                </div>
+                <h2 class="text-4xl font-extrabold text-slate-800 mb-4 z-10">كورس محاسبة التكاليف الشامل</h2>
+                <p class="text-lg text-slate-500 mb-8 max-w-2xl z-10">منصة تعليمية متكاملة لتبسيط أعقد مفاهيم التكاليف
+                    لطلبة كليات التجارة. ابدأ رحلتك الآن واضمن الامتياز!</p>
+                <button onclick="document.querySelector('[data-target=\'lecture-1-content\']').click()"
+                    class="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white font-bold py-3 px-8 rounded-xl shadow-lg transform hover:-translate-y-1 transition-all duration-200 z-10">
+                    <i class="fa-solid fa-rocket ml-2"></i> استكمل المذاكرة
+                </button>
+            </section>
+
+            <!-- Lectures Grid -->
+            <h3 id="lectures" class="text-3xl font-bold text-slate-800 mb-6 border-r-4 border-emerald-600 pr-4">فهرس
+                المحاضرات</h3>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
+
+                <!-- Active Lecture -->
+                <div data-target="lecture-1-content"
+                    class="lecture-card bg-white rounded-2xl shadow-lg p-6 flex flex-col border-b-4 border-emerald-600 cursor-pointer transform hover:-translate-y-1 transition-all duration-200">
+                    <div
+                        class="w-14 h-14 bg-emerald-100 text-emerald-600 rounded-2xl flex items-center justify-center text-2xl mb-4">
+                        <i class="fa-solid fa-book-open"></i>
+                    </div>
+                    <h4 class="text-xl font-bold mb-2">المحاضرة الأولى</h4>
+                    <p class="text-slate-500 text-sm flex-grow">أساسيات محاسبة التكاليف والمصطلحات الرئيسية (Cost
+                        Accounting Basics).</p>
+                    <div class="mt-4 flex justify-between items-center">
+                        <span class="text-xs font-bold px-3 py-1 bg-emerald-100 text-emerald-800 rounded-full">متاح
+                            الآن</span>
+                        <button class="text-emerald-600 font-bold hover:text-emerald-800"><i
+                                class="fa-solid fa-arrow-left"></i></button>
+                    </div>
+                </div>
+
+                <!-- Locked Lecture 2 -->
+                <div data-target="lecture-2-content" data-locked="true"
+                    class="lecture-card bg-slate-50 rounded-2xl shadow-md p-6 flex flex-col border-2 border-slate-200 opacity-70 cursor-pointer transform hover:-translate-y-1 transition-all duration-200">
+                    <div
+                        class="w-14 h-14 bg-slate-200 text-slate-500 rounded-2xl flex items-center justify-center text-2xl mb-4">
+                        <i class="fa-solid fa-lock"></i>
+                    </div>
+                    <h4 class="text-xl font-bold mb-2 text-slate-700">المحاضرة الثانية</h4>
+                    <p class="text-slate-500 text-sm flex-grow">نظام تكاليف الأوامر الإنتاجية (Job Costing) - الجزء
+                        الثاني والمسائل.</p>
+                    <div class="mt-4 flex justify-between items-center">
+                        <span class="text-xs font-bold px-3 py-1 bg-slate-200 text-slate-600 rounded-full">قريباً</span>
+                        <button class="text-slate-500 font-bold hover:text-slate-700"><i
+                                class="fa-solid fa-arrow-left"></i></button>
+                    </div>
+                </div>
+
+                <!-- Locked Lecture 3 -->
+                <div data-target="lecture-3-content" data-locked="true"
+                    class="lecture-card bg-slate-50 rounded-2xl shadow-md p-6 flex flex-col border-2 border-slate-200 opacity-70 cursor-pointer transform hover:-translate-y-1 transition-all duration-200">
+                    <div
+                        class="w-14 h-14 bg-slate-200 text-slate-500 rounded-2xl flex items-center justify-center text-2xl mb-4">
+                        <i class="fa-solid fa-lock"></i>
+                    </div>
+                    <h4 class="text-xl font-bold mb-2 text-slate-700">المحاضرة الثالثة</h4>
+                    <p class="text-slate-500 text-sm flex-grow">نظام تكاليف المراحل (Process Costing) وطرق التقييم.</p>
+                    <div class="mt-4 flex justify-between items-center">
+                        <span class="text-xs font-bold px-3 py-1 bg-slate-200 text-slate-600 rounded-full">قريباً</span>
+                        <button class="text-slate-500 font-bold hover:text-slate-700"><i
+                                class="fa-solid fa-arrow-left"></i></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- FULL WIDTH FEATURED LECTURE CONTENT -->
+        <section id="lecture-1-content"
+            class="lecture-content-section hidden grid-cols-1 gap-6 fade-in pt-8 border-t-2 border-slate-200 scroll-mt-28">
+            <div class="col-span-1 md:col-span-2 lg:col-span-3">
+                <!-- Back Button -->
+                <button onclick="showHomeView()"
+                    class="mb-6 inline-flex items-center gap-2 px-4 py-2 bg-slate-100 hover:bg-slate-200 text-slate-700 hover:text-slate-900 rounded-xl font-bold transition-all duration-200 shadow-sm border border-slate-200">
+                    <i class="fa-solid fa-arrow-right"></i>
+                    العودة إلى قائمة المحاضرات
+                </button>
+                <div class="flex items-center gap-4 mb-6">
+                    <div
+                        class="w-16 h-16 bg-indigo-600 text-white rounded-2xl flex items-center justify-center text-3xl shadow-lg">
+                        <i class="fa-solid fa-chalkboard-user"></i>
+                    </div>
+                    <div>
+                        <h2 class="text-3xl font-black text-slate-800">المحاضرة الأولى: أساسيات محاسبة التكاليف</h2>
+                        <p class="text-indigo-600 font-bold">Cost Accounting Basics</p>
+                    </div>
+                </div>
+
+                <!-- ACCORDION 1 -->
+                <div class="bg-white rounded-2xl shadow-lg mb-4 overflow-hidden border border-slate-100">
+                    <button
+                        class="accordion-toggle w-full flex justify-between items-center p-6 bg-white hover:bg-slate-50 transition-colors focus:outline-none">
+                        <h3 class="text-xl font-bold text-slate-800 flex items-center gap-3">
+                            <span
+                                class="bg-indigo-100 text-indigo-600 w-8 h-8 rounded-full flex items-center justify-center text-sm">1</span>
+                            مصطلحات التكاليف الأساسية (Basic Cost Terminology)
+                        </h3>
+                        <i class="fa-solid fa-chevron-down text-slate-400 chevron text-lg"></i>
+                    </button>
+                    <div class="accordion-content">
+                        <div class="accordion-inner px-6 pb-6 pt-2 border-t border-slate-100">
+                            <!-- English Summary -->
+                            <div
+                                class="bg-slate-800 text-slate-200 rounded-xl p-5 mb-5 shadow-inner en-text text-sm leading-relaxed">
+                                <ul class="list-disc pl-5 space-y-2">
+                                    <li><strong class="text-white">Cost:</strong> is a resource sacrificed or forgone to
+                                        achieve a specific objective.</li>
+                                    <li><strong class="text-white">Actual cost:</strong> is the cost that has occurred
+                                        (a historical or past cost).</li>
+                                    <li><strong class="text-white">Budgeted cost:</strong> is a predicted, or
+                                        forecasted, cost (a future cost).</li>
+                                    <li><strong class="text-white">Cost object:</strong> is anything of interest for
+                                        which a cost measure is desired (e.g., Product, Service, Customer).</li>
+                                    <li><strong class="text-white">Cost accumulation:</strong> is a collection of cost
+                                        data in an organized manner.</li>
+                                    <li><strong class="text-white">Cost assignment includes:</strong> a) Tracing
+                                        accumulated costs with a direct relationship, and b) Allocating accumulated
+                                        costs with an indirect relationship.</li>
+                                </ul>
+                            </div>
+
+                            <!-- Arabic Hint/Cheat Box -->
+                            <div class="bg-[#fffbeb] border-dashed border-2 border-[#f59e0b] rounded-xl p-5 shadow-sm">
+                                <h4 class="text-[#b45309] font-black text-lg mb-3 flex items-center gap-2"><i
+                                        class="fa-solid fa-lightbulb"></i> الخلاصة بالبلدي:</h4>
+                                <p class="text-slate-800 leading-loose mb-3">بص يا بطل، أي محاسب تكاليف لازم يكون عارف
+                                    المصطلحات دي زي اسمه:</p>
+                                <ul class="list-disc pr-6 space-y-2 text-slate-700 font-semibold">
+                                    <li><span class="text-indigo-700 font-bold">التكلفة (Cost):</span> دي الفلوس اللي
+                                        إنت ضحيت بيها عشان توصل لهدف معين زي إنك تشتري خشب عشان تعمل ترابيزة.</li>
+                                    <li><span class="text-indigo-700 font-bold">التكلفة الفعلية والتقديرية:</span>
+                                        الفعلية دي الفلوس اللي ادفعت وخلصت خلاص (تاريخية). أما التقديرية دي اللي إنت
+                                        "تتوقع" تدفعها في المستقبل.</li>
+                                    <li><span class="text-indigo-700 font-bold">هدف التكلفة (Cost Object):</span> ده
+                                        "الشيء" اللي انت عايز تحسب تكلفته (منتج، خدمة، أو قسم).</li>
+                                    <li><span class="text-indigo-700 font-bold">تجميع وتخصيص التكاليف:</span> بنجمع
+                                        الفواتير الأول (Accumulation)، وبعدين نوزعها (Assignment). لو واضحة نعملها تتبع
+                                        (Tracing)، ولو غير مباشرة نعملها تحميل (Allocating).</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ACCORDION 2 -->
+                <div class="bg-white rounded-2xl shadow-lg mb-4 overflow-hidden border border-slate-100">
+                    <button
+                        class="accordion-toggle w-full flex justify-between items-center p-6 bg-white hover:bg-slate-50 transition-colors focus:outline-none">
+                        <h3 class="text-xl font-bold text-slate-800 flex items-center gap-3">
+                            <span
+                                class="bg-indigo-100 text-indigo-600 w-8 h-8 rounded-full flex items-center justify-center text-sm">2</span>
+                            التكاليف المباشرة وغير المباشرة (Direct & Indirect Costs)
+                        </h3>
+                        <i class="fa-solid fa-chevron-down text-slate-400 chevron text-lg"></i>
+                    </button>
+                    <div class="accordion-content">
+                        <div class="accordion-inner px-6 pb-6 pt-2 border-t border-slate-100">
+                            <div
+                                class="bg-slate-800 text-slate-200 rounded-xl p-5 mb-5 shadow-inner en-text text-sm leading-relaxed">
+                                <ul class="list-disc pl-5 space-y-2">
+                                    <li><strong class="text-white">Direct costs</strong> can be conveniently and
+                                        economically traced to a cost object (e.g., parts, assembly line wages).</li>
+                                    <li><strong class="text-white">Indirect costs</strong> cannot be conveniently or
+                                        economically traced. They are allocated in a rational and systematic manner
+                                        (e.g., Electricity, rent).</li>
+                                    <li><strong class="text-white">Factors affecting classification:</strong> The
+                                        materiality of the cost, Available information-gathering technology, and Design
+                                        of operations.</li>
+                                </ul>
+                            </div>
+
+                            <div class="bg-[#fffbeb] border-dashed border-2 border-[#f59e0b] rounded-xl p-5 shadow-sm">
+                                <h4 class="text-[#b45309] font-black text-lg mb-3 flex items-center gap-2"><i
+                                        class="fa-solid fa-lightbulb"></i> الخلاصة بالبلدي:</h4>
+                                <p class="text-slate-800 leading-loose mb-3">هنا بنقسم التكاليف بناءً على قدرتنا إننا
+                                    نربطها بالمنتج:</p>
+                                <ul class="list-disc pr-6 space-y-3 text-slate-700 font-semibold">
+                                    <li><span class="bg-green-100 text-green-800 px-2 rounded">المباشرة (Direct):</span>
+                                        حاجة شايفها بعيني جوه المنتج وأقدر أحسبها بسهولة (زي الخشب، أو أجر النجار).</li>
+                                    <li><span class="bg-red-100 text-red-800 px-2 rounded">غير المباشرة
+                                            (Indirect):</span> مصاريف بتخدم المصنع كله ومقدرش أقول المنتج أخد منها كام
+                                        بالظبط (زي الإيجار والكهربا). وبنضطر نوزعها بنسبة وتناسب.</li>
+                                    <li><span class="text-indigo-700 font-bold">عوامل التحديد:</span> الأهمية النسبية
+                                        (لو مسمار تمنه تافه بنعتبره غير مباشر)، التكنولوجيا (لو عندي باركود هيسهل
+                                        التتبع)، وتصميم المصنع.</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ACCORDION 3 -->
+                <div class="bg-white rounded-2xl shadow-lg mb-4 overflow-hidden border border-slate-100">
+                    <button
+                        class="accordion-toggle w-full flex justify-between items-center p-6 bg-white hover:bg-slate-50 transition-colors focus:outline-none">
+                        <h3 class="text-xl font-bold text-slate-800 flex items-center gap-3">
+                            <span
+                                class="bg-indigo-100 text-indigo-600 w-8 h-8 rounded-full flex items-center justify-center text-sm">3</span>
+                            سلوك التكلفة (Cost Behavior) <span
+                                class="text-xs bg-red-100 text-red-600 px-2 py-1 rounded ml-2 font-bold animate-pulse">هام
+                                جداً للمسائل</span>
+                        </h3>
+                        <i class="fa-solid fa-chevron-down text-slate-400 chevron text-lg"></i>
+                    </button>
+                    <div class="accordion-content">
+                        <div class="accordion-inner px-6 pb-6 pt-2 border-t border-slate-100">
+                            <div
+                                class="bg-slate-800 text-slate-200 rounded-xl p-5 mb-5 shadow-inner en-text text-sm leading-relaxed">
+                                <ul class="list-disc pl-5 space-y-2">
+                                    <li><strong class="text-white">Variable costs:</strong> change in total in
+                                        proportion to changes in the related level of activity, but are constant on a
+                                        per-unit basis.</li>
+                                    <li><strong class="text-white">Fixed costs:</strong> remain unchanged in total
+                                        regardless of changes in activity, but change inversely with the level of
+                                        production on a per-unit basis.</li>
+                                </ul>
+                            </div>
+
+                            <div class="bg-[#fffbeb] border-dashed border-2 border-[#f59e0b] rounded-xl p-5 shadow-sm">
+                                <h4 class="text-[#b45309] font-black text-lg mb-3 flex items-center gap-2"><i
+                                        class="fa-solid fa-lightbulb"></i> الخلاصة بالبلدي:</h4>
+                                <p class="text-slate-800 leading-loose mb-3">الجزء ده هو "روح" التكاليف وأساس المسائل!
+                                    إزاي التكلفة بتتغير لما الإنتاج يتغير؟</p>
+                                <div class="grid md:grid-cols-2 gap-4">
+                                    <div class="bg-white p-4 rounded-xl shadow-sm border-r-4 border-indigo-500">
+                                        <h5 class="font-bold text-indigo-700 mb-2">التكلفة المتغيرة (Variable)</h5>
+                                        <p class="text-sm text-slate-700">بتلعب معاك. أنتجت كتير، الإجمالي يزيد. أنتجت
+                                            قليل الإجمالي يقل. <br><strong class="text-red-600">التريكة:</strong> تكلفة
+                                            "الوحدة الواحدة" منها ثابتة مابتتغيرش (كرسي بـ 50 جنيه خشب، هيفضل 50 جنيه
+                                            سواء عملت كرسي أو ألف).</p>
+                                    </div>
+                                    <div class="bg-white p-4 rounded-xl shadow-sm border-r-4 border-emerald-500">
+                                        <h5 class="font-bold text-emerald-700 mb-2">التكلفة الثابتة (Fixed)</h5>
+                                        <p class="text-sm text-slate-700">عاملة زي الإيجار. صاحب المصنع هياخد منك 10
+                                            آلاف جنيه سواء اشتغلت أو قفلت. <br><strong
+                                                class="text-red-600">التريكة:</strong> تكلفة "الوحدة الواحدة" بتقل كل ما
+                                            تنتج أكتر (علاقة عكسية).</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ACCORDION 4 -->
+                <div class="bg-white rounded-2xl shadow-lg mb-4 overflow-hidden border border-slate-100">
+                    <button
+                        class="accordion-toggle w-full flex justify-between items-center p-6 bg-white hover:bg-slate-50 transition-colors focus:outline-none">
+                        <h3 class="text-xl font-bold text-slate-800 flex items-center gap-3">
+                            <span
+                                class="bg-indigo-100 text-indigo-600 w-8 h-8 rounded-full flex items-center justify-center text-sm">4</span>
+                            محرك التكلفة وتكلفة الوحدة (Other Cost Concepts)
+                        </h3>
+                        <i class="fa-solid fa-chevron-down text-slate-400 chevron text-lg"></i>
+                    </button>
+                    <div class="accordion-content">
+                        <div class="accordion-inner px-6 pb-6 pt-2 border-t border-slate-100">
+                            <div
+                                class="bg-slate-800 text-slate-200 rounded-xl p-5 mb-5 shadow-inner en-text text-sm leading-relaxed">
+                                <ul class="list-disc pl-5 space-y-2">
+                                    <li><strong class="text-white">Cost Driver:</strong> is a variable that causally
+                                        affects costs over a given time span.</li>
+                                    <li><strong class="text-white">Relevant Range:</strong> is the band of normal
+                                        activity level in which fixed costs are considered fixed.</li>
+                                    <li><strong class="text-white">Unit Costs:</strong> are calculated by dividing the
+                                        total cost by the related number of units. Unit costs should be used cautiously.
+                                    </li>
+                                    <li class="bg-red-900/50 p-2 rounded"><strong class="text-red-300">Rule:</strong>
+                                        first calculate total costs, then compute the unit cost.</li>
+                                </ul>
+                            </div>
+
+                            <div class="bg-[#fffbeb] border-dashed border-2 border-[#f59e0b] rounded-xl p-5 shadow-sm">
+                                <h4 class="text-[#b45309] font-black text-lg mb-3 flex items-center gap-2"><i
+                                        class="fa-solid fa-lightbulb"></i> الخلاصة بالبلدي:</h4>
+                                <ul class="list-disc pr-6 space-y-3 text-slate-700 font-semibold">
+                                    <li><span class="text-indigo-700 font-bold">محرك التكلفة:</span> ده "السبب" اللي
+                                        بيخلي الفلوس تتصرف (إيه اللي بيزود فاتورة الكهربا؟ ساعات تشغيل المكن).</li>
+                                    <li><span class="text-indigo-700 font-bold">المدى الملائم:</span> الإيجار ثابت، بس
+                                        لو أنتجت مليون وحدة واضطريت أأجر مصنع تاني؟ إذن التكلفة ثابتة "فقط" في حدود طاقة
+                                        المصنع الحالية.</li>
+                                    <li class="bg-indigo-50 p-3 rounded-lg border-r-4 border-indigo-600 mt-2">
+                                        <i class="fa-solid fa-triangle-exclamation text-amber-500 ml-2"></i>
+                                        <strong class="text-slate-900">القاعدة الذهبية في المسائل:</strong> دايماً احسب
+                                        "إجمالي التكاليف" الأول، وبعدين ابقى اقسم على عدد الوحدات عشان تجيب تكلفة الوحدة
+                                        عشان ماتتخدعش.
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ACCORDION 5 -->
+                <div class="bg-white rounded-2xl shadow-lg mb-4 overflow-hidden border border-slate-100">
+                    <button
+                        class="accordion-toggle w-full flex justify-between items-center p-6 bg-white hover:bg-slate-50 transition-colors focus:outline-none">
+                        <h3 class="text-xl font-bold text-slate-800 flex items-center gap-3">
+                            <span
+                                class="bg-indigo-100 text-indigo-600 w-8 h-8 rounded-full flex items-center justify-center text-sm">5</span>
+                            وعاء التكلفة وأساس التحميل (Cost Pool & Allocation Base)
+                        </h3>
+                        <i class="fa-solid fa-chevron-down text-slate-400 chevron text-lg"></i>
+                    </button>
+                    <div class="accordion-content">
+                        <div class="accordion-inner px-6 pb-6 pt-2 border-t border-slate-100">
+                            <div
+                                class="bg-slate-800 text-slate-200 rounded-xl p-5 mb-5 shadow-inner en-text text-sm leading-relaxed">
+                                <ul class="list-disc pl-5 space-y-2">
+                                    <li><strong class="text-white">Cost Pool:</strong> is any logical grouping of
+                                        related cost objects.</li>
+                                    <li><strong class="text-white">Cost-allocation base:</strong> is a cost driver used
+                                        as a basis to build a systematic method of distributing indirect costs.</li>
+                                    <li><strong class="text-white">Ideal base:</strong> The ideal cost-allocation base
+                                        is the cost driver because there is a cause-and-effect relationship.</li>
+                                    <li><strong class="text-white">Alternatives:</strong> When cause-and-effect is not
+                                        clear, use: Benefits received or Cost object's ability to bear.</li>
+                                </ul>
+                            </div>
+
+                            <div class="bg-[#fffbeb] border-dashed border-2 border-[#f59e0b] rounded-xl p-5 shadow-sm">
+                                <h4 class="text-[#b45309] font-black text-lg mb-3 flex items-center gap-2"><i
+                                        class="fa-solid fa-lightbulb"></i> الخلاصة بالبلدي:</h4>
+                                <p class="text-slate-800 leading-loose mb-3">لما بنيجي نوزع التكاليف "غير المباشرة" اللي
+                                    مغلبانا دي، بنعمل إيه؟</p>
+                                <ul class="list-disc pr-6 space-y-3 text-slate-700 font-semibold">
+                                    <li>بنجيب "حصالة" كبيرة نجمع فيها كل التكاليف الشبه بعض، اسمها <strong
+                                            class="text-indigo-600">(Cost Pool)</strong>.</li>
+                                    <li>عشان نوزع الحصالة بالعدل، بنستخدم <strong class="text-indigo-600">(أساس التحميل
+                                            - Allocation Base)</strong>. أحسن أساس هو اللي فيه علاقة "سبب ونتيجة" (يعني
+                                        أوزع مصاريف الصيانة بناءً على ساعات تشغيل المكنة).</li>
+                                    <li>لو مفيش سبب ونتيجة واضحين؟ بنوزع بأسلوب "المنفعة" (القسم اللي استفاد أكثر يشيل
+                                        أكتر)، أو "القدرة على التحمل" (المنتج اللي بيكسبنا دهب نشيله مصاريف أكتر).</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ACCORDION 6 -->
+                <div class="bg-white rounded-2xl shadow-lg mb-4 overflow-hidden border border-slate-100">
+                    <button
+                        class="accordion-toggle w-full flex justify-between items-center p-6 bg-white hover:bg-slate-50 transition-colors focus:outline-none">
+                        <h3 class="text-xl font-bold text-slate-800 flex items-center gap-3">
+                            <span
+                                class="bg-indigo-100 text-indigo-600 w-8 h-8 rounded-full flex items-center justify-center text-sm">6</span>
+                            نظم التكاليف (Costing Systems)
+                        </h3>
+                        <i class="fa-solid fa-chevron-down text-slate-400 chevron text-lg"></i>
+                    </button>
+                    <div class="accordion-content">
+                        <div class="accordion-inner px-6 pb-6 pt-2 border-t border-slate-100">
+                            <div
+                                class="bg-slate-800 text-slate-200 rounded-xl p-5 mb-5 shadow-inner en-text text-sm leading-relaxed">
+                                <ul class="list-disc pl-5 space-y-2">
+                                    <li><strong class="text-white">Job-Costing:</strong> system accounting for distinct
+                                        units of a product or service. Each job may be different and consumes different
+                                        resources (e.g., aircraft, advertising, wedding announcements).</li>
+                                    <li><strong class="text-white">Process-Costing:</strong> system accounting for mass
+                                        production of identical or similar products (e.g., Oil refining, soda pop).</li>
+                                    <li><em class="text-slate-400">Note: These two systems lie at opposite ends of a
+                                            continuum.</em></li>
+                                </ul>
+                            </div>
+
+                            <div class="bg-[#fffbeb] border-dashed border-2 border-[#f59e0b] rounded-xl p-5 shadow-sm">
+                                <h4 class="text-[#b45309] font-black text-lg mb-3 flex items-center gap-2"><i
+                                        class="fa-solid fa-lightbulb"></i> الخلاصة بالبلدي:</h4>
+                                <p class="text-slate-800 leading-loose mb-3">الشركات في الدنيا بتشتغل بواحد من النظامين
+                                    دول:</p>
+                                <div class="grid md:grid-cols-2 gap-4">
+                                    <div class="bg-white p-4 rounded-xl shadow-sm border-r-4 border-sky-500">
+                                        <h5 class="font-bold text-sky-700 mb-2">1. تكاليف الأوامر (Job-Costing)</h5>
+                                        <p class="text-sm text-slate-700">ده شغل "التفصيل". العميل بيطلب حاجة مخصوصة ليه
+                                            هو بس، وكل طلبية بتسحب خامات ومجهود مختلف (زي بناء طيارة، كروت فرح).</p>
+                                    </div>
+                                    <div class="bg-white p-4 rounded-xl shadow-sm border-r-4 border-fuchsia-500">
+                                        <h5 class="font-bold text-fuchsia-700 mb-2">2. تكاليف المراحل (Process-Costing)
+                                        </h5>
+                                        <p class="text-sm text-slate-700">ده شغل "الإنتاج المستمر". المصنع بيطلع ملايين
+                                            الوحدات "نسخة طبق الأصل" (زي ازايز البيبسي، تكرير البترول).</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ACCORDION 7 -->
+                <div class="bg-white rounded-2xl shadow-lg mb-4 overflow-hidden border border-slate-100">
+                    <button
+                        class="accordion-toggle w-full flex justify-between items-center p-6 bg-white hover:bg-slate-50 transition-colors focus:outline-none">
+                        <h3 class="text-xl font-bold text-slate-800 flex items-center gap-3">
+                            <span
+                                class="bg-indigo-100 text-indigo-600 w-8 h-8 rounded-full flex items-center justify-center text-sm">7</span>
+                            مداخل التكاليف (Actual vs. Normal Costing)
+                        </h3>
+                        <i class="fa-solid fa-chevron-down text-slate-400 chevron text-lg"></i>
+                    </button>
+                    <div class="accordion-content">
+                        <div class="accordion-inner px-6 pb-6 pt-2 border-t border-slate-100">
+                            <div
+                                class="bg-slate-800 text-slate-200 rounded-xl p-5 mb-5 shadow-inner en-text text-sm leading-relaxed">
+                                <ul class="list-disc pl-5 space-y-2">
+                                    <li><strong class="text-white">Actual Costing:</strong> allocates indirect costs
+                                        based on the actual indirect-cost rates times the actual activity consumption.
+                                    </li>
+                                    <li><strong class="text-white">Normal Costing:</strong> allocates indirect costs
+                                        based on the budgeted indirect-cost rates times the actual activity consumption.
+                                    </li>
+                                    <li class="bg-emerald-900/50 p-2 rounded mt-2"><strong
+                                            class="text-emerald-400">Important:</strong> Both methods allocate Direct
+                                        costs the same way: actual direct-cost rates times actual quantities.</li>
+                                </ul>
+                            </div>
+
+                            <div class="bg-[#fffbeb] border-dashed border-2 border-[#f59e0b] rounded-xl p-5 shadow-sm">
+                                <h4 class="text-[#b45309] font-black text-lg mb-3 flex items-center gap-2"><i
+                                        class="fa-solid fa-lightbulb"></i> الخلاصة بالبلدي (أهم جزء لقيود اليومية):</h4>
+                                <p class="text-slate-800 leading-loose mb-3">إحنا اتفقنا إن التكلفة = مواد مباشرة + أجور
+                                    مباشرة + تكاليف غير مباشرة. المحاسبين طلعوا بطريقتين لحسابها:</p>
+                                <ul class="list-disc pr-6 space-y-3 text-slate-700 font-semibold">
+                                    <li><span class="text-indigo-700 font-bold">التكلفة الفعلية (Actual):</span> المحاسب
+                                        بيستنى لآخر السنة لما الفواتير كلها تيجي ويحسب المعدل الفعلي. عيبها إن الإدارة
+                                        بتفضل طول السنة مش عارفة التكلفة!</li>
+                                    <li><span class="text-indigo-700 font-bold">التكلفة الطبيعية (Normal):</span> بنشتغل
+                                        بـ "المعدل التقديري" بتاع أول السنة نضربه في الساعات الفعلية عشان نحمل التكاليف
+                                        غير المباشرة أول بأول.</li>
+                                    <li
+                                        class="bg-green-100 text-green-800 p-3 rounded-lg border-r-4 border-green-600 mt-2">
+                                        <i class="fa-solid fa-check-circle ml-1"></i>
+                                        <strong>تريكة الصح والغلط:</strong> الطريقتين متفقين إن "التكاليف المباشرة"
+                                        دايماً بتتحسب بـ (السعر الفعلي × الكمية الفعلية). الاختلاف بس في التكاليف غير
+                                        المباشرة!
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Lecture 2 Content -->
+        <section id="lecture-2-content"
+            class="lecture-content-section hidden grid-cols-1 gap-6 fade-in pt-8 border-t-2 border-slate-200 scroll-mt-28">
+            <div class="col-span-1 md:col-span-2 lg:col-span-3">
+                <!-- Back Button -->
+                <button onclick="showHomeView()"
+                    class="mb-6 inline-flex items-center gap-2 px-4 py-2 bg-slate-100 hover:bg-slate-200 text-slate-700 hover:text-slate-900 rounded-xl font-bold transition-all duration-200 shadow-sm border border-slate-200">
+                    <i class="fa-solid fa-arrow-right"></i>
+                    العودة إلى قائمة المحاضرات
+                </button>
+
+                <div class="flex items-center gap-4 mb-6">
+                    <div
+                        class="w-16 h-16 bg-emerald-600 text-white rounded-2xl flex items-center justify-center text-3xl shadow-lg">
+                        <i class="fa-solid fa-calculator"></i>
+                    </div>
+                    <div>
+                        <h2 class="text-3xl font-black text-slate-800">المحاضرة الثانية: نظام تكاليف الأوامر الإنتاجية
+                        </h2>
+                        <p class="text-emerald-600 font-bold">Job Costing System</p>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-2xl shadow-lg p-8 text-center border border-slate-100">
+                    <div
+                        class="w-20 h-20 bg-emerald-100 text-emerald-600 rounded-full flex items-center justify-center text-4xl mx-auto mb-4 animate-pulse">
+                        <i class="fa-solid fa-clock"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-slate-800 mb-2">المحتوى قريباً!</h3>
+                    <p class="text-slate-500 max-w-md mx-auto mb-6">هذه المحاضرة قيد التحضير حالياً وسوف يتم إضافتها
+                        قريباً جداً. ترقبوا التفاصيل!</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Lecture 3 Content -->
+        <section id="lecture-3-content"
+            class="lecture-content-section hidden grid-cols-1 gap-6 fade-in pt-8 border-t-2 border-slate-200 scroll-mt-28">
+            <div class="col-span-1 md:col-span-2 lg:col-span-3">
+                <!-- Back Button -->
+                <button onclick="showHomeView()"
+                    class="mb-6 inline-flex items-center gap-2 px-4 py-2 bg-slate-100 hover:bg-slate-200 text-slate-700 hover:text-slate-900 rounded-xl font-bold transition-all duration-200 shadow-sm border border-slate-200">
+                    <i class="fa-solid fa-arrow-right"></i>
+                    العودة إلى قائمة المحاضرات
+                </button>
+
+                <div class="flex items-center gap-4 mb-6">
+                    <div
+                        class="w-16 h-16 bg-emerald-600 text-white rounded-2xl flex items-center justify-center text-3xl shadow-lg">
+                        <i class="fa-solid fa-chart-pie"></i>
+                    </div>
+                    <div>
+                        <h2 class="text-3xl font-black text-slate-800">المحاضرة الثالثة: نظام تكاليف المراحل</h2>
+                        <p class="text-emerald-600 font-bold">Process Costing System</p>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-2xl shadow-lg p-8 text-center border border-slate-100">
+                    <div
+                        class="w-20 h-20 bg-emerald-100 text-emerald-600 rounded-full flex items-center justify-center text-4xl mx-auto mb-4 animate-pulse">
+                        <i class="fa-solid fa-clock"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-slate-800 mb-2">المحتوى قريباً!</h3>
+                    <p class="text-slate-500 max-w-md mx-auto mb-6">هذه المحاضرة قيد التحضير حالياً وسوف يتم إضافتها
+                        قريباً جداً. ترقبوا التفاصيل!</p>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-slate-800 text-slate-400 py-8 text-center mt-12">
+        <p class="font-semibold text-slate-300">أكاديمية التكاليف &copy; 2026</p>
+        <p class="text-sm mt-2">تصميم وتطوير بواسطة ذكائك الاصطناعي المفضل 🚀</p>
+    </footer>
+
+    <!-- JavaScript for interactivity -->
+    <script>
+        // Sticky Header scroll effect
+        let lastScroll = 0;
+        const header = document.getElementById('navbar');
+
+        window.addEventListener('scroll', () => {
+            const currentScroll = window.pageYOffset;
+
+            // If scrolling down and passed the header height, hide it
+            if (currentScroll > lastScroll && currentScroll > 100) {
+                header.classList.add('header-hidden');
+                header.classList.remove('header-visible');
+            }
+            // If scrolling up, show it
+            else {
+                header.classList.remove('header-hidden');
+                header.classList.add('header-visible');
+            }
+            lastScroll = currentScroll;
+        });
+
+        // Tab system for lectures
+        const lectureCards = document.querySelectorAll('.lecture-card');
+        const contentSections = document.querySelectorAll('.lecture-content-section');
+
+        function showHomeView() {
+            // Show home view
+            const homeView = document.getElementById('home-view');
+            homeView.classList.remove('hidden');
+
+            // Hide all content sections
+            contentSections.forEach(section => {
+                section.classList.add('hidden');
+                section.classList.remove('grid');
+            });
+
+            // Reset card styling to neutral
+            lectureCards.forEach(c => {
+                c.classList.remove('border-emerald-600', 'border-b-4', 'bg-white', 'shadow-lg');
+                if (c.getAttribute('data-locked') === 'true') {
+                    c.classList.add('border-slate-200', 'border-2', 'bg-slate-50', 'opacity-70', 'shadow-md');
+                } else {
+                    c.classList.add('border-slate-200', 'border-2', 'bg-white', 'shadow-md');
+                    c.classList.remove('opacity-70', 'bg-slate-50');
+                }
+            });
+
+            // Scroll to top of the page smoothly
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        lectureCards.forEach(card => {
+            card.addEventListener('click', () => {
+                const targetId = card.getAttribute('data-target');
+                const targetSection = document.getElementById(targetId);
+
+                if (targetSection) {
+                    // Hide home view
+                    const homeView = document.getElementById('home-view');
+                    homeView.classList.add('hidden');
+
+                    // Update active styling on cards
+                    lectureCards.forEach(c => {
+                        c.classList.remove('border-emerald-600', 'border-b-4', 'bg-white', 'shadow-lg');
+                        if (c.getAttribute('data-locked') === 'true') {
+                            c.classList.add('border-slate-200', 'border-2', 'bg-slate-50', 'opacity-70', 'shadow-md');
+                        } else {
+                            c.classList.add('border-slate-200', 'border-2', 'bg-white', 'shadow-md');
+                            c.classList.remove('opacity-70', 'bg-slate-50');
+                        }
+                    });
+
+                    // Highlight the clicked card as active
+                    card.classList.remove('border-slate-200', 'border-2', 'bg-slate-50', 'opacity-70', 'shadow-md');
+                    card.classList.add('border-emerald-600', 'border-b-4', 'bg-white', 'shadow-lg');
+
+                    // Hide all content sections
+                    contentSections.forEach(section => {
+                        section.classList.add('hidden');
+                        section.classList.remove('grid');
+                    });
+
+                    // Show target section
+                    targetSection.classList.remove('hidden');
+                    targetSection.classList.add('grid');
+
+                    // Scroll to top of the page smoothly
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                }
+            });
+        });
+
+        // Accordion functionality
+        const accordions = document.querySelectorAll('.accordion-toggle');
+
+        accordions.forEach(button => {
+            button.addEventListener('click', (e) => {
+                // Prevent clicking on accordion from triggering card selection if nested,
+                // although here they are separate, it's good practice.
+                e.stopPropagation();
+
+                const content = button.nextElementSibling;
+                const chevron = button.querySelector('.chevron');
+
+                // Toggle current accordion
+                content.classList.toggle('open');
+                chevron.classList.toggle('open');
+
+                // Optional: Change background of active header
+                if (content.classList.contains('open')) {
+                    button.classList.add('bg-slate-50');
+                } else {
+                    button.classList.remove('bg-slate-50');
+                }
+            });
+        });
+
+        // Open the first accordion of Lecture 1 by default for better UX
+        const firstLectureAccordion = document.querySelector('#lecture-1-content .accordion-toggle');
+        if (firstLectureAccordion) {
+            firstLectureAccordion.click();
+        }
+    </script>
+</body>
+
+</html>
