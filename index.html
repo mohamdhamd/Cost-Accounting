@@ -1329,6 +1329,13 @@
                     </div>
                 </div>
 
+            <!-- Back to Lectures Button -->
+            <div class="mt-8 flex justify-center">
+                <button onclick="showHomeView()" class="px-8 py-3 rounded-xl font-bold text-white shadow-lg transform hover:-translate-y-0.5 transition-all duration-200 bg-gradient-to-r from-emerald-600 to-teal-600 hover:from-emerald-700 hover:to-teal-700">
+                    <i class="fa-solid fa-arrow-right ml-2"></i> العودة لقائمة المحاضرات
+                </button>
+            </div>
+
                 </div><!-- end .lecture-content-col -->
             </div><!-- end .lecture-layout -->
           </div>
@@ -1482,21 +1489,27 @@
                                                     <h6 style="color:#4f46e5">1. حساب المعدل (Budgeted OH Rate) - المطلوب الأول (a)</h6>
                                                     <p>الشركة متوقعة تصرف 40,000 دولار وتشغل المكن 100,000 ساعة.</p>
                                                     <div class="ar-equation">
-                                                        $$\text{Budgeted Rate} = \frac{\text{Budgeted MOH}}{\text{Budgeted Machine-hours}} = \frac{\$40,000}{100,000\ mh} = \$0.40\ \text{per mh}$$
+                                                        <div class="overflow-x-auto w-full my-2">
+                                                            $$\text{Budgeted Rate} = \frac{\text{Budgeted MOH}}{\text{Budgeted Machine-hours}} = \frac{\$40,000}{100,000\ mh} = \$0.40\ \text{per mh}$$
+                                                        </div>
                                                     </div>
                                                 </div>
                                                 <div class="compare-card" style="border-color:#0ea5e9">
                                                     <h6 style="color:#0369a1">2. التكاليف المحملة لشغلانة المدرسة (Allocated OH) - المطلوب الثاني (b)</h6>
                                                     <p>مدرسة "ميز" طلبت جواكت، المكن اشتغل عشانهم 800 ساعة فعلية.</p>
                                                     <div class="ar-equation">
-                                                        $$\text{Allocated MOH} = \text{Budgeted Rate} \times \text{Actual mh used} = \$0.40 \times 800\ mh = \$320$$
+                                                        <div class="overflow-x-auto w-full my-2">
+                                                            $$\text{Allocated MOH} = \text{Budgeted Rate} \times \text{Actual mh used} = \$0.40 \times 800\ mh = \$320$$
+                                                        </div>
                                                     </div>
                                                 </div>
                                                 <div class="compare-card" style="border-color:#10b981">
                                                     <h6 style="color:#059669">3. التكلفة الكلية للشغلانة (Total Cost) - المطلوب الثالث (c)</h6>
                                                     <p>هنجمع المواد + الأجور + التكاليف المحملة اللي حسبناها.</p>
                                                     <div class="ar-equation">
-                                                        $$\text{Total Cost} = \text{DM} + \text{DL} + \text{Allocated MOH} = \$500 + \$100 + \$320 = \$920$$
+                                                        <div class="overflow-x-auto w-full my-2">
+                                                            $$\text{Total Cost} = \text{DM} + \text{DL} + \text{Allocated MOH} = \$500 + \$100 + \$320 = \$920$$
+                                                        </div>
                                                     </div>
                                                 </div>
                                             </div>
@@ -1591,11 +1604,15 @@
                                                     <div class="bg-white p-4 rounded-xl border border-pink-200">
                                                         <strong>معدل قسم Machining (على أساس ساعات المكن MH):</strong>
                                                         <div class="ar-equation">
-                                                            $$\text{Machining Rate} = \frac{\text{Budgeted MOH}}{\text{Budgeted MH}} = \frac{\$250,000}{100,000\ MH} = \$2.50\ \text{per MH}$$
+                                                            <div class="overflow-x-auto w-full my-2">
+                                                                $$\text{Machining Rate} = \frac{\text{Budgeted MOH}}{\text{Budgeted MH}} = \frac{\$250,000}{100,000\ MH} = \$2.50\ \text{per MH}$$
+                                                            </div>
                                                         </div>
                                                         <strong>معدل قسم Assembly (على أساس ساعات العمل DLH):</strong>
                                                         <div class="ar-equation">
-                                                            $$\text{Assembly Rate} = \frac{\text{Budgeted MOH}}{\text{Budgeted DLH}} = \frac{\$360,000}{90,000\ DLH} = \$4.00\ \text{per DLH}$$
+                                                            <div class="overflow-x-auto w-full my-2">
+                                                                $$\text{Assembly Rate} = \frac{\text{Budgeted MOH}}{\text{Budgeted DLH}} = \frac{\$360,000}{90,000\ DLH} = \$4.00\ \text{per DLH}$$
+                                                            </div>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -1609,11 +1626,15 @@
                                                     <div class="bg-white p-4 rounded-xl border border-pink-200">
                                                         <strong>قسم Machining (اقتطع 170 ساعة مكن فعلية):</strong>
                                                         <div class="ar-equation">
-                                                            $$\text{Allocated MOH (Machining)} = 170\ MH \times \$2.50 = \$425$$
+                                                            <div class="overflow-x-auto w-full my-2">
+                                                                $$\text{Allocated MOH (Machining)} = 170\ MH \times \$2.50 = \$425$$
+                                                            </div>
                                                         </div>
                                                         <strong>قسم Assembly (اقتطع 120 ساعة عمل فعلية):</strong>
                                                         <div class="ar-equation">
-                                                            $$\text{Allocated MOH (Assembly)} = 120\ DLH \times \$4.00 = \$480$$
+                                                            <div class="overflow-x-auto w-full my-2">
+                                                                $$\text{Allocated MOH (Assembly)} = 120\ DLH \times \$4.00 = \$480$$
+                                                            </div>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -1627,14 +1648,20 @@
                                                     <p class="text-sm text-slate-600 font-semibold mb-3">نجمع المواد والأجور والتكاليف المحملة في القسمين معاً:</p>
                                                     <div class="bg-white p-4 rounded-xl border border-pink-200">
                                                         <strong>تكاليف قسم Machining:</strong>
-                                                        $$\text{Total Machining Cost} = \$2,700\ (\text{DM}) + \$400\ (\text{DL}) + \$425\ (\text{MOH}) = \$3,525$$
+                                                        <div class="overflow-x-auto w-full my-2">
+                                                            $$\text{Total Machining Cost} = \$2,700\ (\text{DM}) + \$400\ (\text{DL}) + \$425\ (\text{MOH}) = \$3,525$$
+                                                        </div>
                                                         <div class="my-3 border-t border-slate-100"></div>
                                                         <strong>تكاليف قسم Assembly:</strong>
-                                                        $$\text{Total Assembly Cost} = \$1,600\ (\text{DM}) + \$900\ (\text{DL}) + \$480\ (\text{MOH}) = \$2,980$$
+                                                        <div class="overflow-x-auto w-full my-2">
+                                                            $$\text{Total Assembly Cost} = \$1,600\ (\text{DM}) + \$900\ (\text{DL}) + \$480\ (\text{MOH}) = \$2,980$$
+                                                        </div>
                                                         <div class="my-3 border-t border-slate-100"></div>
                                                         <strong>التكلفة الكلية للأمر #846:</strong>
                                                         <div class="ar-equation">
-                                                            $$\text{Grand Total Cost} = \$3,525 + \$2,980 = \$6,505$$
+                                                            <div class="overflow-x-auto w-full my-2">
+                                                                $$\text{Grand Total Cost} = \$3,525 + \$2,980 = \$6,505$$
+                                                            </div>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -1744,10 +1771,14 @@
                                                  </div>
                                                  <div class="bg-white p-4 rounded-xl border border-amber-200">
                                                      <div class="ar-equation">
-                                                         $$\text{Dept 100 Rate} = \frac{\$57,500}{4,000\ MH} = \$14.375\ \text{per MH}$$
+                                                         <div class="overflow-x-auto w-full my-2">
+                                                             $$\text{Dept 100 Rate} = \frac{\$57,500}{4,000\ MH} = \$14.375\ \text{per MH}$$
+                                                         </div>
                                                      </div>
                                                      <div class="ar-equation">
-                                                         $$\text{Dept 200 Rate} = \frac{\$62,500}{8,000\ DLH} = \$7.8125\ \text{per DLH}$$
+                                                         <div class="overflow-x-auto w-full my-2">
+                                                             $$\text{Dept 200 Rate} = \frac{\$62,500}{8,000\ DLH} = \$7.8125\ \text{per DLH}$$
+                                                         </div>
                                                      </div>
                                                  </div>
                                              </div>
@@ -1816,20 +1847,36 @@
                                                      <div class="space-y-3 text-sm text-slate-700 font-semibold">
                                                          <div class="p-3 bg-slate-50 rounded-lg">
                                                              <strong>تكلفة قسم 100:</strong><br>
-                                                             $$\text{Total Dept 100} = \text{DM used} + \text{DL} + \text{Allocated MOH}$$
-                                                             $$\text{Total Dept 100} = \$32,500 + \$52,500 + \$11,500 = \$96,500$$
+                                                             <div class="overflow-x-auto w-full my-2">
+                                                                 $$\text{Total Dept 100} = \text{DM used} + \text{DL} + \text{Allocated MOH}$$
+                                                             </div>
+                                                             
+                                    <div class="overflow-x-auto w-full my-2">
+                                        $$\text{Total Dept 100} = \$32,500 + \$52,500 + \$11,500 = \$96,500$$
+                                    </div>
+                                    
                                                          </div>
                                                          <div class="p-3 bg-slate-50 rounded-lg">
                                                              <strong>تكلفة قسم 200:</strong><br>
                                                              نحسب الأول الـ Allocated MOH لقسم 200 (الأمر استهلك 300 ساعة عمل فعلية والمعدل 7.8125):
-                                                             $$\text{Allocated MOH (Dept 200)} = 300\ DLH \times \$7.8125 = \$2,343.75$$
-                                                             $$\text{Total Dept 200} = \text{DM used} + \text{DL} + \text{Allocated MOH}$$
-                                                             $$\text{Total Dept 200} = \$13,500 + \$53,500 + \$2,343.75 = \$69,343.75$$
+                                                             <div class="overflow-x-auto w-full my-2">
+                                                                 $$\text{Allocated MOH (Dept 200)} = 300\ DLH \times \$7.8125 = \$2,343.75$$
+                                                             </div>
+                                                             
+                                    <div class="overflow-x-auto w-full my-2">
+                                        $$\text{Total Dept 200} = \text{DM used} + \text{DL} + \text{Allocated MOH}$$
+                                    </div>
+                                    
+                                                             <div class="overflow-x-auto w-full my-2">
+                                                                 $$\text{Total Dept 200} = \$13,500 + \$53,500 + \$2,343.75 = \$69,343.75$$
+                                                             </div>
                                                          </div>
                                                          <div class="p-3 bg-emerald-50 text-emerald-900 rounded-lg border border-emerald-200">
                                                              <strong>التكلفة الإجمالية للأمر A:</strong><br>
                                                              <div class="ar-equation">
-                                                                 $$\text{Total Job A Cost} = \$96,500 + \$69,343.75 = \$165,843.75$$
+                                                                 <div class="overflow-x-auto w-full my-2">
+                                                                     $$\text{Total Job A Cost} = \$96,500 + \$69,343.75 = \$165,843.75$$
+                                                                 </div>
                                                              </div>
                                                          </div>
                                                      </div>
@@ -1849,6 +1896,13 @@
                                  </div>
                              </div>
                         </div>
+
+            <!-- Back to Lectures Button -->
+            <div class="mt-8 flex justify-center">
+                <button onclick="showHomeView()" class="px-8 py-3 rounded-xl font-bold text-white shadow-lg transform hover:-translate-y-0.5 transition-all duration-200 bg-gradient-to-r from-emerald-600 to-teal-600 hover:from-emerald-700 hover:to-teal-700">
+                    <i class="fa-solid fa-arrow-right ml-2"></i> العودة لقائمة المحاضرات
+                </button>
+            </div>
 
                     </div><!-- end .lecture-content-col -->
                 </div><!-- end .lecture-layout -->
@@ -1941,7 +1995,13 @@
                                             </div>
                                             <div class="compare-card" style="border-color:#ec4899">
                                                 <h6 style="color:#db2777">المعادلة الذهبية لتدفق الوحدات:</h6>
-                                                <p dir="ltr" class="text-center font-bold text-slate-800">$$\text{Beg. WIP} + \text{Started} = \text{Completed} + \text{End. WIP}$$</p>
+                                                <p dir="ltr" class="text-center font-bold text-slate-800"><div class="overflow-x-auto w-full my-2">
+                                                <p dir="ltr" class="text-center font-bold text-slate-800">    
+                                    <div class="overflow-x-auto w-full my-2">
+                                        $$\text{Beg. WIP} + \text{Started} = \text{Completed} + \text{End. WIP}$$
+                                    </div>
+                                    
+                                                <p dir="ltr" class="text-center font-bold text-slate-800"></div>
                                                 <p class="text-xs text-slate-500 mt-1">لازم الطرفين يساووا بعض بالظبط عشان نتأكد إن مفيش خامات أو وحدات ضاعت في المكن.</p>
                                             </div>
                                         </div>
@@ -2022,20 +2082,32 @@
                                                 <span class="ar-label">الخطوة 3: حساب تكلفة الوحدة المعادلة (Cost per EU)</span>
                                                 <p class="text-sm mt-1">هنجمع تكاليف أول المدة (بتاعة الشهر اللي فات) + التكاليف المضافة الشهر ده ونقسمهم على الوحدات المعادلة:</p>
                                                 <div class="bg-white p-4 rounded-xl border border-purple-200 mt-2">
-                                                    $$\text{Cost per EU (Materials)} = \frac{\$50,000\ (\text{Beg}) + \$400,000\ (\text{Added})}{900,000\ \text{EU}} = \frac{\$450,000}{900,000} = \$0.50\ \text{per unit}$$
-                                                    $$\text{Cost per EU (Conversion)} = \frac{\$35,000\ (\text{Beg}) + \$170,000\ (\text{Added})}{820,000\ \text{EU}} = \frac{\$205,000}{820,000} = \$0.25\ \text{per unit}$$
-                                                    $$\text{Total unit cost (W.A)} = \$0.50 + \$0.25 = \$0.75\ \text{per completed unit}$$
+                                                    <div class="overflow-x-auto w-full my-2">
+                                                        $$\text{Cost per EU (Materials)} = \frac{\$50,000\ (\text{Beg}) + \$400,000\ (\text{Added})}{900,000\ \text{EU}} = \frac{\$450,000}{900,000} = \$0.50\ \text{per unit}$$
+                                                    </div>
+                                                    
+                                    <div class="overflow-x-auto w-full my-2">
+                                        $$\text{Cost per EU (Conversion)} = \frac{\$35,000\ (\text{Beg}) + \$170,000\ (\text{Added})}{820,000\ \text{EU}} = \frac{\$205,000}{820,000} = \$0.25\ \text{per unit}$$
+                                    </div>
+                                    
+                                                    <div class="overflow-x-auto w-full my-2">
+                                                        $$\text{Total unit cost (W.A)} = \$0.50 + \$0.25 = \$0.75\ \text{per completed unit}$$
+                                                    </div>
                                                 </div>
                                             </li>
                                             <li>
                                                 <span class="ar-label">الخطوة 4 &amp; 5: تخصيص وتوزيع التكاليف</span>
                                                 <div class="bg-white p-4 rounded-xl border border-purple-200 mt-2 text-sm text-slate-700">
                                                     <strong>1. تكلفة الوحدات التامة والمنقولة لقسم الخبز (700,000 وحدة):</strong>
-                                                    $$\text{Cost of Completed Units} = 700,000\ \text{units} \times \$0.75 = \$525,000$$
+                                                    <div class="overflow-x-auto w-full my-2">
+                                                        $$\text{Cost of Completed Units} = 700,000\ \text{units} \times \$0.75 = \$525,000$$
+                                                    </div>
                                                     <strong>2. تكلفة مخزون الإنتاج تحت التشغيل آخر المدة (200,000 وحدة):</strong><br>
                                                     • خامات = 200,000 وحدة معادلة $\times$ $0.50 = $100,000<br>
                                                     • تشكيل = 120,000 وحدة معادلة $\times$ $0.25 = $30,000<br>
-                                                    $$\text{Total Cost of Ending WIP} = \$100,000 + \$30,000 = \$130,000$$
+                                                    <div class="overflow-x-auto w-full my-2">
+                                                        $$\text{Total Cost of Ending WIP} = \$100,000 + \$30,000 = \$130,000$$
+                                                    </div>
                                                     <p class="text-xs text-green-600 font-bold mt-2">💡 للتأكد من صحة الحل: مجموع التكاليف الموزعة = $525,000 + $130,000 = $655,000 وهو يساوي تماماً مجموع تكاليف أول المدة والتكاليف الجديدة ($85,000 + $570,000 = $655,000).</p>
                                                 </div>
                                             </li>
@@ -2125,9 +2197,17 @@
                                                 <span class="ar-label font-bold">3. حساب تكلفة الوحدة المعادلة في الـ FIFO:</span>
                                                 <p class="text-sm mt-1 font-bold text-red-600">⚠ المطب هنا! بنقسم تكاليف الشهر ده بس (Added costs in June) على الوحدات المعادلة للشهر ده بس:</p>
                                                 <div class="bg-white p-4 rounded-xl border border-purple-200 mt-2">
-                                                    $$\text{Cost per EU (Materials)} = \frac{\$400,000\ (\text{Added in June})}{800,000\ \text{EU}} = \$0.50$$
-                                                    $$\text{Cost per EU (Conversion)} = \frac{\$170,000\ (\text{Added in June})}{750,000\ \text{EU}} \approx \$0.2267 \approx \$0.23$$
-                                                    $$\text{Total cost per unit (Current Period)} = \$0.50 + \$0.23 = \$0.73$$
+                                                    <div class="overflow-x-auto w-full my-2">
+                                                        $$\text{Cost per EU (Materials)} = \frac{\$400,000\ (\text{Added in June})}{800,000\ \text{EU}} = \$0.50$$
+                                                    </div>
+                                                    
+                                    <div class="overflow-x-auto w-full my-2">
+                                        $$\text{Cost per EU (Conversion)} = \frac{\$170,000\ (\text{Added in June})}{750,000\ \text{EU}} \approx \$0.2267 \approx \$0.23$$
+                                    </div>
+                                    
+                                                    <div class="overflow-x-auto w-full my-2">
+                                                        $$\text{Total cost per unit (Current Period)} = \$0.50 + \$0.23 = \$0.73$$
+                                                    </div>
                                                 </div>
                                             </li>
                                             <li>
@@ -2136,12 +2216,18 @@
                                                     <strong>أولا: تكلفة الـ 100,000 وحدة بتوع أول المدة:</strong><br>
                                                     • التكلفة القديمة اللي جايين بيها من الشهر اللي فات = $85,000<br>
                                                     • التكلفة الجديدة اللي صرفناها عليهم الشهر ده عشان يخلصوا (30,000 وحدة تشكيل $\times$ $0.2267) $\approx$ $6,800<br>
-                                                    $$\text{Total Cost of Beg. WIP units} = \$85,000 + \$6,800 = \$91,800$$
+                                                    <div class="overflow-x-auto w-full my-2">
+                                                        $$\text{Total Cost of Beg. WIP units} = \$85,000 + \$6,800 = \$91,800$$
+                                                    </div>
                                                     <strong>ثانيا: تكلفة الـ 600,000 وحدة اللي بدأوا وانتهوا الشهر ده:</strong>
-                                                    $$\text{Total Cost of Started & Completed} = 600,000\ \text{units} \times \$0.7267 \approx \$436,000$$
+                                                    <div class="overflow-x-auto w-full my-2">
+                                                        $$\text{Total Cost of Started \& Completed} = 600,000\ \text{units} \times \$0.7267 \approx \$436,000$$
+                                                    </div>
                                                     <strong>إجمالي تكلفة الـ 700,000 وحدة التامة المنقولة:</strong>
                                                     <div class="ar-equation">
-                                                        $$\text{Total Cost of Completed} = \$91,800 + \$436,000 = \$527,800$$
+                                                        <div class="overflow-x-auto w-full my-2">
+                                                            $$\text{Total Cost of Completed} = \$91,800 + \$436,000 = \$527,800$$
+                                                        </div>
                                                     </div>
                                                 </div>
                                             </li>
@@ -2268,6 +2354,13 @@
                             </div>
                         </div>
                     </div>
+
+            <!-- Back to Lectures Button -->
+            <div class="mt-8 flex justify-center">
+                <button onclick="showHomeView()" class="px-8 py-3 rounded-xl font-bold text-white shadow-lg transform hover:-translate-y-0.5 transition-all duration-200 bg-gradient-to-r from-emerald-600 to-teal-600 hover:from-emerald-700 hover:to-teal-700">
+                    <i class="fa-solid fa-arrow-right ml-2"></i> العودة لقائمة المحاضرات
+                </button>
+            </div>
 
                     </div><!-- end .lecture-content-col -->
                 </div><!-- end .lecture-layout -->
@@ -2421,7 +2514,9 @@
                                         <div class="p-3 bg-white rounded-lg border border-rose-200">
                                             <strong>الحالة أ (Normal Specific - Not Sold):</strong>
                                             <p class="text-sm mt-1">مفيش قيد محاسبي خالص. الـ 100 دولار بتوع الشغلانة هيفضلوا زي ما هما بس هيتقسموا على الـ 8 السُلام بس، عشان كده الوحدة غليت علينا وبقت بـ 12.50 دولار:</p>
-                                            $$\text{Cost per Good Unit} = \frac{\text{Total Job Cost}}{\text{Good Units}} = \frac{\$100}{8\ \text{Units}} = \$12.50$$
+                                            <div class="overflow-x-auto w-full my-2">
+                                                $$\text{Cost per Good Unit} = \frac{\text{Total Job Cost}}{\text{Good Units}} = \frac{\$100}{8\ \text{Units}} = \$12.50$$
+                                            </div>
                                         </div>
                                         <div class="p-3 bg-white rounded-lg border border-rose-200">
                                             <strong>الحالة ب (Normal Specific - Sold @ $3):</strong>
@@ -2432,7 +2527,9 @@
                                                     <tr><td>قيد إثبات بيع التالف</td><td class="dr">Spoiled Inventory 6</td><td class="cr">WIP-Job X 6</td></tr>
                                                 </table>
                                             </div>
-                                            $$\text{Cost per Good Unit} = \frac{\$100 - \$6\ (\text{Scrap value})}{8} = \frac{\$94}{8} = \$11.75$$
+                                            <div class="overflow-x-auto w-full my-2">
+                                                $$\text{Cost per Good Unit} = \frac{\$100 - \$6\ (\text{Scrap value})}{8} = \frac{\$94}{8} = \$11.75$$
+                                            </div>
                                         </div>
                                         <div class="p-3 bg-white rounded-lg border border-rose-200">
                                             <strong>الحالة ج (Normal Common - Not Sold):</strong>
@@ -2443,7 +2540,9 @@
                                                     <tr><td>قيد معالجة التالف الشائع</td><td class="dr">MOH Control 20</td><td class="cr">WIP-Job X 20</td></tr>
                                                 </table>
                                             </div>
-                                            $$\text{Cost per Good Unit} = \frac{\$100 - \$20}{8} = \frac{\$80}{8} = \$10.00$$
+                                            <div class="overflow-x-auto w-full my-2">
+                                                $$\text{Cost per Good Unit} = \frac{\$100 - \$20}{8} = \frac{\$80}{8} = \$10.00$$
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
@@ -2488,7 +2587,9 @@
                                                     <tr><td>قيد التالف الشائع ومباع</td><td class="dr">MOH Control 14<br>Spoiled Inventory 6</td><td class="cr">WIP-Job X 20</td></tr>
                                                 </table>
                                             </div>
-                                            $$\text{Cost per Good Unit} = \frac{\$80}{8} = \$10.00$$
+                                            <div class="overflow-x-auto w-full my-2">
+                                                $$\text{Cost per Good Unit} = \frac{\$80}{8} = \$10.00$$
+                                            </div>
                                         </div>
                                         <div class="p-3 bg-white rounded-lg border border-rose-200">
                                             <strong>الحالة هـ (Abnormal - Not Sold):</strong>
@@ -2499,7 +2600,9 @@
                                                     <tr><td>قيد التالف غير الطبيعي</td><td class="dr">Loss from Abnormal Spoilage 20</td><td class="cr">WIP-Job X 20</td></tr>
                                                 </table>
                                             </div>
-                                            $$\text{Cost per Good Unit} = \frac{\$80}{8} = \$10.00$$
+                                            <div class="overflow-x-auto w-full my-2">
+                                                $$\text{Cost per Good Unit} = \frac{\$80}{8} = \$10.00$$
+                                            </div>
                                         </div>
                                         <div class="p-3 bg-white rounded-lg border border-rose-200">
                                             <strong>الحالة و (Abnormal - Sold @ $3):</strong>
@@ -2510,7 +2613,9 @@
                                                     <tr><td>قيد الإهمال والبيع</td><td class="dr">Loss from Abnormal Spoilage 14<br>Spoiled Inventory 6</td><td class="cr">WIP-Job X 20</td></tr>
                                                 </table>
                                             </div>
-                                            $$\text{Cost per Good Unit} = \frac{\$80}{8} = \$10.00$$
+                                            <div class="overflow-x-auto w-full my-2">
+                                                $$\text{Cost per Good Unit} = \frac{\$80}{8} = \$10.00$$
+                                            </div>
                                         </div>
                                     </div>
 
@@ -2527,6 +2632,13 @@
                                 </div>
                             </div></div></div>
                         </div>
+
+            <!-- Back to Lectures Button -->
+            <div class="mt-8 flex justify-center">
+                <button onclick="showHomeView()" class="px-8 py-3 rounded-xl font-bold text-white shadow-lg transform hover:-translate-y-0.5 transition-all duration-200 bg-gradient-to-r from-emerald-600 to-teal-600 hover:from-emerald-700 hover:to-teal-700">
+                    <i class="fa-solid fa-arrow-right ml-2"></i> العودة لقائمة المحاضرات
+                </button>
+            </div>
 
                     </div>
                 </div>
@@ -2650,7 +2762,9 @@
                                                     <tr><td class="dr">WIP-Inventory 60</td><td class="cr">Material Inventory 30<br>Wages Payable 20<br>Allocated MOH 10</td></tr>
                                                 </table>
                                             </div>
-                                            $$\text{Cost per unit} = \frac{\$1,000 + \$60}{10\ \text{Units}} = \$106.00$$
+                                            <div class="overflow-x-auto w-full my-2">
+                                                $$\text{Cost per unit} = \frac{\$1,000 + \$60}{10\ \text{Units}} = \$106.00$$
+                                            </div>
                                         </div>
                                         <div class="p-3 bg-white rounded-lg border border-amber-200">
                                             <strong>2. حالة طبيعي وشائع للمصنع كله (Normal Common):</strong>
@@ -2661,7 +2775,9 @@
                                                     <tr><td class="dr">MOH Control 60</td><td class="cr">Material Inventory 30<br>Wages Payable 20<br>Allocated MOH 10</td></tr>
                                                 </table>
                                             </div>
-                                            $$\text{Cost per unit} = \frac{\$1,000}{10\ \text{Units}} = \$100.00$$
+                                            <div class="overflow-x-auto w-full my-2">
+                                                $$\text{Cost per unit} = \frac{\$1,000}{10\ \text{Units}} = \$100.00$$
+                                            </div>
                                         </div>
                                         <div class="p-3 bg-white rounded-lg border border-amber-200">
                                             <strong>3. حالة غير طبيعي (إهمال جسيم):</strong>
@@ -2672,7 +2788,9 @@
                                                     <tr><td class="dr">Loss from Abnormal Rework 60</td><td class="cr">Material Inventory 30<br>Wages Payable 20<br>Allocated MOH 10</td></tr>
                                                 </table>
                                             </div>
-                                            $$\text{Cost per unit} = \frac{\$1,000}{10\ \text{Units}} = \$100.00$$
+                                            <div class="overflow-x-auto w-full my-2">
+                                                $$\text{Cost per unit} = \frac{\$1,000}{10\ \text{Units}} = \$100.00$$
+                                            </div>
                                         </div>
                                     </div>
 
@@ -2798,6 +2916,13 @@
                                 </div>
                             </div></div></div>
                         </div>
+
+            <!-- Back to Lectures Button -->
+            <div class="mt-8 flex justify-center">
+                <button onclick="showHomeView()" class="px-8 py-3 rounded-xl font-bold text-white shadow-lg transform hover:-translate-y-0.5 transition-all duration-200 bg-gradient-to-r from-emerald-600 to-teal-600 hover:from-emerald-700 hover:to-teal-700">
+                    <i class="fa-solid fa-arrow-right ml-2"></i> العودة لقائمة المحاضرات
+                </button>
+            </div>
 
                     </div>
                 </div>
@@ -2953,7 +3078,7 @@
                                     <strong class="text-red-800 block mb-1">فخ الوحدات المخفية (Missing Units):</strong>
                                     الدكتور في الامتحان ممكن مايديكش الـ Started Units صراحة! بس يذكر (أول المدة، والتام، وآخر المدة)، ساعتها بنجيب التايه بالمعادلة البسيطة دي:
                                     <div class="overflow-x-auto w-full my-2">
-                                        $$	ext{Beg. WIP} + 	ext{Started} = 	ext{Completed} + 	ext{Ending WIP}$$
+                                        $$\text{Beg. WIP} + \text{Started} = \text{Completed} + \text{Ending WIP}$$
                                     </div>
                                 </div>
                             </div>
@@ -3021,7 +3146,7 @@
                                     <strong class="block mb-2 text-purple-950 text-sm md:text-base border-b border-purple-100 pb-1">الخطوة 1: الوحدات المعادلة (EU):</strong>
                                     الوحدات التامة الـ 700 ألف أخذت حقها كامل 100% خامات وتشكيل فبتنزل كاملة في الخلايا. أما الـ 200 ألف وحدة تحت التشغيل آخر الشهر بنحسبها بنسبة إتمامها: المواد (100%) = 200 ألف خامات، والتشكيل (60%) نضرب:
                                     <div class="overflow-x-auto w-full my-2">
-                                        $$	ext{Ending WIP CC (EU)} = 200,000 	imes 60% = 120,000	ext{ units}$$
+                                        $$\text{Ending WIP CC (EU)} = 200,000 \times 60% = 120,000\text{ units}$$
                                     </div>
                                     نجمع التام مع آخر المدة فينتج إجمالي وحدات المواد 900 ألف، وإجمالي وحدات التشكيل 820 ألف وحدة معادلة.
                                 </div>
@@ -3030,13 +3155,13 @@
                                     <strong class="block mb-2 text-purple-950 text-sm md:text-base border-b border-purple-100 pb-1">الخطوة 2: حساب تكلفة الوحدة المعادلة:</strong>
                                     نجمع التكاليف القديمة بمخزون أول المدة مع الجديدة المضافة، ونقسمها على إجمالي الوحدات المعادلة:
                                     <div class="overflow-x-auto w-full my-2">
-                                        $$	ext{Unit Materials Cost} = rac{$50,000	ext{ (Beg. WIP)} + $400,000	ext{ (Added)}}{900,000	ext{ EU}} = $0.50	ext{ / unit}$$
+                                        $$\text{Unit Materials Cost} = \frac{\$50,000\text{ (Beg. WIP)} + \$400,000\text{ (Added)}}{900,000\text{ EU}} = \$0.50\text{ / unit}$$
                                     </div>
                                     <div class="overflow-x-auto w-full my-2">
-                                        $$	ext{Unit Conversion Cost} = rac{$35,000	ext{ (Beg. WIP)} + $170,000	ext{ (Added)}}{820,000	ext{ EU}} = $0.25	ext{ / unit}$$
+                                        $$\text{Unit Conversion Cost} = \frac{\$35,000\text{ (Beg. WIP)} + \$170,000\text{ (Added)}}{820,000\text{ EU}} = \$0.25\text{ / unit}$$
                                     </div>
                                     <div class="overflow-x-auto w-full my-2">
-                                        $$	ext{Total Cost per unit (W.A)} = $0.50 + $0.25 = $0.75	ext{ / unit}$$
+                                        $$\text{Total Cost per unit (W.A)} = \$0.50 + \$0.25 = \$0.75\text{ / unit}$$
                                     </div>
                                 </div>
 
@@ -3046,13 +3171,13 @@
                                     <ul class="list-disc pr-4 space-y-2 text-sm text-slate-700">
                                         <li><strong>تكلفة الإنتاج التام المنقول لقسم الخبز (700 ألف وحدة):</strong>
                                             <div class="overflow-x-auto w-full my-2">
-                                                $$	ext{Transferred Out Cost} = 700,000	ext{ units} 	imes $0.75 = $525,000$$
+                                                $$\text{Transferred Out Cost} = 700,000\text{ units} \times \$0.75 = \$525,000$$
                                             </div>
                                         </li>
                                         <li><strong>تكلفة مخزون آخر المدة تحت التشغيل (200 ألف وحدة):</strong>
                                             بضرب وحدات خامات المواد وتكلفة التشكيل المعادلة في معدلاتها:
                                             <div class="overflow-x-auto w-full my-2">
-                                                $$	ext{Ending WIP Cost} = (200,000	ext{ (DM)} 	imes $0.50) + (120,000	ext{ (CC)} 	imes $0.25) = $130,000$$
+                                                $$\text{Ending WIP Cost} = (200,000\text{ (DM)} \times \$0.50) + (120,000\text{ (CC)} \times \$0.25) = \$130,000$$
                                             </div>
                                         </li>
                                     </ul>
@@ -3139,12 +3264,12 @@
                                     <ul class="list-disc pr-4 space-y-2 text-sm text-slate-700">
                                         <li><strong>مخزون أول المدة (100 ألف وحدة):</strong> دول جايين جاهزين خامات 100% يبقى الشهر الحالي مش هنديهم مواد تاني (صفر مواد). وكانوا واخدين 70% تشكيل، يبقى هنكمل النسبة المتبقية المكملة بس (30%):
                                             <div class="overflow-x-auto w-full my-2">
-                                                $$	ext{Beg. WIP CC (EU)} = 100,000 	imes (100% - 70%) = 100,000 	imes 30% = 30,000	ext{ units}$$
+                                                $$\text{Beg. WIP CC (EU)} = 100,000 \times (100% - 70%) = 100,000 \times 30% = 30,000\text{ units}$$
                                             </div>
                                         </li>
                                         <li><strong>بدأ وانتهى خلال الشهر (Started &amp; Completed):</strong> بنطرح وحدات أول المدة من إجمالي الوحدات التامة:
                                             <div class="overflow-x-auto w-full my-2">
-                                                $$	ext{Started & Completed} = 700,000 - 100,000 = 600,000	ext{ units}$$
+                                                $$\text{Started \& Completed} = 700,000 - 100,000 = 600,000\text{ units}$$
                                             </div>
                                         </li>
                                         <li><strong>مخزون آخر المدة (200 ألف وحدة):</strong> نضربها في نسب الإتمام العادية (100% للمواد، و 60% للتشكيل) فينتج 200,000 خامات و 120,000 تشكيل.</li>
@@ -3156,13 +3281,13 @@
                                     <strong class="block mb-2 text-purple-950 text-sm md:text-base border-b border-purple-100 pb-1">الخطوة 2: حساب تكلفة الوحدة المعادلة (تكاليف الشهر الحالي فقط):</strong>
                                     بقسمة التكاليف الجديدة المضافة خلال يونيو فقط على وحدات الـ FIFO المعادلة:
                                     <div class="overflow-x-auto w-full my-2">
-                                        $$	ext{FIFO Materials Cost} = rac{$400,000	ext{ (Added)}}{800,000	ext{ EU}} = $0.50	ext{ / unit}$$
+                                        $$\text{FIFO Materials Cost} = \frac{\$400,000\text{ (Added)}}{800,000\text{ EU}} = \$0.50\text{ / unit}$$
                                     </div>
                                     <div class="overflow-x-auto w-full my-2">
-                                        $$	ext{FIFO Conversion Cost} = rac{$170,000	ext{ (Added)}}{750,000	ext{ EU}} = $0.2267	ext{ / unit}$$
+                                        $$\text{FIFO Conversion Cost} = \frac{\$170,000\text{ (Added)}}{750,000\text{ EU}} = \$0.2267\text{ / unit}$$
                                     </div>
                                     <div class="overflow-x-auto w-full my-2">
-                                        $$	ext{Total Current Cost per unit} = $0.50 + $0.2267 = $0.7267	ext{ / unit}$$
+                                        $$\text{Total Current Cost per unit} = \$0.50 + \$0.2267 = \$0.7267\text{ / unit}$$
                                     </div>
                                 </div>
 
@@ -3173,17 +3298,17 @@
                                         <li><strong>أولاً: تكلفة الـ 100 ألف وحدة القدام (مخزون أول المدة):</strong>
                                             تكلفتها السابقة + تكلفة استكمال تشكيلها الشهر ده:
                                             <div class="overflow-x-auto w-full my-2">
-                                                $$	ext{Cost to complete Beg. WIP} = $85,000	ext{ (Old)} + (30,000	ext{ EU} 	imes $0.2267) = $85,000 + $6,800 = $91,800$$
+                                                $$\text{Cost to complete Beg. WIP} = \$85,000\text{ (Old)} + (30,000\text{ EU} \times \$0.2267) = \$85,000 + \$6,800 = \$91,800$$
                                             </div>
                                         </li>
                                         <li><strong>ثانياً: تكلفة الـ 600 ألف وحدة التي بدأت وانتهت بالكامل:</strong>
                                             <div class="overflow-x-auto w-full my-2">
-                                                $$	ext{Started & Completed Cost} = 600,000 	imes $0.7267 = $436,000$$
+                                                $$\text{Started \& Completed Cost} = 600,000 \times \$0.7267 = \$436,000$$
                                             </div>
                                         </li>
                                     </ul>
                                     <div class="overflow-x-auto w-full my-2">
-                                        $$	ext{Total Transferred Out Cost (FIFO)} = $91,800 + $436,000 = $527,800$$
+                                        $$\text{Total Transferred Out Cost (FIFO)} = \$91,800 + \$436,000 = \$527,800$$
                                     </div>
                                 </div>
                             </div>
@@ -3331,6 +3456,13 @@
                         </div>
                     </div></div></div>
                 </div>
+
+            <!-- Back to Lectures Button -->
+            <div class="mt-8 flex justify-center">
+                <button onclick="showHomeView()" class="px-8 py-3 rounded-xl font-bold text-white shadow-lg transform hover:-translate-y-0.5 transition-all duration-200 bg-gradient-to-r from-emerald-600 to-teal-600 hover:from-emerald-700 hover:to-teal-700">
+                    <i class="fa-solid fa-arrow-right ml-2"></i> العودة لقائمة المحاضرات
+                </button>
+            </div>
             </div>
         </div>
     </div>
@@ -3386,7 +3518,9 @@
                 <div class="acc-body"><div class="acc-body-inner"><div class="acc-body-content">
                     <div class="content-en">
                         At the beginning of March 2014, Pacific Electronics had 225 partially assembled SG-40 units in the assembly department. It started production of another 275 units in March. The data for the assembly department for March are as follows:
-                        <table>
+                        
+                        <div class="overflow-x-auto w-full my-2">
+                            <table>
                             <tr><th>Physical Units &amp; Costs</th><th>Physical Units</th><th>Direct Materials</th><th>Conversion Costs</th></tr>
                             <tr><td><strong>WIP, Beginning (March 1)</strong></td><td>225</td><td>$18,000 (100% complete)</td><td>$8,100 (60% complete)</td></tr>
                             <tr><td>Started during March</td><td>275</td><td>-</td><td>-</td></tr>
@@ -3394,6 +3528,8 @@
                             <tr><td><strong>WIP, Ending (March 31)</strong></td><td>100</td><td>100% complete</td><td>50% complete</td></tr>
                             <tr><td><strong>Costs added during March</strong></td><td>-</td><td>$19,800</td><td>$16,380</td></tr>
                         </table>
+                        </div>
+                        
                     </div>
                     <div class="content-ar">
                         <div class="content-ar-header"><i class="fa-solid fa-lightbulb"></i> تفكيك معطيات المسألة بالعامية</div>
@@ -3484,15 +3620,25 @@
                                         <br>• أول المدة (225 وحدة): أخذت 0% مواد لأنها مخلصة خامات 100% من الشهر اللي فات.
                                         <br>• بدأ وانتهى (400 تامة - 225 أول): 175 وحدة بالكامل.
                                         <br>• آخر المدة (100 وحدة): أخذت خامات بنسبة 100%.
-                                        $$\text{EU for Materials} = 0\text{ (Beg)} + 175\text{ (Started & Completed)} + 100\text{ (End)} = \mathbf{275\text{ units}}$$
+                                        <div class="overflow-x-auto w-full my-2">
+                                            $$\text{EU for Materials} = 0\text{ (Beg)} + 175\text{ (Started \& Completed)} + 100\text{ (End)} = \mathbf{275\text{ units}}$$
+                                        </div>
                                     </li>
                                     <li><strong>تكاليف التشكيل (Conversion Costs):</strong>
                                         <br>• أول المدة (225 وحدة): بنضرب في <strong>مكمل النسبة</strong> عشان نجيب الشغل الجديد بس:
-                                        $$\text{Beg. WIP CC} = 225 \times (100\% - 60\%) = 225 \times 40\% = 90\text{ units}$$
+                                        <div class="overflow-x-auto w-full my-2">
+                                            $$\text{Beg. WIP CC} = 225 \times (100\% - 60\%) = 225 \times 40\% = 90\text{ units}$$
+                                        </div>
                                         <br>• بدأ وانتهى: 175 وحدة بالكامل.
                                         <br>• آخر المدة (100 وحدة): أخذت تشكيل بنسبة 50%:
-                                        $$\text{End. WIP CC} = 100 \times 50\% = 50\text{ units}$$
-                                        $$\text{EU for Conversion} = 90\text{ (Beg)} + 175\text{ (Started & Completed)} + 50\text{ (End)} = \mathbf{315\text{ units}}$$
+                                        <div class="overflow-x-auto w-full my-2">
+                                            $$\text{End. WIP CC} = 100 \times 50\% = 50\text{ units}$$
+                                        </div>
+                                        
+                                    <div class="overflow-x-auto w-full my-2">
+                                        $$\text{EU for Conversion} = 90\text{ (Beg)} + 175\text{ (Started \& Completed)} + 50\text{ (End)} = \mathbf{315\text{ units}}$$
+                                    </div>
+                                    
                                     </li>
                                 </ul>
                             </div>
@@ -3500,9 +3646,17 @@
                             <div class="p-3 bg-white rounded-lg border border-pink-200">
                                 <strong>الخطوة 2: حساب تكلفة الوحدة المعادلة (تكاليف شهر مارس فقط):</strong>
                                 بنقسم تكاليف شهر مارس المضافة فقط (بدون تكاليف أول المدة) على وحدات الـ FIFO المعادلة:
-                                $$\text{FIFO Materials Cost} = \frac{\$19,800\text{ (Added in March)}}{275\text{ EU}} = \$72.00\text{ / unit}$$
-                                $$\text{FIFO Conversion Cost} = \frac{\$16,380\text{ (Added in March)}}{315\text{ EU}} = \$52.00\text{ / unit}$$
-                                $$\text{Total Unit Cost (FIFO added)} = \$72.00 + \$52.00 = \$124.00\text{ / unit}$$
+                                <div class="overflow-x-auto w-full my-2">
+                                    $$\text{FIFO Materials Cost} = \frac{\$19,800\text{ (Added in March)}}{275\text{ EU}} = \$72.00\text{ / unit}$$
+                                </div>
+                                
+                                    <div class="overflow-x-auto w-full my-2">
+                                        $$\text{FIFO Conversion Cost} = \frac{\$16,380\text{ (Added in March)}}{315\text{ EU}} = \$52.00\text{ / unit}$$
+                                    </div>
+                                    
+                                <div class="overflow-x-auto w-full my-2">
+                                    $$\text{Total Unit Cost (FIFO added)} = \$72.00 + \$52.00 = \$124.00\text{ / unit}$$
+                                </div>
                             </div>
 
                             <div class="p-3 bg-white rounded-lg border border-pink-200 text-sm text-slate-700">
@@ -3510,15 +3664,31 @@
                                 <ul class="list-disc pr-4 space-y-2">
                                     <li><strong>أولاً: تكلفة الإنتاج التام (400 وحدة) وتنقسم لجزأين:</strong>
                                         <br>1. تكلفة وحدات أول المدة (الـ 225 وحدة القديمة) = تكلفتها القديمة اللي جاية بيها + مصاريف تكميلها في مارس:
-                                        $$\text{Cost of Beg. WIP} = \$26,100\text{ (Old)} + (90\text{ EU CC} \times \$52.00) = \$26,100 + \$4,680 = \$30,780$$
+                                        <div class="overflow-x-auto w-full my-2">
+                                            $$\text{Cost of Beg. WIP} = \$26,100\text{ (Old)} + (90\text{ EU CC} \times \$52.00) = \$26,100 + \$4,680 = \$30,780$$
+                                        </div>
                                         2. تكلفة الوحدات اللي بدأت وانتهت بالكامل في مارس (175 وحدة):
-                                        $$\text{Cost of Started & Completed} = 175\text{ units} \times \$124.00 = \$21,700$$
+                                        <div class="overflow-x-auto w-full my-2">
+                                            $$\text{Cost of Started \& Completed} = 175\text{ units} \times \$124.00 = \$21,700$$
+                                        </div>
+                                        
+                                    <div class="overflow-x-auto w-full my-2">
                                         $$\text{Total Completed Cost (FIFO)} = \$30,780 + \$21,700 = \mathbf{\$52,480}$$
+                                    </div>
+                                    
                                     </li>
                                     <li><strong>ثانياً: تكلفة مخزون آخر المدة (100 وحدة):</strong>
-                                        $$\text{Ending WIP Materials} = 100\text{ units} \times 100\% \times \$72.00 = \$7,200$$
+                                        <div class="overflow-x-auto w-full my-2">
+                                            $$\text{Ending WIP Materials} = 100\text{ units} \times 100\% \times \$72.00 = \$7,200$$
+                                        </div>
+                                        
+                                    <div class="overflow-x-auto w-full my-2">
                                         $$\text{Ending WIP Conversion} = 100\text{ units} \times 50\% \times \$52.00 = \$2,600$$
-                                        $$\text{Total Ending WIP Cost} = \$7,200 + \$2,600 = \mathbf{\$9,800}$$
+                                    </div>
+                                    
+                                        <div class="overflow-x-auto w-full my-2">
+                                            $$\text{Total Ending WIP Cost} = \$7,200 + \$2,600 = \mathbf{\$9,800}$$
+                                        </div>
                                     </li>
                                 </ul>
                             </div>
@@ -3529,7 +3699,9 @@
                             <div>
                                 <strong class="text-red-700 block mb-1">فخ بدأ وانتهى (Started & Completed):</strong>
                                 الرقم ده مابيكونش جاهز في المسألة أبداً! لازم تحسبه بإيدك في خطوة الـ FIFO عن طريق طرح وحدات أول المدة من إجمالي الوحدات التامة: 
-                                $$\text{Started & Completed} = 400\text{ (Completed)} - 225\text{ (Beg. WIP)} = 175\text{ units}$$
+                                <div class="overflow-x-auto w-full my-2">
+                                    $$\text{Started \& Completed} = 400\text{ (Completed)} - 225\text{ (Beg. WIP)} = 175\text{ units}$$
+                                </div>
                                 وعينك برضه على <strong>مكمل النسبة (The Complement)</strong> لـ Beg. WIP في التشكيل، لأننا بنضرب في الجزء المتبقي من النسبة مش النسبة القديمة!
                             </div>
                         </div>
@@ -3603,7 +3775,17 @@
                     </div>
                 </div></div></div>
             </div>
-            
+
+            <!-- Back to Lectures Button -->
+            <div class="mt-8 flex justify-center">
+                <button onclick="showHomeView()" class="px-8 py-3 rounded-xl font-bold text-white shadow-lg transform hover:-translate-y-0.5 transition-all duration-200 bg-gradient-to-r from-emerald-600 to-teal-600 hover:from-emerald-700 hover:to-teal-700">
+                    <i class="fa-solid fa-arrow-right ml-2"></i> العودة لقائمة المحاضرات
+                </button>
+            </div>
+        </div>
+    </div>
+</section>
+
             <section id="lecture-8-content" class="lecture-content-section hidden grid-cols-1 fade-in scroll-mt-20">
 <div class="col-span-1">
     <div class="lecture-hero hero-l8">
@@ -3679,20 +3861,46 @@
                         <br>• Output: Cream = 25,000 gallons | Liquid Skim = 75,000 gallons. Total = 100,000 gallons.
                         <br><br>
                         <strong>Physical Measures Allocation:</strong>
-                        $$\text{Cream Allocation Ratio} = \frac{25,000\text{ gallons (Cream)}}{100,000\text{ gallons (Total)}} = 25\%$$
-                        $$\text{Cream Allocated Cost} = \$400,000 \times 25\% = \mathbf{\$100,000}$$
-                        $$\text{Skim Milk Allocation Ratio} = \frac{75,000\text{ gallons (Skim)}}{100,000\text{ gallons (Total)}} = 75\%$$
-                        $$\text{Skim Milk Allocated Cost} = \$400,000 \times 75\% = \mathbf{\$300,000}$$
-                        $$\text{Allocated Cost per Unit} = \frac{\$400,000}{100,000\text{ gallons}} = \mathbf{\$4\text{ / gallon}}$$
+                        <div class="overflow-x-auto w-full my-2">
+                            $$\text{Cream Allocation Ratio} = \frac{25,000\text{ gallons (Cream)}}{100,000\text{ gallons (Total)}} = 25\%$$
+                        </div>
+                        
+                                    <div class="overflow-x-auto w-full my-2">
+                                        $$\text{Cream Allocated Cost} = \$400,000 \times 25\% = \mathbf{\$100,000}$$
+                                    </div>
+                                    
+                        <div class="overflow-x-auto w-full my-2">
+                            $$\text{Skim Milk Allocation Ratio} = \frac{75,000\text{ gallons (Skim)}}{100,000\text{ gallons (Total)}} = 75\%$$
+                        </div>
+                        
+                                    <div class="overflow-x-auto w-full my-2">
+                                        $$\text{Skim Milk Allocated Cost} = \$400,000 \times 75\% = \mathbf{\$300,000}$$
+                                    </div>
+                                    
+                        <div class="overflow-x-auto w-full my-2">
+                            $$\text{Allocated Cost per Unit} = \frac{\$400,000}{100,000\text{ gallons}} = \mathbf{\$4\text{ / gallon}}$$
+                        </div>
                     </div>
                     <div class="content-ar">
                         <div class="content-ar-header"><i class="fa-solid fa-calculator"></i> خطوات حل القياس المادي</div>
                         <p>الطريقة دي مابتفكرش في سعر البيع ولا المكسب، بتبص للوزن أو الحجم (الجالونات) وبس:</p>
                         <p>إحنا جالونات الإنتاج الكلية 100 ألف جالون لبن مصفى. القشطة أخذت ربع الجالونات (25%) واللبن خالي الدسم أخذ 75% من الجالونات:</p>
-                        $$\text{نسبة توزيع القشطة} = \frac{25,000\text{ جالون}}{100,000\text{ جالون}} = 25\%$$
-                        $$\text{نسبة توزيع اللبن خالي الدسم} = \frac{75,000\text{ جالون}}{100,000\text{ جالون}} = 75\%$$
-                        $$\text{نصيب القشطة من التكاليف} = \$400,000 \times 25\% = \$100,000$$
-                        $$\text{نصيب اللبن خالي الدسم} = \$400,000 \times 75\% = \$300,000$$
+                        <div class="overflow-x-auto w-full my-2">
+                            $$\text{نسبة توزيع القشطة} = \frac{25,000\text{ جالون}}{100,000\text{ جالون}} = 25\%$$
+                        </div>
+                        
+                                    <div class="overflow-x-auto w-full my-2">
+                                        $$\text{نسبة توزيع اللبن خالي الدسم} = \frac{75,000\text{ جالون}}{100,000\text{ جالون}} = 75\%$$
+                                    </div>
+                                    
+                        <div class="overflow-x-auto w-full my-2">
+                            $$\text{نصيب القشطة من التكاليف} = \$400,000 \times 25\% = \$100,000$$
+                        </div>
+                        
+                                    <div class="overflow-x-auto w-full my-2">
+                                        $$\text{نصيب اللبن خالي الدسم} = \$400,000 \times 75\% = \$300,000$$
+                                    </div>
+                                    
                         <p>كده تطلع تكلفة الجالون للمنتجين متساوية بالملي وهي 4 دولار/جالون. وده طبعاً العيب القاتل للطريقة دي؛ لأن القشطة غالية جداً في السوق واللبن رخيص، فكده ظلمنا القشطة وبوظنا حسابات الربحية الحقيقية للمنتجات!</p>
                     </div>
                 </div></div></div>
@@ -3710,21 +3918,47 @@
                         <strong>Selling Prices at Split-off:</strong> Cream = $8/gallon | Liquid Skim = $4/gallon.
                         <br><br>
                         <strong>Sales Value Calculation of Total Production:</strong>
-                        $$\text{Cream Sales Value} = 25,000\text{ gal} \times \$8\text{ / gal} = \$200,000 \quad (40\%)$$
-                        $$\text{Liquid Skim Sales Value} = 75,000\text{ gal} \times \$4\text{ / gal} = \$300,000 \quad (60\%)$$
-                        $$\text{Total Sales Value} = \$200,000 + \$300,000 = \mathbf{\$500,000}$$
+                        <div class="overflow-x-auto w-full my-2">
+                            $$\text{Cream Sales Value} = 25,000\text{ gal} \times \$8\text{ / gal} = \$200,000 \quad (40\%)$$
+                        </div>
+                        
+                                    <div class="overflow-x-auto w-full my-2">
+                                        $$\text{Liquid Skim Sales Value} = 75,000\text{ gal} \times \$4\text{ / gal} = \$300,000 \quad (60\%)$$
+                                    </div>
+                                    
+                        <div class="overflow-x-auto w-full my-2">
+                            $$\text{Total Sales Value} = \$200,000 + \$300,000 = \mathbf{\$500,000}$$
+                        </div>
                         <br>
                         <strong>Joint Cost Allocation ($400,000 total):</strong>
-                        $$\text{Joint Cost Allocated to Cream} = \$400,000 \times 40\% = \mathbf{\$160,000} \quad \text{(Unit Cost = \$6.40 / gal)}$$
-                        $$\text{Joint Cost Allocated to Liquid Skim} = \$400,000 \times 60\% = \mathbf{\$240,000} \quad \text{(Unit Cost = \$3.20 / gal)}$$
+                        <div class="overflow-x-auto w-full my-2">
+                            $$\text{Joint Cost Allocated to Cream} = \$400,000 \times 40\% = \mathbf{\$160,000} \quad \text{(Unit Cost = \$6.40 / gal)}$$
+                        </div>
+                        
+                                    <div class="overflow-x-auto w-full my-2">
+                                        $$\text{Joint Cost Allocated to Liquid Skim} = \$400,000 \times 60\% = \mathbf{\$240,000} \quad \text{(Unit Cost = \$3.20 / gal)}$$
+                                    </div>
+                                    
                     </div>
                     <div class="content-ar">
                         <div class="content-ar-header"><i class="fa-solid fa-calculator"></i> خطوات الحل بالقيمة البيعية النقدية</div>
                         <p>الطريقة دي أعدل ومنطقية جداً، بنشوف الإنتاج الكلي لكل منتج هيجيب فلوس كام عند نقطة الانفصال بالظبط، ونوزع التكاليف بنسب مساهمتهم في الإيراد الكلي:</p>
-                        $$\text{إجمالي إيراد القشطة} = 25,000\text{ جالون} \times \$8 = \$200,000 \quad (40\%)$$
-                        $$\text{إجمالي إيراد اللبن} = 75,000\text{ جالون} \times \$4 = \$300,000 \quad (60\%)$$
-                        $$\text{التكلفة الموزعة للقشطة} = \$400,000 \times 40\% = \$160,000$$
-                        $$\text{التكلفة الموزعة للبن} = \$400,000 \times 60\% = \$240,000$$
+                        <div class="overflow-x-auto w-full my-2">
+                            $$\text{إجمالي إيراد القشطة} = 25,000\text{ جالون} \times \$8 = \$200,000 \quad (40\%)$$
+                        </div>
+                        
+                                    <div class="overflow-x-auto w-full my-2">
+                                        $$\text{إجمالي إيراد اللبن} = 75,000\text{ جالون} \times \$4 = \$300,000 \quad (60\%)$$
+                                    </div>
+                                    
+                        <div class="overflow-x-auto w-full my-2">
+                            $$\text{التكلفة الموزعة للقشطة} = \$400,000 \times 40\% = \$160,000$$
+                        </div>
+                        
+                                    <div class="overflow-x-auto w-full my-2">
+                                        $$\text{التكلفة الموزعة للبن} = \$400,000 \times 60\% = \$240,000$$
+                                    </div>
+                                    
                         <p>الميزة العبقرية للطريقة دي إن مجمل ربح كل منتج بيطلع متساوي وثابت بنسبة 20% لكل منتج بالتمام والكمال! ودي أكثر طريقة عادلة ومنطقية لما تكون المنتجات قابلة للبيع فوراً عند الفصل.</p>
                         <div class="ar-tip">
                             <i class="fa-solid fa-triangle-exclamation animate-bounce"></i>
@@ -3751,36 +3985,76 @@
                         <br>• Liquid Skim processed into 50,000 gal Condensed Milk, sold @ $22/gal, Separable Cost = $520,000.
                         <br><br>
                         <strong>NRV at Split-off Calculation:</strong>
-                        $$\text{Buttercream NRV} = (20,000\text{ gal} \times \$25) - \$280,000\text{ (Separable)} = \mathbf{\$220,000\text{ NRV}} \quad (27.5\%)$$
-                        $$\text{Condensed Milk NRV} = (50,000\text{ gal} \times \$22) - \$520,000\text{ (Separable)} = \mathbf{\$580,000\text{ NRV}} \quad (72.5\%)$$
-                        $$\text{Total NRV Pool} = \$220,000 + \$580,000 = \mathbf{\$800,000}$$
+                        <div class="overflow-x-auto w-full my-2">
+                            $$\text{Buttercream NRV} = (20,000\text{ gal} \times \$25) - \$280,000\text{ (Separable)} = \mathbf{\$220,000\text{ NRV}} \quad (27.5\%)$$
+                        </div>
+                        
+                                    <div class="overflow-x-auto w-full my-2">
+                                        $$\text{Condensed Milk NRV} = (50,000\text{ gal} \times \$22) - \$520,000\text{ (Separable)} = \mathbf{\$580,000\text{ NRV}} \quad (72.5\%)$$
+                                    </div>
+                                    
+                        <div class="overflow-x-auto w-full my-2">
+                            $$\text{Total NRV Pool} = \$220,000 + \$580,000 = \mathbf{\$800,000}$$
+                        </div>
                         <br>
                         <strong>Joint Cost Allocation ($400,000 total):</strong>
-                        $$\text{Allocation to Buttercream} = \$400,000 \times 27.5\% = \mathbf{\$110,000}$$
-                        $$\text{Allocation to Condensed Milk} = \$400,000 \times 72.5\% = \mathbf{\$290,000}$$
+                        <div class="overflow-x-auto w-full my-2">
+                            $$\text{Allocation to Buttercream} = \$400,000 \times 27.5\% = \mathbf{\$110,000}$$
+                        </div>
+                        
+                                    <div class="overflow-x-auto w-full my-2">
+                                        $$\text{Allocation to Condensed Milk} = \$400,000 \times 72.5\% = \mathbf{\$290,000}$$
+                                    </div>
+                                    
                     </div>
                     <div class="content-ar">
                         <div class="content-ar-header"><i class="fa-solid fa-calculator"></i> خطوات الحل بطريقة صافي القيمة البيعية (NRV)</div>
                         <p>بنستعمل الطريقة دي لما تكون المنتجات مابتتباعش عند الانفصال مباشرة، ولازم تروح مكن تاني ونصرف عليها مصاريف إضافية (Separable Costs) عشان تكون منتجات نهائية:</p>
                         <p><strong>خطوة 1 (حساب صافي القيمة البيعية - NRV):</strong> بنجيب قيمة المبيعات النهائية للمنتج بعد التشغيل الإضافي ونطرح منها التكاليف الإضافية الخاصة بيه:</p>
-                        $$\text{NRV للزبدة} = (20,000 \times \$25) - \$280,000 = \$220,000 \quad (27.5\%)$$
-                        $$\text{NRV للحليب المكثف} = (50,000 \times \$22) - \$520,000 = \$580,000 \quad (72.5\%)$$
-                        $$\text{مجموع وعاء صافي القيمة} = \$220,000 + \$580,000 = \$800,000$$
+                        <div class="overflow-x-auto w-full my-2">
+                            $$\text{NRV للزبدة} = (20,000 \times \$25) - \$280,000 = \$220,000 \quad (27.5\%)$$
+                        </div>
+                        
+                                    <div class="overflow-x-auto w-full my-2">
+                                        $$\text{NRV للحليب المكثف} = (50,000 \times \$22) - \$520,000 = \$580,000 \quad (72.5\%)$$
+                                    </div>
+                                    
+                        <div class="overflow-x-auto w-full my-2">
+                            $$\text{مجموع وعاء صافي القيمة} = \$220,000 + \$580,000 = \$800,000$$
+                        </div>
                         <p><strong>خطوة 2 (توزيع التكلفة المشتركة):</strong> بنوزع التكلفة المشتركة (\$400,000) بنسبة الـ NRV اللي طلعناها لكل منتج:</p>
-                        $$\text{نصيب الزبدة} = \$400,000 \times 27.5\% = \$110,000$$
-                        $$\text{نصيب الحليب المكثف} = \$400,000 \times 72.5\% = \$290,000$$
+                        <div class="overflow-x-auto w-full my-2">
+                            $$\text{نصيب الزبدة} = \$400,000 \times 27.5\% = \$110,000$$
+                        </div>
+                        
+                                    <div class="overflow-x-auto w-full my-2">
+                                        $$\text{نصيب الحليب المكثف} = \$400,000 \times 72.5\% = \$290,000$$
+                                    </div>
+                                    
                         <div class="ar-tip">
                             <i class="fa-solid fa-triangle-exclamation animate-bounce"></i>
                             <div>
                                 <strong class="text-red-700 block mb-1">ألاعيب الدكتور في الامتحان:</strong>
                                 الدكتور ممكن يسألك: "ما هي التكلفة الكلية لمنتج الزبدة؟" <strong>إياك تختار الـ 110 ألف بس!</strong> التكلفة الكلية بتساوي التكلفة المشتركة الموزعة + التكلفة الإضافية القابلة للفصل:
-                                $$\text{Total Buttercream Cost} = \$110,000\text{ (Joint)} + \$280,000\text{ (Separable)} = \mathbf{\$390,000}$$
+                                <div class="overflow-x-auto w-full my-2">
+                                    $$\text{Total Buttercream Cost} = \$110,000\text{ (Joint)} + \$280,000\text{ (Separable)} = \mathbf{\$390,000}$$
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div></div></div>
             </div>
-            
+
+            <!-- Back to Lectures Button -->
+            <div class="mt-8 flex justify-center">
+                <button onclick="showHomeView()" class="px-8 py-3 rounded-xl font-bold text-white shadow-lg transform hover:-translate-y-0.5 transition-all duration-200 bg-gradient-to-r from-emerald-600 to-teal-600 hover:from-emerald-700 hover:to-teal-700">
+                    <i class="fa-solid fa-arrow-right ml-2"></i> العودة لقائمة المحاضرات
+                </button>
+            </div>
+        </div>
+    </div>
+</section>
+
             <section id="lecture-9-content" class="lecture-content-section hidden grid-cols-1 fade-in scroll-mt-20">
 <div class="col-span-1">
     <div class="lecture-hero hero-l9">
@@ -3831,27 +4105,55 @@
                         <br>• Condensed milk final sales = $1,100,000 (Separable cost = $520,000).
                         <br><br>
                         <strong>Step 1: Calculate Overall Gross Margin %:</strong>
-                        $$\text{Total Final Sales} = \$500,000 + \$1,100,000 = \mathbf{\$1,600,000}$$
-                        $$\text{Total Cost (Joint + Separable)} = \$400,000 + \$280,000 + \$520,000 = \mathbf{\$1,200,000}$$
-                        $$\text{Overall Gross Margin Value} = \$1,600,000 - \$1,200,000 = \mathbf{\$400,000}$$
-                        $$\text{Overall Gross Margin \%} = \frac{\$400,000}{\$1,600,000} = \mathbf{25\%}$$
+                        <div class="overflow-x-auto w-full my-2">
+                            $$\text{Total Final Sales} = \$500,000 + \$1,100,000 = \mathbf{\$1,600,000}$$
+                        </div>
+                        
+                                    <div class="overflow-x-auto w-full my-2">
+                                        $$\text{Total Cost (Joint + Separable)} = \$400,000 + \$280,000 + \$520,000 = \mathbf{\$1,200,000}$$
+                                    </div>
+                                    
+                        <div class="overflow-x-auto w-full my-2">
+                            $$\text{Overall Gross Margin Value} = \$1,600,000 - \$1,200,000 = \mathbf{\$400,000}$$
+                        </div>
+                        
+                                    <div class="overflow-x-auto w-full my-2">
+                                        $$\text{Overall Gross Margin \%} = \frac{\$400,000}{\$1,600,000} = \mathbf{25\%}$$
+                                    </div>
+                                    
                         <br>
                         <strong>Step 2: Allocate Joint Costs:</strong>
-                        <table>
+                        
+                        <div class="overflow-x-auto w-full my-2">
+                            <table>
                             <tr><th>Product</th><th>Final Sales Value</th><th>Less Gross Margin (25%)</th><th>= Total Cost</th><th>Less Separable Cost</th><th>= Joint Cost Allocated</th></tr>
                             <tr><td>Buttercream</td><td>$500,000</td><td>($125,000)</td><td>$375,000</td><td>($280,000)</td><td><strong>$95,000</strong></td></tr>
                             <tr><td>Condensed Milk</td><td>$1,100,000</td><td>($275,000)</td><td>$825,000</td><td>($520,000)</td><td><strong>$305,000</strong></td></tr>
                             <tr><td><strong>Total</strong></td><td><strong>$1,600,000</strong></td><td><strong>($400,000)</strong></td><td><strong>$1,200,000</strong></td><td><strong>($800,000)</strong></td><td><strong>$400,000</strong></td></tr>
                         </table>
+                        </div>
+                        
                     </div>
                     <div class="content-ar">
                         <div class="content-ar-header"><i class="fa-solid fa-lightbulb"></i> الشرح بالعامية بالتفصيل الممل</div>
                         <p>الطريقة دي بتفترض إن كل المنتجات لازم تكسب نفس نسبة الربح بالظبط (25% في مثالنا):</p>
                         <p>1. <strong>حساب نسبة مجمل الربح الكلية (Overall Gross Margin %):</strong> بنجمع المبيعات النهائية لكل المنتجات، ونطرح منها التكاليف الكلية (المشتركة والفردية) عشان نجيب مجمل الربح الكلي ونقسمه على إجمالي المبيعات:</p>
-                        $$\text{إجمالي المبيعات النهائية} = \$500,000 + \$1,100,000 = \$1,600,000$$
-                        $$\text{التكاليف الكلية} = \$400,000\text{ (مشتركة)} + \$800,000\text{ (منفصلة)} = \$1,200,000$$
-                        $$\text{مجمل الربح الكلي} = \$1,600,000 - \$1,200,000 = \$400,000$$
-                        $$\text{نسبة مجمل الربح الثابتة} = \frac{\$400,000}{\$1,600,000} = 25\%$$
+                        <div class="overflow-x-auto w-full my-2">
+                            $$\text{إجمالي المبيعات النهائية} = \$500,000 + \$1,100,000 = \$1,600,000$$
+                        </div>
+                        
+                                    <div class="overflow-x-auto w-full my-2">
+                                        $$\text{التكاليف الكلية} = \$400,000\text{ (مشتركة)} + \$800,000\text{ (منفصلة)} = \$1,200,000$$
+                                    </div>
+                                    
+                        <div class="overflow-x-auto w-full my-2">
+                            $$\text{مجمل الربح الكلي} = \$1,600,000 - \$1,200,000 = \$400,000$$
+                        </div>
+                        
+                                    <div class="overflow-x-auto w-full my-2">
+                                        $$\text{نسبة مجمل الربح الثابتة} = \frac{\$400,000}{\$1,600,000} = 25\%$$
+                                    </div>
+                                    
                         <p>2. <strong>حساب التكلفة المشتركة بطريقة عكسية:</strong> بنجيب مبيعات كل منتج ونطرح منها مكسبه المتوقع (25%) فتدينا التكلفة الكلية المتوقعة للمنتج. نطرح منها التكلفة الإضافية القابلة للفصل، فيتبقى <strong>التكلفة المشتركة المستنتجة</strong>!</p>
                         <div class="ar-tip">
                             <i class="fa-solid fa-triangle-exclamation animate-bounce"></i>
@@ -3874,7 +4176,9 @@
                 <div class="acc-body"><div class="acc-body-inner"><div class="acc-body-content">
                     <div class="content-en text-xs md:text-sm">
                         <strong>Byproduct Accounting Overview:</strong>
-                        $$\text{NRV of Byproduct} = \text{Selling Price} - \text{Additional Cost to Sell}$$
+                        <div class="overflow-x-auto w-full my-2">
+                            $$\text{NRV of Byproduct} = \text{Selling Price} - \text{Additional Cost to Sell}$$
+                        </div>
                         <br>
                         <strong>Two Scenarios for NRV:</strong>
                         <ul>
@@ -3909,11 +4213,15 @@
                     <div class="content-en text-xs md:text-sm">
                         <strong>Production Method Data &amp; Entries:</strong><br>
                         Assume Byproduct produced = 4,000 units. Selling price = $10/unit, additional cost to sell = $5/unit.
-                        $$\text{NRV} = \$10 - \$5 = \mathbf{\$5\text{ / unit}}$$
+                        <div class="overflow-x-auto w-full my-2">
+                            $$\text{NRV} = \$10 - \$5 = \mathbf{\$5\text{ / unit}}$$
+                        </div>
                         Units sold this period = 1,200 units.<br><br>
                         
                         <strong>1. At Production Time (Recognizing Byproduct at NRV):</strong>
-                        <table class="journal-table">
+                        
+                        <div class="overflow-x-auto w-full my-2">
+                            <table class="journal-table">
                             <thead>
                                 <tr class="bg-slate-100">
                                     <th class="text-right">Account Names &amp; Details</th>
@@ -3934,9 +4242,13 @@
                                 </tr>
                             </tbody>
                         </table>
+                        </div>
+                        
                         <br>
                         <strong>2. At Selling Time (Selling 1,200 units @ $10/unit, cost @ $5/unit):</strong>
-                        <table class="journal-table">
+                        
+                        <div class="overflow-x-auto w-full my-2">
+                            <table class="journal-table">
                             <thead>
                                 <tr class="bg-slate-100">
                                     <th class="text-right">Account Names &amp; Details</th>
@@ -3969,6 +4281,8 @@
                                 </tr>
                             </tbody>
                         </table>
+                        </div>
+                        
                     </div>
                     <div class="content-ar">
                         <div class="content-ar-header"><i class="fa-solid fa-scale-balanced"></i> قيود طريقة الإنتاج بالبلدي</div>
@@ -4055,7 +4369,9 @@
                         Under this method, no journal entries are recorded at the time of production. Byproduct inventory is not tracked in the general ledger.
                         <br><br>
                         <strong>At Selling Time (Selling 1,200 units @ $10/unit):</strong>
-                        <table class="journal-table">
+                        
+                        <div class="overflow-x-auto w-full my-2">
+                            <table class="journal-table">
                             <thead>
                                 <tr class="bg-slate-100">
                                     <th class="text-right">Account Names &amp; Details</th>
@@ -4076,6 +4392,8 @@
                                 </tr>
                             </tbody>
                         </table>
+                        </div>
+                        
                     </div>
                     <div class="content-ar">
                         <div class="content-ar-header"><i class="fa-solid fa-scale-balanced"></i> قيود طريقة المبيعات بالبلدي</div>
@@ -4115,7 +4433,17 @@
                     </div>
                 </div></div></div>
             </div>
-            
+
+            <!-- Back to Lectures Button -->
+            <div class="mt-8 flex justify-center">
+                <button onclick="showHomeView()" class="px-8 py-3 rounded-xl font-bold text-white shadow-lg transform hover:-translate-y-0.5 transition-all duration-200 bg-gradient-to-r from-emerald-600 to-teal-600 hover:from-emerald-700 hover:to-teal-700">
+                    <i class="fa-solid fa-arrow-right ml-2"></i> العودة لقائمة المحاضرات
+                </button>
+            </div>
+        </div>
+    </div>
+</section>
+
 </main>
 
     <!-- Footer -->
