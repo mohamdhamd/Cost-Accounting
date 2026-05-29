@@ -1084,19 +1084,18 @@
                 </div>
 
                 <!-- Active Lecture 3 -->
-                <div data-target="lecture-3-content" data-locked="false" data-theme="purple"
+                <div data-target="lecture-3-content" data-locked="false" data-theme="sky"
                     class="lecture-card bg-white rounded-2xl shadow-md p-6 flex flex-col border-2 border-slate-200 cursor-pointer transform hover:-translate-y-1 transition-all duration-200">
                     <div
-                        class="w-14 h-14 bg-purple-100 text-purple-600 rounded-2xl flex items-center justify-center text-2xl mb-4">
-                        <i class="fa-solid fa-layer-group"></i>
+                        class="w-14 h-14 bg-sky-100 text-sky-600 rounded-2xl flex items-center justify-center text-2xl mb-4">
+                        <i class="fa-solid fa-scale-balanced"></i>
                     </div>
                     <h4 class="text-xl font-bold mb-2">المحاضرة الثالثة</h4>
-                    <p class="text-slate-500 text-sm flex-grow">نظام تكاليف المراحل (Process Costing) - المتوسط المرجح و
-                        FIFO.</p>
+                    <p class="text-slate-500 text-sm flex-grow">تسوية فروق تحميل التكاليف غير المباشرة (Over/Under Allocation of MOH).</p>
                     <div class="mt-4 flex justify-between items-center">
-                        <span class="text-xs font-bold px-3 py-1 bg-purple-100 text-purple-800 rounded-full">مكتمله
+                        <span class="text-xs font-bold px-3 py-1 bg-sky-100 text-sky-800 rounded-full">مكتمله
                         </span>
-                        <button class="text-purple-600 font-bold hover:text-purple-800"><i
+                        <button class="text-sky-600 font-bold hover:text-sky-800"><i
                                 class="fa-solid fa-arrow-left"></i></button>
                     </div>
                 </div>
@@ -2385,592 +2384,202 @@
              LECTURE 3 CONTENT (NEWLY OPENED & FULLY LOADED)
         ================================================ -->
         <section id="lecture-3-content" class="lecture-content-section hidden grid-cols-1 fade-in scroll-mt-20">
-            <div class="col-span-1">
-                <div class="lecture-hero hero-l3">
-                    <button onclick="showHomeView()" class="back-btn"><i class="fa-solid fa-arrow-right"></i> قائمة
-                        المحاضرات</button>
-                    <h2 class="lecture-hero-title">المحاضرة الثالثة: تكاليف المراحل</h2>
-                    <p class="lecture-hero-sub">Process Costing System — Ch. 17 (Weighted Average & FIFO)</p>
-                    <div class="lecture-stats">
-                        <div class="stat-pill"><i class="fa-solid fa-layer-group"></i> 4 أقسام رئيسية</div>
-                        <div class="stat-pill"><i class="fa-solid fa-clock"></i> ~40 دقيقة</div>
-                        <div class="stat-pill" id="l3-progress-label"><i class="fa-solid fa-chart-simple"></i> 0 / 4
-                            مكتملين</div>
+          <div class="col-span-1">
+            <div class="lecture-hero hero-l3" style="background: linear-gradient(135deg, #0284c7 0%, #0369a1 50%, #075985 100%);">
+                <button onclick="showHomeView()" class="back-btn"><i class="fa-solid fa-arrow-right"></i> قائمة المحاضرات</button>
+                <h2 class="lecture-hero-title">المحاضرة الثالثة: تسوية فروق التحميل</h2>
+                <p class="lecture-hero-sub">Over/Under Allocation of Manufacturing Overhead — Ch. 4 Part 3</p>
+                <div class="lecture-stats">
+                    <div class="stat-pill"><i class="fa-solid fa-layer-group"></i> 3 أقسام رئيسية</div>
+                    <div class="stat-pill"><i class="fa-solid fa-clock"></i> ~30 دقيقة</div>
+                    <div class="stat-pill" id="l3-progress-label"><i class="fa-solid fa-chart-simple"></i> 0 / 3 مكتملين</div>
+                </div>
+                <div class="progress-bar-wrap" style="margin-top:14px;margin-bottom:0;background:rgba(255,255,255,0.2)">
+                    <div class="progress-bar-fill" id="l3-progress-bar" style="width:0%;background:#fff"></div>
+                </div>
+            </div>
+
+            <div class="mobile-topics-nav">
+                <button class="mobile-nav-item active-nav hero-l3" data-acc="l3-acc1" onclick="scrollToAcc('l3-acc1', this, 'l3')"><span class="m-num">1</span><span>Peterson (فروق التحميل)</span></button>
+                <button class="mobile-nav-item hero-l3" data-acc="l3-acc2" onclick="scrollToAcc('l3-acc2', this, 'l3')"><span class="m-num">2</span><span>طرق معالجة الفروق</span></button>
+                <button class="mobile-nav-item hero-l3" data-acc="l3-acc3" onclick="scrollToAcc('l3-acc3', this, 'l3')"><span class="m-num">3</span><span>التوزيع النسبي (Moira)</span></button>
+            </div>
+
+            <div class="lecture-layout">
+                <aside class="lecture-sidebar" style="border-color:#bae6fd">
+                    <h5 style="color:#0369a1"><i class="fa-solid fa-list-ul ml-1"></i> أقسام المحاضرة 3</h5>
+                    <a class="sidebar-item active-nav hero-l3" data-acc="l3-acc1" onclick="scrollToAcc('l3-acc1', this, 'l3')"><span class="nav-num">1</span><span>مسألة Peterson's Plastic</span></a>
+                    <a class="sidebar-item hero-l3" data-acc="l3-acc2" onclick="scrollToAcc('l3-acc2', this, 'l3')"><span class="nav-num">2</span><span>طرق تسوية الفروق دفترياً</span></a>
+                    <a class="sidebar-item hero-l3" data-acc="l3-acc3" onclick="scrollToAcc('l3-acc3', this, 'l3')"><span class="nav-num">3</span><span>مسألة Moira وتوزيع النسب</span></a>
+                </aside>
+
+                <div class="lecture-content-col">
+
+                    <div class="acc-card" id="l3-acc1">
+                        <button class="acc-header l3-toggle" data-index="0" data-lecture="l3">
+                            <div class="acc-icon" style="background:#e0f2fe;color:#0284c7"><i class="fa-solid fa-calculator"></i></div>
+                            <span class="acc-title">أولاً: حساب فروق التحميل - شركة Peterson's Plastic <small style="color:#94a3b8;font-weight:600;font-size:12px;display:block">Actual vs. Allocated Overhead</small></span>
+                            <i class="fa-solid fa-chevron-down acc-chevron"></i>
+                        </button>
+                        <div class="acc-body"><div class="acc-body-inner"><div class="acc-body-content">
+                            <div class="content-en text-xs md:text-sm">
+                                <strong>Question 1: Full Statement</strong><br>
+                                Peterson's Plastic Products Company manufactures pipes and applies manufacturing costs to production at a budgeted indirect-cost rate of $8 per direct labor-hour. The following data are obtained from the accounting records for June 20X5:
+                                <table>
+                                    <tr><td>Direct materials</td><td>$400,000</td></tr>
+                                    <tr><td>Direct labor (8,000 hours @ $11/hour)</td><td>$88,000</td></tr>
+                                    <tr><td>Indirect labor</td><td>$10,000</td></tr>
+                                    <tr><td>Plant facility rent</td><td>$50,000</td></tr>
+                                    <tr><td>Depreciation on plant machinery and equipment</td><td>$20,000</td></tr>
+                                    <tr><td>Sales commissions</td><td>$30,000</td></tr>
+                                    <tr><td>Administrative expenses</td><td>$40,000</td></tr>
+                                </table>
+                                <br>
+                                <strong>Required:</strong>
+                                <ol class="list-decimal pl-5 space-y-1">
+                                    <li>What actual amount of manufacturing overhead costs was incurred during June 20X5?</li>
+                                    <li>What amount of manufacturing overhead was allocated to all jobs during June 20X5?</li>
+                                    <li>For June 20X5, was manufacturing overhead underallocated or overallocated? Explain.</li>
+                                </ol>
+                            </div>
+                            <div class="content-ar">
+                                <div class="content-ar-header"><i class="fa-solid fa-pen-to-square"></i> خطوات الحل الرياضي بالتفصيل الممل</div>
+                                <p>هنا بنقارن اللي المصنع صرفه فعلاً بالتكاليف غير المباشرة، باللي إحنا حملناه تقديرياً على الإنتاج طول الشهر:</p>
+                                <ul class="space-y-3 font-semibold text-slate-800">
+                                    <li>
+                                        <span class="ar-label">1. حساب التكاليف غير المباشرة الفعلية (Actual MOH) - المطلوب (a):</span>
+                                        <p class="text-sm font-normal text-slate-600 mt-1">بنجمع المصاريف غير المباشرة الخاصة بالمصنع فقط (أجور غير مباشرة، إيجار المصنع، إهلاك الآلات):</p>
+                                        <div class="overflow-x-auto w-full my-2">
+                                            $$\text{Actual MOH} = \$10,000\ (\text{Indirect Labor}) + \$50,000\ (\text{Rent}) + \$20,000\ (\text{Depr.}) = \$80,000$$
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <span class="ar-label">2. حساب التكاليف المحملة (Allocated MOH) - المطلوب (b):</span>
+                                        <p class="text-sm font-normal text-slate-600 mt-1">بنضرب ساعات العمل المباشرة الفعلية (8,000 ساعة) × المعدل التقديري ($8):</p>
+                                        <div class="overflow-x-auto w-full my-2">
+                                            $$\text{Allocated MOH} = 8,000\ \text{hours} \times \$8 = \$64,000$$
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <span class="ar-label">3. تحديد الفروق (Under or Over allocated) - المطلوب (c):</span>
+                                        <p class="text-sm font-normal text-slate-600 mt-1">بنقارن الفعلي بالمحمل؛ الفعلي ($80,000) أكبر من المحمل ($64,000)، يعني إحنا حملنا الإنتاج بأقل من حقه (Underallocated) بـ 16 ألف دولار:</p>
+                                        <div class="overflow-x-auto w-full my-2">
+                                            $$\text{Underallocated MOH} = \text{Actual}\ (\$80,000) - \text{Allocated}\ (\$64,000) = \$16,000$$
+                                        </div>
+                                    </li>
+                                </ul>
+                                <div class="ar-tip">
+                                    <i class="fa-solid fa-triangle-exclamation animate-bounce"></i>
+                                    <div>
+                                        <strong class="text-red-700 block mb-1">فخ المصاريف الإدارية والبيعية (Period Costs Trick):</strong>
+                                        أوعى في الامتحان تجمع عمولات البيع (Sales commissions) بـ 30,000 أو مصاريف الإدارة (Administrative expenses) بـ 40,000 ضمن الـ Actual MOH! دي مصاريف فترية غير صناعية ملهاش علاقة بالمصنع، الدكتور حاططها في جدول المعطيات عشان تشتتك وتجمعها وتطلع ناتج غلط!
+                                    </div>
+                                </div>
+                            </div>
+                        </div></div></div>
                     </div>
-                    <div class="progress-bar-wrap"
-                        style="margin-top:14px;margin-bottom:0;background:rgba(255,255,255,0.2)">
-                        <div class="progress-bar-fill" id="l3-progress-bar" style="width:0%;background:#fff"></div>
+
+                    <div class="acc-card" id="l3-acc2">
+                        <button class="acc-header l3-toggle" data-index="1" data-lecture="l3">
+                            <div class="acc-icon" style="background:#e0f2fe;color:#0284c7"><i class="fa-solid fa-gears"></i></div>
+                            <span class="acc-title">ثانياً: طرق تسوية الفروق دفترياً في نهاية السنة <small style="color:#94a3b8;font-weight:600;font-size:12px;display:block">Over/Under Allocation Methods</small></span>
+                            <i class="fa-solid fa-chevron-down acc-chevron"></i>
+                        </button>
+                        <div class="acc-body"><div class="acc-body-inner"><div class="acc-body-content">
+                            <div class="content-en">
+                                <strong>Methods for Disposing Over/Underallocated Overhead:</strong>
+                                <ul class="list-disc pl-5 space-y-2 mt-1">
+                                    <li><strong>1. Adjusted Allocation-Rate Approach:</strong> Restates all overhead entries using the actual overhead rate instead of the budgeted rate (recalculates every job).</li>
+                                    <li><strong>2. Proration Approach:</strong> Spreads the under/overallocated overhead proportionally among Ending WIP, Finished Goods, and Cost of Goods Sold based on their relative balances.</li>
+                                    <li><strong>3. Write-Off to Cost of Goods Sold Approach:</strong> Closes the entire under/overallocation balance directly into the Cost of Goods Sold (COGS) account. (Used if the amount is immaterial).</li>
+                                </ul>
+                            </div>
+                            <div class="content-ar">
+                                <div class="content-ar-header"><i class="fa-solid fa-lightbulb"></i> الشرح بالعامية المصرية المبسطة</div>
+                                <p>لما بتظهر الفروق دي في آخر السنة، المحاسبين بيعالجوها بـ 3 طرق حسب حجم الفروق وأهميتها:</p>
+                                <ol class="list-decimal pr-5 space-y-3 font-semibold text-slate-700">
+                                    <li><span class="text-indigo-600">مدخل تعديل المعدل (Adjusted Rate):</span> بنلغي المعدل التقديري ونحسب المعدل الفعلي، ونرجع نعدل تكلفة كل شغلانة دخلت المصنع من أول وجديد (طريقة دقيقة جداً بس متعبة).</li>
+                                    <li><span class="text-indigo-600">مدخل التوزيع النسبي (Proration):</span> بنوزع الفروق بالنسب على الحسابات اللي لسه لافة في المصنع؛ حساب تحت التشغيل (WIP)، حساب الإنتاج التام (FG)، وحساب البضاعة المباعة (COGS).</li>
+                                    <li><span class="text-indigo-600">مدخل الإقفال في تكلفة المبيعات (Write-Off to COGS):</span> لو المبلغ صغير ومش مستاهل وجع دماغ (Immaterial)، بنرمي الرقم كله في حساب تكلفة البضاعة المباعة (COGS) ونقفل الحساب.</li>
+                                </ol>
+                            </div>
+                        </div></div></div>
                     </div>
+
+                    <div class="acc-card" id="l3-acc3">
+                        <button class="acc-header l3-toggle" data-index="2" data-lecture="l3">
+                            <div class="acc-icon" style="background:#e0f2fe;color:#0284c7"><i class="fa-solid fa-table-list"></i></div>
+                            <span class="acc-title">ثالثاً: مسألة التوزيع النسبي والقيود - شركة Moira <small style="color:#94a3b8;font-weight:600;font-size:12px;display:block">Proration Approach &amp; Journal Entries</small></span>
+                            <i class="fa-solid fa-chevron-down acc-chevron"></i>
+                        </button>
+                        <div class="acc-body"><div class="acc-body-inner"><div class="acc-body-content">
+                            <div class="content-en text-xs md:text-sm">
+                                <strong>Question 2: Moira Company Data</strong><br>
+                                For the year 20X5, Moira Company has an Overallocated Manufacturing Overhead of $10,000. (Allocated MOH = $435,000, Actual MOH = $425,000). The ending balances before proration are:
+                                <br>• Work-in-Process (WIP) Inventory = $40,000 (5%)
+                                <br>• Finished Goods (FG) Inventory = $80,000 (10%)
+                                <br>• Cost of Goods Sold (COGS) = $680,000 (85%)
+                                <br>• Total Balances = $800,000 (100%)
+                                <br><br>
+                                <strong>Required:</strong> Prepare the journal entry to close the overallocated overhead using the proration approach.
+                            </div>
+                            <div class="content-ar">
+                                <div class="content-ar-header"><i class="fa-solid fa-pen-to-square"></i> خطوات حساب نسب التوزيع دفترياً</div>
+                                <p>هنا إحنا محملين الإنتاج **بزيادة** بـ 10,000 دولار (Overallocated). يعني لازم نرجع الـ 10,000 دي للحسابات التلاتة ونخفضهم بنسب أرصدتهم المادية:</p>
+                                
+                                <ul class="space-y-3 font-semibold text-slate-800">
+                                    <li>
+                                        <span class="ar-label">أولاً: حساب النسب المئوية لكل حساب:</span>
+                                        <p class="text-sm font-normal text-slate-600 mt-1">الإجمالي للأرصدة الثلاثة هو: $40k + $80k + $680k = $800,000.</p>
+                                        <div class="bg-white p-3 rounded-lg border border-sky-200 text-left font-mono text-xs">
+                                            WIP % = 40,000 / 800,000 = 5%<br>
+                                            FG % = 80,000 / 800,000 = 10%<br>
+                                            COGS % = 680,000 / 800,000 = 85%
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <span class="ar-label">ثانياً: حساب نصيب كل حساب من التخفيض ($10,000):</span>
+                                        <div class="bg-white p-3 rounded-lg border border-sky-200 text-left font-mono text-xs">
+                                            WIP reduction = $10,000 × 5% = $500<br>
+                                            FG reduction = $10,000 × 10% = $1,000<br>
+                                            COGS reduction = $10,000 × 85% = $8,500
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <span class="ar-label">ثالثاً: قيد الإقفال والتسوية (Journal Entry):</span>
+                                        <p class="text-sm font-normal text-slate-600 mt-1">طالما الحسابات دي هتقل، وحساب التكاليف المحملة (Allocated MOH) بيقفل، فبنكتب القيد كالتالي دفترياً:</p>
+                                        <table class="journal-table">
+                                            <tr><th>الحساب المحاسبي (Account)</th><th>مدين (Dr)</th><th>دائن (Cr)</th></tr>
+                                            <tr><td class="dr">Manufacturing Overhead Allocated</td><td>10,000</td><td></td></tr>
+                                            <tr><td class="cr">Work-in-Process Inventory</td><td></td><td>500</td></tr>
+                                            <tr><td class="cr">Finished Goods Inventory</td><td></td><td>1,000</td></tr>
+                                            <tr><td class="cr">Cost of Goods Sold</td><td></td><td>8,500</td></tr>
+                                        </table>
+                                    </li>
+                                </ul>
+
+                                <div class="ar-tip mt-5">
+                                    <i class="fa-solid fa-triangle-exclamation text-red-600"></i>
+                                    <div>
+                                        <strong class="text-red-800 block mb-1">ألاعيب وتريكات الدكتور في قيد التسوية:</strong>
+                                        ركز جداً في اتجاه القيد! في مسألة Moira إحنا كنا محملين التكاليف **بزيادة (Overallocated)**، فعشان كده حسابات المخازن والـ COGS جات في الجانب **الدائن (Credit)** عشان **نقللها** ونرجعها لأصلها الطبيعي. <br>
+                                        • <strong>لعبة الامتحان:</strong> لو الفعلي هو اللي طلع أكبر (Underallocated)، القيد هيتعكس تماماً! هتخلي الـ WIP والـ FG والـ COGS في الجانب **المدين (Debit)** عشان **تزودهم** بقيمة الفرق! الدكتور بيجيب القيدين في الاختيارات وعينك لازم تلقط الإقفال الصح حسب الـ Over أو الـ Under.
+                                    </div>
+                                </div>
+                            </div>
+                        </div></div></div>
+                    </div>
+
+                    <!-- Back to Lectures Button -->
+                    <div class="mt-8 flex justify-center">
+                        <button onclick="showHomeView()" class="px-8 py-3 rounded-xl font-bold text-white shadow-lg transform hover:-translate-y-0.5 transition-all duration-200 bg-gradient-to-r from-emerald-600 to-teal-600 hover:from-emerald-700 hover:to-teal-700">
+                            <i class="fa-solid fa-arrow-right ml-2"></i> العودة لقائمة المحاضرات
+                        </button>
+                    </div>
+
                 </div>
-
-                <!-- Mobile Navigation L3 -->
-                <div class="mobile-topics-nav">
-                    <button class="mobile-nav-item active-nav hero-l3" data-acc="l3-acc1"
-                        onclick="scrollToAcc('l3-acc1', this, 'l3')"><span class="m-num">1</span><span>النظري
-                            والخطوات</span></button>
-                    <button class="mobile-nav-item hero-l3" data-acc="l3-acc2"
-                        onclick="scrollToAcc('l3-acc2', this, 'l3')"><span class="m-num">2</span><span>المتوسط
-                            المرجح</span></button>
-                    <button class="mobile-nav-item hero-l3" data-acc="l3-acc3"
-                        onclick="scrollToAcc('l3-acc3', this, 'l3')"><span class="m-num">3</span><span>طريقة
-                            FIFO</span></button>
-                    <button class="mobile-nav-item hero-l3" data-acc="l3-acc4"
-                        onclick="scrollToAcc('l3-acc4', this, 'l3')"><span class="m-num">4</span><span>قيود
-                            اليومية</span></button>
-                </div>
-
-                <!-- Two-column layout: Sidebar + Content -->
-                <div class="lecture-layout">
-                    <aside class="lecture-sidebar" style="border-color:#f5d0fe">
-                        <h5 style="color:#701a75"><i class="fa-solid fa-list-ul ml-1"></i> أقسام المحاضرة 3</h5>
-                        <a class="sidebar-item active-nav hero-l3" data-acc="l3-acc1"
-                            onclick="scrollToAcc('l3-acc1', this, 'l3')">
-                            <span class="nav-num">1</span><span>النظري والخطوات الخمسة</span>
-                        </a>
-                        <a class="sidebar-item hero-l3" data-acc="l3-acc2" onclick="scrollToAcc('l3-acc2', this, 'l3')">
-                            <span class="nav-num">2</span><span>طريقة المتوسط المرجح</span>
-                        </a>
-                        <a class="sidebar-item hero-l3" data-acc="l3-acc3" onclick="scrollToAcc('l3-acc3', this, 'l3')">
-                            <span class="nav-num">3</span><span>طريقة FIFO والنسب المكملة</span>
-                        </a>
-                        <a class="sidebar-item hero-l3" data-acc="l3-acc4" onclick="scrollToAcc('l3-acc4', this, 'l3')">
-                            <span class="nav-num">4</span><span>قيود يومية المراحل والترحيل</span>
-                        </a>
-                    </aside>
-
-                    <div class="lecture-content-col">
-
-                        <!-- ======= ACCORDION 1: Comparison & 5 Steps ======= -->
-                        <div class="acc-card" id="l3-acc1">
-                            <button class="acc-header l3-toggle" data-index="0" data-lecture="l3">
-                                <div class="acc-icon" style="background:#f3e8ff;color:#7e22ce">
-                                    <i class="fa-solid fa-circle-info"></i>
-                                </div>
-                                <span class="acc-title">أولاً: مقارنة النظم والخطوات الخمسة للمراحل <small
-                                        style="color:#94a3b8;font-weight:600;font-size:12px;display:block">Process
-                                        Costing Framework</small></span>
-                                <i class="fa-solid fa-chevron-down acc-chevron"></i>
-                            </button>
-                            <div class="acc-body">
-                                <div class="acc-body-inner">
-                                    <div class="acc-body-content">
-                                        <div class="content-en">
-                                            <strong>Comparison of Costing Systems:</strong>
-                                            <ul>
-                                                <li><strong>Process Costing:</strong> Used when similar or identical
-                                                    units of a product or service are mass-produced in a continuous flow
-                                                    (e.g., Paper, Steel, Oil Refining, Soft drinks). Same average cost
-                                                    per unit.</li>
-                                                <li><strong>Job-Order Costing:</strong> Used when many different
-                                                    products, distinct and unique, are produced to custom orders each
-                                                    period (e.g., Aircraft, Hospitals, Law firms).</li>
-                                            </ul>
-                                            <strong>The Five-Step Procedure for Process Costing:</strong>
-                                            <ol class="list-decimal pl-5 mt-2">
-                                                <li>Summarize the flow of physical units of output (تتبع الوحدات
-                                                    المادية).</li>
-                                                <li>Compute output in terms of equivalent units (حساب الوحدات المعادلة).
-                                                </li>
-                                                <li>Summarize total costs to be accounted for (تجميع التكاليف
-                                                    الإجمالية).</li>
-                                                <li>Compute cost per equivalent unit (حساب تكلفة الوحدة المعادلة).</li>
-                                                <li>Assign total costs to completed units and ending WIP (تخصيص وتوزيع
-                                                    التكاليف).</li>
-                                            </ol>
-                                        </div>
-                                        <div class="content-ar">
-                                            <div class="content-ar-header"><i class="fa-solid fa-lightbulb"></i> الشرح
-                                                بالعامية المصرية المبسطة</div>
-                                            <p>بص يا محمد يا بطل، نظام تكاليف المراحل (Process Costing) ده بنستخدمه في
-                                                مصانع خطوط الإنتاج المستمرة والضخمة (زي مصانع بيبسي والحديد والأسمنت).
-                                                كل الأزايز أو الأكياس بتطلع نسخة طبق الأصل من بعض (Identical).</p>
-                                            <p>بما إن المنتجات متشابهة، بنقسم إجمالي مصاريف "المرحلة" (زي قسم الخلط
-                                                Mixing أو التعبئة Packaging) على إجمالي إنتاج المرحلة عشان نجيب متوسط
-                                                تكلفة الوحدة.</p>
-
-                                            <div class="compare-grid mt-4">
-                                                <div class="compare-card" style="border-color:#7e22ce">
-                                                    <h6 style="color:#7e22ce">مفهوم الوحدات المعادلة (Equivalent Units):
-                                                    </h6>
-                                                    <p>تخيل لو عندك كوبايتين عصير، واحدة مليانة ع الآخر، والتانية نصها
-                                                        بس. ماديّاً هما كوبايتين، بس محاسبيّاً الـ 2 دول يعادلوا (1.5)
-                                                        كوباية كاملة! ده بالظبط اللي بنعمله مع الإنتاج تحت التشغيل آخر
-                                                        المدة (WIP Ending) عشان نحسب تكلفته بالعدل.</p>
-                                                </div>
-                                                <div class="compare-card" style="border-color:#ec4899">
-                                                    <h6 style="color:#db2777">المعادلة الذهبية لتدفق الوحدات:</h6>
-                                                    <p dir="ltr" class="text-center font-bold text-slate-800">
-                                                    <div class="overflow-x-auto w-full my-2">
-                                                        <p dir="ltr" class="text-center font-bold text-slate-800">
-                                                        <div class="overflow-x-auto w-full my-2">
-                                                            $$\text{Beg. WIP} + \text{Started} = \text{Completed} +
-                                                            \text{End. WIP}$$
-                                                        </div>
-
-                                                        <p dir="ltr" class="text-center font-bold text-slate-800">
-                                                    </div>
-                                                    <p class="text-xs text-slate-500 mt-1">لازم الطرفين يساووا بعض
-                                                        بالظبط عشان نتأكد إن مفيش خامات أو وحدات ضاعت في المكن.</p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- ======= ACCORDION 2: Weighted Average Method (Kulaj Al-Qasim) ======= -->
-                        <div class="acc-card" id="l3-acc2">
-                            <button class="acc-header l3-toggle" data-index="1" data-lecture="l3">
-                                <div class="acc-icon" style="background:#f3e8ff;color:#7e22ce">
-                                    <i class="fa-solid fa-calculator"></i>
-                                </div>
-                                <span class="acc-title">ثانياً: طريقة المتوسط المرجح بالتفصيل <small
-                                        style="color:#94a3b8;font-weight:600;font-size:12px;display:block">Weighted
-                                        Average Method (Full Problem & Solutions)</small></span>
-                                <i class="fa-solid fa-chevron-down acc-chevron"></i>
-                            </button>
-                            <div class="acc-body">
-                                <div class="acc-body-inner">
-                                    <div class="acc-body-content">
-                                        <div class="content-en text-xs md:text-sm">
-                                            <strong>Example 2: Kulaj Al-Qasim Mixing Department Data</strong>
-                                            <div class="overflow-x-auto w-full my-3">
-                                                <table>
-                                                    <tr>
-                                                        <th>Physical Units &amp; Cost Data</th>
-                                                        <th>Units</th>
-                                                        <th>Direct Materials</th>
-                                                        <th>Conversion Costs</th>
-                                                    </tr>
-                                                    <tr>
-                                                        <td><strong>Work in Process, June 1</strong> (DM 100%, CC 70%)
-                                                        </td>
-                                                        <td>100,000</td>
-                                                        <td>$50,000</td>
-                                                        <td>$35,000</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>Units started into production in June</td>
-                                                        <td>800,000</td>
-                                                        <td colspan="2">Costs added during June:</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>Units completed &amp; transferred to Baking</td>
-                                                        <td>700,000</td>
-                                                        <td>$400,000</td>
-                                                        <td>$170,000</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td><strong>Work in Process, June 30</strong> (DM 100%, CC 60%)
-                                                        </td>
-                                                        <td>200,000</td>
-                                                        <td colspan="2">Total costs added: $570,000</td>
-                                                    </tr>
-                                                </table>
-                                            </div>
-                                        </div>
-                                        <div class="content-ar">
-                                            <div class="content-ar-header"><i class="fa-solid fa-pen-to-square"></i>
-                                                خطوات الحل بالتفصيل الممل (Weighted Average)</div>
-                                            <p>طريقة المتوسط المرجح بتضرب القديم والجديد في الخلاط وتجيب متوسطهم. تعال
-                                                نحل الـ 5 خطوات للمسألة دي بالملي:</p>
-
-                                            <ul class="space-y-4">
-                                                <li>
-                                                    <span class="ar-label">الخطوة 1: تتبع تدفق الوحدات المادية (Physical
-                                                        Flow)</span>
-                                                    <div
-                                                        class="bg-white p-3 rounded-lg border border-purple-200 mt-2 font-mono text-left text-xs md:text-sm">
-                                                        Units to be accounted for = Beg. WIP (100,000) + Started
-                                                        (800,000) = 900,000 Units<br>
-                                                        Units accounted for = Completed (700,000) + End. WIP (200,000) =
-                                                        900,000 Units
-                                                    </div>
-                                                </li>
-                                                <li>
-                                                    <span class="ar-label">الخطوة 2: حساب الوحدات المعادلة (Equivalent
-                                                        Units - EU)</span>
-                                                    <p class="text-sm mt-1">الـ 700,000 اللي خلصوا بالكامل أخذوا مواد
-                                                        100% وتشكيل 100%. الـ 200,000 اللي مخلصوش (آخر المدة): أخذوا
-                                                        مواد 100%، وأخذوا تشكيل 60% بس.</p>
-                                                    <div
-                                                        class="bg-white p-3 rounded-lg border border-purple-200 mt-2 font-mono text-left text-xs md:text-sm">
-                                                        EU (Materials) = 700,000 + (200,000 × 100%) = 900,000 Units<br>
-                                                        EU (Conversion) = 700,000 + (200,000 × 60%) = 820,000 Units
-                                                    </div>
-                                                </li>
-                                                <li>
-                                                    <span class="ar-label">الخطوة 3: حساب تكلفة الوحدة المعادلة (Cost
-                                                        per EU)</span>
-                                                    <p class="text-sm mt-1">هنجمع تكاليف أول المدة (بتاعة الشهر اللي
-                                                        فات) + التكاليف المضافة الشهر ده ونقسمهم على الوحدات المعادلة:
-                                                    </p>
-                                                    <div class="bg-white p-4 rounded-xl border border-purple-200 mt-2">
-                                                        <div class="overflow-x-auto w-full my-2">
-                                                            $$\text{Cost per EU (Materials)} = \frac{\$50,000\
-                                                            (\text{Beg}) + \$400,000\ (\text{Added})}{900,000\
-                                                            \text{EU}} = \frac{\$450,000}{900,000} = \$0.50\ \text{per
-                                                            unit}$$
-                                                        </div>
-
-                                                        <div class="overflow-x-auto w-full my-2">
-                                                            $$\text{Cost per EU (Conversion)} = \frac{\$35,000\
-                                                            (\text{Beg}) + \$170,000\ (\text{Added})}{820,000\
-                                                            \text{EU}} = \frac{\$205,000}{820,000} = \$0.25\ \text{per
-                                                            unit}$$
-                                                        </div>
-
-                                                        <div class="overflow-x-auto w-full my-2">
-                                                            $$\text{Total unit cost (W.A)} = \$0.50 + \$0.25 = \$0.75\
-                                                            \text{per completed unit}$$
-                                                        </div>
-                                                    </div>
-                                                </li>
-                                                <li>
-                                                    <span class="ar-label">الخطوة 4 &amp; 5: تخصيص وتوزيع
-                                                        التكاليف</span>
-                                                    <div
-                                                        class="bg-white p-4 rounded-xl border border-purple-200 mt-2 text-sm text-slate-700">
-                                                        <strong>1. تكلفة الوحدات التامة والمنقولة لقسم الخبز (700,000
-                                                            وحدة):</strong>
-                                                        <div class="overflow-x-auto w-full my-2">
-                                                            $$\text{Cost of Completed Units} = 700,000\ \text{units}
-                                                            \times \$0.75 = \$525,000$$
-                                                        </div>
-                                                        <strong>2. تكلفة مخزون الإنتاج تحت التشغيل آخر المدة (200,000
-                                                            وحدة):</strong><br>
-                                                        • خامات = 200,000 وحدة معادلة $\times$ $0.50 = $100,000<br>
-                                                        • تشكيل = 120,000 وحدة معادلة $\times$ $0.25 = $30,000<br>
-                                                        <div class="overflow-x-auto w-full my-2">
-                                                            $$\text{Total Cost of Ending WIP} = \$100,000 + \$30,000 =
-                                                            \$130,000$$
-                                                        </div>
-                                                        <p class="text-xs text-green-600 font-bold mt-2">💡 للتأكد من
-                                                            صحة الحل: مجموع التكاليف الموزعة = $525,000 + $130,000 =
-                                                            $655,000 وهو يساوي تماماً مجموع تكاليف أول المدة والتكاليف
-                                                            الجديدة ($85,000 + $570,000 = $655,000).</p>
-                                                    </div>
-                                                </li>
-                                            </ul>
-
-                                            <div class="ar-tip mt-4">
-                                                <i class="fa-solid fa-triangle-exclamation animate-bounce"></i>
-                                                <div>
-                                                    <strong class="text-red-700 block mb-1">ألاعيب وفخاخ الدكتور في الـ
-                                                        Weighted Average:</strong>
-                                                    الدكتور هيجيب لك نسبة إتمام مخزون <strong>أول المدة</strong> (الـ
-                                                    70% للتشكيل) في المعطيات عشان يغلطك وتستخدمها! في طريقة المتوسط
-                                                    المرجح <strong>إحنا بنهمل تماماً نسب إتمام أول المدة</strong> ولا
-                                                    نضرب فيها أي كمية، بل بنتعامل مع التام كله بنسبة 100%. بنستخدم نسبة
-                                                    آخر المدة بس!
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- ======= ACCORDION 3: FIFO Method ======= -->
-                        <div class="acc-card" id="l3-acc3">
-                            <button class="acc-header l3-toggle" data-index="2" data-lecture="l3">
-                                <div class="acc-icon" style="background:#f3e8ff;color:#7e22ce">
-                                    <i class="fa-solid fa-business-time"></i>
-                                </div>
-                                <span class="acc-title">ثالثاً: طريقة FIFO والنسب المكملة <small
-                                        style="color:#94a3b8;font-weight:600;font-size:12px;display:block">FIFO Costing
-                                        &amp; prior-period work split</small></span>
-                                <i class="fa-solid fa-chevron-down acc-chevron"></i>
-                            </button>
-                            <div class="acc-body">
-                                <div class="acc-body-inner">
-                                    <div class="acc-body-content">
-                                        <div class="content-en text-xs md:text-sm">
-                                            <strong>Step 2: FIFO Equivalent Units of work done in current period
-                                                (June)</strong>
-                                            <div class="overflow-x-auto w-full my-3">
-                                                <table>
-                                                    <tr>
-                                                        <th>Completed and transferred out: 700,000 units</th>
-                                                        <th>Physical Units</th>
-                                                        <th>Direct Materials</th>
-                                                        <th>Conversion Costs</th>
-                                                    </tr>
-                                                    <tr>
-                                                        <td><strong>a. Work in Process, June 1 (Beg. WIP)</strong></td>
-                                                        <td>100,000</td>
-                                                        <td>100,000 × (100% - 100%) = <strong>0</strong></td>
-                                                        <td>100,000 × (100% - 70%) = <strong>30,000</strong></td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td><strong>b. Started and completed</strong></td>
-                                                        <td>600,000</td>
-                                                        <td>600,000</td>
-                                                        <td>600,000</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td><strong>Work in Process, June 30 (Ending WIP)</strong></td>
-                                                        <td>200,000</td>
-                                                        <td>200,000 × 100% = <strong>200,000</strong></td>
-                                                        <td>200,000 × 60% = <strong>120,000</strong></td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td><strong>Equivalent Units of work done in current period
-                                                                (FIFO)</strong></td>
-                                                        <td>-</td>
-                                                        <td><strong>800,000</strong></td>
-                                                        <td><strong>750,000</strong></td>
-                                                    </tr>
-                                                </table>
-                                            </div>
-                                        </div>
-                                        <div class="content-ar">
-                                            <div class="content-ar-header"><i class="fa-solid fa-arrows-spin"></i> خطوات
-                                                الحل بطريقة FIFO الفنية جداً</div>
-                                            <p>طريقة FIFO بتفصل تماماً بين شغل الشهر اللي فات وشغل الشهر ده. يعني إحنا
-                                                بنعترف بالتكلفة والشغل اللي اتصرفوا **الشهر الحالي بس**.</p>
-
-                                            <ul class="space-y-4">
-                                                <li>
-                                                    <span class="ar-label font-bold">1. فخ مخزون أول المدة والنسبة
-                                                        المكملة (The Complement):</span>
-                                                    <p
-                                                        class="text-sm mt-1 text-slate-700 font-semibold leading-relaxed">
-                                                        الـ 100,000 وحدة بتوع أول الشهر كانوا جايين من الشهر اللي فات
-                                                        واخدين 100% مواد و70% تشكيل. <br>
-                                                        • للمواد: إحنا مش هنصرف عليهم مواد الشهر ده لأنهم مخلصين خامات
-                                                        بالكامل $\rightarrow (100\% - 100\% = 0\%)$. <br>
-                                                        • للتشكيل: هما واخدين 70% مجهود الشهر اللي فات، يبقى عشان يكملوا
-                                                        ويخلصوا في شهر 6 محتاجين بقية النسبة بس (المكملة) وهي 30%
-                                                        $\rightarrow (100\% - 70\% = 30\%)$. <br>
-                                                        • الوحدات المعادلة للتشكيل = $100,000 \times 30\% = 30,000\
-                                                        \text{Units}$.
-                                                    </p>
-                                                </li>
-                                                <li>
-                                                    <span class="ar-label font-bold">2. حساب الوحدات التي بدأت وانتهت
-                                                        (Started &amp; Completed):</span>
-                                                    <p class="text-sm mt-1 text-slate-700 font-semibold">إحنا خلصنا
-                                                        700,000 وحدة بالكامل. نطرح منهم الـ 100,000 وحدة بتوع أول المدة،
-                                                        يتبقالنا اللي بدأناه من الصفر وخلصناه الشهر ده وهو **600,000
-                                                        وحدة**.</p>
-                                                </li>
-                                                <li>
-                                                    <span class="ar-label font-bold">3. حساب تكلفة الوحدة المعادلة في
-                                                        الـ FIFO:</span>
-                                                    <p class="text-sm mt-1 font-bold text-red-600">⚠ المطب هنا! بنقسم
-                                                        تكاليف الشهر ده بس (Added costs in June) على الوحدات المعادلة
-                                                        للشهر ده بس:</p>
-                                                    <div class="bg-white p-4 rounded-xl border border-purple-200 mt-2">
-                                                        <div class="overflow-x-auto w-full my-2">
-                                                            $$\text{Cost per EU (Materials)} = \frac{\$400,000\
-                                                            (\text{Added in June})}{800,000\ \text{EU}} = \$0.50$$
-                                                        </div>
-
-                                                        <div class="overflow-x-auto w-full my-2">
-                                                            $$\text{Cost per EU (Conversion)} = \frac{\$170,000\
-                                                            (\text{Added in June})}{750,000\ \text{EU}} \approx \$0.2267
-                                                            \approx \$0.23$$
-                                                        </div>
-
-                                                        <div class="overflow-x-auto w-full my-2">
-                                                            $$\text{Total cost per unit (Current Period)} = \$0.50 +
-                                                            \$0.23 = \$0.73$$
-                                                        </div>
-                                                    </div>
-                                                </li>
-                                                <li>
-                                                    <span class="ar-label font-bold">4. حساب التكلفة الكلية للإنتاج
-                                                        التام بطريقة FIFO (المطلوب 4):</span>
-                                                    <div
-                                                        class="bg-white p-4 rounded-xl border border-purple-200 mt-2 text-sm text-slate-700">
-                                                        <strong>أولا: تكلفة الـ 100,000 وحدة بتوع أول
-                                                            المدة:</strong><br>
-                                                        • التكلفة القديمة اللي جايين بيها من الشهر اللي فات =
-                                                        $85,000<br>
-                                                        • التكلفة الجديدة اللي صرفناها عليهم الشهر ده عشان يخلصوا
-                                                        (30,000 وحدة تشكيل $\times$ $0.2267) $\approx$ $6,800<br>
-                                                        <div class="overflow-x-auto w-full my-2">
-                                                            $$\text{Total Cost of Beg. WIP units} = \$85,000 + \$6,800 =
-                                                            \$91,800$$
-                                                        </div>
-                                                        <strong>ثانيا: تكلفة الـ 600,000 وحدة اللي بدأوا وانتهوا الشهر
-                                                            ده:</strong>
-                                                        <div class="overflow-x-auto w-full my-2">
-                                                            $$\text{Total Cost of Started \& Completed} = 600,000\
-                                                            \text{units} \times \$0.7267 \approx \$436,000$$
-                                                        </div>
-                                                        <strong>إجمالي تكلفة الـ 700,000 وحدة التامة المنقولة:</strong>
-                                                        <div class="ar-equation">
-                                                            <div class="overflow-x-auto w-full my-2">
-                                                                $$\text{Total Cost of Completed} = \$91,800 + \$436,000
-                                                                = \$527,800$$
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </li>
-                                            </ul>
-
-                                            <div class="ar-tip mt-4">
-                                                <i class="fa-solid fa-triangle-exclamation animate-bounce"></i>
-                                                <div>
-                                                    <strong class="text-red-700 block mb-1">ألاعيب وفخاخ الدكتور في
-                                                        طريقة الـ FIFO:</strong>
-                                                    <ul class="list-disc pr-4 text-sm text-red-900 space-y-1">
-                                                        <li><strong>فخ مكمل النسبة:</strong> لو الدكتور قالك مخزون أول
-                                                            المدة كان خلصان بنسبة 40% خامات، أوعى تضرب الـ 40% في
-                                                            الوحدات! اضرب في مكمل النسبة اللي هو (60%) عشان تجيب الشغل
-                                                            اللي اتعمل الشهر ده.</li>
-                                                        <li><strong>فخ خلط التكاليف:</strong> في حساب تكلفة الوحدة للـ
-                                                            FIFO، لو جمعت التكاليف القديمة بـ 85 ألف دولار، حلك هيعتبر
-                                                            صفر. الـ FIFO بيقسم التكاليف الجديدة المضافة خلال الفترة
-                                                            (Added) بس!</li>
-                                                    </ul>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- ======= ACCORDION 4: Journal Entries & Comparison ======= -->
-                        <div class="acc-card" id="l3-acc4">
-                            <button class="acc-header l3-toggle" data-index="3" data-lecture="l3">
-                                <div class="acc-icon" style="background:#f3e8ff;color:#7e22ce">
-                                    <i class="fa-solid fa-scale-balanced"></i>
-                                </div>
-                                <span class="acc-title">رابعاً: قيود يومية المراحل ومقارنة الطرق <small
-                                        style="color:#94a3b8;font-weight:600;font-size:12px;display:block">Journal
-                                        Entries &amp; Method Comparison</small></span>
-                                <i class="fa-solid fa-chevron-down acc-chevron"></i>
-                            </button>
-                            <div class="acc-body">
-                                <div class="acc-body-inner">
-                                    <div class="acc-body-content">
-                                        <div class="content-ar">
-                                            <div class="content-ar-header"><i
-                                                    class="fa-solid fa-book-journal-whills"></i> قيود يومية المرحلة
-                                                (Mixing Department)</div>
-                                            <p>هنا بنسجل تكاليف مارس المضافة، وبننقل الوحدات التامة للمرحلة التالية
-                                                (Baking Department). لاحظ إزاي قيمة قيد نقل الإنتاج بتختلف حسب الطريقة
-                                                المستخدّمة:</p>
-
-                                            <div class="overflow-x-auto w-full my-3">
-                                                <table class="journal-table">
-                                                    <tr>
-                                                        <th>العملية (Transaction)</th>
-                                                        <th>طريقة المتوسط المرجح (WA Amount)</th>
-                                                        <th>طريقة الـ FIFO (FIFO Amount)</th>
-                                                    </tr>
-                                                    <!-- 1 -->
-                                                    <tr>
-                                                        <td class="font-bold text-slate-700 text-xs">
-                                                            1. سحب خامات جديدة بـ 400 ألف دولار<br>
-                                                            <span class="dr">WIP - Mixing Department
-                                                                (400,000)</span><br>
-                                                            <span class="cr">Materials Control (400,000)</span>
-                                                        </td>
-                                                        <td>$400,000</td>
-                                                        <td>$400,000</td>
-                                                    </tr>
-                                                    <!-- 2 -->
-                                                    <tr>
-                                                        <td class="font-bold text-slate-700 text-xs">
-                                                            2. صرف مجهود تشكيل جديد بـ 170 ألف دولار<br>
-                                                            <span class="dr">WIP - Mixing Department
-                                                                (170,000)</span><br>
-                                                            <span class="cr">Various Accounts (170,000)</span>
-                                                        </td>
-                                                        <td>$170,000</td>
-                                                        <td>$170,000</td>
-                                                    </tr>
-                                                    <!-- 3 -->
-                                                    <tr class="bg-purple-50/50">
-                                                        <td class="font-bold text-purple-900 text-xs">
-                                                            3. قيد نقل الإنتاج التام إلى قسم الخبز (Baking)<br>
-                                                            <span class="dr">WIP - Baking Department</span><br>
-                                                            <span class="cr">WIP - Mixing Department</span>
-                                                        </td>
-                                                        <td class="font-bold text-emerald-700">$525,000</td>
-                                                        <td class="font-bold text-indigo-700">$527,800</td>
-                                                    </tr>
-                                                </table>
-
-                                                <div class="mt-6">
-                                                    <span class="ar-label">مقارنة النتائج النهائية بين الطريقتين (Cost
-                                                        Comparison):</span>
-                                                    <div class="overflow-x-auto w-full my-3">
-                                                        <table class="journal-table mt-3"
-                                                            style="direction:rtl; text-align:right;">
-                                                            <thead>
-                                                                <tr class="bg-slate-100">
-                                                                    <th class="text-right">حسابات التكاليف</th>
-                                                                    <th class="text-right">المتوسط المرجح (WA)</th>
-                                                                    <th class="text-right">الوارد أولاً (FIFO)</th>
-                                                                    <th class="text-right">الفارق (Difference)</th>
-                                                                </tr>
-                                                            </thead>
-                                                            <tbody>
-                                                                <tr>
-                                                                    <td>تكلفة الوحدات التامة المنقولة (Completed Cost)
-                                                                    </td>
-                                                                    <td class="font-mono">$525,000</td>
-                                                                    <td class="font-mono">$527,800</td>
-                                                                    <td class="font-mono text-emerald-600">+$2,800 (FIFO
-                                                                        أعلى)</td>
-                                                                </tr>
-                                                                <tr>
-                                                                    <td>تكلفة مخزون آخر المدة (Ending WIP Cost)</td>
-                                                                    <td class="font-mono">$130,000</td>
-                                                                    <td class="font-mono">$127,200</td>
-                                                                    <td class="font-mono text-red-600">-$2,800 (FIFO
-                                                                        أقل)</td>
-                                                                </tr>
-                                                                <tr class="font-bold bg-slate-50">
-                                                                    <td>إجمالي التكاليف التي تم توزيعها (Total accounted
-                                                                        for)</td>
-                                                                    <td class="font-mono">$655,000</td>
-                                                                    <td class="font-mono">$655,000</td>
-                                                                    <td class="font-mono">صفر (تطابق كامل!)</td>
-                                                                </tr>
-                                                            </tbody>
-                                                        </table>
-                                                    </div>
-                                                </div>
-
-                                                <div class="ar-tip mt-5">
-                                                    <i class="fa-solid fa-triangle-exclamation"></i>
-                                                    <div>
-                                                        <strong class="text-red-700 block mb-1">تريكة قيود الترحيل في
-                                                            الامتحان:</strong>
-                                                        دايماً القسم اللي بننقل إليه البضاعة (المستلِم) بيبقى
-                                                        <strong>مدين (Debit)</strong>، والقسم اللي بنخرج منه البضاعة
-                                                        (المسلِّم) بيبقى <strong>دائن (Credit)</strong>. <br>
-                                                        يعني القيد من حـ/ WIP-Baking إلى حـ/ WIP-Mixing. الدكتور بيجيب
-                                                        لك القيد ده في الـ MCQ مقلوب ومقترن بقيمة غلط عشان يشتتك، فاحذر
-                                                        وعينك في وسط راسك!
-                                                    </div>
-                                                </div>
-
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <!-- Back to Lectures Button -->
-                            <div class="mt-8 flex justify-center">
-                                <button onclick="showHomeView()"
-                                    class="px-8 py-3 rounded-xl font-bold text-white shadow-lg transform hover:-translate-y-0.5 transition-all duration-200 bg-gradient-to-r from-emerald-600 to-teal-600 hover:from-emerald-700 hover:to-teal-700">
-                                    <i class="fa-solid fa-arrow-right ml-2"></i> العودة لقائمة المحاضرات
-                                </button>
-                            </div>
-
-                        </div><!-- end .lecture-content-col -->
-                    </div><!-- end .lecture-layout -->
-                </div>
+            </div>
+          </div>
         </section>
 
         <!-- ==============================================
