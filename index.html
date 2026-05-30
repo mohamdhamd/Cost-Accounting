@@ -1239,7 +1239,7 @@
             border: none;
             color: #94a3b8;
             font-size: 13px;
-            cursor: pointer;
+            cursor: pointer; 
             padding: 6px;
         }
 
@@ -1260,15 +1260,15 @@
         <span id="ai-toast-msg">جارٍ فتح المحادثة...</span>
     </div>
 
-    <!-- Gemini Paste Overlay -->
+    <!-- AI Paste Overlay -->
     <div id="ai-paste-overlay">
         <div class="ai-paste-box">
             <div class="ai-paste-icon">🤖</div>
-            <h3>فتحنا Gemini في تاب جديد!</h3>
-            <p>الشرح اتنسخ تلقائياً — بس Gemini مش بيقبل الرسالة في الـ URL.<br>افتح التاب الجديد والصق الرسالة بالزرار ده:</p>
+            <h3 id="ai-overlay-title">فتحنا الذكاء الاصطناعي في تاب جديد!</h3>
+            <p id="ai-overlay-desc">الشرح اتنسخ تلقائياً.<br>افتح التاب الجديد والصق الرسالة بالزرار ده:</p>
             <div class="ai-paste-shortcut">Ctrl + V</div>
-            <button class="ai-paste-open-btn" onclick="window.open('https://gemini.google.com/app','_blank','noopener'); closePasteOverlay();">
-                <i class="fa-solid fa-arrow-up-right-from-square ml-1"></i> افتح Gemini الآن
+            <button id="ai-overlay-btn" class="ai-paste-open-btn" onclick="closePasteOverlay()">
+                <i class="fa-solid fa-arrow-up-right-from-square ml-1"></i> افتح الآن
             </button>
             <button class="ai-paste-close-btn" onclick="closePasteOverlay()">إغلاق</button>
         </div>
@@ -6729,7 +6729,7 @@ ${fullContent}
             toastTimer = setTimeout(() => toast.classList.remove('show'), 5000);
         }
 
-        // ── Paste overlay for Gemini ───────────────────────────────
+        // ── Paste overlay for all AIs ──────────────────────────────
         function closePasteOverlay() {
             document.getElementById('ai-paste-overlay').classList.remove('show');
         }
@@ -6760,23 +6760,39 @@ ${fullContent}
                 } catch(e) {}
             });
 
-            if (selectedAI === 'gemini') {
-                // Gemini ignores ?q= param — show paste overlay instead
-                window.open('https://gemini.google.com/app', '_blank', 'noopener,noreferrer');
-                setTimeout(() => {
-                    document.getElementById('ai-paste-overlay').classList.add('show');
-                }, 400);
-            } else if (selectedAI === 'chatgpt') {
-                // ChatGPT ?q= param works and auto-submits
-                const url = `https://chatgpt.com/?q=${encodeURIComponent(prompt)}`;
-                window.open(url, '_blank', 'noopener,noreferrer');
-                showToast('✅ ChatGPT فتح مع الرسالة تلقائياً', 'fa-check-circle');
+            // Set up dynamic overlay info
+            const titleEl = document.getElementById('ai-overlay-title');
+            const descEl = document.getElementById('ai-overlay-desc');
+            const btnEl = document.getElementById('ai-overlay-btn');
+
+            let aiName = 'Gemini';
+            let chatUrl = 'https://gemini.google.com/app';
+            let btnGradient = 'linear-gradient(135deg,#1a73e8,#4285f4)';
+
+            if (selectedAI === 'chatgpt') {
+                aiName = 'ChatGPT';
+                chatUrl = 'https://chatgpt.com/';
+                btnGradient = 'linear-gradient(135deg,#10a37f,#0d8a6a)';
             } else if (selectedAI === 'claude') {
-                // Claude ?q= param works and auto-submits
-                const url = `https://claude.ai/new?q=${encodeURIComponent(prompt)}`;
-                window.open(url, '_blank', 'noopener,noreferrer');
-                showToast('✅ Claude فتح مع الرسالة تلقائياً', 'fa-check-circle');
+                aiName = 'Claude';
+                chatUrl = 'https://claude.ai/new';
+                btnGradient = 'linear-gradient(135deg,#d97706,#b45309)';
             }
+
+            titleEl.textContent = `فتحنا ${aiName} في تاب جديد!`;
+            descEl.innerHTML = `الرسالة اتنسخت تلقائياً.<br>افتح التاب الجديد والصق الرسالة بالزرار ده:`;
+            btnEl.innerHTML = `<i class="fa-solid fa-arrow-up-right-from-square ml-1"></i> افتح ${aiName} الآن`;
+            btnEl.style.background = btnGradient;
+            
+            btnEl.onclick = function() {
+                window.open(chatUrl, '_blank', 'noopener,noreferrer');
+                closePasteOverlay();
+            };
+
+            // Show the overlay
+            setTimeout(() => {
+                document.getElementById('ai-paste-overlay').classList.add('show');
+            }, 300);
         }
 
         // ── Inject AI Ask Button into every acc-card ──────────────
