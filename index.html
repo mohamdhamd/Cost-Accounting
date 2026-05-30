@@ -1091,7 +1091,7 @@
                         <i class="fa-solid fa-scale-balanced"></i>
                     </div>
                     <h4 class="text-xl font-bold mb-2">المحاضرة الثالثة</h4>
-                    <p class="text-slate-500 text-sm flex-grow">تسوية فروق تحميل التكاليف غير المباشرة (Over/Under Allocation of MOH).</p>
+                    <p class="text-slate-500 text-sm flex-grow">تسوية فروق التحميل وتأسيس تكاليف التالف والعيوب (Over/Under Allocation of MOH &amp; Spoilage).</p>
                     <div class="mt-4 flex justify-between items-center">
                         <span class="text-xs font-bold px-3 py-1 bg-sky-100 text-sky-800 rounded-full">مكتمله
                         </span>
@@ -2384,202 +2384,399 @@
              LECTURE 3 CONTENT (NEWLY OPENED & FULLY LOADED)
         ================================================ -->
         <section id="lecture-3-content" class="lecture-content-section hidden grid-cols-1 fade-in scroll-mt-20">
-          <div class="col-span-1">
-            <div class="lecture-hero hero-l3" style="background: linear-gradient(135deg, #0284c7 0%, #0369a1 50%, #075985 100%);">
-                <button onclick="showHomeView()" class="back-btn"><i class="fa-solid fa-arrow-right"></i> قائمة المحاضرات</button>
-                <h2 class="lecture-hero-title">المحاضرة الثالثة: تسوية فروق التحميل</h2>
-                <p class="lecture-hero-sub">Over/Under Allocation of Manufacturing Overhead — Ch. 4 Part 3</p>
-                <div class="lecture-stats">
-                    <div class="stat-pill"><i class="fa-solid fa-layer-group"></i> 3 أقسام رئيسية</div>
-                    <div class="stat-pill"><i class="fa-solid fa-clock"></i> ~30 دقيقة</div>
-                    <div class="stat-pill" id="l3-progress-label"><i class="fa-solid fa-chart-simple"></i> 0 / 3 مكتملين</div>
+            <div class="col-span-1">
+                <div class="lecture-hero hero-l3" style="background: linear-gradient(135deg, #0284c7 0%, #0369a1 50%, #075985 100%);">
+                    <button onclick="showHomeView()" class="back-btn"><i class="fa-solid fa-arrow-right"></i> قائمة المحاضرات</button>
+                    <h2 class="lecture-hero-title">المحاضرة الثالثة: تسوية فروق التحميل وتكاليف التالف</h2>
+                    <p class="lecture-hero-sub">Over/Under Allocation of MOH &amp; Spoilage Fundamentals — Ch. 4 &amp; Ch. 18</p>
+                    <div class="lecture-stats">
+                        <div class="stat-pill"><i class="fa-solid fa-layer-group"></i> 5 أقسام رئيسية</div>
+                        <div class="stat-pill"><i class="fa-solid fa-clock"></i> ~45 دقيقة</div>
+                        <div class="stat-pill" id="l3-progress-label"><i class="fa-solid fa-chart-simple"></i> 0 / 5 مكتملين</div>
+                    </div>
+                    <div class="progress-bar-wrap" style="margin-top:14px;margin-bottom:0;background:rgba(255,255,255,0.2)">
+                        <div class="progress-bar-fill" id="l3-progress-bar" style="width:0%;background:#fff"></div>
+                    </div>
                 </div>
-                <div class="progress-bar-wrap" style="margin-top:14px;margin-bottom:0;background:rgba(255,255,255,0.2)">
-                    <div class="progress-bar-fill" id="l3-progress-bar" style="width:0%;background:#fff"></div>
+
+                <div class="mobile-topics-nav">
+                    <button class="mobile-nav-item active-nav hero-l3" data-acc="l3-acc1" onclick="scrollToAcc('l3-acc1', this, 'l3')"><span class="m-num">1</span><span>شركة Peterson</span></button>
+                    <button class="mobile-nav-item hero-l3" data-acc="l3-acc2" onclick="scrollToAcc('l3-acc2', this, 'l3')"><span class="m-num">2</span><span>شركة Modern</span></button>
+                    <button class="mobile-nav-item hero-l3" data-acc="l3-acc3" onclick="scrollToAcc('l3-acc3', this, 'l3')"><span class="m-num">3</span><span>شركة Moira</span></button>
+                    <button class="mobile-nav-item hero-l3" data-acc="l3-acc4" onclick="scrollToAcc('l3-acc4', this, 'l3')"><span class="m-num">4</span><span>مفاهيم التالف</span></button>
+                    <button class="mobile-nav-item hero-l3" data-acc="l3-acc5" onclick="scrollToAcc('l3-acc5', this, 'l3')"><span class="m-num">5</span><span>حالات التالف الست</span></button>
                 </div>
-            </div>
 
-            <div class="mobile-topics-nav">
-                <button class="mobile-nav-item active-nav hero-l3" data-acc="l3-acc1" onclick="scrollToAcc('l3-acc1', this, 'l3')"><span class="m-num">1</span><span>Peterson (فروق التحميل)</span></button>
-                <button class="mobile-nav-item hero-l3" data-acc="l3-acc2" onclick="scrollToAcc('l3-acc2', this, 'l3')"><span class="m-num">2</span><span>طرق معالجة الفروق</span></button>
-                <button class="mobile-nav-item hero-l3" data-acc="l3-acc3" onclick="scrollToAcc('l3-acc3', this, 'l3')"><span class="m-num">3</span><span>التوزيع النسبي (Moira)</span></button>
-            </div>
+                <div class="lecture-layout">
+                    <aside class="lecture-sidebar" style="border-color:#bae6fd">
+                        <h5 style="color:#0369a1"><i class="fa-solid fa-list-ul ml-1"></i> أقسام المحاضرة 3</h5>
+                        <a class="sidebar-item active-nav hero-l3" data-acc="l3-acc1" onclick="scrollToAcc('l3-acc1', this, 'l3')"><span class="nav-num">1</span><span>مسألة شركة Peterson</span></a>
+                        <a class="sidebar-item hero-l3" data-acc="l3-acc2" onclick="scrollToAcc('l3-acc2', this, 'l3')"><span class="nav-num">2</span><span>مسألة شركة Modern</span></a>
+                        <a class="sidebar-item hero-l3" data-acc="l3-acc3" onclick="scrollToAcc('l3-acc3', this, 'l3')"><span class="nav-num">3</span><span>المعالجة الدفترية (Moira)</span></a>
+                        <a class="sidebar-item hero-l3" data-acc="l3-acc4" onclick="scrollToAcc('l3-acc4', this, 'l3')"><span class="nav-num">4</span><span>مفاهيم التوالف والعيوب</span></a>
+                        <a class="sidebar-item hero-l3" data-acc="l3-acc5" onclick="scrollToAcc('l3-acc5', this, 'l3')"><span class="nav-num">5</span><span>حالات التالف الست الشاملة</span></a>
+                    </aside>
 
-            <div class="lecture-layout">
-                <aside class="lecture-sidebar" style="border-color:#bae6fd">
-                    <h5 style="color:#0369a1"><i class="fa-solid fa-list-ul ml-1"></i> أقسام المحاضرة 3</h5>
-                    <a class="sidebar-item active-nav hero-l3" data-acc="l3-acc1" onclick="scrollToAcc('l3-acc1', this, 'l3')"><span class="nav-num">1</span><span>مسألة Peterson's Plastic</span></a>
-                    <a class="sidebar-item hero-l3" data-acc="l3-acc2" onclick="scrollToAcc('l3-acc2', this, 'l3')"><span class="nav-num">2</span><span>طرق تسوية الفروق دفترياً</span></a>
-                    <a class="sidebar-item hero-l3" data-acc="l3-acc3" onclick="scrollToAcc('l3-acc3', this, 'l3')"><span class="nav-num">3</span><span>مسألة Moira وتوزيع النسب</span></a>
-                </aside>
+                    <div class="lecture-content-col">
 
-                <div class="lecture-content-col">
-
-                    <div class="acc-card" id="l3-acc1">
-                        <button class="acc-header l3-toggle" data-index="0" data-lecture="l3">
-                            <div class="acc-icon" style="background:#e0f2fe;color:#0284c7"><i class="fa-solid fa-calculator"></i></div>
-                            <span class="acc-title">أولاً: حساب فروق التحميل - شركة Peterson's Plastic <small style="color:#94a3b8;font-weight:600;font-size:12px;display:block">Actual vs. Allocated Overhead</small></span>
-                            <i class="fa-solid fa-chevron-down acc-chevron"></i>
-                        </button>
-                        <div class="acc-body"><div class="acc-body-inner"><div class="acc-body-content">
-                            <div class="content-en text-xs md:text-sm">
-                                <strong>Question 1: Full Statement</strong><br>
-                                Peterson's Plastic Products Company manufactures pipes and applies manufacturing costs to production at a budgeted indirect-cost rate of $8 per direct labor-hour. The following data are obtained from the accounting records for June 20X5:
-                                <table>
-                                    <tr><td>Direct materials</td><td>$400,000</td></tr>
-                                    <tr><td>Direct labor (8,000 hours @ $11/hour)</td><td>$88,000</td></tr>
-                                    <tr><td>Indirect labor</td><td>$10,000</td></tr>
-                                    <tr><td>Plant facility rent</td><td>$50,000</td></tr>
-                                    <tr><td>Depreciation on plant machinery and equipment</td><td>$20,000</td></tr>
-                                    <tr><td>Sales commissions</td><td>$30,000</td></tr>
-                                    <tr><td>Administrative expenses</td><td>$40,000</td></tr>
-                                </table>
-                                <br>
-                                <strong>Required:</strong>
-                                <ol class="list-decimal pl-5 space-y-1">
-                                    <li>What actual amount of manufacturing overhead costs was incurred during June 20X5?</li>
-                                    <li>What amount of manufacturing overhead was allocated to all jobs during June 20X5?</li>
-                                    <li>For June 20X5, was manufacturing overhead underallocated or overallocated? Explain.</li>
-                                </ol>
-                            </div>
-                            <div class="content-ar">
-                                <div class="content-ar-header"><i class="fa-solid fa-pen-to-square"></i> خطوات الحل الرياضي بالتفصيل الممل</div>
-                                <p>هنا بنقارن اللي المصنع صرفه فعلاً بالتكاليف غير المباشرة، باللي إحنا حملناه تقديرياً على الإنتاج طول الشهر:</p>
-                                <ul class="space-y-3 font-semibold text-slate-800">
-                                    <li>
-                                        <span class="ar-label">1. حساب التكاليف غير المباشرة الفعلية (Actual MOH) - المطلوب (a):</span>
-                                        <p class="text-sm font-normal text-slate-600 mt-1">بنجمع المصاريف غير المباشرة الخاصة بالمصنع فقط (أجور غير مباشرة، إيجار المصنع، إهلاك الآلات):</p>
-                                        <div class="overflow-x-auto w-full my-2">
-                                            $$\text{Actual MOH} = \$10,000\ (\text{Indirect Labor}) + \$50,000\ (\text{Rent}) + \$20,000\ (\text{Depr.}) = \$80,000$$
+                        <div class="acc-card" id="l3-acc1">
+                            <button class="acc-header l3-toggle" data-index="0" data-lecture="l3">
+                                <div class="acc-icon" style="background:#e0f2fe;color:#0284c7"><i class="fa-solid fa-calculator"></i></div>
+                                <span class="acc-title">أولاً: حساب فروق التحميل - شركة Peterson's Plastic</span>
+                                <i class="fa-solid fa-chevron-down acc-chevron"></i>
+                            </button>
+                            <div class="acc-body"><div class="acc-body-inner"><div class="acc-body-content">
+                                <div class="content-en text-xs md:text-sm">
+                                    <strong>Question 1: Full Statement</strong><br>
+                                    Peterson's Plastic Products Company manufactures pipes and applies manufacturing costs to production at a budgeted indirect-cost rate of $8 per direct labor-hour. The following data are obtained from the accounting records for June 20X5:
+                                    <table class="w-full border border-slate-700 mt-2 text-sm text-left">
+                                        <tbody>
+                                            <tr><td class="p-2 border border-slate-700">Direct materials</td><td class="p-2 border border-slate-700">$400,000</td></tr>
+                                            <tr><td class="p-2 border border-slate-700">Direct labor (8,000 hours @ $11/hour)</td><td class="p-2 border border-slate-700">$88,000</td></tr>
+                                            <tr><td class="p-2 border border-slate-700">Indirect labor</td><td class="p-2 border border-slate-700">$10,000</td></tr>
+                                            <tr><td class="p-2 border border-slate-700">Plant facility rent</td><td class="p-2 border border-slate-700">$50,000</td></tr>
+                                            <tr><td class="p-2 border border-slate-700">Depreciation on plant machinery and equipment</td><td class="p-2 border border-slate-700">$20,000</td></tr>
+                                            <tr><td class="p-2 border border-slate-700">Sales commissions</td><td class="p-2 border border-slate-700">$30,000</td></tr>
+                                            <tr><td class="p-2 border border-slate-700">Administrative expenses</td><td class="p-2 border border-slate-700">$40,000</td></tr>
+                                        </tbody>
+                                    </table>
+                                    <br>
+                                    <strong>Required:</strong>
+                                    <ol class="list-decimal pl-5 space-y-1">
+                                        <li>What actual amount of manufacturing overhead costs was incurred during June 20X5?</li>
+                                        <li>What amount of manufacturing overhead was allocated to all jobs during June 20X5?</li>
+                                        <li>For June 20X5, was manufacturing overhead underallocated or overallocated? Explain.</li>
+                                    </ol>
+                                </div>
+                                <div class="content-ar">
+                                    <div class="content-ar-header"><i class="fa-solid fa-pen-to-square"></i> خطوات الحل التفصيلي بالعامية المصرية</div>
+                                    <p>الشركة دي حطت معدل تقديري أول السنة بـ 8 دولار لكل ساعة عمل مباشر، وجينا في آخر شهر 6 عايزين نشوف التكاليف الصناعية غير المباشرة (MOH) صح ولا غلط:</p>
+                                    <ul class="space-y-4 font-semibold text-slate-800">
+                                        <li>
+                                            <span class="ar-label">1. حساب التكاليف الفعلية (Actual MOH) - المطلوب الأول:</span>
+                                            <p class="text-sm font-normal text-slate-600 mt-1">هنلم كل المصاريف غير المباشرة اللي اندفعت بجد جوه جدران المصنع (عمالة غير مباشرة + إيجار المصنع + إهلاك الآلات):</p>
+                                            <div class="overflow-x-auto w-full my-2">
+                                                $$\text{Actual MOH} = \$10,000\ (\text{Indirect labor}) + \$50,000\ (\text{Plant rent}) + \$20,000\ (\text{Depreciation}) = \$80,000$$
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <span class="ar-label">2. حساب التكاليف المحملة تقديرياً (Allocated MOH) - المطلوب الثاني:</span>
+                                            <p class="text-sm font-normal text-slate-600 mt-1">هنضرب الساعات الفعلية اللي العمال اشتغلوها في المعدل التقديري المتفق عليه أول السنة:</p>
+                                            <div class="overflow-x-auto w-full my-2">
+                                                $$\text{Allocated MOH} = 8,000\ \text{hours} \times \$8 = \$64,000$$
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <span class="ar-label">3. المقارنة وتحديد الفرق - المطلوب الثالث:</span>
+                                            <p class="text-sm font-normal text-slate-600 mt-1">إحنا حملنا دفاتر الإنتاج بـ 64 ألف، بس المصنع في الحقيقة كلفنا فواتير بـ 80 ألف! يعني إحنا محملين التكاليف بأقل من حقيقتها (Underallocated) بفرق قدره 16,000 دولار:</p>
+                                            <div class="overflow-x-auto w-full my-2">
+                                                $$\text{Underallocated MOH} = \text{Actual MOH}\ (\$80,000) - \text{Allocated MOH}\ (\$64,000) = \$16,000$$
+                                            </div>
+                                        </li>
+                                    </ul>
+                                    <div class="ar-tip">
+                                        <i class="fa-solid fa-triangle-exclamation text-red-600"></i>
+                                        <div>
+                                            <strong class="text-red-800 block mb-1">ألاعيب الدكتور في مسألة Peterson:</strong>
+                                            <ul class="list-disc pr-4 space-y-1 text-xs text-red-950">
+                                                <li><strong>مصاريف الفخ (Period Costs):</strong> الدكتور حاطط لك في المسألة مصاريف عمولات البيع (Sales commissions) بـ 30,000 ومصاريف الإدارة (Administrative expenses) بـ 40,000، إياك تجمعهم مع الـ MOH! دي مصاريف غير صناعية مكانها قائمة الدخل ولو جمعتها حلك كله هيضيع.</li>
+                                                <li><strong>الساعات المستخبية:</strong> ساعات مش بيديك الـ 8,000 ساعة صريحة لوحدها؛ بيكتبها لك بين قوسين جنب سطر الأجور المباشرة بالشكل ده `(8,000 hours @ $11/hour)` لازم عينك لقطها عشان دي اللي بتضرب في معدل التحميل.</li>
+                                                <li><strong>معدل التحميل:</strong> معدل التحميل هو بـ $8 لكل ساعة عمل مباشر.</li>
+                                            </ul>
                                         </div>
-                                    </li>
-                                    <li>
-                                        <span class="ar-label">2. حساب التكاليف المحملة (Allocated MOH) - المطلوب (b):</span>
-                                        <p class="text-sm font-normal text-slate-600 mt-1">بنضرب ساعات العمل المباشرة الفعلية (8,000 ساعة) × المعدل التقديري ($8):</p>
-                                        <div class="overflow-x-auto w-full my-2">
-                                            $$\text{Allocated MOH} = 8,000\ \text{hours} \times \$8 = \$64,000$$
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <span class="ar-label">3. تحديد الفروق (Under or Over allocated) - المطلوب (c):</span>
-                                        <p class="text-sm font-normal text-slate-600 mt-1">بنقارن الفعلي بالمحمل؛ الفعلي ($80,000) أكبر من المحمل ($64,000)، يعني إحنا حملنا الإنتاج بأقل من حقه (Underallocated) بـ 16 ألف دولار:</p>
-                                        <div class="overflow-x-auto w-full my-2">
-                                            $$\text{Underallocated MOH} = \text{Actual}\ (\$80,000) - \text{Allocated}\ (\$64,000) = \$16,000$$
-                                        </div>
-                                    </li>
-                                </ul>
-                                <div class="ar-tip">
-                                    <i class="fa-solid fa-triangle-exclamation animate-bounce"></i>
-                                    <div>
-                                        <strong class="text-red-700 block mb-1">فخ المصاريف الإدارية والبيعية (Period Costs Trick):</strong>
-                                        أوعى في الامتحان تجمع عمولات البيع (Sales commissions) بـ 30,000 أو مصاريف الإدارة (Administrative expenses) بـ 40,000 ضمن الـ Actual MOH! دي مصاريف فترية غير صناعية ملهاش علاقة بالمصنع، الدكتور حاططها في جدول المعطيات عشان تشتتك وتجمعها وتطلع ناتج غلط!
                                     </div>
                                 </div>
-                            </div>
-                        </div></div></div>
-                    </div>
+                            </div></div></div>
+                        </div>
 
-                    <div class="acc-card" id="l3-acc2">
-                        <button class="acc-header l3-toggle" data-index="1" data-lecture="l3">
-                            <div class="acc-icon" style="background:#e0f2fe;color:#0284c7"><i class="fa-solid fa-gears"></i></div>
-                            <span class="acc-title">ثانياً: طرق تسوية الفروق دفترياً في نهاية السنة <small style="color:#94a3b8;font-weight:600;font-size:12px;display:block">Over/Under Allocation Methods</small></span>
-                            <i class="fa-solid fa-chevron-down acc-chevron"></i>
-                        </button>
-                        <div class="acc-body"><div class="acc-body-inner"><div class="acc-body-content">
-                            <div class="content-en">
-                                <strong>Methods for Disposing Over/Underallocated Overhead:</strong>
-                                <ul class="list-disc pl-5 space-y-2 mt-1">
-                                    <li><strong>1. Adjusted Allocation-Rate Approach:</strong> Restates all overhead entries using the actual overhead rate instead of the budgeted rate (recalculates every job).</li>
-                                    <li><strong>2. Proration Approach:</strong> Spreads the under/overallocated overhead proportionally among Ending WIP, Finished Goods, and Cost of Goods Sold based on their relative balances.</li>
-                                    <li><strong>3. Write-Off to Cost of Goods Sold Approach:</strong> Closes the entire under/overallocation balance directly into the Cost of Goods Sold (COGS) account. (Used if the amount is immaterial).</li>
-                                </ul>
-                            </div>
-                            <div class="content-ar">
-                                <div class="content-ar-header"><i class="fa-solid fa-lightbulb"></i> الشرح بالعامية المصرية المبسطة</div>
-                                <p>لما بتظهر الفروق دي في آخر السنة، المحاسبين بيعالجوها بـ 3 طرق حسب حجم الفروق وأهميتها:</p>
-                                <ol class="list-decimal pr-5 space-y-3 font-semibold text-slate-700">
-                                    <li><span class="text-indigo-600">مدخل تعديل المعدل (Adjusted Rate):</span> بنلغي المعدل التقديري ونحسب المعدل الفعلي، ونرجع نعدل تكلفة كل شغلانة دخلت المصنع من أول وجديد (طريقة دقيقة جداً بس متعبة).</li>
-                                    <li><span class="text-indigo-600">مدخل التوزيع النسبي (Proration):</span> بنوزع الفروق بالنسب على الحسابات اللي لسه لافة في المصنع؛ حساب تحت التشغيل (WIP)، حساب الإنتاج التام (FG)، وحساب البضاعة المباعة (COGS).</li>
-                                    <li><span class="text-indigo-600">مدخل الإقفال في تكلفة المبيعات (Write-Off to COGS):</span> لو المبلغ صغير ومش مستاهل وجع دماغ (Immaterial)، بنرمي الرقم كله في حساب تكلفة البضاعة المباعة (COGS) ونقفل الحساب.</li>
-                                </ol>
-                            </div>
-                        </div></div></div>
-                    </div>
-
-                    <div class="acc-card" id="l3-acc3">
-                        <button class="acc-header l3-toggle" data-index="2" data-lecture="l3">
-                            <div class="acc-icon" style="background:#e0f2fe;color:#0284c7"><i class="fa-solid fa-table-list"></i></div>
-                            <span class="acc-title">ثالثاً: مسألة التوزيع النسبي والقيود - شركة Moira <small style="color:#94a3b8;font-weight:600;font-size:12px;display:block">Proration Approach &amp; Journal Entries</small></span>
-                            <i class="fa-solid fa-chevron-down acc-chevron"></i>
-                        </button>
-                        <div class="acc-body"><div class="acc-body-inner"><div class="acc-body-content">
-                            <div class="content-en text-xs md:text-sm">
-                                <strong>Question 2: Moira Company Data</strong><br>
-                                For the year 20X5, Moira Company has an Overallocated Manufacturing Overhead of $10,000. (Allocated MOH = $435,000, Actual MOH = $425,000). The ending balances before proration are:
-                                <br>• Work-in-Process (WIP) Inventory = $40,000 (5%)
-                                <br>• Finished Goods (FG) Inventory = $80,000 (10%)
-                                <br>• Cost of Goods Sold (COGS) = $680,000 (85%)
-                                <br>• Total Balances = $800,000 (100%)
-                                <br><br>
-                                <strong>Required:</strong> Prepare the journal entry to close the overallocated overhead using the proration approach.
-                            </div>
-                            <div class="content-ar">
-                                <div class="content-ar-header"><i class="fa-solid fa-pen-to-square"></i> خطوات حساب نسب التوزيع دفترياً</div>
-                                <p>هنا إحنا محملين الإنتاج **بزيادة** بـ 10,000 دولار (Overallocated). يعني لازم نرجع الـ 10,000 دي للحسابات التلاتة ونخفضهم بنسب أرصدتهم المادية:</p>
-                                
-                                <ul class="space-y-3 font-semibold text-slate-800">
-                                    <li>
-                                        <span class="ar-label">أولاً: حساب النسب المئوية لكل حساب:</span>
-                                        <p class="text-sm font-normal text-slate-600 mt-1">الإجمالي للأرصدة الثلاثة هو: $40k + $80k + $680k = $800,000.</p>
-                                        <div class="bg-white p-3 rounded-lg border border-sky-200 text-left font-mono text-xs">
-                                            WIP % = 40,000 / 800,000 = 5%<br>
-                                            FG % = 80,000 / 800,000 = 10%<br>
-                                            COGS % = 680,000 / 800,000 = 85%
+                        <div class="acc-card" id="l3-acc2">
+                            <button class="acc-header l3-toggle" data-index="1" data-lecture="l3">
+                                <div class="acc-icon" style="background:#e0f2fe;color:#0284c7"><i class="fa-solid fa-industry"></i></div>
+                                <span class="acc-title">ثانياً: تطبيق آخر - مسألة شركة Modern Electronics</span>
+                                <i class="fa-solid fa-chevron-down acc-chevron"></i>
+                            </button>
+                            <div class="acc-body"><div class="acc-body-inner"><div class="acc-body-content">
+                                <div class="content-en text-xs md:text-sm">
+                                    <strong>Question 2: Full Statement (H.W)</strong><br>
+                                    Modern Electronics manufactures surround sound systems and applies manufacturing costs to production at a budgeted indirect-cost rate of $22 per direct-labor hour. The following data are obtained from the accounting records for August 20X9:
+                                    <table class="w-full border border-slate-700 mt-2 text-sm text-left">
+                                        <tbody>
+                                            <tr><td class="p-2 border border-slate-700">Direct materials</td><td class="p-2 border border-slate-700">$350,000</td></tr>
+                                            <tr><td class="p-2 border border-slate-700">Direct labor (7,000 hours @ $15/hour)</td><td class="p-2 border border-slate-700">$105,000</td></tr>
+                                            <tr><td class="p-2 border border-slate-700">Indirect labor</td><td class="p-2 border border-slate-700">$15,000</td></tr>
+                                            <tr><td class="p-2 border border-slate-700">Plant lease</td><td class="p-2 border border-slate-700">$75,000</td></tr>
+                                            <tr><td class="p-2 border border-slate-700">Depreciation on plant and equipment</td><td class="p-2 border border-slate-700">$40,000</td></tr>
+                                            <tr><td class="p-2 border border-slate-700">Marketing expense</td><td class="p-2 border border-slate-700">$20,000</td></tr>
+                                            <tr><td class="p-2 border border-slate-700">Plant utilities</td><td class="p-2 border border-slate-700">$15,000</td></tr>
+                                        </tbody>
+                                    </table>
+                                    <br>
+                                    <strong>Required:</strong>
+                                    <ol class="list-decimal pl-5 space-y-1">
+                                        <li>What actual amount of manufacturing overhead cost was incurred during August 20X9?</li>
+                                        <li>What amount of manufacturing overhead was allocated to all jobs during August 20X9?</li>
+                                        <li>For August 20X9, was manufacturing overhead underallocated or overallocated? Explain.</li>
+                                    </ol>
+                                </div>
+                                <div class="content-ar">
+                                    <div class="content-ar-header"><i class="fa-solid fa-pen-to-square"></i> خطوات الحل التفصيلي بالعامية المصرية</div>
+                                    <p>نفس الفكرة بالضبط بس الأرقام والـ Rate هنا بـ 22 دولار لكل ساعة عمل مباشر:</p>
+                                    <ul class="space-y-4 font-semibold text-slate-800">
+                                        <li>
+                                            <span class="ar-label">1. حساب التكاليف الفعلية (Actual MOH):</span>
+                                            <p class="text-sm font-normal text-slate-600 mt-1">هنجمع كل المصاريف الصناعية المباشرة والكهربا والماء بتوع المصنع بس:</p>
+                                            <div class="overflow-x-auto w-full my-2">
+                                                $$\text{Actual MOH} = \$15,000\ (\text{Indirect labor}) + \$75,000\ (\text{Plant lease}) + \$40,000\ (\text{Depr.}) + \$15,000\ (\text{Utilities}) = \$145,000$$
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <span class="ar-label">2. حساب التكاليف المحملة (Allocated MOH):</span>
+                                            <p class="text-sm font-normal text-slate-600 mt-1">العمال اشتغلوا 7,000 ساعة فعلية نضربها في المعدل المقدر (22 دولار):</p>
+                                            <div class="overflow-x-auto w-full my-2">
+                                                $$\text{Allocated MOH} = 7,000\ \text{hours} \times \$22 = \$154,000$$
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <span class="ar-label">3. المقارنة وتحديد الفرق:</span>
+                                            <p class="text-sm font-normal text-slate-600 mt-1">هنا بقى العكس حصل! إحنا حملنا الإنتاج في الدفاتر بـ 154 ألف، بس الفعلي طلع 145 ألف بس! يعني إحنا مضخمين ومحملين التكاليف بزيادة عن حقها (Overallocated) بفرق قدره 9,000 دولار:</p>
+                                            <div class="overflow-x-auto w-full my-2">
+                                                $$\text{Overallocated MOH} = \text{Allocated}\ (\$154,000) - \text{Actual}\ (\$145,000) = \$9,000$$
+                                            </div>
+                                        </li>
+                                    </ul>
+                                    <div class="ar-tip">
+                                        <i class="fa-solid fa-triangle-exclamation text-red-600"></i>
+                                        <div>
+                                            <strong class="text-red-800 block mb-1">تريكة الدكتور في مسألة Modern Electronics:</strong>
+                                            الدكتور حاطط لك في الجدول مصاريف التسويق (Marketing expense) بقيمة 20,000 دولار. دي مصاريف بيعية وإدارية (Period Cost) تتجاهلها تماماً وماتدخلهاش في حساب الـ Actual MOH عشان متضيعش منك المسألة.
                                         </div>
-                                    </li>
-                                    <li>
-                                        <span class="ar-label">ثانياً: حساب نصيب كل حساب من التخفيض ($10,000):</span>
-                                        <div class="bg-white p-3 rounded-lg border border-sky-200 text-left font-mono text-xs">
-                                            WIP reduction = $10,000 × 5% = $500<br>
-                                            FG reduction = $10,000 × 10% = $1,000<br>
-                                            COGS reduction = $10,000 × 85% = $8,500
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <span class="ar-label">ثالثاً: قيد الإقفال والتسوية (Journal Entry):</span>
-                                        <p class="text-sm font-normal text-slate-600 mt-1">طالما الحسابات دي هتقل، وحساب التكاليف المحملة (Allocated MOH) بيقفل، فبنكتب القيد كالتالي دفترياً:</p>
-                                        <table class="journal-table">
-                                            <tr><th>الحساب المحاسبي (Account)</th><th>مدين (Dr)</th><th>دائن (Cr)</th></tr>
-                                            <tr><td class="dr">Manufacturing Overhead Allocated</td><td>10,000</td><td></td></tr>
-                                            <tr><td class="cr">Work-in-Process Inventory</td><td></td><td>500</td></tr>
-                                            <tr><td class="cr">Finished Goods Inventory</td><td></td><td>1,000</td></tr>
-                                            <tr><td class="cr">Cost of Goods Sold</td><td></td><td>8,500</td></tr>
-                                        </table>
-                                    </li>
-                                </ul>
-
-                                <div class="ar-tip mt-5">
-                                    <i class="fa-solid fa-triangle-exclamation text-red-600"></i>
-                                    <div>
-                                        <strong class="text-red-800 block mb-1">ألاعيب وتريكات الدكتور في قيد التسوية:</strong>
-                                        ركز جداً في اتجاه القيد! في مسألة Moira إحنا كنا محملين التكاليف **بزيادة (Overallocated)**، فعشان كده حسابات المخازن والـ COGS جات في الجانب **الدائن (Credit)** عشان **نقللها** ونرجعها لأصلها الطبيعي. <br>
-                                        • <strong>لعبة الامتحان:</strong> لو الفعلي هو اللي طلع أكبر (Underallocated)، القيد هيتعكس تماماً! هتخلي الـ WIP والـ FG والـ COGS في الجانب **المدين (Debit)** عشان **تزودهم** بقيمة الفرق! الدكتور بيجيب القيدين في الاختيارات وعينك لازم تلقط الإقفال الصح حسب الـ Over أو الـ Under.
                                     </div>
                                 </div>
-                            </div>
-                        </div></div></div>
-                    </div>
+                            </div></div></div>
+                        </div>
 
-                    <!-- Back to Lectures Button -->
-                    <div class="mt-8 flex justify-center">
-                        <button onclick="showHomeView()" class="px-8 py-3 rounded-xl font-bold text-white shadow-lg transform hover:-translate-y-0.5 transition-all duration-200 bg-gradient-to-r from-emerald-600 to-teal-600 hover:from-emerald-700 hover:to-teal-700">
-                            <i class="fa-solid fa-arrow-right ml-2"></i> العودة لقائمة المحاضرات
-                        </button>
-                    </div>
+                        <div class="acc-card" id="l3-acc3">
+                            <button class="acc-header l3-toggle" data-index="2" data-lecture="l3">
+                                <div class="acc-icon" style="background:#e0f2fe;color:#0284c7"><i class="fa-solid fa-book-journal-whills"></i></div>
+                                <span class="acc-title">ثالثاً: المعالجة الدفترية لقيود الإقفال والتسوية - شركة Moira</span>
+                                <i class="fa-solid fa-chevron-down acc-chevron"></i>
+                            </button>
+                            <div class="acc-body"><div class="acc-body-inner"><div class="acc-body-content">
+                                <div class="content-en text-xs md:text-sm">
+                                    <strong>Question 3: Full Statement (Exam Problem)</strong><br>
+                                    Moira Company has just finished its first year of operations and must decide which method to use for adjusting cost of goods sold. Because the company used a budgeted indirect-cost rate for its manufacturing operations, the amount that was allocated ($435,000) to cost of goods sold was different from the actual amount incurred ($425,000). Ending balances in the relevant accounts were:
+                                    <ul class="list-disc pl-5 mt-2 space-y-1">
+                                        <li>Work-in-Process (WIP) Inventory = $40,000</li>
+                                        <li>Finished Goods (FG) Inventory = $80,000</li>
+                                        <li>Cost of Goods Sold (COGS) = $680,000</li>
+                                    </ul>
+                                    <br>
+                                    <strong>Required:</strong>
+                                    <ol class="list-decimal pl-5 space-y-1">
+                                        <li>Prepare a journal entry to write off the difference between allocated and actual overhead directly to Cost of Goods Sold. Be sure your journal entry closes the related overhead accounts.</li>
+                                        <li>Prepare a journal entry that prorates the write-off of the difference between allocated and actual overhead using ending account balances. Be sure your journal entry closes the related overhead accounts.</li>
+                                    </ol>
+                                </div>
+                                <div class="content-ar">
+                                    <div class="content-ar-header"><i class="fa-solid fa-scale-balanced"></i> خطوات الحل الدفتري بالتفصيل الممل</div>
+                                    <p>الشركة دي لقت في دفاترها إن التكاليف المحملة التقديرية 435 ألف والفعلي 425 ألف، يعني عندنا 10 آلاف دولار متحملين بالزيادة (Overallocated). الدكتور طالب نقفل الـ 10 آلاف دي بطريقتين:</p>
+                                    
+                                    <ul class="space-y-4 font-semibold text-slate-800">
+                                        <li>
+                                            <span class="ar-label">الطريقة الأولى: الإقفال المباشر في تكلفة المبيعات (Write-off to COGS)</span>
+                                            <p class="text-sm font-normal text-slate-600 mt-1">بما إننا حملنا الإنتاج بزيادة، يبقى لازم نقلل تكلفة المبيعات بالـ 10 آلاف عشان نصلح الغلط؛ بنقفل حساب الـ Allocated المدين وبنقفل الـ Control الدائن والفرق بنخفض بيه الـ COGS في الدائن:</p>
+                                            <table class="journal-table">
+                                                <tr><th>Account Names</th><th>Debit (Dr)</th><th>Credit (Cr)</th></tr>
+                                                <tr><td class="dr">Manufacturing Overhead Allocated</td><td>$435,000</td><td></td></tr>
+                                                <tr><td class="cr">Cost of Goods Sold (COGS)</td><td></td><td>$10,000</td></tr>
+                                                <tr><td class="cr">Manufacturing Overhead Control</td><td></td><td>$425,000</td></tr>
+                                            </table>
+                                        </li>
+                                        <li>
+                                            <span class="ar-label">الطريقة الثانية: التوزيع النسبي على الحسابات (Proration Approach)</span>
+                                            <p class="text-sm font-normal text-slate-600 mt-1">هنا بنوزع الـ 10 آلاف بالعدل على أرصدة الـ 3 حسابات المتبقية (تحت التشغيل WIP، التام FG، والمباع COGS):</p>
+                                            <p class="text-xs font-normal text-slate-500">1. نجمع إجمالي الأرصدة الثلاثة:</p>
+                                            <div class="overflow-x-auto w-full my-2 text-center">
+                                                $$\$40,000 + \$80,000 + \$680,000 = \$800,000$$
+                                            </div>
+                                            <p class="text-xs font-normal text-slate-500">2. نحسب النسبة المئوية ونصيب كل حساب من التخفيض الكلي للـ 10 آلاف:</p>
+                                            <div class="bg-white p-3 rounded-xl border border-sky-200 font-mono text-xs text-left leading-relaxed">
+                                                • WIP % = 40,000 / 800,000 = 5% &rightarrow; Reduction = $10,000 × 5% = $500<br>
+                                                • FG % = 80,000 / 800,000 = 10% &rightarrow; Reduction = $10,000 × 10% = $1,000<br>
+                                                • COGS % = 680,000 / 800,000 = 85% &rightarrow; Reduction = $10,000 × 85% = $8,500
+                                            </div>
+                                            <p class="text-sm font-normal text-slate-600 mt-2">3. نثبت قيد الإقفال الجماعي بنقل الأرصدة المخفضة في الجانب الدائن:</p>
+                                            <table class="journal-table">
+                                                <tr><th>Account Names</th><th>Debit (Dr)</th><th>Credit (Cr)</th></tr>
+                                                <tr><td class="dr">Manufacturing Overhead Allocated</td><td>$435,000</td><td></td></tr>
+                                                <tr><td class="cr">Work-in-Process Inventory</td><td></td><td>$500</td></tr>
+                                                <tr><td class="cr">Finished Goods Inventory</td><td></td><td>$1,000</td></tr>
+                                                <tr><td class="cr">Cost of Goods Sold (COGS)</td><td></td><td>$8,500</td></tr>
+                                                <tr><td class="cr">Manufacturing Overhead Control</td><td></td><td>$425,000</td></tr>
+                                            </table>
+                                        </li>
+                                    </ul>
+                                    <div class="ar-tip">
+                                        <i class="fa-solid fa-triangle-exclamation text-red-600"></i>
+                                        <div>
+                                            <strong class="text-red-800 block mb-1">تريكة الدكتور الخطيرة في اتجاه القيد (Proration Direction):</strong>
+                                            في المسألة دي الحالة كانت <strong>Overallocated</strong> يعني إحنا مضخمين التكاليف التقديرية، عشان كده حطينا حسابات المخازن (WIP, FG, COGS) في الجانب <strong>الدائن (Credit)</strong> عشان نقللها ونقفل الحساب. <br>
+                                            لو الدكتور عكسها في الامتحان وجابها <strong>Underallocated</strong> يعني التكاليف الحقيقية طلعت أكبر وإنت محتاج تزود وتضخم تكلفتهم، ساعتها هتعكس القيد تماماً وتحط حسابات الـ WIP والـ FG والـ COGS في الجانب <strong>المدين (Debit)</strong>! ركز فيها جداً عشان بتوقع الدفعة كلها.
+                                        </div>
+                                    </div>
+                                </div>
+                            </div></div></div>
+                        </div>
 
+                        <div class="acc-card" id="l3-acc4">
+                            <button class="acc-header l3-toggle" data-index="3" data-lecture="l3">
+                                <div class="acc-icon" style="background:#e0f2fe;color:#0284c7"><i class="fa-solid fa-shirt"></i></div>
+                                <span class="acc-title">رابعاً: مفاهيم التوالف والعيوب الصناعية</span>
+                                <i class="fa-solid fa-chevron-down acc-chevron"></i>
+                            </button>
+                            <div class="acc-body"><div class="acc-body-inner"><div class="acc-body-content">
+                                <div class="content-en">
+                                    <strong>Basic Spoilage, Rework, and Scrap Definitions:</strong>
+                                    <ul class="list-disc pl-5 mt-2 space-y-1">
+                                        <li><strong>Spoilage:</strong> units of production that do not meet the specifications required by customers and that are discarded or sold for reduced prices.</li>
+                                        <li><strong>Rework:</strong> units of production that do not meet specifications but that are subsequently repaired and sold as good finished units.</li>
+                                        <li><strong>Scrap:</strong> leftover materials that have a positive but minimal sales value (fabric clippings, wood shavings).</li>
+                                        <li><strong>Normal Spoilage:</strong> inherent in a particular production process, treated as a product cost. Can be Job-specific or Common to all jobs.</li>
+                                        <li><strong>Abnormal Spoilage:</strong> avoidable, results from operational inefficiency or errors, treated as a period cost (Loss account).</li>
+                                    </ul>
+                                </div>
+                                <div class="content-ar">
+                                    <div class="content-ar-header"><i class="fa-solid fa-lightbulb"></i> الشرح بالتفصيل الممل (رسمة القميص)</div>
+                                    <p>بص يا محمد يا بطل على رسمة القميص اللي الدكتور عاملها في الورق، دي بتلخص المفهوم كله في المصنع:</p>
+                                    <ul>
+                                        <li><span class="ar-label">1. إعادة تشغيل (Rework):</span> قميص كمه مقطوع أو راكب غلط؛ ده منتج معيوب بس ينفع يتصلح، هنرجعه للعمال يخيطوه تاني ونبيعه سليم كأنه جديد.</li>
+                                        <li><span class="ar-label">2. تالف (Spoilage):</span> قميص مشخبط عليه ومتبهدل؛ ده منتج باظ تماماً ومينفعش يتصلح خلاص، يا إما هنرميه في الزبالة يا نبيعه كخردة بربع تمنه.</li>
+                                        <li><span class="ar-label">3. خردة/عوادم (Scrap):</span> شوية قصاقيص قماش مرمية جنب المكن؛ دي البواقي الطبيعية بتاعة الخامات بعد ما فصلنا القميص وليها قيمة تافهة.</li>
+                                    </ul>
+                                    <div class="ar-tip">
+                                        <i class="fa-solid fa-triangle-exclamation text-red-600"></i>
+                                        <div>
+                                            <strong class="text-red-800 block mb-1">سؤال نظري مضمون في الصح والغلط:</strong>
+                                            الدكتور بيجيب سؤال يقولك: `Abnormal spoilage is considered a product cost` الإجابة دايماً <strong>غلط (False)</strong>! التالف غير الطبيعي الناتجة عن الإهمال بتعتبر <strong>Period Cost</strong> يعني خسارة فترة بتترمي في قائمة الدخل فوراً عشان صاحب الشغل يحاسب الإدارة عليها.
+                                        </div>
+                                    </div>
+                                </div>
+                            </div></div></div>
+                        </div>
+
+                        <div class="acc-card" id="l3-acc5">
+                            <button class="acc-header l3-toggle" data-index="4" data-lecture="l3">
+                                <div class="acc-icon" style="background:#e0f2fe;color:#0284c7"><i class="fa-solid fa-square-root-variable"></i></div>
+                                <span class="acc-title">خامساً: المسألة الشاملة (حالات التالف الست بالقيود)</span>
+                                <i class="fa-solid fa-chevron-down acc-chevron"></i>
+                            </button>
+                            <div class="acc-body"><div class="acc-body-inner"><div class="acc-body-content">
+                                <div class="content-en text-xs md:text-sm">
+                                    <strong>Comprehensive Base Data:</strong><br>
+                                    Job X consists of 10 WIP units. Total Initial Cost of Job = $100 (Cost per unit = $10). 2 units are found spoiled, leaving 8 good units.
+                                    <br><br>
+                                    <strong>Case 1: Normal Spoilage, Specific to Job, not Sold</strong><br>
+                                    • No Journal Entry. Total Cost of Job X remains $100. Cost of good units = $100 / 8 = **$12.50 / unit**.
+                                    <br><br>
+                                    <strong>Case 2: Normal Spoilage, Specific to Job, Sold @ $3/unit</strong><br>
+                                    • J.E: Dr. Spoiled Inventory $6 (2 × $3) / Cr. WIP-Job X $6. Net Job Cost = $94. Cost per good unit = $94 / 8 = **$11.75 / unit**.
+                                    <br><br>
+                                    <strong>Case 3: Normal Spoilage, Common to all Jobs, not Sold</strong><br>
+                                    • J.E: Dr. MOH Control $20 (2 × $10) / Cr. WIP-Job X $20. Net Job Cost = $80. Cost per good unit = $80 / 8 = **$10.00 / unit**.
+                                    <br><br>
+                                    <strong>Case 4: Normal Spoilage, Common to all Jobs, Sold @ $3/unit</strong><br>
+                                    • J.E: Dr. MOH Control $14 (Net loss) &amp; Dr. Spoiled Inventory $6 / Cr. WIP-Job X $20. Net Job Cost = $80. Cost per good unit = **$10.00 / unit**.
+                                    <br><br>
+                                    <strong>Case 5: Abnormal Spoilage (Inefficiency), not Sold</strong><br>
+                                    • J.E: Dr. Loss from Abnormal Spoilage $20 / Cr. WIP-Job X $20. Net Job Cost = $80. Cost per good unit = **$10.00 / unit**.
+                                    <br><br>
+                                    <strong>Case 6: Abnormal Spoilage (Inefficiency), Sold @ $3/unit</strong><br>
+                                    • J.E: Dr. Loss from Abnormal Spoilage $14 &amp; Dr. Spoiled Inventory $6 / Cr. WIP-Job X $20. Cost per good unit = **$10.00 / unit**.
+                                </div>
+                                <div class="content-ar">
+                                    <div class="content-ar-header"><i class="fa-solid fa-calculator"></i> خطوات احتساب قيود الحالات الست بالتفصيل الممل</div>
+                                    <p>بص يا بطل، دي أتقل جزئية حسابية في الورق، وبنفصص الـ 6 حالات بالورقة والقلم كالتالي:</p>
+                                    
+                                    <div class="space-y-4">
+                                        <div class="p-3 bg-white rounded-lg border border-sky-200">
+                                            <strong>الحالة 1 (طبيعي خاص بالأمر - غير مباع):</strong>
+                                            <p class="text-xs text-slate-600 mt-1">مفيش أي قيود يومية (No Entry). الـ 100 دولار بتوع الشغلانة هيفضلوا زي ما هما متحملين عليها، والـ 8 وحدات السليمة هيشيلوا الليلة، فتكلفة الوحدة السليمة تزيد لـ 12.50 دولار:</p>
+                                            <div class="overflow-x-auto w-full my-2">
+                                                $$\text{Cost of Good Unit} = \frac{\$100}{8\ \text{Units}} = \$12.50$$
+                                            </div>
+                                        </div>
+                                        <div class="p-3 bg-white rounded-lg border border-sky-200">
+                                            <strong>الحالة 2 (طبيعي خاص بالأمر - مباع بـ 3 دولار للوحدة):</strong>
+                                            <p class="text-xs text-slate-600 mt-1">هنبيع الوحدتين بـ 6 دولار ونحطهم في مخزن التالف (مدين)، والـ 6 دولار دول بيقللوا تكلفة الشغلانة في الدائن:</p>
+                                            <table class="journal-table text-xs">
+                                                <tr><td class="dr">Spoiled Inventory Control</td><td>$6</td><td></td></tr>
+                                                <tr><td class="cr">WIP Control - Job X</td><td></td><td>$6</td></tr>
+                                            </table>
+                                            <div class="overflow-x-auto w-full my-2">
+                                                $$\text{Cost of Good Unit} = \frac{\$100 - \$6}{8\ \text{Units}} = \frac{\$94}{8} = \$11.75$$
+                                            </div>
+                                        </div>
+                                        <div class="p-3 bg-white rounded-lg border border-sky-200">
+                                            <strong>الحالة 3 (طبيعي شائع للمصنع - غير مباع):</strong>
+                                            <p class="text-xs text-slate-600 mt-1">الشغلانة ملهاش ذنب في العطل فالمصنع كله بيشيل التكلفة الأصلية للوحدتين ($2 &times; 10 = 20 دولار) في حساب الـ OH Control وننقصهم من الشغلانة:</p>
+                                            <table class="journal-table text-xs">
+                                                <tr><td class="dr">Manufacturing Overhead Control</td><td>$20</td><td></td></tr>
+                                                <tr><td class="cr">WIP Control - Job X</td><td></td><td>$20</td></tr>
+                                            </table>
+                                            <div class="overflow-x-auto w-full my-2">
+                                                $$\text{Cost of Good Unit} = \frac{\$100 - \$20}{8\ \text{Units}} = \frac{\$80}{8} = \$10.00$$
+                                            </div>
+                                        </div>
+                                        <div class="p-3 bg-white rounded-lg border border-sky-200">
+                                            <strong>الحالة 4 (طبيعي شائع للمصنع - مباع بـ 3 دولار للوحدة):</strong>
+                                            <p class="text-xs text-slate-600 mt-1">بنخفض الشغلانة بالـ 20 دولار كاملين في الدائن. الـ 20 دي بنعوض منها 6 دولار في مخزن التالف، والـ 14 دولار الباقية هي الخسارة الصافية اللي هيشيلها المصنع:</p>
+                                            <table class="journal-table text-xs">
+                                                <tr><td class="dr">Manufacturing Overhead Control<br>Spoiled Inventory Control</td><td>$14<br>$6</td><td></td></tr>
+                                                <tr><td class="cr">WIP Control - Job X</td><td></td><td>$20</td></tr>
+                                            </table>
+                                        </div>
+                                        <div class="p-3 bg-white rounded-lg border border-sky-200">
+                                            <strong>الحالة 5 (غير طبيعي إهمال - غير مباع):</strong>
+                                            <p class="text-xs text-slate-600 mt-1">طالما إهمال عمال مينفعش نحمله على تكلفة المنتج، بنفتح حساب خسائر مستقل في الجانب المدين ونخفض حساب الـ WIP بقيمة التكلفة الأصلية للوحدتين (20 دولار):</p>
+                                            <table class="journal-table text-xs">
+                                                <tr><td class="dr">Loss from Abnormal Spoilage</td><td>$20</td><td></td></tr>
+                                                <tr><td class="cr">WIP Control - Job X</td><td></td><td>$20</td></tr>
+                                            </table>
+                                        </div>
+                                        <div class="p-3 bg-white rounded-lg border border-sky-200">
+                                            <strong>الحالة 6 (غير طبيعي إهمال - مباع بـ 3 دولار للوحدة):</strong>
+                                            <p class="text-xs text-slate-600 mt-1">بنخفض الشغلانة بالـ 20 دولار في الدائن، وندخل 6 دولار مخزن التالف مدين، وصافي خسارة الإهمال اللي هتروح قائمة الدخل هي 14 دولار بس مدين:</p>
+                                            <table class="journal-table text-xs">
+                                                <tr><td class="dr">Loss from Abnormal Spoilage<br>Spoiled Inventory Control</td><td>$14<br>$6</td><td></td></tr>
+                                                <tr><td class="cr">WIP Control - Job X</td><td></td><td>$20</td></tr>
+                                            </table>
+                                        </div>
+                                    </div>
+
+                                    <div class="ar-tip mt-5">
+                                        <i class="fa-solid fa-triangle-exclamation text-red-600"></i>
+                                        <div>
+                                            <strong class="text-red-800 block mb-1">تريكات الدكتور في أسئلة البابل شيت للـ Spoilage:</strong>
+                                            <ul class="list-disc pr-4 space-y-1 text-xs text-red-950">
+                                                <li><strong>لعبة الحساب المدين:</strong> لو قالك في الامتحان كلمة <strong>Common</strong> (شائع) في التالف الطبيعي، لازم حساب المدين يكون <span class="bg-red-100 text-red-800 px-1 rounded">OH Control</span>. ولو قالك كلمة <strong>Abnormal</strong> (غير طبيعي/إهمال)، لازم الحساب المدين يكون <span class="bg-red-100 text-red-800 px-1 rounded">Loss from Abnormal Spoilage</span>. لو بدلتهم في القيود هتاخد صفر علطول!</li>
+                                                <li><strong>تريكة القسمة والمقام:</strong> في الحالة الأولى لو طلب تكلفة الوحدة السليمة الجديدة، إوعى تقسم الـ 100 على 10! دايماً بنقسم على الوحدات السليمة الباقية بس (اللي هما 8 وحدات) عشان تطلع معاك 12.50 دولار صح.</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div></div></div>
+                        </div>
+
+                    </div>
+                </div>
+                
+                <!-- Back to Lectures Button -->
+                <div class="mt-8 flex justify-center">
+                    <button onclick="showHomeView()" class="px-8 py-3 rounded-xl font-bold text-white shadow-lg transform hover:-translate-y-0.5 transition-all duration-200 bg-gradient-to-r from-emerald-600 to-teal-600 hover:from-emerald-700 hover:to-teal-700">
+                        <i class="fa-solid fa-arrow-right ml-2"></i> العودة لقائمة المحاضرات
+                    </button>
                 </div>
             </div>
-          </div>
         </section>
 
         <!-- ==============================================
