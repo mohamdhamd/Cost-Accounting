@@ -1130,22 +1130,22 @@
             position: fixed;
             bottom: 28px;
             right: 50%;
-            transform: translateX(50%) translateY(100px);
-            background: #1e293b;
+            transform: translateX(50%) translateY(120px);
+            background: #0f172a;
             color: #fff;
-            padding: 12px 22px;
+            padding: 14px 26px;
             border-radius: 50px;
-            font-size: 13.5px;
-            font-weight: 600;
-            box-shadow: 0 8px 32px rgba(0,0,0,0.28);
+            font-size: 14px;
+            font-weight: 700;
+            box-shadow: 0 8px 40px rgba(0,0,0,0.4);
             z-index: 9999;
-            transition: transform 0.35s cubic-bezier(0.34,1.56,0.64,1), opacity 0.3s;
+            transition: transform 0.4s cubic-bezier(0.34,1.56,0.64,1), opacity 0.3s;
             opacity: 0;
             display: flex;
             align-items: center;
-            gap: 9px;
-            white-space: nowrap;
+            gap: 10px;
             pointer-events: none;
+            border: 1.5px solid rgba(255,255,255,0.12);
         }
 
         #ai-toast.show {
@@ -1153,10 +1153,101 @@
             opacity: 1;
         }
 
+        /* Gemini paste overlay */
+        #ai-paste-overlay {
+            display: none;
+            position: fixed;
+            inset: 0;
+            background: rgba(0,0,0,0.55);
+            z-index: 99999;
+            align-items: center;
+            justify-content: center;
+            backdrop-filter: blur(4px);
+        }
+
+        #ai-paste-overlay.show {
+            display: flex;
+        }
+
+        .ai-paste-box {
+            background: #fff;
+            border-radius: 24px;
+            padding: 32px 28px;
+            max-width: 440px;
+            width: 90%;
+            text-align: center;
+            box-shadow: 0 24px 80px rgba(0,0,0,0.35);
+            animation: bounceIn 0.4s cubic-bezier(0.34,1.56,0.64,1);
+        }
+
+        @keyframes bounceIn {
+            from { transform: scale(0.7); opacity: 0; }
+            to   { transform: scale(1);   opacity: 1; }
+        }
+
+        .ai-paste-icon {
+            font-size: 48px;
+            margin-bottom: 12px;
+        }
+
+        .ai-paste-box h3 {
+            font-size: 20px;
+            font-weight: 800;
+            color: #1e293b;
+            margin-bottom: 8px;
+        }
+
+        .ai-paste-box p {
+            font-size: 14px;
+            color: #64748b;
+            margin-bottom: 20px;
+            line-height: 1.6;
+        }
+
+        .ai-paste-shortcut {
+            display: inline-block;
+            background: #1e293b;
+            color: #fff;
+            font-family: monospace;
+            font-size: 18px;
+            font-weight: 800;
+            padding: 10px 24px;
+            border-radius: 12px;
+            margin-bottom: 20px;
+            letter-spacing: 2px;
+        }
+
+        .ai-paste-open-btn {
+            display: block;
+            width: 100%;
+            padding: 13px;
+            border-radius: 14px;
+            border: none;
+            background: linear-gradient(135deg,#1a73e8,#4285f4);
+            color: #fff;
+            font-size: 15px;
+            font-weight: 700;
+            cursor: pointer;
+            margin-bottom: 10px;
+            transition: transform 0.15s;
+        }
+
+        .ai-paste-open-btn:hover { transform: translateY(-1px); }
+
+        .ai-paste-close-btn {
+            background: none;
+            border: none;
+            color: #94a3b8;
+            font-size: 13px;
+            cursor: pointer;
+            padding: 6px;
+        }
+
         @media (max-width: 600px) {
             .ai-ask-btn { font-size: 11px; padding: 5px 10px; }
             .ai-picker-wrap { padding: 12px 14px; gap: 7px; }
             .ai-btn { font-size: 12px; padding: 6px 12px; }
+            #ai-toast { font-size: 13px; padding: 12px 18px; white-space: normal; max-width: 90vw; text-align: center; }
         }
     </style>
 </head>
@@ -1167,6 +1258,20 @@
     <div id="ai-toast">
         <i class="fa-solid fa-robot"></i>
         <span id="ai-toast-msg">جارٍ فتح المحادثة...</span>
+    </div>
+
+    <!-- Gemini Paste Overlay -->
+    <div id="ai-paste-overlay">
+        <div class="ai-paste-box">
+            <div class="ai-paste-icon">🤖</div>
+            <h3>فتحنا Gemini في تاب جديد!</h3>
+            <p>الشرح اتنسخ تلقائياً — بس Gemini مش بيقبل الرسالة في الـ URL.<br>افتح التاب الجديد والصق الرسالة بالزرار ده:</p>
+            <div class="ai-paste-shortcut">Ctrl + V</div>
+            <button class="ai-paste-open-btn" onclick="window.open('https://gemini.google.com/app','_blank','noopener'); closePasteOverlay();">
+                <i class="fa-solid fa-arrow-up-right-from-square ml-1"></i> افتح Gemini الآن
+            </button>
+            <button class="ai-paste-close-btn" onclick="closePasteOverlay()">إغلاق</button>
+        </div>
     </div>
 
     <!-- Sticky Header -->
@@ -6614,31 +6719,64 @@ ${fullContent}
 
         // ── Toast helper ───────────────────────────────────────────
         let toastTimer = null;
-        function showToast(msg, icon = 'fa-robot') {
+        function showToast(msg, icon = 'fa-check-circle') {
             const toast = document.getElementById('ai-toast');
             const msgEl = document.getElementById('ai-toast-msg');
             toast.querySelector('i').className = `fa-solid ${icon}`;
             msgEl.textContent = msg;
             toast.classList.add('show');
             clearTimeout(toastTimer);
-            toastTimer = setTimeout(() => toast.classList.remove('show'), 3500);
+            toastTimer = setTimeout(() => toast.classList.remove('show'), 5000);
         }
+
+        // ── Paste overlay for Gemini ───────────────────────────────
+        function closePasteOverlay() {
+            document.getElementById('ai-paste-overlay').classList.remove('show');
+        }
+        // Close overlay if clicking backdrop
+        document.getElementById('ai-paste-overlay').addEventListener('click', function(e) {
+            if (e.target === this) closePasteOverlay();
+        });
 
         // ── Open AI Chat in new tab ────────────────────────────────
         function openAIChat(card) {
             const prompt = buildPrompt(card);
-            const urlFn = AI_URLS[selectedAI] || AI_URLS.gemini;
-            const url = urlFn(prompt);
 
-            // Also copy to clipboard as fallback for long prompts
-            try {
-                navigator.clipboard.writeText(prompt).catch(() => {});
-            } catch (e) {}
+            // Copy to clipboard first (always)
+            const copyPromise = navigator.clipboard ? 
+                navigator.clipboard.writeText(prompt) : 
+                Promise.reject('no clipboard API');
 
-            window.open(url, '_blank', 'noopener,noreferrer');
+            copyPromise.catch(() => {
+                // Fallback: textarea trick
+                try {
+                    const ta = document.createElement('textarea');
+                    ta.value = prompt;
+                    ta.style.position = 'fixed'; ta.style.opacity = '0';
+                    document.body.appendChild(ta);
+                    ta.focus(); ta.select();
+                    document.execCommand('copy');
+                    document.body.removeChild(ta);
+                } catch(e) {}
+            });
 
-            const aiNames = { gemini: 'Gemini', chatgpt: 'ChatGPT', claude: 'Claude' };
-            showToast(`جارٍ فتح ${aiNames[selectedAI] || 'AI'} — الرسالة نُسخت كذلك للكليبورد ✓`, 'fa-robot');
+            if (selectedAI === 'gemini') {
+                // Gemini ignores ?q= param — show paste overlay instead
+                window.open('https://gemini.google.com/app', '_blank', 'noopener,noreferrer');
+                setTimeout(() => {
+                    document.getElementById('ai-paste-overlay').classList.add('show');
+                }, 400);
+            } else if (selectedAI === 'chatgpt') {
+                // ChatGPT ?q= param works and auto-submits
+                const url = `https://chatgpt.com/?q=${encodeURIComponent(prompt)}`;
+                window.open(url, '_blank', 'noopener,noreferrer');
+                showToast('✅ ChatGPT فتح مع الرسالة تلقائياً', 'fa-check-circle');
+            } else if (selectedAI === 'claude') {
+                // Claude ?q= param works and auto-submits
+                const url = `https://claude.ai/new?q=${encodeURIComponent(prompt)}`;
+                window.open(url, '_blank', 'noopener,noreferrer');
+                showToast('✅ Claude فتح مع الرسالة تلقائياً', 'fa-check-circle');
+            }
         }
 
         // ── Inject AI Ask Button into every acc-card ──────────────
