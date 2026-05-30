@@ -4893,912 +4893,535 @@
         </section>
 
         <section id="lecture-8-content" class="lecture-content-section hidden grid-cols-1 fade-in scroll-mt-20">
-            <div class="col-span-1">
-                <div class="lecture-hero hero-l8">
-                    <button onclick="showHomeView()" class="back-btn"><i class="fa-solid fa-arrow-right"></i> قائمة
-                        المحاضرات</button>
-                    <h2 class="lecture-hero-title">المحاضرة الثامنة: المنتجات المشتركة والفرعية</h2>
-                    <p class="lecture-hero-sub">Joint Products and Byproducts (Terminology &amp; Main Methods)</p>
-                    <div class="lecture-stats">
-                        <div class="stat-pill"><i class="fa-solid fa-layer-group"></i> 4 أقسام رئيسية</div>
-                        <div class="stat-pill"><i class="fa-solid fa-clock"></i> ~35 دقيقة</div>
-                        <div class="stat-pill" id="l8-progress-label"><i class="fa-solid fa-chart-simple"></i> 0 / 4
-                            مكتملين</div>
-                    </div>
-                    <div class="progress-bar-wrap"
-                        style="margin-top:14px;margin-bottom:0;background:rgba(255,255,255,0.2)">
-                        <div class="progress-bar-fill" id="l8-progress-bar" style="width:0%;background:#fff"></div>
-                    </div>
+          <div class="col-span-1">
+            <div class="lecture-hero hero-l8" style="background: linear-gradient(135deg, #065f46 0%, #059669 50%, #10b981 100%);">
+                <button onclick="showHomeView()" class="back-btn"><i class="fa-solid fa-arrow-right"></i> قائمة المحاضرات</button>
+                <h2 class="lecture-hero-title">المحاضرة الثامنة: التكاليف المشتركة والمنتجات المشتركة</h2>
+                <p class="lecture-hero-sub">Joint Products and Byproducts (Terminology &amp; Allocation Methods)</p>
+                <div class="lecture-stats">
+                    <div class="stat-pill"><i class="fa-solid fa-layer-group"></i> 4 أقسام رئيسية</div>
+                    <div class="stat-pill"><i class="fa-solid fa-clock"></i> ~35 دقيقة</div>
+                    <div class="stat-pill" id="l8-progress-label"><i class="fa-solid fa-chart-simple"></i> 0 / 4 مكتملين</div>
                 </div>
-
-                <!-- Mobile Navigation L8 -->
-                <div class="mobile-topics-nav">
-                    <button class="mobile-nav-item active-nav hero-l8" data-acc="l8-acc1"
-                        onclick="scrollToAcc('l8-acc1', this, 'l8')"><span
-                            class="m-num">1</span><span>المصطلحات</span></button>
-                    <button class="mobile-nav-item hero-l8" data-acc="l8-acc2"
-                        onclick="scrollToAcc('l8-acc2', this, 'l8')"><span class="m-num">2</span><span>القياس
-                            المادي</span></button>
-                    <button class="mobile-nav-item hero-l8" data-acc="l8-acc3"
-                        onclick="scrollToAcc('l8-acc3', this, 'l8')"><span class="m-num">3</span><span>القيمة
-                            البيعية</span></button>
-                    <button class="mobile-nav-item hero-l8" data-acc="l8-acc4"
-                        onclick="scrollToAcc('l8-acc4', this, 'l8')"><span class="m-num">4</span><span>صافي القيمة
-                            (NRV)</span></button>
+                <div class="progress-bar-wrap" style="margin-top:14px;margin-bottom:0;background:rgba(255,255,255,0.2)">
+                    <div class="progress-bar-fill" id="l8-progress-bar" style="width:0%;background:#fff"></div>
                 </div>
+            </div>
 
-                <!-- Two-column layout L8 -->
-                <div class="lecture-layout">
-                    <aside class="lecture-sidebar" style="border-color:#a7f3d0">
-                        <h5 style="color:#059669"><i class="fa-solid fa-list-ul ml-1"></i> أقسام المحاضرة 8</h5>
-                        <a class="sidebar-item active-nav hero-l8" data-acc="l8-acc1"
-                            onclick="scrollToAcc('l8-acc1', this, 'l8')"><span class="nav-num">1</span><span>مفاهيم
-                                ومصطلحات مشتركة</span></a>
-                        <a class="sidebar-item hero-l8" data-acc="l8-acc2"
-                            onclick="scrollToAcc('l8-acc2', this, 'l8')"><span class="nav-num">2</span><span>طريقة
-                                القياس المادي</span></a>
-                        <a class="sidebar-item hero-l8" data-acc="l8-acc3"
-                            onclick="scrollToAcc('l8-acc3', this, 'l8')"><span class="nav-num">3</span><span>القيمة
-                                البيعية عند الانفصال</span></a>
-                        <a class="sidebar-item hero-l8" data-acc="l8-acc4"
-                            onclick="scrollToAcc('l8-acc4', this, 'l8')"><span class="nav-num">4</span><span>طريقة صافي
-                                القيمة (NRV)</span></a>
-                    </aside>
+            <div class="mobile-topics-nav">
+                <button class="mobile-nav-item active-nav hero-l8" data-acc="l8-acc1" onclick="scrollToAcc('l8-acc1', this, 'l8')"><span class="m-num">1</span><span>المصطلحات</span></button>
+                <button class="mobile-nav-item hero-l8" data-acc="l8-acc2" onclick="scrollToAcc('l8-acc2', this, 'l8')"><span class="m-num">2</span><span>القياس المادي</span></button>
+                <button class="mobile-nav-item hero-l8" data-acc="l8-acc3" onclick="scrollToAcc('l8-acc3', this, 'l8')"><span class="m-num">3</span><span>القيمة البيعية</span></button>
+                <button class="mobile-nav-item hero-l8" data-acc="l8-acc4" onclick="scrollToAcc('l8-acc4', this, 'l8')"><span class="m-num">4</span><span>صافي القيمة (NRV)</span></button>
+            </div>
 
-                    <div class="lecture-content-col">
+            <div class="lecture-layout">
+                <aside class="lecture-sidebar" style="border-color:#a7f3d0">
+                    <h5 style="color:#059669"><i class="fa-solid fa-list-ul ml-1"></i> أقسام المحاضرة 8</h5>
+                    <a class="sidebar-item active-nav hero-l8" data-acc="l8-acc1" onclick="scrollToAcc('l8-acc1', this, 'l8')"><span class="nav-num">1</span><span>مصطلحات التكاليف المشتركة</span></a>
+                    <a class="sidebar-item hero-l8" data-acc="l8-acc2" onclick="scrollToAcc('l8-acc2', this, 'l8')"><span class="nav-num">2</span><span>طريقة القياس المادي</span></a>
+                    <a class="sidebar-item hero-l8" data-acc="l8-acc3" onclick="scrollToAcc('l8-acc3', this, 'l8')"><span class="nav-num">3</span><span>القيمة البيعية عند الانفصال</span></a>
+                    <a class="sidebar-item hero-l8" data-acc="l8-acc4" onclick="scrollToAcc('l8-acc4', this, 'l8')"><span class="nav-num">4</span><span>طريقة صافي القيمة (NRV)</span></a>
+                </aside>
 
-                        <!-- L8 ACC 1 -->
-                        <div class="acc-card" id="l8-acc1">
-                            <button class="acc-header l8-toggle" data-index="0" data-lecture="l8">
-                                <div class="acc-icon" style="background:#d1fae5;color:#059669"><i
-                                        class="fa-solid fa-circle-nodes"></i></div>
-                                <span class="acc-title">أولاً: مفاهيم ومصطلحات التكاليف المشتركة <small
-                                        style="color:#94a3b8;font-weight:600;font-size:12px;display:block">Joint Cost
-                                        Terminology</small></span>
-                                <i class="fa-solid fa-chevron-down acc-chevron"></i>
-                            </button>
-                            <div class="acc-body">
-                                <div class="acc-body-inner">
-                                    <div class="acc-body-content">
-                                        <div class="content-en">
-                                            <ul>
-                                                <li><strong>Joint Costs:</strong> costs of a single production process
-                                                    that yields multiple products simultaneously.</li>
-                                                <li><strong>Splitoff Point:</strong> the place in a joint production
-                                                    process where two or more products become separately identifiable.
-                                                </li>
-                                                <li><strong>Separable Costs:</strong> all costs incurred beyond the
-                                                    splitoff point that are assignable to each of the now-identifiable
-                                                    specific products.</li>
-                                                <li><strong>Main Product:</strong> product of a joint production process
-                                                    with a high sales value compared to other outputs.</li>
-                                                <li><strong>Joint Products:</strong> two or more products with a high
-                                                    sales value compared to the sales values of any other outputs.</li>
-                                                <li><strong>Byproducts:</strong> outputs that have low sales values
-                                                    compared to main products.</li>
-                                            </ul>
-                                        </div>
-                                        <div class="content-ar">
-                                            <div class="content-ar-header"><i class="fa-solid fa-lightbulb"></i> الشرح
-                                                بالعامية المصرية (فكرة الدرس)</div>
-                                            <p>الدرس ده بيكلمنا عن المصانع اللي بتدخل "خامة واحدة" في خط إنتاج واحد،
-                                                ويطلع منها "أكتر من منتج" في نفس اللحظة غصب عننا! زي البترول بيطلع بنزين
-                                                وسولار كمنتجات مشتركة (Joint Products), ويطلع إسفلت كمنتج فرعي تافه
-                                                (Byproduct).</p>
-                                            <p><strong>نقطة الانفصال (Splitoff Point):</strong> هي المحطة أو اللحظة اللي
-                                                المنتجات بتفصل فيها عن بعض وكل واحد بيبان بشخصيته المستقلة. والمصاريف
-                                                اللي بتتصرف بعد اللحظة دي على منتج بعينه اسمها <strong>تكاليف قابلة
-                                                    للفصل (Separable Costs)</strong>.</p>
-                                        </div>
+                <div class="lecture-content-col">
+                    
+                    <div class="acc-card" id="l8-acc1">
+                        <button class="acc-header l8-toggle" data-index="0" data-lecture="l8">
+                            <div class="acc-icon" style="background:#d1fae5;color:#059669"><i class="fa-solid fa-book"></i></div>
+                            <span class="acc-title">أولاً: مفاهيم التكاليف المشتركة ومصطلحاتها <small style="color:#94a3b8;font-weight:600;font-size:12px;display:block">Joint Cost Core Definitions</small></span>
+                            <i class="fa-solid fa-chevron-down acc-chevron"></i>
+                        </button>
+                        <div class="acc-body"><div class="acc-body-inner"><div class="acc-body-content">
+                            <div class="content-en">
+                                <strong>Joint Cost Terminology:</strong>
+                                <ul class="list-disc pl-5 mt-1 space-y-1">
+                                    <li><strong>Joint Costs:</strong> costs of a single production process that yields multiple products simultaneously.</li>
+                                    <li><strong>Splitoff Point:</strong> the place in a joint production process where two or more products become separately identifiable.</li>
+                                    <li><strong>Separable Costs:</strong> all costs incurred beyond the splitoff point that are assignable to each of the now-identifiable specific products.</li>
+                                    <li><strong>Main Product:</strong> output of a joint production process that yields one product with a high sales value compared to the sales values of the other outputs.</li>
+                                    <li><strong>Joint Products:</strong> outputs of a joint production process that yields two or more products with a high sales value compared to the sales values of any other outputs.</li>
+                                    <li><strong>Byproducts:</strong> outputs of a joint production process that have low sales values compared to the sales values of the other outputs.</li>
+                                </ul>
+                            </div>
+                            <div class="content-ar">
+                                <div class="content-ar-header"><i class="fa-solid fa-lightbulb"></i> الشرح بالعامية المصرية (فكرة الدرس)</div>
+                                <p class="mb-4">الدرس ده بيكلمنا عن المصانع اللي بتدخل "خامة واحدة" في مكنة واحدة، ويطلع منها "أكتر من منتج" في نفس الوقت. المصاريف اللي اتصرفت في الأول دي خالص مع بعضها بنسميها التكاليف المشتركة (Joint Costs).</p>
+                                
+                                <div class="bg-white border border-slate-200 rounded-xl p-4 my-4 flex flex-col md:flex-row items-center justify-center gap-4 text-center text-xs font-bold text-slate-700">
+                                    <div class="p-3 bg-slate-100 rounded-lg border border-slate-300 w-full md:w-auto">
+                                        خامة واحدة ودورة واحدة<br><span class="text-emerald-600 font-black">Joint Costs</span>
+                                    </div>
+                                    <div class="text-xl text-slate-400 hidden md:block"><i class="fa-solid fa-arrow-left"></i></div>
+                                    <div class="p-3 bg-amber-100 rounded-lg border border-amber-300 text-amber-900 w-full md:w-auto animate-pulse">
+                                        نقطة الانفصال<br><span class="font-black">Splitoff Point</span>
+                                    </div>
+                                    <div class="text-xl text-slate-400 hidden md:block"><i class="fa-solid fa-arrow-left"></i></div>
+                                    <div class="flex flex-col gap-2 w-full md:w-auto">
+                                        <div class="p-2 bg-emerald-100 text-emerald-800 rounded border border-emerald-200">منتج رئيسي أ (Main Product)</div>
+                                        <div class="p-2 bg-blue-100 text-blue-800 rounded border border-blue-200">منتج مشترك ب (Joint Product)</div>
+                                        <div class="p-2 bg-rose-100 text-rose-800 rounded border border-rose-200">منتج فرعي تافه (Byproduct)</div>
+                                    </div>
+                                </div>
+
+                                <ul class="list-disc pr-6 space-y-2">
+                                    <li><span class="ar-label">نقطة الانفصال (Splitoff Point)</span> دي اللحظة اللي المنتجات بتنفصل فيها عن بعض وكل منتج بيبان لوحده زي اللبن الخام لما يدخل مكنة الفرز ويتفصل لقشطة (Cream) ولبن خالي الدسم (Liquid Skim).</li>
+                                    <li><span class="ar-label">التكاليف القابلة للفصل (Separable Costs)</span> بعد ما المنتجات تتفصل، لو حابين ناخد منتج منهم نوديه مكنة تانية عشان نحسنه ونغير شكله (مثلاً ناخد القشطة نصرف عليها مصاريف تصنيع إضافية عشان نحولها لزبدة Buttercream)، المصاريف الجديدة دي خاصة بالمنتج ده بس.</li>
+                                </ul>
+                                <div class="ar-tip">
+                                    <i class="fa-solid fa-triangle-exclamation text-red-600"></i>
+                                    <div>
+                                        <strong class="text-red-800 block mb-1">لعبة التعريفات (Definitions Trap):</strong>
+                                        الدكتور بيجيب لك تعريف الـ Separable costs ويقولك في الاختيارات ده الـ Joint costs. لازم تركز وتفتكر دايماً إن الـ Separable بتكون <strong>بعد</strong> نقطة الانفصال (beyond the splitoff point)، بينما الـ Joint بتكون <strong>قبلها</strong> (صناعة مشتركة).
                                     </div>
                                 </div>
                             </div>
-                        </div>
-
-                        <div class="acc-card" id="l8-acc2">
-                            <button class="acc-header l8-toggle" data-index="1" data-lecture="l8">
-                                <div class="acc-icon" style="background:#d1fae5;color:#059669"><i
-                                        class="fa-solid fa-scale-unbalanced"></i></div>
-                                <span class="acc-title">ثانياً: طريقة القياس المادي (Cream &amp; Skim Milk) <small
-                                        style="color:#94a3b8;font-weight:600;font-size:12px;display:block">Physical
-                                        Measures Method</small></span>
-                                <i class="fa-solid fa-chevron-down acc-chevron"></i>
-                            </button>
-                            <div class="acc-body">
-                                <div class="acc-body-inner">
-                                    <div class="acc-body-content">
-                                        <div class="content-en text-xs md:text-sm">
-                                            <strong>Example 1 Data:</strong><br>
-                                            • Joint Costs = $400,000 (Processing 110,000 gallons raw milk).
-                                            <br>• Output: Cream = 25,000 gallons | Liquid Skim = 75,000 gallons. Total =
-                                            100,000 gallons.
-                                            <br><br>
-                                            <strong>Physical Measures Allocation:</strong>
-                                            <div class="overflow-x-auto w-full my-2">
-                                                $$\text{Cream Allocation Ratio} = \frac{25,000\text{ gallons
-                                                (Cream)}}{100,000\text{ gallons (Total)}} = 25\%$$
-                                            </div>
-
-                                            <div class="overflow-x-auto w-full my-2">
-                                                $$\text{Cream Allocated Cost} = \$400,000 \times 25\% =
-                                                \mathbf{\$100,000}$$
-                                            </div>
-
-                                            <div class="overflow-x-auto w-full my-2">
-                                                $$\text{Skim Milk Allocation Ratio} = \frac{75,000\text{ gallons
-                                                (Skim)}}{100,000\text{ gallons (Total)}} = 75\%$$
-                                            </div>
-
-                                            <div class="overflow-x-auto w-full my-2">
-                                                $$\text{Skim Milk Allocated Cost} = \$400,000 \times 75\% =
-                                                \mathbf{\$300,000}$$
-                                            </div>
-
-                                            <div class="overflow-x-auto w-full my-2">
-                                                $$\text{Allocated Cost per Unit} = \frac{\$400,000}{100,000\text{
-                                                gallons}} = \mathbf{\$4\text{ / gallon}}$$
-                                            </div>
-                                        </div>
-                                        <div class="content-ar">
-                                            <div class="content-ar-header"><i class="fa-solid fa-calculator"></i> خطوات
-                                                حل القياس المادي</div>
-                                            <p>الطريقة دي مابتفكرش في سعر البيع ولا المكسب، بتبص للوزن أو الحجم
-                                                (الجالونات) وبس:</p>
-                                            <p>إحنا جالونات الإنتاج الكلية 100 ألف جالون لبن مصفى. القشطة أخذت ربع
-                                                الجالونات (25%) واللبن خالي الدسم أخذ 75% من الجالونات:</p>
-                                            <div class="overflow-x-auto w-full my-2">
-                                                $\text{Cream Allocation Ratio} = \frac{25,000\text{ gal}}{100,000\text{ gal}} = 25\%$
-                                            </div>
-
-                                            <div class="overflow-x-auto w-full my-2">
-                                                $\text{Skim Milk Allocation Ratio} = \frac{75,000\text{ gal}}{100,000\text{ gal}} = 75\%$
-                                            </div>
-
-                                            <div class="overflow-x-auto w-full my-2">
-                                                $\text{Cream Allocated Joint Cost} = \$400,000 \times 25\% = \$100,000$
-                                            </div>
-
-                                            <div class="overflow-x-auto w-full my-2">
-                                                $\text{Skim Milk Allocated Joint Cost} = \$400,000 \times 75\% = \$300,000$
-                                            </div>
-
-                                            <p>كده تطلع تكلفة الجالون للمنتجين متساوية بالملي وهي 4 دولار/جالون. وده
-                                                طبعاً العيب القاتل للطريقة دي؛ لأن القشطة غالية جداً في السوق واللبن
-                                                رخيص، فكده ظلمنا القشطة وبوظنا حسابات الربحية الحقيقية للمنتجات!</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- L8 ACC 3 -->
-                        <div class="acc-card" id="l8-acc3">
-                            <button class="acc-header l8-toggle" data-index="2" data-lecture="l8">
-                                <div class="acc-icon" style="background:#d1fae5;color:#059669"><i
-                                        class="fa-solid fa-coins"></i></div>
-                                <span class="acc-title">ثالثاً: طريقة القيمة البيعية عند نقطة الانفصال <small
-                                        style="color:#94a3b8;font-weight:600;font-size:12px;display:block">Sales Value
-                                        at Split-off Method</small></span>
-                                <i class="fa-solid fa-chevron-down acc-chevron"></i>
-                            </button>
-                            <div class="acc-body">
-                                <div class="acc-body-inner">
-                                    <div class="acc-body-content">
-                                        <div class="content-en text-xs md:text-sm">
-                                            <strong>Selling Prices at Split-off:</strong> Cream = $8/gallon | Liquid
-                                            Skim = $4/gallon.
-                                            <br><br>
-                                            <strong>Sales Value Calculation of Total Production:</strong>
-                                            <div class="overflow-x-auto w-full my-2">
-                                                $$\text{Cream Sales Value} = 25,000\text{ gal} \times \$8\text{ / gal} =
-                                                \$200,000 \quad (40\%)$$
-                                            </div>
-
-                                            <div class="overflow-x-auto w-full my-2">
-                                                $$\text{Liquid Skim Sales Value} = 75,000\text{ gal} \times \$4\text{ /
-                                                gal} = \$300,000 \quad (60\%)$$
-                                            </div>
-
-                                            <div class="overflow-x-auto w-full my-2">
-                                                $$\text{Total Sales Value} = \$200,000 + \$300,000 =
-                                                \mathbf{\$500,000}$$
-                                            </div>
-                                            <br>
-                                            <strong>Joint Cost Allocation ($400,000 total):</strong>
-                                            <div class="overflow-x-auto w-full my-2">
-                                                $$\text{Joint Cost Allocated to Cream} = \$400,000 \times 40\% =
-                                                \mathbf{\$160,000} \quad \text{(Unit Cost = \$6.40 / gal)}$$
-                                            </div>
-
-                                            <div class="overflow-x-auto w-full my-2">
-                                                $$\text{Joint Cost Allocated to Liquid Skim} = \$400,000 \times 60\% =
-                                                \mathbf{\$240,000} \quad \text{(Unit Cost = \$3.20 / gal)}$$
-                                            </div>
-
-                                        </div>
-                                        <div class="content-ar">
-                                            <div class="content-ar-header"><i class="fa-solid fa-calculator"></i> خطوات
-                                                الحل بالقيمة البيعية النقدية</div>
-                                            <p>الطريقة دي أعدل ومنطقية جداً، بنشوف الإنتاج الكلي لكل منتج هيجيب فلوس كام
-                                                عند نقطة الانفصال بالظبط، ونوزع التكاليف بنسب مساهمتهم في الإيراد الكلي:
-                                            </p>
-                                            <div class="overflow-x-auto w-full my-2">
-                                                $\text{Cream Sales Value} = 25,000\text{ gal} \times \$8\text{ / gal} = \$200,000 \quad (40\%)$
-                                            </div>
-
-                                            <div class="overflow-x-auto w-full my-2">
-                                                $\text{Liquid Skim Sales Value} = 75,000\text{ gal} \times \$4\text{ / gal} = \$300,000 \quad (60\%)$
-                                            </div>
-
-                                            <div class="overflow-x-auto w-full my-2">
-                                                $\text{Joint Cost Allocated to Cream} = \$400,000 \times 40\% = \$160,000$
-                                            </div>
-
-                                            <div class="overflow-x-auto w-full my-2">
-                                                $\text{Joint Cost Allocated to Liquid Skim} = \$400,000 \times 60\% = \$240,000$
-                                            </div>
-
-                                            <p>الميزة العبقرية للطريقة دي إن مجمل ربح كل منتج بيطلع متساوي وثابت بنسبة
-                                                20% لكل منتج بالتمام والكمال! ودي أكثر طريقة عادلة ومنطقية لما تكون
-                                                المنتجات قابلة للبيع فوراً عند الفصل.</p>
-                                            <div class="ar-tip">
-                                                <i class="fa-solid fa-triangle-exclamation animate-bounce"></i>
-                                                <div>
-                                                    <strong class="text-red-700 block mb-1">فخ كمية المبيعات المشتتة
-                                                        (Production vs Sales):</strong>
-                                                    الدكتور في المسائل دي ممكن يكتب لك في السطر إنهم باعوا 20 ألف جالون
-                                                    قشطة بس من الـ 25 ألف اللي أنتجوهم. <strong>إياك تضرب سعر البيع في
-                                                        كمية المبيعات!</strong> في التوزيع إحنا بنوزع تكلفة "الإنتاج
-                                                    الكلي"، فلازم نضرب دايماً في كمية الإنتاج بالكامل (الـ 25 ألف
-                                                    جالون).
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- L8 ACC 4 -->
-                        <div class="acc-card" id="l8-acc4">
-                            <button class="acc-header l8-toggle" data-index="3" data-lecture="l8">
-                                <div class="acc-icon" style="background:#d1fae5;color:#059669"><i
-                                        class="fa-solid fa-percent"></i></div>
-                                <span class="acc-title">رابعاً: طريقة صافي القيمة البيعية التقديرية (NRV) <small
-                                        style="color:#94a3b8;font-weight:600;font-size:12px;display:block">Net
-                                        Realizable Value Method</small></span>
-                                <i class="fa-solid fa-chevron-down acc-chevron"></i>
-                            </button>
-                            <div class="acc-body">
-                                <div class="acc-body-inner">
-                                    <div class="acc-body-content">
-                                        <div class="content-en text-xs md:text-sm">
-                                            <strong>Example 2 Further Processing Data:</strong><br>
-                                            • Cream processed into 20,000 gal Buttercream, sold @ $25/gal, Separable
-                                            Cost = $280,000.
-                                            <br>• Liquid Skim processed into 50,000 gal Condensed Milk, sold @ $22/gal,
-                                            Separable Cost = $520,000.
-                                            <br><br>
-                                            <strong>NRV at Split-off Calculation:</strong>
-                                            <div class="overflow-x-auto w-full my-2">
-                                                $$\text{Buttercream NRV} = (20,000\text{ gal} \times \$25) -
-                                                \$280,000\text{ (Separable)} = \mathbf{\$220,000\text{ NRV}} \quad
-                                                (27.5\%)$$
-                                            </div>
-
-                                            <div class="overflow-x-auto w-full my-2">
-                                                $$\text{Condensed Milk NRV} = (50,000\text{ gal} \times \$22) -
-                                                \$520,000\text{ (Separable)} = \mathbf{\$580,000\text{ NRV}} \quad
-                                                (72.5\%)$$
-                                            </div>
-
-                                            <div class="overflow-x-auto w-full my-2">
-                                                $$\text{Total NRV Pool} = \$220,000 + \$580,000 = \mathbf{\$800,000}$$
-                                            </div>
-                                            <br>
-                                            <strong>Joint Cost Allocation ($400,000 total):</strong>
-                                            <div class="overflow-x-auto w-full my-2">
-                                                $$\text{Allocation to Buttercream} = \$400,000 \times 27.5\% =
-                                                \mathbf{\$110,000}$$
-                                            </div>
-
-                                            <div class="overflow-x-auto w-full my-2">
-                                                $$\text{Allocation to Condensed Milk} = \$400,000 \times 72.5\% =
-                                                \mathbf{\$290,000}$$
-                                            </div>
-
-                                        </div>
-                                        <div class="content-ar">
-                                            <div class="content-ar-header"><i class="fa-solid fa-calculator"></i> خطوات
-                                                الحل بطريقة صافي القيمة البيعية (NRV)</div>
-                                            <p>بنستعمل الطريقة دي لما تكون المنتجات مابتتباعش عند الانفصال مباشرة، ولازم
-                                                تروح مكن تاني ونصرف عليها مصاريف إضافية (Separable Costs) عشان تكون
-                                                منتجات نهائية:</p>
-                                            <p><strong>خطوة 1 (حساب صافي القيمة البيعية - NRV):</strong> بنجيب قيمة
-                                                المبيعات النهائية للمنتج بعد التشغيل الإضافي ونطرح منها التكاليف
-                                                الإضافية الخاصة بيه:</p>
-                                            <div class="overflow-x-auto w-full my-2">
-                                                $\text{Buttercream NRV} = (20,000\text{ gal} \times \$25) - \$280,000\text{ (Separable)} = \$220,000 \quad (27.5\%)$
-                                            </div>
-
-                                            <div class="overflow-x-auto w-full my-2">
-                                                $\text{Condensed Milk NRV} = (50,000\text{ gal} \times \$22) - \$520,000\text{ (Separable)} = \$580,000 \quad (72.5\%)$
-                                            </div>
-
-                                            <div class="overflow-x-auto w-full my-2">
-                                                $\text{Total NRV Pool} = \$220,000 + \$580,000 = \$800,000$
-                                            </div>
-                                            <p><strong>خطوة 2 (توزيع التكلفة المشتركة):</strong> بنوزع التكلفة المشتركة
-                                                (\$400,000) بنسبة الـ NRV اللي طلعناها لكل منتج:</p>
-                                            <div class="overflow-x-auto w-full my-2">
-                                                $\text{Allocation to Buttercream} = \$400,000 \times 27.5\% = \$110,000$
-                                            </div>
-
-                                            <div class="overflow-x-auto w-full my-2">
-                                                $\text{Allocation to Condensed Milk} = \$400,000 \times 72.5\% = \$290,000$
-                                            </div>
-
-                                            <div class="ar-tip">
-                                                <i class="fa-solid fa-triangle-exclamation animate-bounce"></i>
-                                                <div>
-                                                    <strong class="text-red-700 block mb-1">ألاعيب الدكتور في
-                                                        الامتحان:</strong>
-                                                    الدكتور ممكن يسألك: "ما هي التكلفة الكلية لمنتج الزبدة؟"
-                                                    <strong>إياك تختار الـ 110 ألف بس!</strong> التكلفة الكلية بتساوي
-                                                    التكلفة المشتركة الموزعة + التكلفة الإضافية القابلة للفصل:
-                                                    <div class="overflow-x-auto w-full my-2">
-                                                        $$\text{Total Buttercream Cost} = \$110,000\text{ (Joint)} +
-                                                        \$280,000\text{ (Separable)} = \mathbf{\$390,000}$$
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Back to Lectures Button -->
-                        <div class="mt-8 flex justify-center">
-                            <button onclick="showHomeView()"
-                                class="px-8 py-3 rounded-xl font-bold text-white shadow-lg transform hover:-translate-y-0.5 transition-all duration-200 bg-gradient-to-r from-emerald-600 to-teal-600 hover:from-emerald-700 hover:to-teal-700">
-                                <i class="fa-solid fa-arrow-right ml-2"></i> العودة لقائمة المحاضرات
-                            </button>
-                        </div>
+                        </div></div></div>
                     </div>
+
+                    <div class="acc-card" id="l8-acc2">
+                        <button class="acc-header l8-toggle" data-index="1" data-lecture="l8">
+                            <div class="acc-icon" style="background:#d1fae5;color:#059669"><i class="fa-solid fa-weight-hanging"></i></div>
+                            <span class="acc-title">ثانياً: طريقة القياس المادي <small style="color:#94a3b8;font-weight:600;font-size:12px;display:block">Physical Measures Method</small></span>
+                            <i class="fa-solid fa-chevron-down acc-chevron"></i>
+                        </button>
+                        <div class="acc-body"><div class="acc-body-inner"><div class="acc-body-content">
+                            <div class="content-en">
+                                <strong>Example 1 Data &amp; Physical Measures Allocation:</strong>
+                                <br>• Joint Costs = $400,000 (Processing 110,000 gallons raw milk).
+                                <br>• Production: Cream = 25,000 gallons | Liquid Skim = 75,000 gallons. Total Production = 100,000 gallons.
+                                <div class="overflow-x-auto w-full my-2">
+                                    <table class="w-full border border-slate-700 mt-3 text-sm text-left">
+                                        <thead>
+                                            <tr class="bg-slate-800 text-white">
+                                                <th class="p-2 border border-slate-700">Product</th>
+                                                <th class="p-2 border border-slate-700">Physical measures (gallons)</th>
+                                                <th class="p-2 border border-slate-700">Weighting (Proportion)</th>
+                                                <th class="p-2 border border-slate-700">Joint Cost Allocation</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td class="p-2 border border-slate-700">Cream</td>
+                                                <td class="p-2 border border-slate-700">25,000</td>
+                                                <td class="p-2 border border-slate-700">0.25 (25%)</td>
+                                                <td class="p-2 border border-slate-700">$100,000</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="p-2 border border-slate-700">Liquid Skim</td>
+                                                <td class="p-2 border border-slate-700">75,000</td>
+                                                <td class="p-2 border border-slate-700">0.75 (75%)</td>
+                                                <td class="p-2 border border-slate-700">$300,000</td>
+                                            </tr>
+                                            <tr class="bg-slate-900 text-white font-bold">
+                                                <td class="p-2 border border-slate-700">Total</td>
+                                                <td class="p-2 border border-slate-700">100,000</td>
+                                                <td class="p-2 border border-slate-700">1.00</td>
+                                                <td class="p-2 border border-slate-700">$400,000</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                                <p class="text-xs text-slate-400 mt-2">Result: Cost per Unit of Joint Cost = $4 / gallon for both. Gross Margin %: Cream = 50%, Liquid Skim = Zero.</p>
+                            </div>
+                            <div class="content-ar">
+                                <div class="content-ar-header"><i class="fa-solid fa-calculator"></i> خطوات حل القياس المادي بالبلدي</div>
+                                <p>إحنا مصنع ألبان صرفنا 400,000 دولار (Joint Costs) عشان نطلع من اللبن الخام قشطة ولبن خالي الدسم. الطريقة دي مابتفكرش في سعر البيع ولا المكسب، بتبص للوزن أو الحجم (الجالونات الناتجة) وبس:</p>
+                                <ol class="list-decimal pr-5 space-y-1 text-sm text-slate-800 font-semibold">
+                                    <li>إجمالي إنتاج الجالونات الفعلي عند الانفصال = 25 ألف + 75 ألف = 100,000 جالون.</li>
+                                    <li>نسبة وزن القشطة = 25% ونسبة اللبن الخالي = 75%.</li>
+                                    <li>نوزع الـ 400 ألف دولار التكلفة الكلية على النسب دي: نصيب القشطة 100,000 دولار، ونصيب اللبن 300,000 دولار.</li>
+                                    <li>تكلفة الجالون الواحد بتطلع متساوية لكل منتج (4 دولار/جالون) لأن التوزيع مبني ع الحجم بس. وده بيخلي مجمل ربح اللبن صفر (Zero) ومجمل ربح القشطة 50%، وده من عيوب الطريقة دي.</li>
+                                </ol>
+                            </div>
+                        </div></div></div>
+                    </div>
+
+                    <div class="acc-card" id="l8-acc3">
+                        <button class="acc-header l8-toggle" data-index="2" data-lecture="l8">
+                            <div class="acc-icon" style="background:#d1fae5;color:#059669"><i class="fa-solid fa-coins"></i></div>
+                            <span class="acc-title">ثالثاً: طريقة القيمة البيعية عند نقطة الانفصال <small style="color:#94a3b8;font-weight:600;font-size:12px;display:block">Sales Value at Split-off Method</small></span>
+                            <i class="fa-solid fa-chevron-down acc-chevron"></i>
+                        </button>
+                        <div class="acc-body"><div class="acc-body-inner"><div class="acc-body-content">
+                            <div class="content-en">
+                                <strong>Selling Prices at Split-off:</strong> Cream = $8 / gallon | Liquid Skim = $4 / gallon.
+                                <br><br>
+                                <strong>Sales Value Calculation of Total Production:</strong>
+                                <div class="overflow-x-auto w-full my-2">
+                                    <table class="w-full border border-slate-700 mt-2 text-sm text-left">
+                                        <thead>
+                                            <tr class="bg-slate-800 text-white">
+                                                <th class="p-2 border border-slate-700">Product Item</th>
+                                                <th class="p-2 border border-slate-700">Sales Value of Production</th>
+                                                <th class="p-2 border border-slate-700">Weighting (Proportion)</th>
+                                                <th class="p-2 border border-slate-700">Joint Cost Allocated</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td class="p-2 border border-slate-700">Cream</td>
+                                                <td class="p-2 border border-slate-700">$200,000 (25,000 gal × $8)</td>
+                                                <td class="p-2 border border-slate-700">0.40 (40%)</td>
+                                                <td class="p-2 border border-slate-700">$160,000</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="p-2 border border-slate-700">Liquid Skim</td>
+                                                <td class="p-2 border border-slate-700">$300,000 (75,000 gal × $4)</td>
+                                                <td class="p-2 border border-slate-700">0.60 (60%)</td>
+                                                <td class="p-2 border border-slate-700">$240,000</td>
+                                            </tr>
+                                            <tr class="bg-slate-900 text-white font-bold">
+                                                <td class="p-2 border border-slate-700">Total</td>
+                                                <td class="p-2 border border-slate-700">$500,000</td>
+                                                <td class="p-2 border border-slate-700">1.00</td>
+                                                <td class="p-2 border border-slate-700">$400,000</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                                <p class="text-xs text-slate-400 mt-2">Resulting Gross Margin % is exactly 20% for both products!</p>
+                            </div>
+                            <div class="content-ar">
+                                <div class="content-ar-header"><i class="fa-solid fa-calculator"></i> خطوات الحل بالقيمة البيعية النقدية</div>
+                                <p>الطريقة دي أعدل ومنطقية جداً، بنشوف الإنتاج الكلي لكل منتج هيجيب فلوس كام في السوق عند لحظة الانفصال وبنوزع التكلفة بناءً على المبيعات دي كـ وزن نسبي:</p>
+                                <p>القشطة قيمتها البيعية لإنتاجها بالكامل 200 ألف، واللبن خالي الدسم قيمته 300 ألف، المجموع المشترك للمبيعات المتوقعة 500 ألف دولار. كدة القشطة بتمثل 40% من الفلوس واللبن بيمثل 60%. بنضرب النسب دي في الـ 400 ألف التكلفة المشتركة الأساسية فيطلع نصيب القشطة 160 ألف ونصيب اللبن 240 ألف دولار، وتكلفة الجالون للقشطة تطلع 6.40 دولار ولللبن 3.20 دولار.</p>
+                                <div class="ar-tip">
+                                    <i class="fa-solid fa-triangle-exclamation text-red-600"></i>
+                                    <div>
+                                        <strong class="text-red-800 block mb-1">فخ كمية المبيعات المشتتة (Production vs Sales):</strong>
+                                        الدكتور في المسائل دي ممكن يكتب لك في السطر إنهم باعوا 20 ألف جالون قشطة بس من الـ 25 ألف اللي أنتجوهم. <strong>إياك تضرب سعر البيع في كمية المبيعات!</strong> في توزيع التكاليف إحنا بنوزع تكلفة "الإنتاج بالكامل"، فلازم نضرب دايماً في كمية الإنتاج الإجمالية (الـ 25 ألف جالون) عشان نجيب الـ Sales Value المظبوطة.
+                                    </div>
+                                </div>
+                            </div>
+                        </div></div></div>
+                    </div>
+
+                    <div class="acc-card" id="l8-acc4">
+                        <button class="acc-header l8-toggle" data-index="3" data-lecture="l8">
+                            <div class="acc-icon" style="background:#d1fae5;color:#059669"><i class="fa-solid fa-percent"></i></div>
+                            <span class="acc-title">رابعاً: طريقة صافي القيمة البيعية التقديرية (NRV) <small style="color:#94a3b8;font-weight:600;font-size:12px;display:block">Net Realizable Value Method</small></span>
+                            <i class="fa-solid fa-chevron-down acc-chevron"></i>
+                        </button>
+                        <div class="acc-body"><div class="acc-body-inner"><div class="acc-body-content">
+                            <div class="content-en">
+                                <strong>Example 2 Further Processing Data:</strong><br>
+                                • Joint Costs to allocate = $400,000.
+                                <br>• Cream processed into 20,000 gal Buttercream, sold @ $25/gal, Separable Cost = $280,000.
+                                <br>• Liquid Skim processed into 50,000 gal Condensed Milk, sold @ $22/gal, Separable Cost = $520,000.
+                                <div class="overflow-x-auto w-full my-2">
+                                    <table class="w-full border border-slate-700 mt-2 text-sm text-left">
+                                        <thead>
+                                            <tr class="bg-slate-800 text-white">
+                                                <th class="p-2 border border-slate-700">Product</th>
+                                                <th class="p-2 border border-slate-700">Final Sales Value</th>
+                                                <th class="p-2 border border-slate-700">− Separable Cost</th>
+                                                <th class="p-2 border border-slate-700">= NRV at Split-off</th>
+                                                <th class="p-2 border border-slate-700">Weight &amp; Allocation</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td class="p-2 border border-slate-700">Buttercream</td>
+                                                <td class="p-2 border border-slate-700">$500,000 (20k × $25)</td>
+                                                <td class="p-2 border border-slate-700">($280,000)</td>
+                                                <td class="p-2 border border-slate-700">$220,000</td>
+                                                <td class="p-2 border border-slate-700">27.5% &rightarrow; **$110,000**</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="p-2 border border-slate-700">Condensed Milk</td>
+                                                <td class="p-2 border border-slate-700">$1,100,000 (50k × $22)</td>
+                                                <td class="p-2 border border-slate-700">($520,000)</td>
+                                                <td class="p-2 border border-slate-700">$580,000</td>
+                                                <td class="p-2 border border-slate-700">72.5% &rightarrow; **$290,000**</td>
+                                            </tr>
+                                            <tr class="bg-slate-900 text-white font-bold">
+                                                <td class="p-2 border border-slate-700">Total</td>
+                                                <td class="p-2 border border-slate-700">$1,600,000</td>
+                                                <td class="p-2 border border-slate-700">($800,000)</td>
+                                                <td class="p-2 border border-slate-700">$800,000</td>
+                                                <td class="p-2 border border-slate-700">100% &rightarrow; **$400,000**</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                            <div class="content-ar">
+                                <div class="content-ar-header"><i class="fa-solid fa-calculator"></i> خطوات الحل بطريقة الـ NRV للتشغيل الإضافي</div>
+                                <p>بنلجأ للطريقة دي لو المنتجات مش هتباع علطول عند نقطة الانفصال، وهندخلها مكن جديد ونصرف عليها مصاريف إضافية (Separable Costs) عشان نحولها لمنتجات تانية: زبدة (Buttercream) ولبن مكثف (Condensed Milk):</p>
+                                <p>بنحسب سعر البيع النهائي للإنتاج الكلي المتطور ونطرح منه المصاريف الإضافية الخاصة بالتشغيل الإضافي عشان نوصل لصافي قيمة المنتج الحقيقية (NRV) عند الانفصال. الزبدة صفت معنا 220 ألف، واللبن المكثف صِفى معنا 580 ألف، المجموع المشترك للصوافي 800 ألف دولار. بنوزع الـ 400 ألف التكلفة المشتركة الأساسية بنسبة الصوافي ($220k / $800k = 27.5%) و ($580k / $800k = 72.5%) فيطلع نصيب الزبدة 110 ألف ونصيب اللبن المكثف 290 ألف دولار.</p>
+                                <div class="ar-tip text-red-700 bg-red-50 border-red-300">
+                                    <i class="fa-solid fa-triangle-exclamation text-red-600"></i>
+                                    <div>
+                                        <strong class="text-red-800 block mb-1">فخ تكلفة الإنتاج الكلية (Total Production Cost):</strong>
+                                        الدكتور ممكن يطلب منك في البابل شيت "Total Production cost" للزبدة مثلاً. إياك تقوله الـ 110,000 وبس! دي التكلفة المشتركة الموزعة بس، لازم تجمع معاها التكلفة الإضافية القابلة للفصل عشان تجيب الرقم الصح:
+                                        <div class="overflow-x-auto w-full my-2">
+                                            $$	ext{Total Cost (Buttercream)} = $110,000 (	ext{Joint}) + $280,000 (	ext{Separable}) = $390,000$$
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div></div></div>
+                    </div>
+
+                    <!-- Back to Lectures Button -->
+                    <div class="mt-8 flex justify-center">
+                        <button onclick="showHomeView()" class="px-8 py-3 rounded-xl font-bold text-white shadow-lg transform hover:-translate-y-0.5 transition-all duration-200 bg-gradient-to-r from-emerald-600 to-teal-600 hover:from-emerald-700 hover:to-teal-700">
+                            <i class="fa-solid fa-arrow-right ml-2"></i> العودة لقائمة المحاضرات
+                        </button>
+                    </div>
+
                 </div>
+            </div>
+          </div>
         </section>
 
-        <section id="lecture-9-content" class="lecture-content-section hidden grid-cols-1 fade-in scroll-mt-20">
-            <div class="col-span-1">
-                <div class="lecture-hero hero-l9">
-                    <button onclick="showHomeView()" class="back-btn"><i class="fa-solid fa-arrow-right"></i> قائمة
-                        المحاضرات</button>
-                    <h2 class="lecture-hero-title">المحاضرة التاسعة: المنتجات المشتركة والفرعية (المتقدم)</h2>
-                    <p class="lecture-hero-sub">Constant Gross Margin NRV &amp; Byproduct Accounting</p>
-                    <div class="lecture-stats">
-                        <div class="stat-pill"><i class="fa-solid fa-layer-group"></i> 4 أقسام رئيسية</div>
-                        <div class="stat-pill"><i class="fa-solid fa-clock"></i> ~35 دقيقة</div>
-                        <div class="stat-pill" id="l9-progress-label"><i class="fa-solid fa-chart-simple"></i> 0 / 4
-                            مكتملين</div>
-                    </div>
-                    <div class="progress-bar-wrap"
-                        style="margin-top:14px;margin-bottom:0;background:rgba(255,255,255,0.2)">
-                        <div class="progress-bar-fill" id="l9-progress-bar" style="width:0%;background:#fff"></div>
-                    </div>
+
+
+<section id="lecture-9-content" class="lecture-content-section hidden grid-cols-1 fade-in scroll-mt-20">
+          <div class="col-span-1">
+            <div class="lecture-hero hero-l5" style="background: linear-gradient(135deg, #7c2d12 0%, #9a3412 50%, #b45309 100%);">
+                <button onclick="showHomeView()" class="back-btn"><i class="fa-solid fa-arrow-right"></i> قائمة المحاضرات</button>
+                <h2 class="lecture-hero-title">المحاضرة التاسعة: مجمل الربح الثابت والمنتجات الفرعية</h2>
+                <p class="lecture-hero-sub">Constant Gross Margin NRV &amp; Byproduct Accounting Systems — Ch. 18 Part 2</p>
+                <div class="lecture-stats">
+                    <div class="stat-pill"><i class="fa-solid fa-layer-group"></i> 3 أقسام رئيسية</div>
+                    <div class="stat-pill"><i class="fa-solid fa-clock"></i> ~35 دقيقة</div>
+                    <div class="stat-pill" id="l9-progress-label"><i class="fa-solid fa-chart-simple"></i> 0 / 3 مكتملين</div>
                 </div>
-
-                <!-- Mobile Navigation L9 -->
-                <div class="mobile-topics-nav">
-                    <button class="mobile-nav-item active-nav hero-l9" data-acc="l9-acc1"
-                        onclick="scrollToAcc('l9-acc1', this, 'l9')"><span class="m-num">1</span><span>مجمل الربح
-                            الثابت</span></button>
-                    <button class="mobile-nav-item hero-l9" data-acc="l9-acc2"
-                        onclick="scrollToAcc('l9-acc2', this, 'l9')"><span class="m-num">2</span><span>تقييم
-                            الفرعية</span></button>
-                    <button class="mobile-nav-item hero-l9" data-acc="l9-acc3"
-                        onclick="scrollToAcc('l9-acc3', this, 'l9')"><span class="m-num">3</span><span>طريقة
-                            الإنتاج</span></button>
-                    <button class="mobile-nav-item hero-l9" data-acc="l9-acc4"
-                        onclick="scrollToAcc('l9-acc4', this, 'l9')"><span class="m-num">4</span><span>طريقة
-                            المبيعات</span></button>
+                <div class="progress-bar-wrap" style="margin-top:14px;margin-bottom:0;background:rgba(255,255,255,0.2)">
+                    <div class="progress-bar-fill" id="l9-progress-bar" style="width:0%;background:#fff"></div>
                 </div>
+            </div>
 
-                <!-- Two-column layout L9 -->
-                <div class="lecture-layout">
-                    <aside class="lecture-sidebar" style="border-color:#bfdbfe">
-                        <h5 style="color:#2563eb"><i class="fa-solid fa-list-ul ml-1"></i> أقسام المحاضرة 9</h5>
-                        <a class="sidebar-item active-nav hero-l9" data-acc="l9-acc1"
-                            onclick="scrollToAcc('l9-acc1', this, 'l9')"><span class="nav-num">1</span><span>طريقة مجمل
-                                الربح الثابت</span></a>
-                        <a class="sidebar-item hero-l9" data-acc="l9-acc2"
-                            onclick="scrollToAcc('l9-acc2', this, 'l9')"><span class="nav-num">2</span><span>تقييم
-                                المنتجات الفرعية</span></a>
-                        <a class="sidebar-item hero-l9" data-acc="l9-acc3"
-                            onclick="scrollToAcc('l9-acc3', this, 'l9')"><span class="nav-num">3</span><span>طريقة
-                                الإنتاج بالقيود</span></a>
-                        <a class="sidebar-item hero-l9" data-acc="l9-acc4"
-                            onclick="scrollToAcc('l9-acc4', this, 'l9')"><span class="nav-num">4</span><span>طريقة
-                                المبيعات بالقيود</span></a>
-                    </aside>
+            <div class="mobile-topics-nav">
+                <button class="mobile-nav-item active-nav hero-l5" data-acc="l9-acc1" onclick="scrollToAcc('l9-acc1', this, 'l9')"><span class="m-num">1</span><span>مجمل الربح الثابت</span></button>
+                <button class="mobile-nav-item hero-l5" data-acc="l9-acc2" onclick="scrollToAcc('l9-acc2', this, 'l9')"><span class="m-num">2</span><span>المنتجات الفرعية</span></button>
+                <button class="mobile-nav-item hero-l5" data-acc="l9-acc3" onclick="scrollToAcc('l9-acc3', this, 'l9')"><span class="m-num">3</span><span>قيود طريقة الإنتاج</span></button>
+            </div>
 
-                    <div class="lecture-content-col">
+            <div class="lecture-layout">
+                <aside class="lecture-sidebar" style="border-color:#fef08a">
+                    <h5 style="color:#b45309"><i class="fa-solid fa-list-ul ml-1"></i> أقسام المحاضرة 9</h5>
+                    <a class="sidebar-item active-nav hero-l5" data-acc="l9-acc1" onclick="scrollToAcc('l9-acc1', this, 'l9')"><span class="nav-num">1</span><span>طريقة مجمل الربح الثابت</span></a>
+                    <a class="sidebar-item hero-l5" data-acc="l9-acc2" onclick="scrollToAcc('l9-acc2', this, 'l9')"><span class="nav-num">2</span><span>مفاهيم وتقييم الفرعية</span></a>
+                    <a class="sidebar-item hero-l5" data-acc="l9-acc3" onclick="scrollToAcc('l9-acc3', this, 'l9')"><span class="nav-num">3</span><span>قيود اليومية والدفاتر</span></a>
+                </aside>
 
-                        <!-- L9 ACC 1 -->
-                        <div class="acc-card" id="l9-acc1">
-                            <button class="acc-header l9-toggle" data-index="0" data-lecture="l9">
-                                <div class="acc-icon" style="background:#dbeafe;color:#2563eb"><i
-                                        class="fa-solid fa-calculator"></i></div>
-                                <span class="acc-title">أولاً: طريقة نسبة مجمل الربح الثابت <small
-                                        style="color:#94a3b8;font-weight:600;font-size:12px;display:block">Constant
-                                        Gross Margin NRV Method</small></span>
-                                <i class="fa-solid fa-chevron-down acc-chevron"></i>
-                            </button>
-                            <div class="acc-body">
-                                <div class="acc-body-inner">
-                                    <div class="acc-body-content">
-                                        <div class="content-en text-xs md:text-sm">
-                                            <strong>Same Example Data (Joint Cost = $400,000):</strong><br>
-                                            • Buttercream final sales = $500,000 (Separable cost = $280,000).
-                                            <br>• Condensed milk final sales = $1,100,000 (Separable cost = $520,000).
-                                            <br><br>
-                                            <strong>Step 1: Calculate Overall Gross Margin %:</strong>
-                                            <div class="overflow-x-auto w-full my-2">
-                                                $$\text{Total Final Sales} = \$500,000 + \$1,100,000 =
-                                                \mathbf{\$1,600,000}$$
-                                            </div>
-
-                                            <div class="overflow-x-auto w-full my-2">
-                                                $$\text{Total Cost (Joint + Separable)} = \$400,000 + \$280,000 +
-                                                \$520,000 = \mathbf{\$1,200,000}$$
-                                            </div>
-
-                                            <div class="overflow-x-auto w-full my-2">
-                                                $$\text{Overall Gross Margin Value} = \$1,600,000 - \$1,200,000 =
-                                                \mathbf{\$400,000}$$
-                                            </div>
-
-                                            <div class="overflow-x-auto w-full my-2">
-                                                $$\text{Overall Gross Margin \%} = \frac{\$400,000}{\$1,600,000} =
-                                                \mathbf{25\%}$$
-                                            </div>
-
-                                            <br>
-                                            <strong>Step 2: Allocate Joint Costs:</strong>
-
-                                            <div class="overflow-x-auto w-full my-2">
-                                                <table>
-                                                    <tr>
-                                                        <th>Product</th>
-                                                        <th>Final Sales Value</th>
-                                                        <th>Less Gross Margin (25%)</th>
-                                                        <th>= Total Cost</th>
-                                                        <th>Less Separable Cost</th>
-                                                        <th>= Joint Cost Allocated</th>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>Buttercream</td>
-                                                        <td>$500,000</td>
-                                                        <td>($125,000)</td>
-                                                        <td>$375,000</td>
-                                                        <td>($280,000)</td>
-                                                        <td><strong>$95,000</strong></td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>Condensed Milk</td>
-                                                        <td>$1,100,000</td>
-                                                        <td>($275,000)</td>
-                                                        <td>$825,000</td>
-                                                        <td>($520,000)</td>
-                                                        <td><strong>$305,000</strong></td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td><strong>Total</strong></td>
-                                                        <td><strong>$1,600,000</strong></td>
-                                                        <td><strong>($400,000)</strong></td>
-                                                        <td><strong>$1,200,000</strong></td>
-                                                        <td><strong>($800,000)</strong></td>
-                                                        <td><strong>$400,000</strong></td>
-                                                    </tr>
-                                                </table>
-                                            </div>
-
-                                        </div>
-                                        <div class="content-ar">
-                                            <div class="content-ar-header"><i class="fa-solid fa-lightbulb"></i> الشرح
-                                                بالعامية بالتفصيل الممل</div>
-                                            <p>الطريقة دي بتفترض إن كل المنتجات لازم تكسب نفس نسبة الربح بالظبط (25% في
-                                                مثالنا):</p>
-                                            <p>1. <strong>حساب نسبة مجمل الربح الكلية (Overall Gross Margin %):</strong>
-                                                بنجمع المبيعات النهائية لكل المنتجات، ونطرح منها التكاليف الكلية
-                                                (المشتركة والفردية) عشان نجيب مجمل الربح الكلي ونقسمه على إجمالي
-                                                المبيعات:</p>
-                                            <div class="overflow-x-auto w-full my-2">
-                                                $\text{Total Final Sales} = \$500,000 + \$1,100,000 = \$1,600,000$
-                                            </div>
-
-                                            <div class="overflow-x-auto w-full my-2">
-                                                $\text{Total Cost (Joint + Separable)} = \$400,000\text{ (Joint)} + $800,000\text{ (Separable)} = \$1,200,000$
-                                            </div>
-
-                                            <div class="overflow-x-auto w-full my-2">
-                                                $\text{Overall Gross Margin Value} = \$1,600,000 - \$1,200,000 = \$400,000$
-                                            </div>
-
-                                            <div class="overflow-x-auto w-full my-2">
-                                                $\text{Overall Gross Margin \%} = \frac{\$400,000}{\$1,600,000} = 25\%$
-                                            </div>
-
-                                            <p>2. <strong>حساب التكلفة المشتركة بطريقة عكسية:</strong> بنجيب مبيعات كل
-                                                منتج ونطرح منها مكسبه المتوقع (25%) فتدينا التكلفة الكلية المتوقعة
-                                                للمنتج. نطرح منها التكلفة الإضافية القابلة للفصل، فيتبقى <strong>التكلفة
-                                                    المشتركة المستنتجة</strong>!</p>
-                                            <div class="ar-tip">
-                                                <i class="fa-solid fa-triangle-exclamation animate-bounce"></i>
-                                                <div>
-                                                    <strong class="text-red-700 block mb-1">لعبة الترتيب
-                                                        العكسي:</strong>
-                                                    في الامتحان، اوعى تبدأ بتوزيع التكلفة المشتركة. لازم تمشي بالخطوات
-                                                    دي بالظبط: المبيعات \(\leftarrow\) نطرح مجمل الربح \(\leftarrow\)
-                                                    تدينا التكلفة الكلية \(\leftarrow\) نطرح التكلفة الإضافية
-                                                    \(\leftarrow\) تدينا التكلفة المشتركة. لو عكست الخطوات الحسبة هتبوظ
-                                                    منك!
-                                                </div>
-                                            </div>
-                                        </div>
+                <div class="lecture-content-col">
+                    <div class="acc-card" id="l9-acc1">
+                        <button class="acc-header l9-toggle" data-index="0" data-lecture="l9">
+                            <div class="acc-icon" style="background:#fef3c7;color:#d97706"><i class="fa-solid fa-percent"></i></div>
+                            <span class="acc-title">أولاً: طريقة نسبة مجمل الربح الثابت (Constant Gross Margin NRV)</span>
+                            <i class="fa-solid fa-chevron-down acc-chevron"></i>
+                        </button>
+                        <div class="acc-body"><div class="acc-body-inner"><div class="acc-body-content">
+                            <div class="content-en">
+                                <strong>Step 1: Calculate Overall Gross Margin Percentage:</strong>
+                                <div class="overflow-x-auto w-full my-2 text-sm text-slate-300">
+                                    • Final Sales Value of Total Production = $500,000 (Buttercream) + $1,100,000 (C. Milk) = $1,600,000.
+                                    <br>• Total Cost (Joint + Separable) = $400,000 + $280,000 + $520,000 = $1,200,000.
+                                    <br>• Total Gross Margin = $1,600,000 − $1,200,000 = $400,000.
+                                    <br>• Overall Gross Margin % = $400,000 / $1,600,000 = **25%**.
+                                </div>
+                                <strong class="block mt-3">Step 2: Allocate Joint Costs Backwards:</strong>
+                                <div class="overflow-x-auto w-full my-2">
+                                    <table class="w-full border border-slate-700 mt-2 text-sm text-left">
+                                        <thead>
+                                            <tr class="bg-slate-800 text-white">
+                                                <th class="p-2 border border-slate-700">Allocation Backwards Table</th>
+                                                <th class="p-2 border border-slate-700">B. Cream</th>
+                                                <th class="p-2 border border-slate-700">C. Milk</th>
+                                                <th class="p-2 border border-slate-700">Total Pool</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td class="p-2 border border-slate-700">Final Sales Value</td>
+                                                <td class="p-2 border border-slate-700">$500,000</td>
+                                                <td class="p-2 border border-slate-700">$1,100,000</td>
+                                                <td class="p-2 border border-slate-700">$1,600,000</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="p-2 border border-slate-700">− Gross Margin (25%)</td>
+                                                <td class="p-2 border border-slate-700">($125,000)</td>
+                                                <td class="p-2 border border-slate-700">($275,000)</td>
+                                                <td class="p-2 border border-slate-700">($400,000)</td>
+                                            </tr>
+                                            <tr class="bg-slate-100 font-bold">
+                                                <td class="p-2 border border-slate-700">= Total Production Cost</td>
+                                                <td class="p-2 border border-slate-700">$375,000</td>
+                                                <td class="p-2 border border-slate-700">$825,000</td>
+                                                <td class="p-2 border border-slate-700">$1,200,000</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="p-2 border border-slate-700">− Separable Cost</td>
+                                                <td class="p-2 border border-slate-700">($280,000)</td>
+                                                <td class="p-2 border border-slate-700">($520,000)</td>
+                                                <td class="p-2 border border-slate-700">($800,000)</td>
+                                            </tr>
+                                            <tr class="bg-slate-900 text-white font-black">
+                                                <td class="p-2 border border-slate-700">= Joint Cost Allocated</td>
+                                                <td class="p-2 border border-slate-700">$95,000</td>
+                                                <td class="p-2 border border-slate-700">$305,000</td>
+                                                <td class="p-2 border border-slate-700">$400,000</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                            <div class="content-ar">
+                                <div class="content-ar-header"><i class="fa-solid fa-reply"></i> خطوات الحل العكسي بالتفصيل الممل</div>
+                                <p>الطريقة دي عبقرية وليها فكرة ثابتة، بنمشي فيها بضهرنا (من تحت لفوق) بهدف إن كل منتج من المنتجات المشتركة يكسب نفس النسبة الثابتة بالملي وهي (25%):</p>
+                                <ul class="space-y-4 font-semibold text-slate-800">
+                                    <li>
+                                        <strong>1. حتة الـ $110,000 والـ $280,000 اللي كانوا بيلخبطوا:</strong>
+                                        <p class="text-sm font-normal text-slate-600 mt-1">بص يا بطل، في الطريقة دي عشان تحسب الـ <strong>Joint Cost Allocated</strong> (آخر سطر في الجدول) بنمشي بالعكس:</p>
+                                        <p class="text-xs text-slate-600 font-semibold">• للـ Buttercream: بنطرح الربح المستهدف (125 ألف) من المبيعات (500 ألف)، فيطلع إجمالي تكلفته الإنتاجية الكلية <strong>375,000 دولار</strong>. وبما إن التكلفة الكلية دي عبارة عن (المشتركة + القابلة للفصل)، وإحنا عارفين إن القابلة للفصل في المعطيات بـ 280,000 دولار، فبنطرحها عشان يتبقالنا نصيبه الصافي من التكلفة المشتركة وهو <strong>95,000 دولار</strong>.</p>
+                                    </li>
+                                </ul>
+                                <div class="ar-tip">
+                                    <i class="fa-solid fa-triangle-exclamation text-red-600"></i>
+                                    <div>
+                                        <strong>لعبة الترتيب العكسي وفخ إجمالي التكلفة (Total Cost Trap):</strong>
+                                        الدكتور بيلعب في الحتة دي في الـ MCQ بلعبة خبيثة جداً؛ يطلب منك في السطر التكلفة الإجمالية لإنتاج منتج معين (Total Production Cost)، ويحط في الاختيارات نصيب المشتركة لوحده ونصيب الفصل لوحده. الطالب أول ما يلاقي نصيب المشتركة طلع على الآلة بيختاره علطول ويفرح، وبينسى يجمع عليها التكلفة الإضافية (Separable Cost). افتكر دايماً: <strong>إجمالي تكلفة المنتج النهائي = نصيبه من المشتركة + تكلفة تشغيله الإضافي</strong>.
                                     </div>
                                 </div>
                             </div>
-                        </div>
-
-                        <!-- L9 ACC 2 -->
-                        <div class="acc-card" id="l9-acc2">
-                            <button class="acc-header l9-toggle" data-index="1" data-lecture="l9">
-                                <div class="acc-icon" style="background:#dbeafe;color:#2563eb"><i
-                                        class="fa-solid fa-cubes"></i></div>
-                                <span class="acc-title">ثانياً: تقييم المنتجات الفرعية وصافي القيمة <small
-                                        style="color:#94a3b8;font-weight:600;font-size:12px;display:block">Byproduct
-                                        Evaluation &amp; NRV Concepts</small></span>
-                                <i class="fa-solid fa-chevron-down acc-chevron"></i>
-                            </button>
-                            <div class="acc-body">
-                                <div class="acc-body-inner">
-                                    <div class="acc-body-content">
-                                        <div class="content-en text-xs md:text-sm">
-                                            <strong>Byproduct Accounting Overview:</strong>
-                                            <div class="overflow-x-auto w-full my-2">
-                                                $$\text{NRV of Byproduct} = \text{Selling Price} - \text{Additional Cost
-                                                to Sell}$$
-                                            </div>
-                                            <br>
-                                            <strong>Two Scenarios for NRV:</strong>
-                                            <ul>
-                                                <li><strong>Case 1: NRV &le; 0:</strong> Considered as **Waste**. No
-                                                    journal entry is required, no financial value.</li>
-                                                <li><strong>Case 2: NRV &gt; 0:</strong> It has value and can be sold.
-                                                    We use two methods:
-                                                    <br>• **1. Production Method (High Value):** Recognizes byproduct
-                                                    inventory at the time of production. Reducer of main product's WIP.
-                                                    <br>• **2. Sales Method (Low Value):** Recognizes byproduct only
-                                                    when sold. Byproduct revenue is recorded directly as other revenue.
-                                                </li>
-                                            </ul>
-                                        </div>
-                                        <div class="content-ar">
-                                            <div class="content-ar-header"><i class="fa-solid fa-lightbulb"></i> فهم
-                                                المنتجات الفرعية بالعامية المصرية</div>
-                                            <p>المنتج الفرعي (Byproduct) هو منتج جانبي بيطلع غصب عننا وقيمته صغيرة
-                                                مقارنة بالمنتج الأساسي. عشان نعرف هنعالجه إزاي دفترياً، بنجيب صافي قيمته
-                                                البيعية (سعر البيع - مصاريف البيع):</p>
-                                            <p>• <strong>الحالة الأولى (القيمة صفر أو سالبة):</strong> يعني مصاريف بيعه
-                                                وتوضيبه أغلى من سعره في السوق! في الحالة دي بنعتبره زبالة/عوادم (Waste)
-                                                وملوش أي قيم ولا قيود محاسبية ونرميه برة المصنع.</p>
-                                            <p>• <strong>الحالة الثانية (القيمة موجبة):</strong> يعني نقدر نبيعه ونستفيد
-                                                منه. هنا عندنا طريقتين:</p>
-                                            <ol class="list-decimal pr-5 space-y-1">
-                                                <li><strong>طريقة الإنتاج (Production Method):</strong> بنعترف بالخردة
-                                                    دي في مخازننا أول ما تتنتج فوراً كأصل، وتكلفتها بتقلل من تكلفة
-                                                    المنتج الأساسي. (ودي بنستعملها لو قيمتها عالية نسبياً ومؤثرة).</li>
-                                                <li><strong>طريقة المبيعات (Sales Method):</strong> بنطنشها ومابنعملش
-                                                    قيود عند الإنتاج، ويوم ما نبيعها نقبض فلوسها ونسجلها "إيراد فرعي".
-                                                    (بنستعملها لو قيمتها تافهة جداً وغير مؤثرة).</li>
-                                            </ol>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- L9 ACC 3 -->
-                        <div class="acc-card" id="l9-acc3">
-                            <button class="acc-header l9-toggle" data-index="2" data-lecture="l9">
-                                <div class="acc-icon" style="background:#dbeafe;color:#2563eb"><i
-                                        class="fa-solid fa-file-invoice-dollar"></i></div>
-                                <span class="acc-title">ثالثاً: طريقة الإنتاج بالقيود اليومية <small
-                                        style="color:#94a3b8;font-weight:600;font-size:12px;display:block">Production
-                                        Method J.E (Material Value)</small></span>
-                                <i class="fa-solid fa-chevron-down acc-chevron"></i>
-                            </button>
-                            <div class="acc-body">
-                                <div class="acc-body-inner">
-                                    <div class="acc-body-content">
-                                        <div class="content-en text-xs md:text-sm">
-                                            <strong>Production Method Data &amp; Entries:</strong><br>
-                                            Assume Byproduct produced = 4,000 units. Selling price = $10/unit,
-                                            additional cost to sell = $5/unit.
-                                            <div class="overflow-x-auto w-full my-2">
-                                                $$\text{NRV} = \$10 - \$5 = \mathbf{\$5\text{ / unit}}$$
-                                            </div>
-                                            Units sold this period = 1,200 units.<br><br>
-
-                                            <strong>1. At Production Time (Recognizing Byproduct at NRV):</strong>
-
-                                            <div class="overflow-x-auto w-full my-2">
-                                                <table class="journal-table">
-                                                    <thead>
-                                                        <tr class="bg-slate-100">
-                                                            <th class="text-right">Account Names &amp; Details</th>
-                                                            <th class="text-right">Debit (Dr.)</th>
-                                                            <th class="text-right">Credit (Cr.)</th>
-                                                        </tr>
-                                                    </thead>
-                                                    <tbody>
-                                                        <tr>
-                                                            <td class="dr">Byproduct Inventory (4,000 units × $5)</td>
-                                                            <td class="font-mono text-sky-700 font-bold">$20,000</td>
-                                                            <td class="font-mono text-slate-400">-</td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td class="cr">Work in Process - Main Product</td>
-                                                            <td class="font-mono text-slate-400">-</td>
-                                                            <td class="font-mono text-emerald-700 font-bold">$20,000
-                                                            </td>
-                                                        </tr>
-                                                    </tbody>
-                                                </table>
-                                            </div>
-
-                                            <br>
-                                            <strong>2. At Selling Time (Selling 1,200 units @ $10/unit, cost @
-                                                $5/unit):</strong>
-
-                                            <div class="overflow-x-auto w-full my-2">
-                                                <table class="journal-table">
-                                                    <thead>
-                                                        <tr class="bg-slate-100">
-                                                            <th class="text-right">Account Names &amp; Details</th>
-                                                            <th class="text-right">Debit (Dr.)</th>
-                                                            <th class="text-right">Credit (Cr.)</th>
-                                                        </tr>
-                                                    </thead>
-                                                    <tbody>
-                                                        <!-- Cash Entry -->
-                                                        <tr>
-                                                            <td class="dr">Cash / Accounts Receivable (1,200 × $10)</td>
-                                                            <td class="font-mono text-sky-700 font-bold">$12,000</td>
-                                                            <td class="font-mono text-slate-400">-</td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td class="cr">Byproduct Revenue</td>
-                                                            <td class="font-mono text-slate-400">-</td>
-                                                            <td class="font-mono text-emerald-700 font-bold">$12,000
-                                                            </td>
-                                                        </tr>
-                                                        <!-- Cost Entry -->
-                                                        <tr>
-                                                            <td class="dr">Cost of Goods Sold - Byproduct (1,200 × $5)
-                                                            </td>
-                                                            <td class="font-mono text-sky-700 font-bold">$6,000</td>
-                                                            <td class="font-mono text-slate-400">-</td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td class="cr">Byproduct Inventory</td>
-                                                            <td class="font-mono text-slate-400">-</td>
-                                                            <td class="font-mono text-emerald-700 font-bold">$6,000</td>
-                                                        </tr>
-                                                    </tbody>
-                                                </table>
-                                            </div>
-
-                                        </div>
-                                        <div class="content-ar">
-                                            <div class="content-ar-header"><i class="fa-solid fa-scale-balanced"></i>
-                                                قيود طريقة الإنتاج بالبلدي</div>
-                                            <p>في طريقة الإنتاج، بنعترف بالخردة فوراً وقت التصنيع بالـ NRV (وهو 5 دولار
-                                                للوحدة في مثالنا):</p>
-                                            <p>• <strong>وقت الإنتاج:</strong> بنعمل قيد نثبت فيه مخزون الخردة مدين
-                                                بقيمة 20,000 دولار، ونخفض تكلفة تشغيل المنتج الأساسي في الدائن بـ 20,000
-                                                دولار. (كده المنتج الأساسي وقف علينا أرخص):</p>
-                                            <div class="overflow-x-auto w-full my-3">
-                                                <table class="journal-table">
-                                                    <thead>
-                                                        <tr class="bg-slate-100">
-                                                            <th class="text-right">العملية والحسابات (Production
-                                                                Recognition)</th>
-                                                            <th class="text-right">المدين (Dr.)</th>
-                                                            <th class="text-right">الدائن (Cr.)</th>
-                                                        </tr>
-                                                    </thead>
-                                                    <tbody>
-                                                        <tr>
-                                                            <td class="dr">Byproduct Inventory (Dr.)</td>
-                                                            <td class="font-mono text-sky-700 font-bold">$20,000</td>
-                                                            <td class="font-mono text-slate-400">-</td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td class="cr">Work in Process - Main Product (Cr.)</td>
-                                                            <td class="font-mono text-slate-400">-</td>
-                                                            <td class="font-mono text-emerald-700 font-bold">$20,000
-                                                            </td>
-                                                        </tr>
-                                                    </tbody>
-                                                </table>
-                                            </div>
-                                            <p>• <strong>وقت البيع:</strong> لما نبيع 1,200 وحدة، بنعمل قيدين: الأول
-                                                بنثبت قبض الفلوس بسعر البيع (10 دولار للوحدة) في حساب النقدية مدين
-                                                والإيراد دائن بقيمة 12,000 دولار. القيد الثاني بنقفل تكلفة الوحدات اللي
-                                                خرجت من مخزن الخردة بسعر تكلفتها (5 دولار) فنخلي تكلفة المبيعات مدين
-                                                والمخزن دائن بقيمة 6,000 دولار:</p>
-                                            <div class="overflow-x-auto w-full my-3">
-                                                <table class="journal-table">
-                                                    <thead>
-                                                        <tr class="bg-slate-100">
-                                                            <th class="text-right">العملية والحسابات (Byproduct Sales
-                                                                &amp; Cost Recognition)</th>
-                                                            <th class="text-right">المدين (Dr.)</th>
-                                                            <th class="text-right">الدائن (Cr.)</th>
-                                                        </tr>
-                                                    </thead>
-                                                    <tbody>
-                                                        <tr>
-                                                            <td class="dr">Cash / Accounts Receivable (Dr.)</td>
-                                                            <td class="font-mono text-sky-700 font-bold">$12,000</td>
-                                                            <td class="font-mono text-slate-400">-</td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td class="cr">Byproduct Revenue (Cr.)</td>
-                                                            <td class="font-mono text-slate-400">-</td>
-                                                            <td class="font-mono text-emerald-700 font-bold">$12,000
-                                                            </td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td class="dr">Cost of Goods Sold - Byproduct (Dr.)</td>
-                                                            <td class="font-mono text-sky-700 font-bold">$6,000</td>
-                                                            <td class="font-mono text-slate-400">-</td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td class="cr">Byproduct Inventory (Cr.)</td>
-                                                            <td class="font-mono text-slate-400">-</td>
-                                                            <td class="font-mono text-emerald-700 font-bold">$6,000</td>
-                                                        </tr>
-                                                    </tbody>
-                                                </table>
-                                            </div>
-                                            <div class="ar-tip">
-                                                <i class="fa-solid fa-triangle-exclamation animate-bounce"></i>
-                                                <div>
-                                                    <strong class="text-red-700 block mb-1">تخفيض الـ WIP (WIP
-                                                        Reduction):</strong>
-                                                    ركز جداً في قيد الإنتاج، الطرف الدائن دايماً بيكون حساب
-                                                    <strong>تشغيل المنتج الأساسي (WIP - Main Product)</strong>. ده
-                                                    بيسألك فيه الدكتور: "أي حساب يتم تخفيضه عند إثبات إنتاج المنتج
-                                                    الفرعي؟" الإجابة هي حساب تشغيل المنتج الأساسي.
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- L9 ACC 4 -->
-                        <div class="acc-card" id="l9-acc4">
-                            <button class="acc-header l9-toggle" data-index="3" data-lecture="l9">
-                                <div class="acc-icon" style="background:#dbeafe;color:#2563eb"><i
-                                        class="fa-solid fa-receipt"></i></div>
-                                <span class="acc-title">رابعاً: طريقة المبيعات بالقيود اليومية <small
-                                        style="color:#94a3b8;font-weight:600;font-size:12px;display:block">Sales Method
-                                        J.E (Immaterial Value)</small></span>
-                                <i class="fa-solid fa-chevron-down acc-chevron"></i>
-                            </button>
-                            <div class="acc-body">
-                                <div class="acc-body-inner">
-                                    <div class="acc-body-content">
-                                        <div class="content-en text-xs md:text-sm">
-                                            <strong>Sales Method Journal Entries:</strong><br>
-                                            Under this method, no journal entries are recorded at the time of
-                                            production. Byproduct inventory is not tracked in the general ledger.
-                                            <br><br>
-                                            <strong>At Selling Time (Selling 1,200 units @ $10/unit):</strong>
-
-                                            <div class="overflow-x-auto w-full my-2">
-                                                <table class="journal-table">
-                                                    <thead>
-                                                        <tr class="bg-slate-100">
-                                                            <th class="text-right">Account Names &amp; Details</th>
-                                                            <th class="text-right">Debit (Dr.)</th>
-                                                            <th class="text-right">Credit (Cr.)</th>
-                                                        </tr>
-                                                    </thead>
-                                                    <tbody>
-                                                        <tr>
-                                                            <td class="dr">Cash / Accounts Receivable</td>
-                                                            <td class="font-mono text-sky-700 font-bold">$12,000</td>
-                                                            <td class="font-mono text-slate-400">-</td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td class="cr">Byproduct Revenue (or Other Income)</td>
-                                                            <td class="font-mono text-slate-400">-</td>
-                                                            <td class="font-mono text-emerald-700 font-bold">$12,000
-                                                            </td>
-                                                        </tr>
-                                                    </tbody>
-                                                </table>
-                                            </div>
-
-                                        </div>
-                                        <div class="content-ar">
-                                            <div class="content-ar-header"><i class="fa-solid fa-scale-balanced"></i>
-                                                قيود طريقة المبيعات بالبلدي</div>
-                                            <p>دي أسهل طريقة للمحاسب الكسلان، مابيعملش أي قيود ولا جرد مخازن وقت
-                                                التصنيع. بينتظر لحد ما يبيع ويقبض:</p>
-                                            <p>• <strong>وقت الإنتاج:</strong> مفيش قيود (No Entry).</p>
-                                            <p>• <strong>وقت البيع:</strong> لما يبيع الـ 1,200 وحدة بـ 12,000 دولار،
-                                                بيسجل قيد واحد مباشر يقبض فيه الفلوس في المدين ويرميها إيراد فرعي في
-                                                الدائن:</p>
-                                            <div class="overflow-x-auto w-full my-3">
-                                                <table class="journal-table">
-                                                    <thead>
-                                                        <tr class="bg-slate-100">
-                                                            <th class="text-right">العملية والحسابات (Byproduct Sales
-                                                                Recognition)</th>
-                                                            <th class="text-right">المدين (Dr.)</th>
-                                                            <th class="text-right">الدائن (Cr.)</th>
-                                                        </tr>
-                                                    </thead>
-                                                    <tbody>
-                                                        <tr>
-                                                            <td class="dr">Cash / Accounts Receivable (Dr.)</td>
-                                                            <td class="font-mono text-sky-700 font-bold">$12,000</td>
-                                                            <td class="font-mono text-slate-400">-</td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td class="cr">Byproduct Revenue / Other Income (Cr.)</td>
-                                                            <td class="font-mono text-slate-400">-</td>
-                                                            <td class="font-mono text-emerald-700 font-bold">$12,000
-                                                            </td>
-                                                        </tr>
-                                                    </tbody>
-                                                </table>
-                                            </div>
-                                            <div class="ar-tip">
-                                                <i class="fa-solid fa-triangle-exclamation animate-bounce"></i>
-                                                <div>
-                                                    <strong class="text-red-700 block mb-1">مقارنة الطريقتين في
-                                                        الامتحان:</strong>
-                                                    الدكتور بيحب يقارن بينهم في الأسئلة النظري. افتكر دايماً إن
-                                                    <strong>طريقة الإنتاج أصح محاسبياً</strong> لأنها بتلتزم بمبدأ
-                                                    المقابلة (Matching Principle) وبتسجل المخزون فور إنتاجه، بينما
-                                                    <strong>طريقة المبيعات أسهل وأبسط عملياً</strong> ومناسبة للحاجات
-                                                    التافهة.
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Back to Lectures Button -->
-                        <div class="mt-8 flex justify-center">
-                            <button onclick="showHomeView()"
-                                class="px-8 py-3 rounded-xl font-bold text-white shadow-lg transform hover:-translate-y-0.5 transition-all duration-200 bg-gradient-to-r from-emerald-600 to-teal-600 hover:from-emerald-700 hover:to-teal-700">
-                                <i class="fa-solid fa-arrow-right ml-2"></i> العودة لقائمة المحاضرات
-                            </button>
-                        </div>
+                        </div></div></div>
                     </div>
+
+                    <div class="acc-card" id="l9-acc2">
+                        <button class="acc-header l9-toggle" data-index="1" data-lecture="l9">
+                            <div class="acc-icon" style="background:#fef3c7;color:#d97706"><i class="fa-solid fa-recycle"></i></div>
+                            <span class="acc-title">ثانياً: تقييم المنتجات الفرعية ونظام صافي القيمة <small style="color:#94a3b8;font-weight:600;font-size:12px;display:block">Byproduct Accounting System Rules</small></span>
+                            <i class="fa-solid fa-chevron-down acc-chevron"></i>
+                        </button>
+                        <div class="acc-body"><div class="acc-body-inner"><div class="acc-body-content">
+                            <div class="content-en">
+                                <strong>Byproduct Accounting System Rules:</strong>
+                                <div class="overflow-x-auto w-full my-2">
+                                    $$	ext{NRV} = 	ext{Selling Price} - 	ext{Additional cost to sell}$$
+                                </div>
+                                <ul class="list-disc pl-5 mt-2 space-y-1">
+                                    <li><strong>Case 1 (NRV &le; 0):</strong> Considered Waste. No Journal Entries (No J.E), no accounting treatment.</li>
+                                    <li><strong>Case 2 (NRV &gt; 0):</strong> Useful byproduct.
+                                        <br>• <em>Low Value (Sales Method):</em> No byproduct inventory is tracked. Recognized only at sales time &rightarrow; Dr. Cash / Cr. Byproduct Sales Revenue.
+                                        <br>• <em>High Value (Production Method):</em> Recognizes byproduct inventory as it is created &rightarrow; Dr. Byproduct Inventory / Cr. WIP Main Job.
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="content-ar">
+                                <div class="content-ar-header"><i class="fa-solid fa-lightbulb"></i> الشرح بالعامية وتوقيت الاعتراف دفترياً</div>
+                                <p>المنتج الفرعي (الهاموش اللي بيطلع من خامة الخشب أو اللبن) عشان نعالجه محاسبياً بنحسبله صافي القيمة البيعية أولاً (NRV = سعر بيع الخردة - مصاريف البيع والتغليف والتشغيل الإضافي للفرعي):</p>
+                                <ul>
+                                    <li>لو القيمة طلعت بالسالب أو صفر، يعني مصاريف نقلها وتغليفها أغلى من تمن بيعها في السوق، بنعتبرها <strong>عوادم وزبالة (Waste)</strong> ونرميها ومابنعملهاش أي قيود محاسبية نهائياً في الدفاتر.</li>
+                                    <li>لو قيمتها الإجمالية تافهة وصغيرة بنشتغل بـ <strong>طريقة المبيعات (Sales Method)</strong>، مابنفتحش لها مخزن جرد، ويوم ما تتباع بنسجيل الكاش كإيراد فرعي وخلاص. أما لو قيمتها الإجمالية كبيرة ومحترمة بنشتغل بـ <strong>طريقة الإنتاج (Production Method)</strong> وبندخلها المخزن فور إنتاجها لتقليص تكاليف المنتج الأصلي الرئيسي.</li>
+                                </ul>
+                                <div class="ar-tip">
+                                    <i class="fa-solid fa-triangle-exclamation text-red-600"></i>
+                                    <div>
+                                        <strong>لعبة التوقيت (Timing Trick):</strong>
+                                        الدكتور بيركز في الـ MCQ على الفرق بين الطريقتين في التوقيت؛ طريقة الإنتاج بتعترف بالمنتج الفرعي فوراً <strong>وقت تصنيعه (As it is created)</strong>، لكن طريقة المبيعات بتعترف بيه فقط <strong>وقت بيعه (At the time of sale)</strong>.
+                                    </div>
+                                </div>
+                            </div>
+                        </div></div></div>
+                    </div>
+
+                    <div class="acc-card" id="l9-acc3">
+                        <button class="acc-header l9-toggle" data-index="2" data-lecture="l9">
+                            <div class="acc-icon" style="background:#fef3c7;color:#d97706"><i class="fa-solid fa-book-journal-whills"></i></div>
+                            <span class="acc-title">ثالثاً: قيود اليومية الكاملة لطريقة الإنتاج <small style="color:#94a3b8;font-weight:600;font-size:12px;display:block">Production Method Comprehensive J.E.</small></span>
+                            <i class="fa-solid fa-chevron-down acc-chevron"></i>
+                        </button>
+                        <div class="acc-body"><div class="acc-body-inner"><div class="acc-body-content">
+                            <div class="content-en text-xs md:text-sm">
+                                <strong>Production Method Case Data (Wood Chips Byproduct):</strong>
+                                <br>• Assume: Sales value = $10 | Add'l cost to sell = $5 &rightarrow; $$	ext{NRV} = $5 / 	ext{unit}$$ (High Value).
+                                <br>• Production = 4,000 units | Sales = 1,200 units.
+                                
+                                <div class="overflow-x-auto w-full my-2">
+                                    <table class="journal-table">
+                                        <thead>
+                                            <tr>
+                                                <th>Accounting Entry Stage &amp; Accounts</th>
+                                                <th>Debit (Dr)</th>
+                                                <th>Credit (Cr)</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr class="bg-slate-50 font-bold text-slate-800">
+                                                <td colspan="3">a. At Production (4,000 units):</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="dr">Byproduct Inventory Control</td>
+                                                <td>$20,000</td>
+                                                <td></td>
+                                            </tr>
+                                            <tr>
+                                                <td class="cr">Work-in-Process Control - Main Job</td>
+                                                <td></td>
+                                                <td>$20,000</td>
+                                            </tr>
+                                            <tr class="bg-slate-50 font-bold text-slate-800">
+                                                <td colspan="3">b. At Sales (1,200 units):</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="dr">Cash / Accounts Receivable</td>
+                                                <td>$6,000</td>
+                                                <td></td>
+                                            </tr>
+                                            <tr>
+                                                <td class="cr">Byproduct Sales Revenue</td>
+                                                <td></td>
+                                                <td>$6,000</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="dr">Cost of Goods Sold - Byproduct</td>
+                                                <td>$6,000</td>
+                                                <td></td>
+                                            </tr>
+                                            <tr>
+                                                <td class="cr">Byproduct Inventory Control</td>
+                                                <td></td>
+                                                <td>$6,000</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                            <div class="content-ar">
+                                <div class="content-ar-header"><i class="fa-solid fa-scale-balanced"></i> خطوات القيود بالتفصيل الممل للأرقام</div>
+                                <p>هنا المنتج الفرعي طالع بقيمة محترمة وهندخله الدورة الدفترية بطريقة الإنتاج، المكسب الصافي (NRV) للوحدة الفرعية 5 دولار:</p>
+                                <ul class="space-y-3 font-semibold text-slate-800">
+                                    <li><span class="ar-label">قيد إثبات الإنتاج (وقت الخروج من المكنة)</span> بنضرب إجمالي الكمية اللي <strong>أنتجناها بالكامل (4,000 وحدة)</strong> $	imes$ الـ NRV بتاعها (5 دولار) = 20,000 دولار. الـ 20 ألف دي أصل بندخله المخزن في المدين (Byproduct inventory), وبنكافئ الشغلانة الأساسية اللي طلعت الخردة بإننا "نخفض تكلفتها" فبنجيب الـ WIP للمنتج الرئيسي في الجانب الدائن بـ 20,000 دولار.</li>
+                                    <li><span class="ar-label">قيد البيع الفعلي (وقت البيع للعميل)</span> بنضرب الكمية اللي <strong>بعناها بس (1,200 وحدة)</strong> $	imes$ الـ 5 دولار = 6,000 دولار. القيد بيكون مزدوج للجرد المستمر: الأول قيد قبض الكاش وزيادة الإيرادات (Cash مدين و Revenue دائن)، والتاني قيد خروج البضاعة من المخزن ونقص قيمتها تكلفتها (COGS مدين والمخزون الفرعي دائن بقيمة الـ 6 آلاف).</li>
+                                </ul>
+                                <div class="ar-tip">
+                                    <i class="fa-solid fa-triangle-exclamation text-red-600"></i>
+                                    <div>
+                                        <strong class="text-red-800 block mb-1">فخاخ قيود التجميع والإنتاج الفرعي (Production vs Sales):</strong>
+                                        دي أخطر لعبة في الدرس كله! في قيد الإنتاج الأول إياك تضرب في الكمية اللي اتباعت، بتثبت كل اللي دخل المخزن وأنتجته (4,000). ولما تيجي تعمل قيد البيع، إياك تضرب في اللي أنتجته، بتضرب في اللي اتباع بس (1,200 وحدة). <br>
+                                        تذكر أن الحساب الذي يُجعل دائناً عند قيد الإثبات الأولي هو حساب <strong>Work in Process (WIP)</strong> للمنتج الأساسي عشان نخفض تكلفته.
+                                    </div>
+                                </div>
+                            </div>
+                        </div></div></div>
+                    </div>
+
+                    <!-- Back to Lectures Button -->
+                    <div class="mt-8 flex justify-center">
+                        <button onclick="showHomeView()" class="px-8 py-3 rounded-xl font-bold text-white shadow-lg transform hover:-translate-y-0.5 transition-all duration-200 bg-gradient-to-r from-emerald-600 to-teal-600 hover:from-emerald-700 hover:to-teal-700">
+                            <i class="fa-solid fa-arrow-right ml-2"></i> العودة لقائمة المحاضرات
+                        </button>
+                    </div>
+
                 </div>
+            </div>
+          </div>
         </section>
+
 
     </main>
 
