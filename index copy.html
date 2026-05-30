@@ -142,6 +142,14 @@
             }
         }
 
+        /* Main content column next to sidebar */
+        .lecture-content-col {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+            min-width: 0;
+        }
+
         /* Sidebar */
         .lecture-sidebar {
             position: sticky;
@@ -5429,7 +5437,7 @@
                                      الـ rendering بيحتاج مكتبة زي MathJax أو KaTeX تكون محملة في الصفحة
                                 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ -->
                                 <div class="overflow-x-auto w-full my-2">
-                                    $$  ext{Total Production} = 25,000  ext{gal} + 75,000   ext{gal} = 100,000  ext{gallons}$$
+                                    $\text{Total Production} = 25{,}000\text{ gal} + 75{,}000\text{ gal} = 100{,}000\text{ gallons}$
                                 </div>
                             </li>
                             <li>
@@ -5461,7 +5469,7 @@
                             <li>
                                 <span>خطوة 4: حساب تكلفة الجالون الواحد (يطلع متساوياً للجميع):</span>
                                 <div class="overflow-x-auto w-full my-2">
-                                    $$  ext{Joint Cost per Gallon} = rac{$400,000}{100,000     ext{gal}} = $4 /    ext{gallon}$$
+                                    $\text{Joint Cost per Gallon} = \frac{\$400{,}000}{100{,}000\text{ gal}} = \$4/\text{gallon}$
                                 </div>
                             </li>
                         </ul>
@@ -5691,7 +5699,7 @@
                                 <strong class="text-red-800 block mb-1">فخ تكلفة الإنتاج الكلية (Total Production Cost):</strong>
                                 الدكتور ممكن يطلب منك في البابل شيت "Total Production cost" للزبدة مثلاً. إياك تقوله الـ 110,000 وبس! دي التكلفة المشتركة الموزعة بس، لازم تجمع معاها التكلفة الإضافية القابلة للفصل عشان تجيب الرقم الصح:
                                 <div class="overflow-x-auto w-full my-2">
-                                    $$  ext{Total Cost (Buttercream)} = $110,000 (  ext{Joint}) + $280,000 (    ext{Separable}) = $390,000$$
+                                    $\text{Total Cost (Buttercream)} = \$110{,}000\text{ (Joint)} + \$280{,}000\text{ (Separable)} = \$390{,}000$
                                 </div>
                             </div>
                         </div>
@@ -5895,13 +5903,13 @@
                                 <strong>1. كيفية حساب نسبة مجمل الربح الإجمالية (25%):</strong>
                                 <p class="text-xs text-slate-600 font-normal mt-1">دي البداية دايماً؛ بنجمع مبيعات كل المنتجات النهائية المطورة ونطرح منها كل التكاليف (المشتركة وقابلة للفصل):</p>
                                 <div class="overflow-x-auto w-full my-2">
-                                    $$\text{Total Sales Value} = $500,000 (\text{Cream}) + $1,100,000 (\text{Skim}) = $1,600,000$$
+                                    $\text{Total Sales Value} = \$500{,}000\text{ (Cream)} + \$1{,}100{,}000\text{ (Skim)} = \$1{,}600{,}000$
                                 </div>
                                 <div class="overflow-x-auto w-full my-2">
-                                    $$\text{Total Cost} = $400,000 (\text{Joint}) + $280,000 (\text{Separable B}) + $520,000 (\text{Separable C}) = $1,200,000$$
+                                    $\text{Total Cost} = \$400{,}000 + \$280{,}000 + \$520{,}000 = \$1{,}200{,}000$
                                 </div>
                                 <div class="overflow-x-auto w-full my-2">
-                                    $$\text{Gross Margin %} = rac{$1,600,000 - $1,200,000}{$1,600,000} = 25%$$
+                                    $\text{Gross Margin \%} = \frac{\$1{,}600{,}000 - \$1{,}200{,}000}{\$1{,}600{,}000} = 25\%$
                                 </div>
                             </li>
                             <li>
@@ -6001,11 +6009,11 @@
                                وعلى الشاشات المتوسطة فأكبر بيكبر للعادي (0.875rem)
                                ده عشان جدول القيود كتير ومش هيتناسب على الموبايل بحجم عادي.
 
-                             $$\text{NRV} = $5 / \text{unit}$$
+                             $\text{NRV} = \$5/\text{unit}$
                              → معادلة مدمجة جوا الـ paragraph عشان توضح الحساب
                         ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ -->
                         <strong>Production Method Case Data (Wood Chips Byproduct):</strong>
-                        <br>• Assume: Sales value = $10 | Add'l cost to sell = $5 &rightarrow; $$\text{NRV} = $5 / \text{unit}$$ (High Value).
+                        <br>• Assume: Sales value = $10 | Add'l cost to sell = $5 &rightarrow; $$\text{NRV} = \$5/\text{unit}$$ (High Value).
                         <br>• Production = 4,000 units | Sales = 1,200 units.
 
                         <!-- ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
