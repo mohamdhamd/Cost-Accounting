@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="ar" dir="rtl">
 
 <head>
@@ -1255,13 +1255,14 @@
             display: none;
             position: fixed;
             inset: 0;
-            background: rgba(15, 23, 42, 0.6);
+            background: rgba(15, 23, 42, 0.65);
             z-index: 9999;
             align-items: center;
             justify-content: center;
             backdrop-filter: blur(8px);
             opacity: 0;
             transition: opacity 0.3s ease;
+            padding: 0.75rem;
         }
         #bookmarks-modal-overlay.show-modal {
             display: flex;
@@ -1269,21 +1270,42 @@
         }
         #bookmarks-modal-content {
             background: #f8fafc;
-            width: 95%;
-            max-width: 850px;
-            max-height: 85vh;
-            border-radius: 24px;
+            width: 100%;
+            max-width: 860px;
+            max-height: 90vh;
+            border-radius: 20px;
             display: flex;
             flex-direction: column;
             overflow: hidden;
-            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
-            transform: scale(0.95);
+            box-shadow: 0 25px 60px -10px rgba(0, 0, 0, 0.35);
+            transform: scale(0.95) translateY(20px);
             opacity: 0;
-            transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1), opacity 0.3s ease;
+            transition: transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1), opacity 0.3s ease;
         }
         #bookmarks-modal-overlay.show-modal #bookmarks-modal-content {
-            transform: scale(1);
+            transform: scale(1) translateY(0);
             opacity: 1;
+        }
+        /* Ensure bookmark card text is always dark/readable */
+        #bookmarks-modal-list * {
+            color: inherit;
+        }
+        #bookmarks-modal-list .bm-card-header {
+            background: #faf5ff;
+        }
+        @media (max-width: 640px) {
+            #bookmarks-modal-content {
+                max-height: 95vh;
+                border-radius: 16px;
+            }
+            #bookmarks-modal-overlay {
+                padding: 0.4rem;
+                align-items: flex-end;
+            }
+            #bookmarks-modal-content {
+                border-radius: 16px 16px 0 0;
+                max-height: 92vh;
+            }
         }
     
         /* Bookmark Button and Modal Styles */
@@ -1327,40 +1349,7 @@
             transform: scale(1.08) !important;
         }
 
-        #bookmarks-modal-overlay {
-            display: none;
-            position: fixed;
-            inset: 0;
-            background: rgba(15, 23, 42, 0.6);
-            z-index: 9999;
-            align-items: center;
-            justify-content: center;
-            backdrop-filter: blur(8px);
-            opacity: 0;
-            transition: opacity 0.3s ease;
-        }
-        #bookmarks-modal-overlay.show-modal {
-            display: flex;
-            opacity: 1;
-        }
-        #bookmarks-modal-content {
-            background: #f8fafc;
-            width: 95%;
-            max-width: 850px;
-            max-height: 85vh;
-            border-radius: 24px;
-            display: flex;
-            flex-direction: column;
-            overflow: hidden;
-            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
-            transform: scale(0.95);
-            opacity: 0;
-            transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1), opacity 0.3s ease;
-        }
-        #bookmarks-modal-overlay.show-modal #bookmarks-modal-content {
-            transform: scale(1);
-            opacity: 1;
-        }
+        /* (duplicate removed - see above) */
 
         @media (max-width: 600px) {
             .ai-ask-btn { font-size: 11px; padding: 5px 10px; }
@@ -6375,7 +6364,7 @@
                                 <strong>1. كيفية حساب نسبة مجمل الربح الإجمالية (25%):</strong>
                                 <p class="text-xs text-slate-600 font-normal mt-1">دي البداية دايماً؛ بنجمع مبيعات كل المنتجات النهائية المطورة ونطرح منها كل التكاليف (المشتركة وقابلة للفصل):</p>
                                 <div class="overflow-x-auto w-full my-2">
-                                    $$\text{Total Sales Value} = \$500{,}000\text{ (Cream)} + \$1{,}100{,}000\text{ (Skim)} = \$1{,}600{,}000$$
+$$\text{Total Sales Value} = \$500{,}000\text{ (Cream)} + \$1{,}100{,}000\text{ (Skim)} = \$1{,}600{,}000$$
                                 </div>
                                 <div class="overflow-x-auto w-full my-2">
                                     $$\text{Total Cost} = \$400{,}000 + \$280{,}000 + \$520{,}000 = \$1{,}200{,}000$$
@@ -6406,7 +6395,10 @@
                  ║  🃏 Accordion Card #2 - المنتجات الفرعية وتقييمها     ║
                  ╚══════════════════════════════════════════════════════════╝
 
-              ● fa-recycle → أيقونة إعادة تدوير مناسبة للمنتجات الفرعية (الخردة)
+              ● class="l9-toggle"
+                → الـ event listeners في الجافاسكريبت معمولة على '.l9-toggle'
+                  منفصلة تماماً عن '.l8-toggle' عشان كل محاضرة تشتغل لوحدها.
+
               ● data-index="1" → التاني (index 1) في المحاضرة 9
             -->
             <div class="acc-card" id="l9-acc2">
@@ -6463,7 +6455,10 @@
                  ║  🃏 Accordion Card #3 - قيود اليومية الكاملة          ║
                  ╚══════════════════════════════════════════════════════════╝
 
-              ● fa-book-journal-whills → أيقونة الدفتر المناسبة لقيود اليومية
+              ● class="l9-toggle"
+                → الـ event listeners في الجافاسكريبت معمولة على '.l9-toggle'
+                  منفصلة تماماً عن '.l8-toggle' عشان كل محاضرة تشتغل لوحدها.
+
               ● data-index="2" → التالت والأخير (index 2) في المحاضرة 9
             -->
             <div class="acc-card" id="l9-acc3">
@@ -7166,7 +7161,7 @@ ${fullContent}
             }
 
             if (subtitle) {
-                subtitle.textContent = bookmarks.length + ' عناصر محفوظة للمراجعة';
+                subtitle.textContent = bookmarks.length + ' Ø¹Ù†Ø§ØµØ± Ù…Ø­ÙÙˆØ¸Ø© Ù„Ù„Ù…Ø±Ø§Ø¬Ø¹Ø©';
             }
 
             if (!list) return;
@@ -7183,104 +7178,95 @@ ${fullContent}
             bookmarks.forEach((bm, idx) => {
                 const card = document.createElement('div');
                 const isLec = (bm.type === 'lecture');
-                const borderHex = isLec ? '#a855f7' : '#fcd34d';
-                const hoverShadow = isLec ? '0 8px 24px rgba(168,85,247,0.12)' : '0 8px 24px rgba(245,158,11,0.12)';
+                const borderHex = isLec ? '#a855f7' : '#f59e0b';
+                const hoverShadow = isLec ? '0 8px 24px rgba(168,85,247,0.15)' : '0 8px 24px rgba(245,158,11,0.15)';
                 const headerBg = isLec ? '#faf5ff' : '#fffbeb';
                 const mainIcon = isLec ? 'fa-solid fa-graduation-cap' : 'fa-solid fa-bookmark';
                 const mainIconColor = isLec ? '#7e22ce' : '#b45309';
                 const mainIconBg = isLec ? '#f3e8ff' : '#fef9c3';
                 const mainIconBorder = isLec ? '#e9d5ff' : '#fcd34d';
 
-                card.style.cssText = `background:white; border-radius:1.25rem; border:2px solid ${borderHex}; overflow:hidden; box-shadow:0 4px 16px rgba(0,0,0,0.04); transition: box-shadow 0.2s;`;
+                card.style.cssText = `background:white; border-radius:1rem; border:2px solid ${borderHex}; overflow:hidden; box-shadow:0 2px 12px rgba(0,0,0,0.06); transition:box-shadow 0.2s;`;
                 card.onmouseover = () => card.style.boxShadow = hoverShadow;
-                card.onmouseout = () => card.style.boxShadow = '0 4px 16px rgba(0,0,0,0.04)';
+                card.onmouseout = () => card.style.boxShadow = '0 2px 12px rgba(0,0,0,0.06)';
 
                 if (isLec) {
-                    const cleanTitle = (bm.lectureTitle || '').replace('المحاضرة ', 'محاضرة ');
-                    
+                    const cleanTitle = (bm.lectureTitle || '').replace('Ø§Ù„Ù…Ø­Ø§Ø¶Ø±Ø© ', 'Ù…Ø­Ø§Ø¶Ø±Ø© ');
+                    const cardTitle = (bm.cardTitle || '').replace(/<[^>]+>/g, '');
                     card.innerHTML = `
-                        <div onclick="toggleBookmarkCard(${idx})" style="display:flex; align-items:center; justify-content:space-between; gap:0.75rem; padding:1rem 1.25rem; cursor:pointer; background:${headerBg};">
-                            <div style="display:flex; align-items:center; gap:0.75rem; min-width:0; flex:1;">
-                                <div style="width:2.2rem; height:2.2rem; background:${mainIconBg}; border:1.5px solid ${mainIconBorder}; border-radius:0.6rem; display:flex; align-items:center; justify-content:center; color:${mainIconColor}; font-size:0.95rem; flex-shrink:0;">
+                        <div onclick="toggleBookmarkCard(${idx})" style="display:flex; align-items:flex-start; justify-content:space-between; gap:0.6rem; padding:0.85rem 1rem; cursor:pointer; background:${headerBg};">
+                            <div style="display:flex; align-items:flex-start; gap:0.6rem; min-width:0; flex:1;">
+                                <div style="width:2rem; height:2rem; min-width:2rem; background:${mainIconBg}; border:1.5px solid ${mainIconBorder}; border-radius:0.5rem; display:flex; align-items:center; justify-content:center; color:${mainIconColor}; font-size:0.85rem; margin-top:0.1rem;">
                                     <i class="${mainIcon}"></i>
                                 </div>
                                 <div style="flex:1; min-width:0;">
-                                    <div style="display:flex; align-items:center; gap:0.5rem; margin-bottom:0.2rem; flex-wrap:wrap;">
-                                        <span style="font-size:0.7rem; font-weight:900; background:#f3e8ff; color:#6b21a8; padding:0.15rem 0.5rem; border-radius:0.35rem;">شرح للمراجعة</span>
-                                        <span style="font-size:0.7rem; font-weight:800; background:#f0fdf4; color:#166534; padding:0.15rem 0.5rem; border-radius:0.35rem; border:1px solid #86efac;">${cleanTitle}</span>
-                                        <span style="font-size:0.68rem; color:#94a3b8; font-weight:600;">${bm.savedAt || ''}</span>
+                                    <div style="display:flex; align-items:center; gap:0.35rem; margin-bottom:0.3rem; flex-wrap:wrap;">
+                                        <span style="font-size:0.62rem; font-weight:900; background:#f3e8ff; color:#6b21a8; padding:0.1rem 0.4rem; border-radius:0.3rem; white-space:nowrap;">Ø´Ø±Ø­ Ù„Ù„Ù…Ø±Ø§Ø¬Ø¹Ø©</span>
+                                        <span style="font-size:0.62rem; font-weight:800; background:#f0fdf4; color:#166534; padding:0.1rem 0.4rem; border-radius:0.3rem; border:1px solid #86efac; white-space:nowrap;">${cleanTitle}</span>
+                                        <span style="font-size:0.6rem; color:#94a3b8; font-weight:600;">${bm.savedAt || ''}</span>
                                     </div>
-                                    <div style="font-size:0.9rem; font-weight:800; color:#1e293b; direction:rtl; text-align:right; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; max-width:100%;">${bm.cardTitle || ''}</div>
+                                    <div style="font-size:0.85rem; font-weight:800; color:#1e293b; direction:rtl; text-align:right; word-break:break-word; line-height:1.45;">${cardTitle || ''}</div>
                                 </div>
                             </div>
-                            <div style="display:flex; align-items:center; gap:0.5rem; flex-shrink:0;">
-                                <button onclick="event.stopPropagation(); navigateToLectureCardByIdx(${idx})" title="عرض في المحاضرة" style="width:1.9rem; height:1.9rem; border-radius:0.5rem; border:1.5px solid #c084fc; background:#faf5ff; color:#7e22ce; cursor:pointer; display:flex; align-items:center; justify-content:center; font-size:0.8rem; transition:all 0.15s;" onmouseover="this.style.background='#f3e8ff'" onmouseout="this.style.background='#faf5ff'">
+                            <div style="display:flex; align-items:center; gap:0.3rem; flex-shrink:0; padding-top:0.05rem;">
+                                <button onclick="event.stopPropagation(); navigateToLectureCardByIdx(${idx})" title="Ø¹Ø±Ø¶ ÙÙŠ Ø§Ù„Ù…Ø­Ø§Ø¶Ø±Ø©" style="width:1.7rem; height:1.7rem; border-radius:0.4rem; border:1.5px solid #c084fc; background:#faf5ff; color:#7e22ce; cursor:pointer; display:flex; align-items:center; justify-content:center; font-size:0.72rem;" onmouseover="this.style.background='#f3e8ff'" onmouseout="this.style.background='#faf5ff'">
                                     <i class="fa-solid fa-eye"></i>
                                 </button>
-                                <button onclick="event.stopPropagation(); openAIChatForBookmarkByIdx(${idx})" title="اسأل AI" style="width:1.9rem; height:1.9rem; border-radius:0.5rem; border:1.5px solid #10b981; background:#ecfdf5; color:#047857; cursor:pointer; display:flex; align-items:center; justify-content:center; font-size:0.8rem; transition:all 0.15s;" onmouseover="this.style.background='#d1fae5'" onmouseout="this.style.background='#ecfdf5'">
+                                <button onclick="event.stopPropagation(); openAIChatForBookmarkByIdx(${idx})" title="Ø§Ø³Ø£Ù„ AI" style="width:1.7rem; height:1.7rem; border-radius:0.4rem; border:1.5px solid #10b981; background:#ecfdf5; color:#047857; cursor:pointer; display:flex; align-items:center; justify-content:center; font-size:0.72rem;" onmouseover="this.style.background='#d1fae5'" onmouseout="this.style.background='#ecfdf5'">
                                     <i class="fa-solid fa-robot"></i>
                                 </button>
-                                <button onclick="event.stopPropagation(); deleteBookmarkByIdx(${idx})" title="حذف" style="width:1.9rem; height:1.9rem; border-radius:0.5rem; border:1.5px solid #fca5a5; background:#fff5f5; color:#dc2626; cursor:pointer; display:flex; align-items:center; justify-content:center; font-size:0.8rem; transition:all 0.15s;" onmouseover="this.style.background='#fee2e2'" onmouseout="this.style.background='#fff5f5'">
+                                <button onclick="event.stopPropagation(); deleteBookmarkByIdx(${idx})" title="Ø­Ø°Ù" style="width:1.7rem; height:1.7rem; border-radius:0.4rem; border:1.5px solid #fca5a5; background:#fff5f5; color:#dc2626; cursor:pointer; display:flex; align-items:center; justify-content:center; font-size:0.72rem;" onmouseover="this.style.background='#fee2e2'" onmouseout="this.style.background='#fff5f5'">
                                     <i class="fa-solid fa-trash-can"></i>
                                 </button>
-                                <i id="bm-chevron-${idx}" class="fa-solid fa-chevron-down" style="color:#94a3b8; font-size:0.85rem; transition:transform 0.3s; margin-right:0.25rem;"></i>
+                                <i id="bm-chevron-${idx}" class="fa-solid fa-chevron-down" style="color:#94a3b8; font-size:0.78rem; transition:transform 0.3s;"></i>
                             </div>
                         </div>
-                        <div id="bm-body-${idx}" style="display:none; padding:1.25rem; border-top:1.5px solid #f3e8ff; background:#fff; direction:ltr; text-align:left;">
-                            ${bm.enText ? `
-                            <div class="content-en" style="background:#f8fafc; border:1px solid #e2e8f0; border-radius:0.75rem; padding:1rem; font-size:0.85rem; font-weight:600; color:#334155; line-height:1.7; overflow-x:auto;">
-                                ${bm.enText}
-                            </div>` : ''}
-                            ${bm.arText ? `
-                            <div class="content-ar" style="background:#fffbeb; border:1px solid #fde68a; border-radius:0.75rem; padding:1rem; font-size:0.85rem; font-weight:700; color:#78350f; line-height:1.75; direction:rtl; text-align:right; margin-top:0.75rem;">
-                                ${bm.arText}
-                            </div>` : ''}
+                        <div id="bm-body-${idx}" style="display:none; padding:1rem; border-top:1.5px solid #f3e8ff; background:#fff;">
+                            ${bm.enText ? `<div style="background:#f8fafc; border:1px solid #e2e8f0; border-radius:0.6rem; padding:0.85rem; font-size:0.82rem; font-weight:600; color:#334155; line-height:1.75; overflow-x:auto; direction:ltr; text-align:left; word-break:break-word;">${bm.enText}</div>` : ''}
+                            ${bm.arText ? `<div style="background:#fffbeb; border:1px solid #fde68a; border-radius:0.6rem; padding:0.85rem; font-size:0.83rem; font-weight:700; color:#78350f; line-height:1.8; direction:rtl; text-align:right; margin-top:0.65rem; word-break:break-word;">${bm.arText}</div>` : ''}
                         </div>
                     `;
                 } else {
                     const examBg = bm.examId === 'cost_1_s' ? '#e0e7ff' : '#ede9fe';
                     const examColor = bm.examId === 'cost_1_s' ? '#3730a3' : '#5b21b6';
-
+                    const qTextClean = (bm.qText || '').replace(/<[^>]+>/g,'');
                     card.innerHTML = `
-                        <div onclick="toggleBookmarkCard(${idx})" style="display:flex; align-items:center; justify-content:space-between; gap:0.75rem; padding:1rem 1.25rem; cursor:pointer; background:${headerBg};">
-                            <div style="display:flex; align-items:center; gap:0.75rem; min-width:0; flex:1;">
-                                <div style="width:2.2rem; height:2.2rem; background:${mainIconBg}; border:1.5px solid ${mainIconBorder}; border-radius:0.6rem; display:flex; align-items:center; justify-content:center; color:${mainIconColor}; font-size:0.95rem; flex-shrink:0;">
+                        <div onclick="toggleBookmarkCard(${idx})" style="display:flex; align-items:flex-start; justify-content:space-between; gap:0.6rem; padding:0.85rem 1rem; cursor:pointer; background:${headerBg};">
+                            <div style="display:flex; align-items:flex-start; gap:0.6rem; min-width:0; flex:1;">
+                                <div style="width:2rem; height:2rem; min-width:2rem; background:${mainIconBg}; border:1.5px solid ${mainIconBorder}; border-radius:0.5rem; display:flex; align-items:center; justify-content:center; color:${mainIconColor}; font-size:0.85rem; margin-top:0.1rem;">
                                     <i class="${mainIcon}"></i>
                                 </div>
                                 <div style="flex:1; min-width:0;">
-                                    <div style="display:flex; align-items:center; gap:0.5rem; margin-bottom:0.2rem; flex-wrap:wrap;">
-                                        <span style="font-size:0.7rem; font-weight:900; background:${examBg}; color:${examColor}; padding:0.15rem 0.5rem; border-radius:0.35rem;">${bm.examTitle || bm.examId}</span>
-                                        <span style="font-size:0.7rem; font-weight:800; background:#f0fdf4; color:#166534; padding:0.15rem 0.5rem; border-radius:0.35rem; border:1px solid #86efac;">سؤال ${(bm.qIndex || 0) + 1}</span>
-                                        <span style="font-size:0.68rem; color:#94a3b8; font-weight:600;">${bm.savedAt || ''}</span>
+                                    <div style="display:flex; align-items:center; gap:0.35rem; margin-bottom:0.3rem; flex-wrap:wrap;">
+                                        <span style="font-size:0.62rem; font-weight:900; background:${examBg}; color:${examColor}; padding:0.1rem 0.4rem; border-radius:0.3rem; white-space:nowrap;">${bm.examTitle || bm.examId}</span>
+                                        <span style="font-size:0.62rem; font-weight:800; background:#f0fdf4; color:#166534; padding:0.1rem 0.4rem; border-radius:0.3rem; border:1px solid #86efac; white-space:nowrap;">Ø³Ø¤Ø§Ù„ ${(bm.qIndex || 0) + 1}</span>
+                                        <span style="font-size:0.6rem; color:#94a3b8; font-weight:600;">${bm.savedAt || ''}</span>
                                     </div>
-                                    <div style="font-size:0.85rem; font-weight:700; color:#1e293b; direction:ltr; text-align:left; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; max-width:100%;">${(bm.qText || '').replace(/<[^>]+>/g,'').slice(0,120)}${(bm.qText||'').length > 120 ? '...' : ''}</div>
-                                    ${bm.note ? `<div style="font-size:0.75rem; color:#92400e; font-weight:700; margin-top:0.2rem; direction:rtl; text-align:right;"><i class="fa-solid fa-pen" style="font-size:0.65rem;"></i> ${bm.note}</div>` : ''}
+                                    <div style="font-size:0.83rem; font-weight:700; color:#1e293b; direction:ltr; text-align:left; word-break:break-word; line-height:1.4;">${qTextClean.slice(0,150)}${qTextClean.length > 150 ? '...' : ''}</div>
+                                    ${bm.note ? `<div style="font-size:0.72rem; color:#92400e; font-weight:700; margin-top:0.2rem; direction:rtl; text-align:right; word-break:break-word;"><i class="fa-solid fa-pen" style="font-size:0.6rem;"></i> ${bm.note}</div>` : ''}
                                 </div>
                             </div>
-                            <div style="display:flex; align-items:center; gap:0.5rem; flex-shrink:0;">
-                                <button onclick="event.stopPropagation(); openAIChatForBookmarkByIdx(${idx})" title="اسأل AI" style="width:1.9rem; height:1.9rem; border-radius:0.5rem; border:1.5px solid #10b981; background:#ecfdf5; color:#047857; cursor:pointer; display:flex; align-items:center; justify-content:center; font-size:0.8rem; transition:all 0.15s;" onmouseover="this.style.background='#d1fae5'" onmouseout="this.style.background='#ecfdf5'">
+                            <div style="display:flex; align-items:center; gap:0.3rem; flex-shrink:0; padding-top:0.05rem;">
+                                <button onclick="event.stopPropagation(); openAIChatForBookmarkByIdx(${idx})" title="Ø§Ø³Ø£Ù„ AI" style="width:1.7rem; height:1.7rem; border-radius:0.4rem; border:1.5px solid #10b981; background:#ecfdf5; color:#047857; cursor:pointer; display:flex; align-items:center; justify-content:center; font-size:0.72rem;" onmouseover="this.style.background='#d1fae5'" onmouseout="this.style.background='#ecfdf5'">
                                     <i class="fa-solid fa-robot"></i>
                                 </button>
-                                <button onclick="event.stopPropagation(); deleteBookmarkByIdx(${idx})" title="حذف" style="width:1.9rem; height:1.9rem; border-radius:0.5rem; border:1.5px solid #fca5a5; background:#fff5f5; color:#dc2626; cursor:pointer; display:flex; align-items:center; justify-content:center; font-size:0.8rem; transition:all 0.15s;" onmouseover="this.style.background='#fee2e2'" onmouseout="this.style.background='#fff5f5'">
+                                <button onclick="event.stopPropagation(); deleteBookmarkByIdx(${idx})" title="Ø­Ø°Ù" style="width:1.7rem; height:1.7rem; border-radius:0.4rem; border:1.5px solid #fca5a5; background:#fff5f5; color:#dc2626; cursor:pointer; display:flex; align-items:center; justify-content:center; font-size:0.72rem;" onmouseover="this.style.background='#fee2e2'" onmouseout="this.style.background='#fff5f5'">
                                     <i class="fa-solid fa-trash-can"></i>
                                 </button>
-                                <i id="bm-chevron-${idx}" class="fa-solid fa-chevron-down" style="color:#94a3b8; font-size:0.85rem; transition:transform 0.3s; margin-right:0.25rem;"></i>
+                                <i id="bm-chevron-${idx}" class="fa-solid fa-chevron-down" style="color:#94a3b8; font-size:0.78rem; transition:transform 0.3s;"></i>
                             </div>
                         </div>
-                        <div id="bm-body-${idx}" style="display:none; padding:1rem 1.25rem; border-top:1.5px solid #fef3c7; background:#fff; direction:ltr; text-align:left;">
-                            <div style="background:#f0fdf4; border:1px solid #86efac; border-radius:0.75rem; padding:0.65rem 0.9rem; margin-bottom:0.75rem; font-size:0.82rem; font-weight:700; color:#166534; direction:ltr; text-align:left;">
-                                <strong>الإجابة الصحيحة:</strong> ${bm.correctText || bm.correct || ''}
+                        <div id="bm-body-${idx}" style="display:none; padding:1rem; border-top:1.5px solid #fef3c7; background:#fff;">
+                            <div style="background:#f0fdf4; border:1px solid #86efac; border-radius:0.6rem; padding:0.6rem 0.85rem; margin-bottom:0.65rem; font-size:0.82rem; font-weight:700; color:#166534; direction:ltr; text-align:left; word-break:break-word;">
+                                <strong style="color:#166534;">Ø§Ù„Ø¥Ø¬Ø§Ø¨Ø© Ø§Ù„ØµØ­ÙŠØ­Ø©:</strong> ${bm.correctText || bm.correct || ''}
                             </div>
-                            <div class="content-en" style="background:#f8fafc; border:1px solid #e2e8f0; border-radius:0.75rem; padding:0.85rem; font-size:0.82rem; font-weight:600; color:#475569; line-height:1.7; overflow-x:auto; max-height:300px; overflow-y:auto;">
-                                <div style="font-size:0.78rem; font-weight:800; color:#4f46e5; display:flex; align-items:center; gap:0.35rem; margin-bottom:0.5rem;">
-                                    <i class="fa-solid fa-chalkboard-user"></i> الشرح التفصيلي:
+                            <div style="background:#f8fafc; border:1px solid #e2e8f0; border-radius:0.6rem; padding:0.85rem; font-size:0.82rem; font-weight:600; color:#475569; line-height:1.75; overflow-x:auto; max-height:280px; overflow-y:auto; direction:ltr; text-align:left; word-break:break-word;">
+                                <div style="font-size:0.76rem; font-weight:800; color:#4f46e5; display:flex; align-items:center; gap:0.35rem; margin-bottom:0.5rem;">
+                                    <i class="fa-solid fa-chalkboard-user"></i> Ø§Ù„Ø´Ø±Ø­ Ø§Ù„ØªÙØµÙŠÙ„ÙŠ:
                                 </div>
                                 ${bm.explanation || ''}
                             </div>
-                            ${bm.note ? `
-                            <div style="background:#fef9c3; border:1.5px solid #fcd34d; border-radius:0.75rem; padding:0.65rem 0.9rem; margin-top:0.75rem; font-size:0.85rem; font-weight:700; color:#92400e; direction:rtl; text-align:right;">
-                                <i class="fa-solid fa-pen" style="margin-left:0.3rem;"></i> ملاحظتي: ${bm.note}
-                            </div>` : ''}
+                            ${bm.note ? `<div style="background:#fef9c3; border:1.5px solid #fcd34d; border-radius:0.6rem; padding:0.6rem 0.85rem; margin-top:0.65rem; font-size:0.83rem; font-weight:700; color:#92400e; direction:rtl; text-align:right; word-break:break-word;"><i class="fa-solid fa-pen" style="margin-left:0.3rem;"></i> Ù…Ù„Ø§Ø­Ø¸ØªÙŠ: ${bm.note}</div>` : ''}
                         </div>
                     `;
                 }
@@ -7292,7 +7278,7 @@ ${fullContent}
             }
         }
 
-        // Bookmark Index Event Handlers
+                // Bookmark Index Event Handlers
         function navigateToLectureCardByIdx(idx) {
             const bm = getBookmarks()[idx];
             if (bm) {
