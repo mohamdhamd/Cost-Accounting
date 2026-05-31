@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="ar" dir="rtl">
 
 <head>
@@ -15,7 +15,6 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
     <!-- MathJax CDN for Beautiful Formulas -->
-    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
     <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 
     <!-- Tailwind CSS -->
@@ -6794,8 +6793,16 @@ $$\text{Total Sales Value} = \$500{,}000\text{ (Cream)} + \$1{,}100{,}000\text{ 
                 el.querySelector('.acc-header').click();
             }
             setTimeout(() => {
-                el.scrollIntoView({ behavior: 'smooth', block: 'start' });
-            }, 80);
+                const header = document.getElementById('main-header');
+                const headerHeight = header ? header.offsetHeight : 70;
+                const elementPosition = el.getBoundingClientRect().top + window.pageYOffset;
+                const offsetPosition = elementPosition - headerHeight - 15; // 15px extra padding for premium spacing
+                
+                window.scrollTo({
+                    top: offsetPosition,
+                    behavior: 'smooth'
+                });
+            }, 120);
             // Update active state in both navigation components
             document.querySelectorAll(`.sidebar-item[data-acc^="${lec}"], .mobile-nav-item[data-acc^="${lec}"]`).forEach(i => i.classList.remove('active-nav'));
             document.querySelectorAll(`[data-acc="${accId}"]`).forEach(item => item.classList.add('active-nav'));
@@ -7142,6 +7149,15 @@ ${fullContent}
             const isOpen = body.style.display !== 'none';
             body.style.display = isOpen ? 'none' : 'block';
             if (chevron) chevron.style.transform = isOpen ? 'rotate(0deg)' : 'rotate(180deg)';
+            
+            // Smoothly scroll the card into view when expanded inside the modal scroll area
+            if (!isOpen) {
+                setTimeout(() => {
+                    if (body.parentElement) {
+                        body.parentElement.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+                    }
+                }, 100);
+            }
         }
 
         function renderBookmarks() {

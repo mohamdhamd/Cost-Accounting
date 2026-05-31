@@ -16,7 +16,6 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
     <!-- MathJax for Formulas -->
-    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
     <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 
     <style>
@@ -672,6 +671,111 @@
             color: #991b1b !important;
         }
         .option-btn:disabled { cursor: not-allowed; opacity: 0.85; }
+
+        /* Inline Explanation and Response Styles */
+        .inline-expl-wrap {
+            margin-top: 1rem;
+            border-radius: 12px;
+            overflow: hidden;
+            border: 1.5px solid #e2e8f0;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+            background: #ffffff;
+            transition: all 0.25s ease;
+        }
+        .inline-expl-wrap:hover {
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.05), 0 4px 6px -2px rgba(0, 0, 0, 0.02);
+            border-color: #cbd5e1;
+        }
+        .expl-feedback-banner {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            padding: 0.75rem 1rem;
+            font-size: 0.88rem;
+            font-weight: 800;
+            font-family: 'Cairo', sans-serif;
+            border-bottom: 1.5px solid #f1f5f9;
+        }
+        .expl-feedback-banner.is-correct {
+            background: #ecfdf5;
+            color: #065f46;
+            border-bottom-color: #a7f3d0;
+        }
+        .expl-feedback-banner.is-wrong {
+            background: #fff1f2;
+            color: #9f1239;
+            border-bottom-color: #fecdd3;
+        }
+        .expl-feedback-banner.is-bypassed {
+            background: #fef3c7;
+            color: #92400e;
+            border-bottom-color: #fde68a;
+        }
+        .expl-feedback-banner i {
+            font-size: 1.1rem;
+        }
+        .inline-expl-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0.75rem 1rem;
+            background: #f8fafc;
+            cursor: pointer;
+            gap: 0.5rem;
+            transition: background 0.2s;
+            font-family: 'Cairo', sans-serif;
+            font-weight: 700;
+        }
+        .inline-expl-header:hover {
+            background: #f1f5f9;
+        }
+        .inline-expl-header-title {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: #475569;
+            font-size: 0.85rem;
+        }
+        .inline-expl-header-title i {
+            color: #64748b;
+        }
+        .inline-expl-header-badge {
+            font-size: 0.75rem;
+            font-weight: 700;
+            padding: 0.2rem 0.6rem;
+            border-radius: 6px;
+            background: #f1f5f9;
+            color: #475569;
+            border: 1px solid #e2e8f0;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            max-width: 250px;
+        }
+        .inline-expl-body {
+            display: none;
+            padding: 1.25rem;
+            background: #fafaf9;
+            font-size: 0.92rem;
+            font-weight: 600;
+            color: #374151;
+            line-height: 1.8;
+            direction: rtl;
+            text-align: right;
+            border-top: 1px solid #f1f5f9;
+            font-family: 'Cairo', sans-serif;
+            overflow-x: auto;
+        }
+        .inline-expl-body pre, .inline-expl-body code {
+            font-family: inherit;
+            direction: ltr;
+            text-align: left;
+        }
+        .inline-expl-chevron {
+            color: #94a3b8;
+            font-size: 0.8rem;
+            transition: transform 0.25s;
+        }
 
         /* Nav row below each question */
         .question-nav-row {
@@ -1469,6 +1573,83 @@
         renderCurrentGroup();
     }
 
+    function createInlineExplanation(q, answered) {
+        if (!studyMode && answered === null) return null;
+
+        const isCorrect = answered === q.correct;
+        const isBypassed = answered === 'bypassed';
+        const isWrong = answered !== null && !isCorrect && !isBypassed;
+        
+        const wrapper = document.createElement('div');
+        wrapper.className = 'inline-expl-wrap';
+
+        // 1. Feedback Banner
+        if (answered !== null) {
+            const banner = document.createElement('div');
+            banner.className = 'expl-feedback-banner';
+            const correctOpt = q.options.find(o => o.id === q.correct);
+            const correctText = correctOpt ? correctOpt.text : q.correct;
+            
+            if (isCorrect) {
+                banner.classList.add('is-correct');
+                banner.innerHTML = `<i class="fa-solid fa-circle-check"></i> <span>إجابة صحيحة! أحسنت عملاً.</span>`;
+            } else if (isWrong) {
+                banner.classList.add('is-wrong');
+                const userOpt = q.options.find(o => o.id === answered);
+                const userText = userOpt ? userOpt.text : answered;
+                banner.innerHTML = `<i class="fa-solid fa-circle-xmark"></i> <span>إجابة خاطئة. الإجابة الصحيحة هي: <strong>(${q.correct.toUpperCase()}) ${correctText}</strong></span>`;
+            } else if (isBypassed) {
+                banner.classList.add('is-bypassed');
+                banner.innerHTML = `<i class="fa-solid fa-circle-info"></i> <span>تم التخطي. الإجابة الصحيحة هي: <strong>(${q.correct.toUpperCase()}) ${correctText}</strong></span>`;
+            }
+            wrapper.appendChild(banner);
+        }
+
+        // 2. Accordion Toggle Header
+        const header = document.createElement('div');
+        header.className = 'inline-expl-header';
+        
+        const titleDiv = document.createElement('div');
+        titleDiv.className = 'inline-expl-header-title';
+        titleDiv.innerHTML = `<i class="fa-solid fa-chalkboard-user"></i> <span>الشرح والتفاصيل:</span>`;
+        header.appendChild(titleDiv);
+
+        // Badge showing correct option letter
+        const badge = document.createElement('span');
+        badge.className = 'inline-expl-header-badge';
+        badge.textContent = `خيار (${q.correct.toUpperCase()})`;
+        header.appendChild(badge);
+
+        // Chevron icon
+        const chevron = document.createElement('i');
+        chevron.className = 'fa-solid fa-chevron-down inline-expl-chevron';
+        header.appendChild(chevron);
+
+        wrapper.appendChild(header);
+
+        // 3. Accordion Content Body
+        const body = document.createElement('div');
+        body.className = 'inline-expl-body';
+        body.innerHTML = q.explanation || 'لا يوجد شرح مفصل متاح لهذا السؤال.';
+        wrapper.appendChild(body);
+
+        // Click Handler
+        header.addEventListener('click', () => {
+            if (body.style.display === 'none' || !body.style.display) {
+                body.style.display = 'block';
+                chevron.style.transform = 'rotate(180deg)';
+                if (typeof MathJax !== 'undefined' && MathJax.typesetPromise) {
+                    MathJax.typesetPromise([body]);
+                }
+            } else {
+                body.style.display = 'none';
+                chevron.style.transform = 'rotate(0deg)';
+            }
+        });
+
+        return wrapper;
+    }
+
     function buildQuestionBlock(q, qIndex, isSolo) {
         const answered = userAnswers[qIndex];
         const isCorrect = answered === q.correct;
@@ -1562,43 +1743,8 @@
         });
 
         // Inline explanation (shown under question after answering or in study mode)
-        if (studyMode || answered !== null) {
-            const correctOpt = q.options.find(o => o.id === q.correct);
-            const inlineExpl = document.createElement('div');
-            inlineExpl.className = 'inline-expl-wrap';
-            inlineExpl.style.cssText = 'margin-top:0.75rem; border-radius:0.75rem; overflow:hidden; border:1px solid #e0e7ff;';
-
-            // Toggle header
-            const explHeader = document.createElement('div');
-            explHeader.style.cssText = 'display:flex; align-items:center; justify-content:space-between; padding:0.55rem 0.85rem; background:#eef2ff; cursor:pointer; gap:0.5rem;';
-            explHeader.innerHTML = `
-                <div style="display:flex; align-items:center; gap:0.5rem; flex:1; min-width:0;">
-                    <span style="font-size:0.72rem; font-weight:900; color:#4f46e5;"><i class="fa-solid fa-chalkboard-user"></i> الشرح:</span>
-                    <span style="font-size:0.72rem; font-weight:700; color:#166534; background:#dcfce7; padding:0.1rem 0.45rem; border-radius:0.3rem; border:1px solid #86efac; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; max-width:60%;">✓ ${correctOpt ? correctOpt.text.replace(/<[^>]+>/g,'').slice(0,60) : ''}</span>
-                </div>
-                <i class="fa-solid fa-chevron-down inline-expl-chevron" style="color:#6366f1; font-size:0.72rem; transition:transform 0.25s; flex-shrink:0;"></i>
-            `;
-
-            const explBody = document.createElement('div');
-            explBody.style.cssText = 'display:none; padding:0.85rem; background:#f8fafc; font-size:0.8rem; font-weight:600; color:#374151; line-height:1.75; direction:ltr; text-align:left; overflow-x:auto;';
-            explBody.innerHTML = q.explanation || '';
-
-            explHeader.addEventListener('click', () => {
-                const chevron = explHeader.querySelector('.inline-expl-chevron');
-                if (explBody.style.display === 'none') {
-                    explBody.style.display = 'block';
-                    chevron.style.transform = 'rotate(180deg)';
-                    if (typeof MathJax !== 'undefined' && MathJax.typesetPromise) {
-                        MathJax.typesetPromise([explBody]);
-                    }
-                } else {
-                    explBody.style.display = 'none';
-                    chevron.style.transform = 'rotate(0deg)';
-                }
-            });
-
-            inlineExpl.appendChild(explHeader);
-            inlineExpl.appendChild(explBody);
+        const inlineExpl = createInlineExplanation(q, answered);
+        if (inlineExpl) {
             body.appendChild(inlineExpl);
         }
 
@@ -1690,31 +1836,10 @@
             // Inject inline explanation if not already present
             const body = block.querySelector('.question-block-body');
             if (body && !body.querySelector('.inline-expl-wrap')) {
-                const correctOpt = q.options.find(o => o.id === q.correct);
-                const inlineExpl = document.createElement('div');
-                inlineExpl.className = 'inline-expl-wrap';
-                inlineExpl.style.cssText = 'margin-top:0.75rem; border-radius:0.75rem; overflow:hidden; border:1px solid #e0e7ff;';
-                const correctText = correctOpt ? correctOpt.text.replace(/<[^>]+>/g,'').slice(0,60) : '';
-                const explHeader = document.createElement('div');
-                explHeader.style.cssText = 'display:flex; align-items:center; justify-content:space-between; padding:0.55rem 0.85rem; background:#eef2ff; cursor:pointer; gap:0.5rem;';
-                explHeader.innerHTML = '<div style="display:flex; align-items:center; gap:0.5rem; flex:1; min-width:0;"><span style="font-size:0.72rem; font-weight:900; color:#4f46e5;"><i class="fa-solid fa-chalkboard-user"></i> الشرح:</span><span style="font-size:0.72rem; font-weight:700; color:#166534; background:#dcfce7; padding:0.1rem 0.45rem; border-radius:0.3rem; border:1px solid #86efac; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; max-width:60%;">&#10003; ' + correctText + '</span></div><i class="fa-solid fa-chevron-down inline-expl-chevron" style="color:#6366f1; font-size:0.72rem; transition:transform 0.25s; flex-shrink:0;"></i>';
-                const explBody = document.createElement('div');
-                explBody.style.cssText = 'display:none; padding:0.85rem; background:#f8fafc; font-size:0.8rem; font-weight:600; color:#374151; line-height:1.75; direction:ltr; text-align:left; overflow-x:auto;';
-                explBody.innerHTML = q.explanation || '';
-                explHeader.addEventListener('click', function() {
-                    const chevron = explHeader.querySelector('.inline-expl-chevron');
-                    if (explBody.style.display === 'none') {
-                        explBody.style.display = 'block';
-                        if (chevron) chevron.style.transform = 'rotate(180deg)';
-                        if (typeof MathJax !== 'undefined' && MathJax.typesetPromise) MathJax.typesetPromise([explBody]);
-                    } else {
-                        explBody.style.display = 'none';
-                        if (chevron) chevron.style.transform = 'rotate(0deg)';
-                    }
-                });
-                inlineExpl.appendChild(explHeader);
-                inlineExpl.appendChild(explBody);
-                body.appendChild(inlineExpl);
+                const inlineExpl = createInlineExplanation(q, 'bypassed');
+                if (inlineExpl) {
+                    body.appendChild(inlineExpl);
+                }
             }
         }
 
@@ -1769,37 +1894,10 @@
             // Inject inline explanation if not already present
             const body = block.querySelector('.question-block-body');
             if (body && !body.querySelector('.inline-expl-wrap')) {
-                const correctOpt = q.options.find(o => o.id === q.correct);
-                const inlineExpl = document.createElement('div');
-                inlineExpl.className = 'inline-expl-wrap';
-                inlineExpl.style.cssText = 'margin-top:0.75rem; border-radius:0.75rem; overflow:hidden; border:1px solid #e0e7ff;';
-
-                const explHeader = document.createElement('div');
-                explHeader.style.cssText = 'display:flex; align-items:center; justify-content:space-between; padding:0.55rem 0.85rem; background:#eef2ff; cursor:pointer; gap:0.5rem;';
-                const correctText = correctOpt ? correctOpt.text.replace(/<[^>]+>/g,'').slice(0,60) : '';
-                explHeader.innerHTML = '<div style="display:flex; align-items:center; gap:0.5rem; flex:1; min-width:0;"><span style="font-size:0.72rem; font-weight:900; color:#4f46e5;"><i class="fa-solid fa-chalkboard-user"></i> الشرح:</span><span style="font-size:0.72rem; font-weight:700; color:#166534; background:#dcfce7; padding:0.1rem 0.45rem; border-radius:0.3rem; border:1px solid #86efac; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; max-width:60%;">&#10003; ' + correctText + '</span></div><i class="fa-solid fa-chevron-down inline-expl-chevron" style="color:#6366f1; font-size:0.72rem; transition:transform 0.25s; flex-shrink:0;"></i>';
-
-                const explBody = document.createElement('div');
-                explBody.style.cssText = 'display:none; padding:0.85rem; background:#f8fafc; font-size:0.8rem; font-weight:600; color:#374151; line-height:1.75; direction:ltr; text-align:left; overflow-x:auto;';
-                explBody.innerHTML = q.explanation || '';
-
-                explHeader.addEventListener('click', function() {
-                    const chevron = explHeader.querySelector('.inline-expl-chevron');
-                    if (explBody.style.display === 'none') {
-                        explBody.style.display = 'block';
-                        if (chevron) chevron.style.transform = 'rotate(180deg)';
-                        if (typeof MathJax !== 'undefined' && MathJax.typesetPromise) {
-                            MathJax.typesetPromise([explBody]);
-                        }
-                    } else {
-                        explBody.style.display = 'none';
-                        if (chevron) chevron.style.transform = 'rotate(0deg)';
-                    }
-                });
-
-                inlineExpl.appendChild(explHeader);
-                inlineExpl.appendChild(explBody);
-                body.appendChild(inlineExpl);
+                const inlineExpl = createInlineExplanation(q, selectedOptId);
+                if (inlineExpl) {
+                    body.appendChild(inlineExpl);
+                }
             }
         }
 
