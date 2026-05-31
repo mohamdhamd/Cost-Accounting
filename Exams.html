@@ -1,0 +1,2135 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>منصة الاختبارات التفاعلية | محاسبة التكاليف</title>
+    <meta name="description" content="منصة تفاعلية لمراجعة وحل امتحانات محاسبة التكاليف مع شرح تفصيلي لكل سؤال">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- MathJax for Formulas -->
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+    <style>
+        /* ===== CSS VARIABLES ===== */
+        :root {
+            --primary: #008e5c;
+            --primary-dark: #006e47;
+            --primary-light: #e6f7f0;
+            --secondary: #4f46e5;
+            --secondary-light: #eef2ff;
+            --danger: #ef4444;
+            --danger-light: #fee2e2;
+            --warning: #f59e0b;
+            --warning-light: #fef3c7;
+            --success: #22c55e;
+            --success-light: #dcfce7;
+            --slate-50: #f8fafc;
+            --slate-100: #f1f5f9;
+            --slate-200: #e2e8f0;
+            --slate-300: #cbd5e1;
+            --slate-400: #94a3b8;
+            --slate-500: #64748b;
+            --slate-600: #475569;
+            --slate-700: #334155;
+            --slate-800: #1e293b;
+            --slate-900: #0f172a;
+            --radius-xl: 1.25rem;
+            --radius-2xl: 1.5rem;
+            --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+            --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+            --shadow-xl: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+        }
+
+        /* ===== RESET & BASE ===== */
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+        body {
+            font-family: 'Cairo', sans-serif;
+            background: var(--slate-50);
+            color: var(--slate-800);
+            min-height: 100vh;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* ===== SCROLLBAR ===== */
+        ::-webkit-scrollbar { width: 7px; height: 7px; }
+        ::-webkit-scrollbar-track { background: var(--slate-100); }
+        ::-webkit-scrollbar-thumb { background: var(--slate-300); border-radius: 4px; }
+        ::-webkit-scrollbar-thumb:hover { background: var(--slate-400); }
+
+        /* ===== ANIMATIONS ===== */
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(16px); }
+            to   { opacity: 1; transform: translateY(0); }
+        }
+        @keyframes slideDown {
+            from { opacity: 0; transform: translateY(-10px); }
+            to   { opacity: 1; transform: translateY(0); }
+        }
+        @keyframes pulse-green {
+            0%, 100% { box-shadow: 0 0 0 0 rgba(0,142,92,0.4); }
+            50%       { box-shadow: 0 0 0 8px rgba(0,142,92,0); }
+        }
+        .fade-in-up { animation: fadeInUp 0.4s ease forwards; }
+
+        /* ===== HEADER ===== */
+        header {
+            background: var(--primary);
+            color: white;
+            position: fixed;
+            top: 0; left: 0; right: 0;
+            z-index: 100;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.15);
+        }
+        .header-inner {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0.75rem 1.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 1rem;
+        }
+        .header-logo {
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+            font-weight: 800;
+            font-size: 1rem;
+        }
+        .header-logo i { font-size: 1.1rem; opacity: 0.9; }
+        .header-tasbih {
+            font-size: 0.7rem;
+            font-weight: 600;
+            color: rgba(255,255,255,0.75);
+            text-align: center;
+            display: none;
+        }
+        @media(min-width:640px) { .header-tasbih { display: block; } }
+
+        #score-badge {
+            background: rgba(255,255,255,0.2);
+            border: 1px solid rgba(255,255,255,0.3);
+            border-radius: 50px;
+            padding: 0.3rem 0.8rem;
+            font-weight: 800;
+            font-size: 0.8rem;
+            white-space: nowrap;
+            display: none;
+        }
+        #score-badge.visible { display: block; }
+
+        /* ===== MAIN WRAPPER ===== */
+        main {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 5.5rem 1rem 2rem;
+        }
+
+        /* ===== SCREEN TOGGLE ===== */
+        .screen { display: none; }
+        .screen.active { display: block; }
+
+        /* ============================
+           SCREEN 1: DASHBOARD
+        ============================ */
+        .dashboard-header {
+            text-align: center;
+            margin-bottom: 2.5rem;
+        }
+        .dashboard-header h1 {
+            font-size: clamp(1.5rem, 4vw, 2.2rem);
+            font-weight: 900;
+            color: var(--slate-800);
+            margin-bottom: 0.4rem;
+        }
+        .dashboard-header p {
+            color: var(--slate-500);
+            font-weight: 600;
+            font-size: 0.95rem;
+        }
+
+        .exams-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .exam-card {
+            background: white;
+            border-radius: var(--radius-2xl);
+            border: 1px solid var(--slate-200);
+            overflow: hidden;
+            box-shadow: var(--shadow-md);
+            transition: box-shadow 0.3s, transform 0.3s;
+        }
+        .exam-card:hover {
+            box-shadow: var(--shadow-xl);
+            transform: translateY(-3px);
+        }
+        .exam-card-header {
+            padding: 2rem;
+            text-align: center;
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+        .exam-card-header .bg-icon {
+            position: absolute;
+            top: -1rem; right: -1rem;
+            font-size: 6rem;
+            opacity: 0.08;
+        }
+        .exam-card-icon {
+            width: 4.5rem; height: 4.5rem;
+            background: rgba(255,255,255,0.2);
+            border: 1px solid rgba(255,255,255,0.3);
+            border-radius: 1rem;
+            display: flex; align-items: center; justify-content: center;
+            font-size: 1.8rem;
+            margin: 0 auto 1rem;
+            position: relative; z-index: 1;
+            backdrop-filter: blur(4px);
+        }
+        .exam-card-title { font-size: 1.3rem; font-weight: 900; position: relative; z-index: 1; margin-bottom: 0.25rem; }
+        .exam-card-sub { font-size: 0.8rem; font-weight: 600; opacity: 0.8; position: relative; z-index: 1; }
+
+        .exam-card-body { padding: 1.25rem 1.5rem 1.5rem; }
+
+        .exam-stats {
+            display: flex;
+            gap: 0;
+            background: var(--slate-50);
+            border: 1px solid var(--slate-100);
+            border-radius: var(--radius-xl);
+            overflow: hidden;
+            margin-bottom: 1.25rem;
+        }
+        .exam-stat {
+            flex: 1;
+            text-align: center;
+            padding: 0.75rem 0.5rem;
+        }
+        .exam-stat + .exam-stat { border-right: 1px solid var(--slate-200); }
+        .exam-stat i { display: block; font-size: 1rem; margin-bottom: 0.25rem; }
+        .exam-stat .label { font-size: 0.65rem; font-weight: 700; color: var(--slate-400); text-transform: uppercase; letter-spacing: 0.05em; }
+        .exam-stat .value { font-size: 1rem; font-weight: 900; color: var(--slate-700); }
+
+        .exam-btns { display: grid; grid-template-columns: 1fr 1fr; gap: 0.75rem; }
+        .btn {
+            display: inline-flex; align-items: center; justify-content: center;
+            gap: 0.4rem;
+            padding: 0.75rem 1rem;
+            border-radius: 0.75rem;
+            font-family: 'Cairo', sans-serif;
+            font-weight: 700;
+            font-size: 0.9rem;
+            cursor: pointer;
+            border: none;
+            transition: all 0.2s;
+            text-decoration: none;
+        }
+        .btn:hover { transform: translateY(-1px); }
+        .btn:active { transform: translateY(0); }
+        .btn-primary { background: var(--primary); color: white; box-shadow: 0 2px 8px rgba(0,142,92,0.3); }
+        .btn-primary:hover { background: var(--primary-dark); box-shadow: 0 4px 12px rgba(0,142,92,0.4); }
+        .btn-dark { background: var(--slate-800); color: white; box-shadow: var(--shadow-md); }
+        .btn-dark:hover { background: var(--slate-900); }
+        .btn-outline { background: white; color: var(--slate-700); border: 2px solid var(--slate-200); }
+        .btn-outline:hover { background: var(--slate-50); border-color: var(--slate-300); }
+        .btn-danger { background: var(--danger); color: white; }
+        .btn-sm { padding: 0.4rem 0.8rem; font-size: 0.8rem; }
+
+        /* History Section */
+        .history-section {
+            background: white;
+            border-radius: var(--radius-2xl);
+            border: 1px solid var(--slate-200);
+            padding: 1.5rem;
+            box-shadow: var(--shadow-md);
+            margin-top: 1.5rem;
+        }
+        .history-header {
+            display: flex; align-items: center; justify-content: space-between;
+            margin-bottom: 1rem;
+            padding-bottom: 0.75rem;
+            border-bottom: 1px solid var(--slate-100);
+        }
+        .history-header h3 {
+            font-weight: 900; font-size: 1rem;
+            display: flex; align-items: center; gap: 0.5rem;
+            color: var(--slate-800);
+        }
+        .history-header h3 i { color: var(--primary); }
+        .history-list { display: flex; flex-direction: column; gap: 0.6rem; max-height: 280px; overflow-y: auto; }
+        .history-item {
+            display: flex; align-items: center; justify-content: space-between;
+            background: var(--slate-50);
+            border: 1px solid var(--slate-100);
+            border-radius: 0.75rem;
+            padding: 0.75rem 1rem;
+            gap: 1rem;
+        }
+        .history-item-info { display: flex; flex-direction: column; gap: 0.15rem; }
+        .history-item-title { font-weight: 700; font-size: 0.9rem; color: var(--slate-700); }
+        .history-item-date { font-size: 0.75rem; color: var(--slate-400); }
+        .history-item-score { display: flex; align-items: center; gap: 0.5rem; }
+        .history-score-num { font-weight: 900; font-size: 1rem; color: var(--slate-700); direction: ltr; }
+        .badge {
+            padding: 0.2rem 0.6rem;
+            border-radius: 50px;
+            font-size: 0.7rem;
+            font-weight: 900;
+        }
+        .badge-success { background: var(--success-light); color: #166534; }
+        .badge-danger { background: var(--danger-light); color: #991b1b; }
+        .badge-warning { background: var(--warning-light); color: #92400e; }
+
+        /* ============================
+           SCREEN 2: EXAM
+        ============================ */
+        #exam-screen .exam-topbar {
+            background: white;
+            border: 1px solid var(--slate-200);
+            border-radius: var(--radius-xl);
+            padding: 0.8rem 1.25rem;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            flex-wrap: wrap;
+            margin-bottom: 1.25rem;
+            box-shadow: var(--shadow-md);
+        }
+        .exam-progress-info {
+            display: flex; align-items: center; gap: 0.5rem;
+            font-weight: 700; color: var(--slate-700); font-size: 0.95rem;
+            white-space: nowrap;
+        }
+        .exam-progress-info i { color: var(--secondary); }
+        .exam-progress-info span { color: var(--secondary); font-weight: 900; font-size: 1.1rem; }
+        .progress-wrap {
+            flex: 1; min-width: 120px;
+            height: 10px;
+            background: var(--slate-100);
+            border-radius: 50px;
+            overflow: hidden;
+            border: 1px solid var(--slate-200);
+        }
+        #progress-bar {
+            height: 100%;
+            background: linear-gradient(90deg, var(--primary), var(--secondary));
+            border-radius: 50px;
+            transition: width 0.5s ease;
+            width: 0%;
+        }
+        .exam-topbar-btns { display: flex; gap: 0.5rem; margin-right: auto; }
+
+        /* Exam layout: Split view */
+        .exam-layout {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 1.25rem;
+        }
+        @media(min-width: 1024px) {
+            .exam-layout {
+                grid-template-columns: 5fr 7fr;
+            }
+        }
+
+        /* ===== EXPLANATION PANEL ===== */
+        .explanation-panel {
+            background: white;
+            border-radius: var(--radius-2xl);
+            border: 1px solid var(--slate-200);
+            padding: 1.5rem;
+            box-shadow: var(--shadow-md);
+            position: relative;
+            min-height: 300px;
+            display: flex;
+            flex-direction: column;
+        }
+        @media(min-width:1024px) {
+            .explanation-panel { position: sticky; top: 5rem; max-height: calc(100vh - 7rem); overflow: hidden; }
+        }
+        .explanation-panel-header {
+            display: flex; align-items: center; gap: 0.75rem;
+            padding-bottom: 0.75rem;
+            margin-bottom: 0.75rem;
+            border-bottom: 1px solid var(--slate-100);
+            flex-shrink: 0;
+        }
+        .explanation-panel-header .icon {
+            width: 2.25rem; height: 2.25rem;
+            background: var(--primary-light);
+            color: var(--primary);
+            border-radius: 0.6rem;
+            display: flex; align-items: center; justify-content: center;
+            font-size: 1rem;
+            flex-shrink: 0;
+        }
+        .explanation-panel-header h3 { font-weight: 900; font-size: 1rem; color: var(--slate-800); }
+
+        /* Lock overlay */
+        #explanation-lock {
+            position: absolute;
+            inset: 0;
+            background: rgba(248,250,252,0.95);
+            backdrop-filter: blur(3px);
+            border-radius: var(--radius-2xl);
+            display: flex; flex-direction: column;
+            align-items: center; justify-content: center;
+            padding: 2rem;
+            text-align: center;
+            z-index: 5;
+            transition: opacity 0.3s;
+        }
+        #explanation-lock.hidden {
+            opacity: 0;
+            pointer-events: none;
+        }
+        .lock-icon {
+            width: 3.5rem; height: 3.5rem;
+            background: white;
+            border: 1px solid var(--slate-200);
+            border-radius: 1rem;
+            display: flex; align-items: center; justify-content: center;
+            font-size: 1.4rem;
+            color: var(--slate-400);
+            margin-bottom: 1rem;
+            box-shadow: var(--shadow-md);
+        }
+        .lock-title { font-weight: 900; color: var(--slate-700); margin-bottom: 0.3rem; }
+        .lock-sub { font-size: 0.8rem; color: var(--slate-500); font-weight: 600; margin-bottom: 1.25rem; max-width: 240px; line-height: 1.5; }
+
+        #explanation-content { flex: 1; overflow-y: auto; }
+        #explanation-content.blurred { filter: blur(4px); pointer-events: none; user-select: none; }
+
+        /* ===== BOOKMARK BUTTON ===== */
+        .bookmark-bar {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 0.75rem;
+            padding: 0.65rem 0;
+            margin-bottom: 0.75rem;
+            border-bottom: 1px solid var(--slate-200);
+            flex-shrink: 0;
+        }
+        .bookmark-bar-label {
+            font-size: 0.8rem;
+            font-weight: 800;
+            color: var(--slate-600);
+        }
+        .btn-bookmark {
+            display: inline-flex; align-items: center; gap: 0.4rem;
+            padding: 0.45rem 0.9rem;
+            border-radius: 0.6rem;
+            font-family: 'Cairo', sans-serif;
+            font-weight: 700;
+            font-size: 0.8rem;
+            cursor: pointer;
+            border: 1.5px solid #fcd34d;
+            background: #fefce8;
+            color: #92400e;
+            transition: all 0.2s;
+        }
+        .btn-bookmark:hover {
+            background: #fef08a;
+            border-color: #f59e0b;
+            transform: translateY(-1px);
+        }
+        .btn-bookmark.saved {
+            background: #fef9c3;
+            border-color: #ca8a04;
+            color: #713f12;
+        }
+        .btn-bookmark i { font-size: 0.85rem; }
+
+        .btn-q-bookmark {
+            background: none;
+            border: none;
+            color: var(--slate-400);
+            cursor: pointer;
+            padding: 0.25rem;
+            font-size: 1.05rem;
+            margin-right: 0.5rem;
+            transition: color 0.2s, transform 0.2s;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+        .btn-q-bookmark:hover {
+            color: var(--warning) !important;
+            transform: scale(1.15);
+        }
+
+        /* ===== BOOKMARK MODAL ===== */
+        #bookmark-modal {
+            display: none;
+            position: fixed;
+            inset: 0;
+            background: rgba(0,0,0,0.5);
+            z-index: 9999;
+            align-items: center;
+            justify-content: center;
+            backdrop-filter: blur(4px);
+            padding: 1rem;
+        }
+        #bookmark-modal.show { display: flex; }
+        .bookmark-modal-box {
+            background: white;
+            border-radius: 1.5rem;
+            padding: 2rem;
+            max-width: 480px;
+            width: 100%;
+            box-shadow: 0 24px 80px rgba(0,0,0,0.3);
+            animation: fadeInUp 0.35s ease;
+        }
+        .bookmark-modal-header {
+            display: flex; align-items: center; gap: 0.75rem;
+            margin-bottom: 1.25rem;
+        }
+        .bookmark-modal-icon {
+            width: 2.75rem; height: 2.75rem;
+            background: #fef9c3;
+            border: 1.5px solid #fcd34d;
+            border-radius: 0.75rem;
+            display: flex; align-items: center; justify-content: center;
+            font-size: 1.1rem; color: #b45309;
+            flex-shrink: 0;
+        }
+        .bookmark-modal-header h3 { font-weight: 900; font-size: 1rem; color: var(--slate-800); }
+        .bookmark-modal-header p { font-size: 0.78rem; color: var(--slate-500); font-weight: 600; margin-top: 0.1rem; }
+        .bookmark-note-label {
+            font-size: 0.8rem; font-weight: 800;
+            color: var(--slate-600); margin-bottom: 0.4rem;
+            display: block;
+        }
+        .bookmark-note-input {
+            width: 100%;
+            padding: 0.75rem;
+            border: 1.5px solid var(--slate-200);
+            border-radius: 0.75rem;
+            font-family: 'Cairo', sans-serif;
+            font-size: 0.88rem;
+            font-weight: 600;
+            color: var(--slate-800);
+            resize: vertical;
+            min-height: 90px;
+            outline: none;
+            transition: border-color 0.2s;
+            background: var(--slate-50);
+            margin-bottom: 1rem;
+        }
+        .bookmark-note-input:focus { border-color: var(--warning); }
+        .bookmark-modal-btns { display: flex; gap: 0.75rem; }
+        .bookmark-preview {
+            background: var(--slate-50);
+            border: 1px solid var(--slate-200);
+            border-radius: 0.6rem;
+            padding: 0.75rem;
+            font-size: 0.78rem;
+            color: var(--slate-600);
+            font-weight: 600;
+            line-height: 1.5;
+            margin-bottom: 1rem;
+            max-height: 120px;
+            overflow-y: auto;
+            direction: ltr;
+            text-align: left;
+        }
+
+        /* ===== QUESTION PANEL ===== */
+        .question-panel {
+            background: white;
+            border-radius: var(--radius-2xl);
+            border: 1px solid var(--slate-200);
+            padding: 1.5rem;
+            box-shadow: var(--shadow-md);
+        }
+
+        /* Group header strip */
+        .group-header-strip {
+            background: linear-gradient(135deg, #f0fdf4, #e0f2fe);
+            border: 1px solid #bfdbfe;
+            border-radius: 0.75rem;
+            padding: 0.6rem 1rem;
+            margin-bottom: 1rem;
+            font-size: 0.8rem;
+            font-weight: 700;
+            color: #1e40af;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        .group-header-strip i { color: #3b82f6; }
+
+        /* Group questions list: each question is a collapsible card */
+        .group-questions-container { display: flex; flex-direction: column; gap: 1rem; }
+
+        .question-block {
+            border: 2px solid var(--slate-200);
+            border-radius: var(--radius-xl);
+            overflow: hidden;
+            transition: border-color 0.2s;
+        }
+        .question-block.is-current { border-color: var(--secondary); }
+        .question-block.is-correct { border-color: var(--success); }
+        .question-block.is-wrong { border-color: var(--danger); }
+        .question-block.is-bypassed { border-color: var(--warning); }
+
+        .question-block-header {
+            padding: 0.9rem 1.1rem;
+            display: flex;
+            align-items: flex-start;
+            gap: 0.75rem;
+            cursor: default;
+            background: var(--slate-50);
+        }
+        .question-block.is-current .question-block-header { background: var(--secondary-light); }
+
+        .q-badge {
+            flex-shrink: 0;
+            background: var(--slate-200);
+            color: var(--slate-600);
+            border-radius: 0.5rem;
+            padding: 0.2rem 0.5rem;
+            font-size: 0.7rem;
+            font-weight: 900;
+            white-space: nowrap;
+        }
+        .question-block.is-current .q-badge { background: var(--secondary); color: white; }
+        .question-block.is-correct .q-badge { background: var(--success); color: white; }
+        .question-block.is-wrong .q-badge { background: var(--danger); color: white; }
+        .question-block.is-bypassed .q-badge { background: var(--warning); color: white; }
+
+        .q-text {
+            font-size: 0.92rem;
+            font-weight: 700;
+            color: var(--slate-800);
+            line-height: 1.55;
+            direction: ltr;
+            text-align: left;
+            flex: 1;
+        }
+
+        .question-block-body {
+            padding: 0 1.1rem 1.1rem;
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+
+        /* Status badge inside question header */
+        .q-status-icon { flex-shrink: 0; font-size: 1rem; margin-top: 0.15rem; }
+        .q-status-icon.correct { color: var(--success); }
+        .q-status-icon.wrong { color: var(--danger); }
+        .q-status-icon.bypassed { color: var(--warning); }
+
+        /* Options */
+        .option-btn {
+            width: 100%;
+            text-align: left;
+            direction: ltr;
+            padding: 0.7rem 1rem;
+            border: 2px solid var(--slate-200);
+            border-radius: 0.75rem;
+            background: var(--slate-50);
+            font-family: 'Cairo', sans-serif;
+            font-weight: 600;
+            font-size: 0.88rem;
+            color: var(--slate-700);
+            cursor: pointer;
+            transition: all 0.18s;
+            display: block;
+        }
+        .option-btn:hover:not(:disabled) {
+            border-color: var(--primary);
+            background: var(--primary-light);
+            transform: translateX(-3px);
+        }
+        .option-btn.correct {
+            background: var(--success-light) !important;
+            border-color: var(--success) !important;
+            color: #166534 !important;
+            font-weight: 800;
+        }
+        .option-btn.wrong {
+            background: var(--danger-light) !important;
+            border-color: var(--danger) !important;
+            color: #991b1b !important;
+        }
+        .option-btn:disabled { cursor: not-allowed; opacity: 0.85; }
+
+        /* Nav row below each question */
+        .question-nav-row {
+            display: flex;
+            justify-content: flex-end;
+            gap: 0.5rem;
+            margin-top: 0.5rem;
+        }
+
+        /* ===== QUESTION NAVIGATOR ===== */
+        .navigator-section {
+            background: white;
+            border: 1px solid var(--slate-200);
+            border-radius: var(--radius-2xl);
+            padding: 1.25rem;
+            box-shadow: var(--shadow-md);
+            margin-top: 1.25rem;
+        }
+        .navigator-header {
+            display: flex; align-items: center; justify-content: space-between;
+            margin-bottom: 0.75rem;
+            padding-bottom: 0.6rem;
+            border-bottom: 1px solid var(--slate-100);
+        }
+        .navigator-header h4 {
+            font-weight: 800; font-size: 0.9rem;
+            display: flex; align-items: center; gap: 0.4rem;
+            color: var(--slate-700);
+        }
+        .navigator-header h4 i { color: var(--secondary); }
+        .navigator-legend {
+            display: flex; gap: 0.75rem; flex-wrap: wrap;
+        }
+        .legend-item {
+            display: flex; align-items: center; gap: 0.3rem;
+            font-size: 0.7rem; font-weight: 700; color: var(--slate-500);
+        }
+        .legend-dot {
+            width: 0.75rem; height: 0.75rem;
+            border-radius: 3px;
+        }
+
+        .navigator-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.35rem;
+        }
+        .nav-btn {
+            width: 2.2rem; height: 2.2rem;
+            border-radius: 0.4rem;
+            border: 2px solid var(--slate-200);
+            background: var(--slate-50);
+            font-family: 'Cairo', sans-serif;
+            font-weight: 800;
+            font-size: 0.75rem;
+            color: var(--slate-500);
+            cursor: pointer;
+            transition: all 0.15s;
+            display: flex; align-items: center; justify-content: center;
+        }
+        .nav-btn:hover { border-color: var(--secondary); color: var(--secondary); background: var(--secondary-light); }
+        .nav-btn.active { border-color: var(--secondary); background: var(--secondary); color: white; }
+        .nav-btn.answered-correct { border-color: var(--success); background: var(--success-light); color: #166534; }
+        .nav-btn.answered-wrong { border-color: var(--danger); background: var(--danger-light); color: #991b1b; }
+        .nav-btn.answered-bypassed { border-color: var(--warning); background: var(--warning-light); color: #92400e; }
+        .nav-btn.in-group { border-style: dashed; }
+
+        /* Finish bar */
+        .finish-bar {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 1rem;
+            margin-top: 1rem;
+            padding-top: 1rem;
+            border-top: 1px solid var(--slate-100);
+            flex-wrap: wrap;
+        }
+        .finish-bar .answered-count {
+            font-size: 0.85rem;
+            font-weight: 700;
+            color: var(--slate-500);
+        }
+        .finish-bar .answered-count span { color: var(--slate-800); font-weight: 900; }
+
+        /* ============================
+           SCREEN 3: RESULTS
+        ============================ */
+        #result-screen {
+            max-width: 640px;
+            margin: 0 auto;
+        }
+        .result-hero {
+            background: linear-gradient(135deg, var(--primary), #0d9488);
+            color: white;
+            border-radius: var(--radius-2xl) var(--radius-2xl) 0 0;
+            padding: 2.5rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        .result-hero::before {
+            content: '';
+            position: absolute;
+            top: -50%; left: -50%;
+            width: 200%; height: 200%;
+            background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 60%);
+        }
+        .result-trophy {
+            width: 5rem; height: 5rem;
+            background: white;
+            border-radius: 1.25rem;
+            display: flex; align-items: center; justify-content: center;
+            font-size: 2.2rem;
+            color: var(--primary);
+            margin: 0 auto 1rem;
+            box-shadow: var(--shadow-xl);
+            position: relative; z-index: 1;
+        }
+        .result-title { font-size: 1.5rem; font-weight: 900; position: relative; z-index: 1; }
+        .result-sub { font-size: 0.85rem; font-weight: 600; opacity: 0.85; position: relative; z-index: 1; }
+
+        .result-body {
+            background: white;
+            border-radius: 0 0 var(--radius-2xl) var(--radius-2xl);
+            border: 1px solid var(--slate-200);
+            border-top: none;
+            padding: 2rem;
+        }
+        .score-display {
+            font-size: 0.7rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: var(--slate-400);
+            text-align: center;
+            margin-bottom: 0.5rem;
+        }
+        .score-big {
+            font-size: 3.5rem;
+            font-weight: 900;
+            text-align: center;
+            color: var(--slate-800);
+            direction: ltr;
+            margin-bottom: 1.5rem;
+            line-height: 1;
+        }
+        .score-big .score-val { color: var(--primary); }
+        .score-big .score-sep { font-size: 1.5rem; color: var(--slate-300); margin: 0 0.25rem; }
+        .score-big .score-total { font-size: 1.5rem; color: var(--slate-400); }
+
+        .result-msg {
+            border-radius: 0.75rem;
+            padding: 1rem;
+            margin-bottom: 1.5rem;
+            font-size: 0.9rem;
+            font-weight: 700;
+            text-align: center;
+            line-height: 1.6;
+        }
+        .result-stats {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 0.75rem;
+            margin-bottom: 1.5rem;
+        }
+        .result-stat {
+            text-align: center;
+            background: var(--slate-50);
+            border: 1px solid var(--slate-100);
+            border-radius: 0.75rem;
+            padding: 0.75rem 0.5rem;
+        }
+        .result-stat i { font-size: 1.1rem; display: block; margin-bottom: 0.3rem; }
+        .result-stat .stat-val { font-weight: 900; font-size: 1.1rem; display: block; }
+        .result-stat .stat-label { font-size: 0.7rem; font-weight: 700; color: var(--slate-400); }
+
+        /* ============================
+           WRONG ANSWERS REVIEW
+        ============================ */
+        .wrong-review-section {
+            margin-top: 2rem;
+            max-width: 900px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .wrong-review-header {
+            display: flex; align-items: center; gap: 0.75rem;
+            margin-bottom: 1.25rem;
+            padding-bottom: 0.75rem;
+            border-bottom: 2px solid var(--slate-200);
+        }
+        .wrong-review-header i { color: var(--danger); font-size: 1.25rem; }
+        .wrong-review-header h3 { font-weight: 900; font-size: 1.1rem; color: var(--slate-800); }
+
+        .wrong-answer-card {
+            background: white;
+            border: 2px solid #fca5a5;
+            border-radius: var(--radius-xl);
+            padding: 1.25rem;
+            margin-bottom: 1rem;
+            box-shadow: var(--shadow-md);
+            animation: fadeInUp 0.3s ease forwards;
+        }
+        .wrong-q-label {
+            display: inline-block;
+            background: var(--danger-light);
+            color: #dc2626;
+            font-size: 0.7rem;
+            font-weight: 900;
+            padding: 0.15rem 0.5rem;
+            border-radius: 0.35rem;
+            margin-bottom: 0.5rem;
+        }
+        .wrong-q-text {
+            font-weight: 700;
+            color: var(--slate-800);
+            margin-bottom: 0.75rem;
+            font-size: 0.9rem;
+            direction: ltr;
+            text-align: left;
+            line-height: 1.5;
+        }
+        .wrong-answers-row { display: flex; flex-direction: column; gap: 0.5rem; margin-bottom: 0.75rem; }
+        .wrong-your-ans {
+            background: var(--danger-light);
+            border: 1px solid #fca5a5;
+            border-radius: 0.6rem;
+            padding: 0.6rem 0.85rem;
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: var(--slate-700);
+            direction: ltr;
+            text-align: left;
+        }
+        .wrong-your-ans strong { color: #dc2626; }
+        .wrong-correct-ans {
+            background: var(--success-light);
+            border: 1px solid #86efac;
+            border-radius: 0.6rem;
+            padding: 0.6rem 0.85rem;
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: var(--slate-700);
+            direction: ltr;
+            text-align: left;
+        }
+        .wrong-correct-ans strong { color: #166534; }
+        .wrong-explanation {
+            background: var(--slate-50);
+            border: 1px solid var(--slate-200);
+            border-radius: 0.6rem;
+            padding: 0.75rem;
+            font-size: 0.82rem;
+            font-weight: 600;
+            color: var(--slate-700);
+            line-height: 1.6;
+        }
+        .wrong-explanation .expl-label {
+            font-weight: 800;
+            color: var(--secondary);
+            display: flex; align-items: center; gap: 0.35rem;
+            margin-bottom: 0.4rem;
+            font-size: 0.85rem;
+        }
+
+        /* ===== UTILITY ===== */
+        .hidden { display: none !important; }
+        .text-primary { color: var(--primary); }
+        .text-danger { color: var(--danger); }
+        .text-warning { color: var(--warning); }
+
+        /* Responsive tweaks */
+        @media (max-width: 640px) {
+            .exam-btns { grid-template-columns: 1fr; }
+            .result-stats { grid-template-columns: 1fr 1fr; }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- ===== HEADER ===== -->
+    <header id="navbar">
+        <div class="header-inner">
+            <a href="index.html" class="header-logo" style="color: white; text-decoration: none; display: flex; align-items: center; gap: 0.5rem; font-family: 'Cairo', sans-serif;">
+                <i class="fa-solid fa-arrow-right"></i>
+                <span>العودة للشرح</span>
+            </a>
+            
+            <div style="flex-grow: 1; text-align: center;">
+                <span style="font-size: 0.95rem; font-weight: 700; font-family: 'Cairo', sans-serif;">سبحان الله، والحمد لله، ولا إله إلا الله، والله أكبر.</span>
+            </div>
+
+            <div id="score-badge" style="font-family: 'Cairo', sans-serif;">
+                النتيجة: <span id="live-score">0</span>
+            </div>
+        </div>
+    </header>
+
+    <main>
+
+        <!-- ==========================
+             SCREEN 1: DASHBOARD
+        =========================== -->
+        <div id="intro-screen" class="screen active fade-in-up">
+            <div class="dashboard-header">
+                <h1>منصة الاختبارات التفاعلية</h1>
+                <p>اختر الامتحان ونظام الحل لبدء المراجعة والتدريب</p>
+            </div>
+
+            <div class="exams-grid">
+                <!-- Card 1 -->
+                <div class="exam-card">
+                    <div class="exam-card-header" style="background: linear-gradient(135deg, #059669, #0d9488);">
+                        <div class="bg-icon"><i class="fa-solid fa-file-contract"></i></div>
+                        <div class="exam-card-icon"><i class="fa-solid fa-clipboard-question"></i></div>
+                        <div class="exam-card-title">الامتحان الشامل الأول</div>
+                        <div class="exam-card-sub">Cost 1_s.pdf</div>
+                    </div>
+                    <div class="exam-card-body">
+                        <div class="exam-stats">
+                            <div class="exam-stat">
+                                <i class="fa-solid fa-list-ol" style="color:var(--primary)"></i>
+                                <div class="label">الأسئلة</div>
+                                <div class="value">46 سؤال</div>
+                            </div>
+                            <!-- <div class="exam-stat">
+                                <i class="fa-solid fa-stopwatch" style="color:#0d9488"></i>
+                                <div class="label">الوقت</div>
+                                <div class="value">مفتوح</div>
+                            </div>
+                            <div class="exam-stat">
+                                <i class="fa-solid fa-star" style="color:var(--warning)"></i>
+                                <div class="label">المستوى</div>
+                                <div class="value">شامل</div>
+                            </div> -->
+                        </div>
+                        <div class="exam-btns">
+                            <button class="btn btn-primary" onclick="startExam('cost_1_s', false)">
+                                <i class="fa-solid fa-rocket"></i> اختبر نفسك
+                            </button>
+                            <button class="btn btn-dark" onclick="startExam('cost_1_s', true)">
+                                <i class="fa-solid fa-chalkboard-user"></i> دراسة وشرح
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="exam-card">
+                    <div class="exam-card-header" style="background: linear-gradient(135deg, #4f46e5, #7c3aed);">
+                        <div class="bg-icon"><i class="fa-solid fa-file-signature"></i></div>
+                        <div class="exam-card-icon"><i class="fa-solid fa-clipboard-list"></i></div>
+                        <div class="exam-card-title">الامتحان الشامل الثاني</div>
+                        <div class="exam-card-sub">2026_1</div>
+                    </div>
+                    <div class="exam-card-body">
+                        <div class="exam-stats">
+                            <div class="exam-stat">
+                                <i class="fa-solid fa-list-ol" style="color:var(--secondary)"></i>
+                                <div class="label">الأسئلة</div>
+                                <div class="value">50 سؤال</div>
+                            </div>
+                            <!-- <div class="exam-stat">
+                                <i class="fa-solid fa-stopwatch" style="color:#0d9488"></i>
+                                <div class="label">الوقت</div>
+                                <div class="value">مفتوح</div>
+                            </div>
+                            <div class="exam-stat">
+                                <i class="fa-solid fa-star" style="color:var(--warning)"></i>
+                                <div class="label">المستوى</div>
+                                <div class="value">شامل</div>
+                            </div> -->
+                        </div>
+                        <div class="exam-btns">
+                            <button class="btn btn-primary" onclick="startExam('2026_1', false)">
+                                <i class="fa-solid fa-rocket"></i> اختبر نفسك
+                            </button>
+                            <button class="btn btn-dark" onclick="startExam('2026_1', true)">
+                                <i class="fa-solid fa-chalkboard-user"></i> دراسة وشرح
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- History -->
+            <div id="history-section" class="history-section hidden">
+                <div class="history-header">
+                    <h3><i class="fa-solid fa-clock-rotate-left"></i> سجل المحاولات السابقة</h3>
+                    <button class="btn btn-sm btn-outline" onclick="clearHistory()" style="color:var(--danger); border-color:var(--danger);">
+                        <i class="fa-solid fa-trash-can"></i> مسح السجل
+                    </button>
+                </div>
+                <div id="history-list" class="history-list"></div>
+            </div>
+        </div>
+
+        <!-- ==========================
+             SCREEN 2: EXAM
+        =========================== -->
+        <div id="exam-screen" class="screen">
+
+            <!-- Top Progress Bar -->
+            <div class="exam-topbar">
+                <div class="exam-progress-info">
+                    <i class="fa-solid fa-circle-question"></i>
+                    مجموعة <span id="q-current-num">1</span> من <span id="q-total-num" style="color:var(--slate-600); font-size:0.95rem; font-weight:800;">0</span>
+                </div>
+                <div class="progress-wrap">
+                    <div id="progress-bar"></div>
+                </div>
+                <div class="exam-topbar-btns">
+                    <button class="btn btn-sm btn-outline" onclick="exitExam()">
+                        <i class="fa-solid fa-rotate-left"></i> <span class="hidden" id="exit-label-full">قائمة الامتحانات</span>
+                        <span id="exit-label-short">خروج</span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Split Layout -->
+            <div class="exam-layout">
+
+                <!-- LEFT: Explanation -->
+                <div class="explanation-panel" id="exp-panel">
+                    <div class="explanation-panel-header">
+                        <div class="icon"><i class="fa-solid fa-chalkboard-user"></i></div>
+                        <h3>شرح الإجابة والحل التفصيلي</h3>
+                    </div>
+
+                    <!-- Bookmark Bar (Moved to top below header) -->
+                    <div class="bookmark-bar" id="bookmark-bar" style="display:none;">
+                        <span class="bookmark-bar-label"><i class="fa-solid fa-lightbulb" style="color:#f59e0b"></i> مش فاهم الشرح ده؟</span>
+                        <button class="btn-bookmark" id="exp-bookmark-btn" onclick="openBookmarkModal()">
+                            <i class="fa-regular fa-bookmark"></i> احفظ للمراجعة
+                        </button>
+                    </div>
+
+                    <div id="explanation-lock">
+                        <div class="lock-icon"><i class="fa-solid fa-lock"></i></div>
+                        <div class="lock-title">الشرح مغلق مؤقتاً</div>
+                        <div class="lock-sub">قم باختيار إجابة أولاً ليتم فتح الشرح التفصيلي تلقائياً.</div>
+                        <button class="btn btn-primary btn-sm" onclick="bypassLockCurrent()">
+                            <i class="fa-solid fa-lock-open"></i> أظهر الشرح وتجاوز
+                        </button>
+                    </div>
+
+                    <div id="explanation-content" class="blurred">
+                        <!-- Injected via JS -->
+                    </div>
+                </div>
+
+                <!-- RIGHT: Questions -->
+                <div class="question-panel">
+                    <div id="group-header-strip" class="group-header-strip hidden">
+                        <i class="fa-solid fa-link"></i>
+                        <span id="group-header-text"></span>
+                    </div>
+                    <div id="questions-container" class="group-questions-container">
+                        <!-- Injected via JS -->
+                    </div>
+                    <!-- Group Navigation Buttons -->
+                    <div id="group-nav-row" style="display:flex; justify-content:space-between; align-items:center; margin-top:1.25rem; padding-top:1rem; border-top:1px solid var(--slate-100); gap:0.75rem; flex-wrap:wrap;">
+                        <button id="prev-group-btn" class="btn btn-outline btn-sm" onclick="navigateGroup(-1)" style="display:none;">
+                            <i class="fa-solid fa-arrow-right"></i> المجموعة السابقة
+                        </button>
+                        <div id="group-position-label" style="font-size:0.8rem; font-weight:700; color:var(--slate-400); flex:1; text-align:center;"></div>
+                        <button id="next-group-btn" class="btn btn-primary btn-sm" onclick="navigateGroup(1)" style="display:none;">
+                            المجموعة التالية <i class="fa-solid fa-arrow-left"></i>
+                        </button>
+                        <button id="finish-study-btn" class="btn btn-primary btn-sm hidden" onclick="showResults()">
+                            إنهاء المراجعة <i class="fa-solid fa-flag-checkered"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Navigator -->
+            <div class="navigator-section">
+                <div class="navigator-header">
+                    <h4><i class="fa-solid fa-table-cells-large"></i> متصفح الأسئلة</h4>
+                    <div class="navigator-legend">
+                        <div class="legend-item"><div class="legend-dot" style="background:var(--slate-200); border:2px solid var(--slate-300);"></div> لم يُحل</div>
+                        <div class="legend-item"><div class="legend-dot" style="background:var(--success-light); border:2px solid var(--success);"></div> صحيح</div>
+                        <div class="legend-item"><div class="legend-dot" style="background:var(--danger-light); border:2px solid var(--danger);"></div> خطأ</div>
+                        <div class="legend-item"><div class="legend-dot" style="background:var(--warning-light); border:2px solid var(--warning);"></div> متجاوز</div>
+                        <div class="legend-item"><div class="legend-dot" style="background:var(--secondary); border:2px solid var(--secondary);"></div> الحالي</div>
+                    </div>
+                </div>
+                <div id="navigator-grid" class="navigator-grid">
+                    <!-- Injected via JS -->
+                </div>
+                <div class="finish-bar">
+                    <div class="answered-count">
+                        تم حل <span id="answered-count-val">0</span> من <span id="answered-total-val">0</span> سؤال
+                    </div>
+                    <button id="finish-btn" class="btn btn-primary" onclick="showResults()">
+                        إنهاء الاختبار <i class="fa-solid fa-flag-checkered"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- ==========================
+             SCREEN 3: RESULTS
+        =========================== -->
+        <div id="result-screen" class="screen">
+            <div class="result-hero">
+                <div class="result-trophy"><i class="fa-solid fa-trophy"></i></div>
+                <div class="result-title">اكتمل الاختبار!</div>
+                <div class="result-sub" id="result-sub-text">مجهود رائع، فخورين بك يا بطل.</div>
+            </div>
+            <div class="result-body">
+                <div class="score-display">نتيجتك النهائية</div>
+                <div class="score-big" dir="ltr">
+                    <span class="score-val" id="final-score">0</span>
+                    <span class="score-sep">/</span>
+                    <span class="score-total" id="final-total">0</span>
+                </div>
+                <div class="result-stats">
+                    <div class="result-stat">
+                        <i class="fa-solid fa-check-circle" style="color:var(--success)"></i>
+                        <span class="stat-val" id="stat-correct">0</span>
+                        <span class="stat-label">صحيح</span>
+                    </div>
+                    <div class="result-stat">
+                        <i class="fa-solid fa-times-circle" style="color:var(--danger)"></i>
+                        <span class="stat-val" id="stat-wrong">0</span>
+                        <span class="stat-label">خطأ</span>
+                    </div>
+                    <div class="result-stat">
+                        <i class="fa-solid fa-forward" style="color:var(--warning)"></i>
+                        <span class="stat-val" id="stat-bypassed">0</span>
+                        <span class="stat-label">متجاوز</span>
+                    </div>
+                </div>
+                <div id="result-message" class="result-msg"></div>
+                <button class="btn btn-primary" style="width:100%;" onclick="location.reload()">
+                    <i class="fa-solid fa-rotate-left"></i> العودة لقائمة الامتحانات
+                </button>
+            </div>
+
+            <!-- Wrong Answers Review -->
+            <div id="wrong-review-section" class="wrong-review-section hidden">
+                <div class="wrong-review-header">
+                    <i class="fa-solid fa-triangle-exclamation"></i>
+                    <h3>مراجعة الأخطاء والأسئلة المتجاوزة</h3>
+                </div>
+                <div id="wrong-review-container"></div>
+            </div>
+        </div>
+
+    </main>
+
+    <!-- Include Exams Data -->
+    <script src="exams_data.js"></script>
+
+    <script>
+    // ================================================================
+    //  GROUPS DEFINITION
+    //  Map: examId -> array of groups. Each group = { label, ids[] }
+    //  "ids" are the 1-based question indices in the exam's questions array
+    // ================================================================
+    const EXAM_GROUPS = {
+        "cost_1_s": [
+            { label: "تعريفات التكاليف المشتركة (Joint Costs)", ids: [1,2,3,4,5] },
+            { label: "بيانات شركة PearCo - Overhead", ids: [11,12,13,14] },
+            { label: "بيانات Crusan Corporation - Rework", ids: [17,18] },
+            { label: "بيانات Abod Textiles - Spoilage", ids: [21,22,23,24] },
+            { label: "بيانات الخردة (Scrap) - المادية والخاصة", ids: [25,26,27] },
+            { label: "Case 1: حسابات تكاليف العمليات - بدون مخزون أول", ids: [28,29,30] },
+            { label: "Case 2: مواد مضافة على مراحل (أرباع)", ids: [31,32,33] },
+            { label: "بيانات شركة Marshal Inc. - توزيع التكاليف المشتركة", ids: [35,36,37] },
+            { label: "بيانات Kulaj Al-Qasim - طريقتا المتوسط المرجح والـ FIFO", ids: [38,39,40,41,42,43,44] },
+        ],
+        "2026_1": [
+            { label: "بيانات Job Z - إعادة تشغيل المعيب (Rework)", ids: [6,7,8] },
+            { label: "بيانات شركة Almerinda - قيود المواد", ids: [9,10] },
+            { label: "بيانات Lilac Skin Care - وحدات معادلة متعددة", ids: [11,12,13,14,15] },
+            { label: "بيانات قسم التعبئة (Bottling Dept) - FIFO", ids: [18,19,20,21] },
+            { label: "بيانات LCR Company - تكاليف إنتاجية فعلية ومحملة", ids: [22,23] },
+            { label: "بيانات Wood Manufacturing - معدل التحميل وشغلانة Mirna", ids: [25,26,27,28] },
+            { label: "بيانات Blitzer Enterprises - ABC مقابل معدل موحد", ids: [34,35,36,37,38] },
+            { label: "بيانات Astel - Target Costing والتسعير", ids: [39,40,41] },
+            { label: "بيانات MDF & Boards & Lumber - NRV وتوزيع مشترك", ids: [42,43,44,45,46,47,48] },
+        ]
+    };
+
+    // ================================================================
+    //  STATE
+    // ================================================================
+    let activeQuestions = [];
+    let studyMode = false;
+    let score = 0;
+    let userAnswers = [];   // indexed by question index, value = optId or 'bypassed' or null
+    let selectedExamId = "";
+    // Groups for current exam: array of { label, indices[] } (0-based indices)
+    let questionGroups = [];   // [{label, indices:[0,1,2,...]}, ...]
+    let questionGroupMap = []; // questionGroupMap[qIndex] = groupIndex (-1 if standalone)
+    // Current "view group" index (which group is displayed)
+    let currentGroupIndex = 0;
+    // currentQuestionIndex: which question we focus on (for explanation)
+    let currentQuestionIndex = 0;
+
+    // ================================================================
+    //  DOM
+    // ================================================================
+    const introScreen    = document.getElementById('intro-screen');
+    const examScreen     = document.getElementById('exam-screen');
+    const resultScreen   = document.getElementById('result-screen');
+    const scoreBadge     = document.getElementById('score-badge');
+    const liveScore      = document.getElementById('live-score');
+    const progressBar    = document.getElementById('progress-bar');
+    const qCurrentNum    = document.getElementById('q-current-num');
+    const qTotalNum      = document.getElementById('q-total-num');
+    const questionsContainer = document.getElementById('questions-container');
+    const groupHeaderStrip   = document.getElementById('group-header-strip');
+    const groupHeaderText    = document.getElementById('group-header-text');
+    const explanationLock    = document.getElementById('explanation-lock');
+    const explanationContent = document.getElementById('explanation-content');
+    const navigatorGrid      = document.getElementById('navigator-grid');
+    const answeredCountVal   = document.getElementById('answered-count-val');
+    const answeredTotalVal   = document.getElementById('answered-total-val');
+
+    // ================================================================
+    //  HELPERS
+    // ================================================================
+    function showScreen(id) {
+        document.querySelectorAll('.screen').forEach(s => s.classList.remove('active'));
+        document.getElementById(id).classList.add('active');
+    }
+
+    function runMathJax() {
+        if (typeof MathJax !== 'undefined' && MathJax.typesetPromise) {
+            MathJax.typesetPromise();
+        }
+    }
+
+    // Build group structures from EXAM_GROUPS definition
+    function buildGroups(examId, questions) {
+        const rawGroups = EXAM_GROUPS[examId] || [];
+        questionGroupMap = new Array(questions.length).fill(-1);
+        questionGroups = [];
+
+        // Convert 1-based ids to 0-based indices
+        const groupedIndices = new Set();
+        rawGroups.forEach((g, gi) => {
+            const indices = g.ids.map(id => id - 1).filter(i => i >= 0 && i < questions.length);
+            if (indices.length > 0) {
+                questionGroups.push({ label: g.label, indices });
+                indices.forEach(i => { questionGroupMap[i] = gi; groupedIndices.add(i); });
+            }
+        });
+
+        // Standalone questions each become their own "group"
+        for (let i = 0; i < questions.length; i++) {
+            if (!groupedIndices.has(i)) {
+                const gi = questionGroups.length;
+                questionGroups.push({ label: null, indices: [i] });
+                questionGroupMap[i] = gi;
+            }
+        }
+
+        // Sort groups so they appear in question order (by first index)
+        questionGroups.sort((a, b) => a.indices[0] - b.indices[0]);
+
+        // Rebuild questionGroupMap after sort
+        questionGroupMap = new Array(questions.length).fill(-1);
+        questionGroups.forEach((g, gi) => {
+            g.indices.forEach(i => { questionGroupMap[i] = gi; });
+        });
+    }
+
+    // Get group index for a question
+    function getGroupOfQuestion(qIndex) {
+        return questionGroupMap[qIndex];
+    }
+
+    // ================================================================
+    //  START EXAM
+    // ================================================================
+    function startExam(examId, isStudyMode = false) {
+        if (typeof examsData === 'undefined' || !examsData[examId]) {
+            alert("تعذر تحميل بيانات الامتحان المختار. تأكد من تحميل ملف exams_data.js");
+            return;
+        }
+        selectedExamId = examId;
+        studyMode = isStudyMode;
+        activeQuestions = [...examsData[examId].questions];
+        score = 0;
+        userAnswers = new Array(activeQuestions.length).fill(null);
+        currentQuestionIndex = 0;
+
+        buildGroups(examId, activeQuestions);
+
+        // Set current group to the group of question 0
+        currentGroupIndex = questionGroupMap[0];
+
+        liveScore.textContent = score;
+        qTotalNum.textContent = questionGroups.length;
+
+        if (studyMode) {
+            scoreBadge.classList.remove('visible');
+        } else {
+            scoreBadge.classList.add('visible');
+        }
+
+        showScreen('exam-screen');
+        renderCurrentGroup();
+        buildNavigator();
+        updateAnsweredCount();
+
+        // In study mode, show all groups sequentially - auto-unlock for current group
+        if (studyMode) {
+            document.getElementById('score-badge').style.display = 'none';
+        }
+    }
+
+    function exitExam() {
+        if (confirm("هل أنت متأكد من الخروج؟ لن يتم حفظ تقدمك.")) {
+            location.reload();
+        }
+    }
+
+    // ================================================================
+    //  RENDER CURRENT GROUP
+    // ================================================================
+    function renderCurrentGroup() {
+        const group = questionGroups[currentGroupIndex];
+        if (!group) return;
+
+        // Update progress
+        qCurrentNum.textContent = currentGroupIndex + 1;
+        qTotalNum.textContent = questionGroups.length;
+        const pct = (currentGroupIndex / questionGroups.length) * 100;
+        progressBar.style.width = pct + '%';
+
+        // Group header
+        if (group.label) {
+            groupHeaderStrip.classList.remove('hidden');
+            groupHeaderText.textContent = 'مجموعة مترابطة: ' + group.label;
+        } else {
+            groupHeaderStrip.classList.add('hidden');
+        }
+
+        // Render all questions in group
+        questionsContainer.innerHTML = '';
+        group.indices.forEach((qIndex) => {
+            const block = buildQuestionBlock(activeQuestions[qIndex], qIndex);
+            questionsContainer.appendChild(block);
+        });
+
+        // Focus: first unanswered in group, or first
+        const firstUnanswered = group.indices.find(i => userAnswers[i] === null);
+        currentQuestionIndex = firstUnanswered !== undefined ? firstUnanswered : group.indices[0];
+
+        updateExplanationPanel();
+        updateNavigator();
+        updateGroupNavButtons();
+        runMathJax();
+
+        // Scroll to top of question panel
+        questionsContainer.parentElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+
+    function updateGroupNavButtons() {
+        const prevBtn = document.getElementById('prev-group-btn');
+        const nextBtn = document.getElementById('next-group-btn');
+        const finishStudyBtn = document.getElementById('finish-study-btn');
+        const posLabel = document.getElementById('group-position-label');
+
+        const isFirst = currentGroupIndex === 0;
+        const isLast = currentGroupIndex === questionGroups.length - 1;
+
+        // Show/hide prev button
+        prevBtn.style.display = isFirst ? 'none' : 'inline-flex';
+
+        // Show/hide next vs finish
+        if (isLast) {
+            nextBtn.style.display = 'none';
+            finishStudyBtn.classList.remove('hidden');
+        } else {
+            nextBtn.style.display = 'inline-flex';
+            finishStudyBtn.classList.add('hidden');
+        }
+
+        posLabel.textContent = `المجموعة ${currentGroupIndex + 1} من ${questionGroups.length}`;
+    }
+
+    function navigateGroup(direction) {
+        const newIndex = currentGroupIndex + direction;
+        if (newIndex < 0 || newIndex >= questionGroups.length) return;
+        currentGroupIndex = newIndex;
+        renderCurrentGroup();
+    }
+
+    function buildQuestionBlock(q, qIndex, isSolo) {
+        const answered = userAnswers[qIndex];
+        const isCorrect = answered === q.correct;
+        const isBypassed = answered === 'bypassed';
+        const isWrong = answered !== null && answered !== q.correct && answered !== 'bypassed';
+        const isCurrent = (qIndex === currentQuestionIndex);
+
+        const block = document.createElement('div');
+        block.className = 'question-block' +
+            (isCurrent ? ' is-current' : '') +
+            (answered !== null && isCorrect ? ' is-correct' : '') +
+            (isWrong ? ' is-wrong' : '') +
+            (isBypassed ? ' is-bypassed' : '');
+        block.id = 'qblock-' + qIndex;
+
+        // Header
+        const header = document.createElement('div');
+        header.className = 'question-block-header';
+
+        const badge = document.createElement('span');
+        badge.className = 'q-badge';
+        badge.textContent = 'س ' + (qIndex + 1);
+
+        const qText = document.createElement('div');
+        qText.className = 'q-text';
+        qText.innerHTML = q.text;
+
+        // Status icon
+        const statusIcon = document.createElement('i');
+        statusIcon.className = 'q-status-icon';
+        if (answered !== null) {
+            if (isCorrect || studyMode) {
+                statusIcon.classList.add('fa-solid', 'fa-circle-check', 'correct');
+            } else if (isBypassed) {
+                statusIcon.classList.add('fa-solid', 'fa-forward', 'bypassed');
+            } else {
+                statusIcon.classList.add('fa-solid', 'fa-circle-xmark', 'wrong');
+            }
+        } else {
+            statusIcon.classList.add('fa-regular', 'fa-circle');
+            statusIcon.style.color = 'var(--slate-300)';
+        }
+
+        header.appendChild(badge);
+        header.appendChild(qText);
+
+        // Bookmark button
+        const qBookmarkBtn = document.createElement('button');
+        qBookmarkBtn.className = 'btn-q-bookmark';
+        qBookmarkBtn.title = 'احفظ للمراجعة';
+        const bookmarks = getBookmarks();
+        const isBookmarked = bookmarks.some(b => b.qId === q.id && b.examId === selectedExamId);
+        if (isBookmarked) {
+            qBookmarkBtn.innerHTML = '<i class="fa-solid fa-bookmark" style="color:#f59e0b"></i>';
+            qBookmarkBtn.title = 'محفوظ ✓';
+        } else {
+            qBookmarkBtn.innerHTML = '<i class="fa-regular fa-bookmark"></i>';
+        }
+        qBookmarkBtn.onclick = (e) => {
+            e.stopPropagation();
+            currentQuestionIndex = qIndex;
+            openBookmarkModal();
+        };
+        header.appendChild(qBookmarkBtn);
+
+        header.appendChild(statusIcon);
+        block.appendChild(header);
+
+        // Body (options)
+        const body = document.createElement('div');
+        body.className = 'question-block-body';
+
+        q.options.forEach(opt => {
+            const btn = document.createElement('button');
+            btn.className = 'option-btn';
+            btn.innerHTML = opt.text;
+            btn.dataset.optId = opt.id;
+            btn.dataset.qIndex = qIndex;
+
+            if (studyMode) {
+                btn.disabled = true;
+                if (opt.id === q.correct) btn.classList.add('correct');
+            } else if (answered !== null) {
+                btn.disabled = true;
+                if (opt.id === q.correct) btn.classList.add('correct');
+                else if (opt.id === answered) btn.classList.add('wrong');
+            } else {
+                btn.onclick = () => selectOption(qIndex, opt.id);
+            }
+            body.appendChild(btn);
+        });
+
+        block.appendChild(body);
+
+        // Click on block header to focus
+        header.addEventListener('click', () => {
+            focusQuestion(qIndex);
+        });
+
+        return block;
+    }
+
+    // ================================================================
+    //  FOCUS / EXPLANATION
+    // ================================================================
+    function focusQuestion(qIndex) {
+        currentQuestionIndex = qIndex;
+        updateExplanationPanel();
+
+        // Highlight active block
+        document.querySelectorAll('.question-block').forEach(b => b.classList.remove('is-current'));
+        const block = document.getElementById('qblock-' + qIndex);
+        if (block) {
+            block.classList.add('is-current');
+            block.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+        }
+    }
+
+    function updateExplanationPanel() {
+        const q = activeQuestions[currentQuestionIndex];
+        if (!q) return;
+        const answered = userAnswers[currentQuestionIndex];
+        const bookmarkBar = document.getElementById('bookmark-bar');
+        const bookmarkBtn = document.getElementById('exp-bookmark-btn');
+
+        if (studyMode || answered !== null) {
+            // Show explanation
+            explanationLock.classList.add('hidden');
+            explanationContent.classList.remove('blurred');
+            explanationContent.innerHTML = q.explanation;
+            runMathJax();
+
+            // Show bookmark bar
+            if (bookmarkBar) bookmarkBar.style.display = 'flex';
+
+            // Check if already bookmarked
+            if (bookmarkBtn) {
+                const bookmarks = getBookmarks();
+                const isBookmarked = bookmarks.some(b => b.qId === q.id && b.examId === selectedExamId);
+                if (isBookmarked) {
+                    bookmarkBtn.classList.add('saved');
+                    bookmarkBtn.innerHTML = '<i class="fa-solid fa-bookmark"></i> محفوظ ✓';
+                } else {
+                    bookmarkBtn.classList.remove('saved');
+                    bookmarkBtn.innerHTML = '<i class="fa-regular fa-bookmark"></i> احفظ للمراجعة';
+                }
+            }
+        } else {
+            explanationLock.classList.remove('hidden');
+            explanationContent.classList.add('blurred');
+            explanationContent.innerHTML = '';
+            // Hide bookmark bar
+            if (bookmarkBar) bookmarkBar.style.display = 'none';
+        }
+    }
+
+    function bypassLockCurrent() {
+        const q = activeQuestions[currentQuestionIndex];
+        const block = document.getElementById('qblock-' + currentQuestionIndex);
+
+        // Mark as bypassed
+        userAnswers[currentQuestionIndex] = 'bypassed';
+
+        // Show correct answer in block
+        if (block) {
+            const btns = block.querySelectorAll('.option-btn');
+            btns.forEach(btn => {
+                btn.disabled = true;
+                if (btn.dataset.optId === q.correct) btn.classList.add('correct');
+            });
+            block.classList.remove('is-current', 'is-wrong');
+            block.classList.add('is-bypassed');
+            const statusIcon = block.querySelector('.q-status-icon');
+            if (statusIcon) {
+                statusIcon.className = 'q-status-icon fa-solid fa-forward bypassed';
+            }
+        }
+
+        updateExplanationPanel();
+        updateNavigator();
+        updateAnsweredCount();
+        checkGroupCompletion();
+    }
+
+    function checkGroupCompletion() {
+        const group = questionGroups[currentGroupIndex];
+        if (!group) return;
+        const allDone = group.indices.every(i => userAnswers[i] !== null);
+        // Nothing special needed; navigator updates
+    }
+
+    // ================================================================
+    //  SELECT OPTION
+    // ================================================================
+    function selectOption(qIndex, selectedOptId) {
+        if (userAnswers[qIndex] !== null) return;
+
+        const q = activeQuestions[qIndex];
+        userAnswers[qIndex] = selectedOptId;
+
+        const isCorrect = selectedOptId === q.correct;
+        if (isCorrect) {
+            score++;
+            liveScore.textContent = score;
+        }
+
+        // Update block UI
+        const block = document.getElementById('qblock-' + qIndex);
+        if (block) {
+            const btns = block.querySelectorAll('.option-btn');
+            btns.forEach(btn => {
+                btn.disabled = true;
+                const oid = btn.dataset.optId;
+                if (oid === q.correct) btn.classList.add('correct');
+                else if (oid === selectedOptId) btn.classList.add('wrong');
+            });
+            block.classList.remove('is-current');
+            if (isCorrect) block.classList.add('is-correct');
+            else block.classList.add('is-wrong');
+            const statusIcon = block.querySelector('.q-status-icon');
+            if (statusIcon) {
+                statusIcon.className = isCorrect
+                    ? 'q-status-icon fa-solid fa-circle-check correct'
+                    : 'q-status-icon fa-solid fa-circle-xmark wrong';
+            }
+        }
+
+        // Focus this question to show explanation
+        focusQuestion(qIndex);
+        updateNavigator();
+        updateAnsweredCount();
+    }
+
+    // ================================================================
+    //  NAVIGATOR
+    // ================================================================
+    function buildNavigator() {
+        navigatorGrid.innerHTML = '';
+        answeredTotalVal.textContent = activeQuestions.length;
+
+        // Build flat navigator: one button per question
+        activeQuestions.forEach((q, qi) => {
+            const gIndex = questionGroupMap[qi];
+            const group = questionGroups[gIndex];
+            const isGrouped = group && group.label !== null;
+
+            const btn = document.createElement('button');
+            btn.className = 'nav-btn' + (isGrouped ? ' in-group' : '');
+            btn.textContent = qi + 1;
+            btn.id = 'navbtn-' + qi;
+            btn.title = 'سؤال ' + (qi + 1);
+            btn.onclick = () => navigateToQuestion(qi);
+            navigatorGrid.appendChild(btn);
+        });
+    }
+
+    function updateNavigator() {
+        activeQuestions.forEach((q, qi) => {
+            const btn = document.getElementById('navbtn-' + qi);
+            if (!btn) return;
+            const answered = userAnswers[qi];
+            const gIndex = questionGroupMap[qi];
+            const group = questionGroups[gIndex];
+            const isGrouped = group && group.label !== null;
+
+            btn.className = 'nav-btn' + (isGrouped ? ' in-group' : '');
+
+            if (qi === currentQuestionIndex) {
+                btn.classList.add('active');
+            } else if (answered !== null) {
+                if (answered === 'bypassed') btn.classList.add('answered-bypassed');
+                else if (answered === q.correct) btn.classList.add('answered-correct');
+                else btn.classList.add('answered-wrong');
+            }
+        });
+    }
+
+    function navigateToQuestion(qIndex) {
+        const gIndex = questionGroupMap[qIndex];
+        if (gIndex !== currentGroupIndex) {
+            currentGroupIndex = gIndex;
+            currentQuestionIndex = qIndex;
+            renderCurrentGroup();
+        } else {
+            focusQuestion(qIndex);
+            updateNavigator();
+        }
+        // Scroll to question panel
+        questionsContainer.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+
+    function updateAnsweredCount() {
+        const count = userAnswers.filter(a => a !== null).length;
+        answeredCountVal.textContent = count;
+    }
+
+    // ================================================================
+    //  RESULTS
+    // ================================================================
+    function showResults() {
+        if (!studyMode) {
+            const unanswered = userAnswers.filter(a => a === null).length;
+            if (unanswered > 0) {
+                if (!confirm(`لا يزال هناك ${unanswered} سؤال لم يُحل. هل تريد إنهاء الاختبار الآن؟`)) return;
+            }
+        }
+
+        showScreen('result-screen');
+        scoreBadge.classList.remove('visible');
+
+        const total = activeQuestions.length;
+        const correct = userAnswers.filter((a, i) => a === activeQuestions[i].correct).length;
+        const bypassed = userAnswers.filter(a => a === 'bypassed').length;
+        const wrong = userAnswers.filter((a, i) => a !== null && a !== 'bypassed' && a !== activeQuestions[i].correct).length;
+        const percentage = Math.round((correct / total) * 100);
+
+        document.getElementById('final-score').textContent = correct;
+        document.getElementById('final-total').textContent = total;
+        document.getElementById('stat-correct').textContent = correct;
+        document.getElementById('stat-wrong').textContent = wrong;
+        document.getElementById('stat-bypassed').textContent = bypassed;
+
+        const msgEl = document.getElementById('result-message');
+        if (studyMode) {
+            msgEl.innerHTML = "لقد أكملت استعراض الشرح والمراجعة لكافة الأسئلة بنجاح! 📚✨";
+            msgEl.style.cssText = "background:#e6f7f0; border:1px solid var(--primary); color:var(--primary);";
+        } else {
+            if (percentage === 100) {
+                msgEl.innerHTML = "أستاذ ورئيس قسم! إنت مقفل المادة وفهمت كل التريكات 🏆";
+                msgEl.style.cssText = "background:#dcfce7; border:1px solid #86efac; color:#166534;";
+            } else if (percentage >= 70) {
+                msgEl.innerHTML = "عاش يا بطل! مستواك ممتاز جداً، راجع بس الشرح في الأسئلة اللي غلطت فيها 👏";
+                msgEl.style.cssText = "background:#dbeafe; border:1px solid #93c5fd; color:#1e40af;";
+            } else {
+                msgEl.innerHTML = "محتاج تركز أكتر يا محاسب، ارجع اقرأ الشرح التفصيلي وحل الامتحان تاني 📚";
+                msgEl.style.cssText = "background:var(--danger-light); border:1px solid #fca5a5; color:#991b1b;";
+            }
+
+            saveAttempt(selectedExamId, correct, total);
+            renderWrongAnswersReview(wrong + bypassed);
+        }
+    }
+
+    // ================================================================
+    //  WRONG ANSWERS REVIEW
+    // ================================================================
+    function renderWrongAnswersReview(wrongCount) {
+        const section = document.getElementById('wrong-review-section');
+        const container = document.getElementById('wrong-review-container');
+
+        if (wrongCount === 0) {
+            section.classList.add('hidden');
+            return;
+        }
+
+        section.classList.remove('hidden');
+        container.innerHTML = '';
+
+        activeQuestions.forEach((q, idx) => {
+            const answered = userAnswers[idx];
+            if (answered === q.correct) return; // skip correct
+
+            const card = document.createElement('div');
+            card.className = 'wrong-answer-card';
+
+            const label = document.createElement('div');
+            label.className = 'wrong-q-label';
+            label.textContent = 'سؤال ' + (idx + 1);
+            card.appendChild(label);
+
+            const qTextEl = document.createElement('div');
+            qTextEl.className = 'wrong-q-text';
+            qTextEl.innerHTML = q.text;
+            card.appendChild(qTextEl);
+
+            const answersRow = document.createElement('div');
+            answersRow.className = 'wrong-answers-row';
+
+            // User's answer
+            const yourAns = document.createElement('div');
+            yourAns.className = 'wrong-your-ans';
+            let userText = '';
+            if (answered === 'bypassed') {
+                userText = '<em>تم عرض الشرح وتجاوز القفل</em>';
+            } else if (answered === null) {
+                userText = '<em>لم يتم الإجابة</em>';
+            } else {
+                const opt = q.options.find(o => o.id === answered);
+                userText = opt ? opt.text : answered;
+            }
+            yourAns.innerHTML = '<strong>إجابتك:</strong> ' + userText;
+            answersRow.appendChild(yourAns);
+
+            // Correct answer
+            const correctAns = document.createElement('div');
+            correctAns.className = 'wrong-correct-ans';
+            const correctOpt = q.options.find(o => o.id === q.correct);
+            correctAns.innerHTML = '<strong>الإجابة الصحيحة:</strong> ' + (correctOpt ? correctOpt.text : q.correct);
+            answersRow.appendChild(correctAns);
+            card.appendChild(answersRow);
+
+            // Explanation
+            const expl = document.createElement('div');
+            expl.className = 'wrong-explanation';
+            expl.innerHTML = `
+                <div class="expl-label"><i class="fa-solid fa-chalkboard-user"></i> الشرح والتوضيح:</div>
+                <div>${q.explanation}</div>
+            `;
+            card.appendChild(expl);
+
+            container.appendChild(card);
+        });
+
+        runMathJax();
+    }
+
+    // ================================================================
+    //  HISTORY
+    // ================================================================
+    function saveAttempt(examId, score, total) {
+        try {
+            const history = JSON.parse(localStorage.getItem('exams_history')) || [];
+            const examTitle = examsData[examId] ? examsData[examId].title : examId;
+            history.unshift({
+                examId,
+                examTitle,
+                score,
+                total,
+                percentage: Math.round((score / total) * 100),
+                date: new Date().toLocaleString('ar-EG', {
+                    hour: '2-digit', minute: '2-digit',
+                    day: '2-digit', month: '2-digit', year: 'numeric', hour12: true
+                })
+            });
+            if (history.length > 10) history.pop();
+            localStorage.setItem('exams_history', JSON.stringify(history));
+            renderHistory();
+        } catch (e) { console.error(e); }
+    }
+
+    function renderHistory() {
+        const section = document.getElementById('history-section');
+        const list = document.getElementById('history-list');
+        try {
+            const history = JSON.parse(localStorage.getItem('exams_history')) || [];
+            if (history.length === 0) { section.classList.add('hidden'); return; }
+            section.classList.remove('hidden');
+            list.innerHTML = '';
+            history.forEach(a => {
+                const pct = a.percentage;
+                const badgeClass = pct >= 70 ? 'badge-success' : pct >= 50 ? 'badge-warning' : 'badge-danger';
+                const item = document.createElement('div');
+                item.className = 'history-item';
+                item.innerHTML = `
+                    <div class="history-item-info">
+                        <div class="history-item-title">${a.examTitle}</div>
+                        <div class="history-item-date">${a.date}</div>
+                    </div>
+                    <div class="history-item-score">
+                        <span class="history-score-num">${a.score} / ${a.total}</span>
+                        <span class="badge ${badgeClass}">${pct}%</span>
+                    </div>
+                `;
+                list.appendChild(item);
+            });
+        } catch (e) { section.classList.add('hidden'); }
+    }
+
+    function clearHistory() {
+        if (confirm("هل أنت متأكد من مسح سجل المحاولات بالكامل؟")) {
+            localStorage.removeItem('exams_history');
+            renderHistory();
+        }
+    }
+
+    // ================================================================
+    //  INIT
+    // ================================================================
+    renderHistory();
+    // ================================================================
+    //  BOOKMARKS
+    // ================================================================
+    const BOOKMARKS_KEY = 'cost_bookmarks';
+    let pendingBookmarkData = null;
+
+    function getBookmarks() {
+        try { return JSON.parse(localStorage.getItem(BOOKMARKS_KEY)) || []; }
+        catch(e) { return []; }
+    }
+
+    function saveBookmarks(arr) {
+        localStorage.setItem(BOOKMARKS_KEY, JSON.stringify(arr));
+    }
+
+    function openBookmarkModal() {
+        const q = activeQuestions[currentQuestionIndex];
+        if (!q) return;
+
+        // Strip HTML tags for preview
+        const stripHtml = html => {
+            const tmp = document.createElement('div');
+            tmp.innerHTML = html;
+            return tmp.textContent || tmp.innerText || '';
+        };
+
+        // Check if already saved
+        const bookmarks = getBookmarks();
+        const existingIdx = bookmarks.findIndex(b => b.qId === q.id && b.examId === selectedExamId);
+
+        pendingBookmarkData = {
+            examId: selectedExamId,
+            examTitle: examsData[selectedExamId]?.title || selectedExamId,
+            qIndex: currentQuestionIndex,
+            qId: q.id,
+            qText: q.text,
+            explanation: q.explanation,
+            correct: q.correct,
+            correctText: q.options.find(o => o.id === q.correct)?.text || '',
+        };
+
+        document.getElementById('bm-q-num').textContent = 'سؤال ' + (currentQuestionIndex + 1);
+        document.getElementById('bm-q-preview').innerHTML = q.text.length > 200 ? q.text.slice(0,200) + '...' : q.text;
+        document.getElementById('bm-note-input').value = existingIdx >= 0 ? (bookmarks[existingIdx].note || '') : '';
+        document.getElementById('bm-save-btn').textContent = existingIdx >= 0 ? 'تحديث المحفوظة' : 'حفظ للمراجعة';
+        
+        const deleteBtn = document.getElementById('bm-delete-btn');
+        if (deleteBtn) {
+            deleteBtn.style.display = existingIdx >= 0 ? 'inline-flex' : 'none';
+        }
+        
+        document.getElementById('bookmark-modal').classList.add('show');
+        document.getElementById('bm-note-input').focus();
+    }
+
+    function closeBookmarkModal() {
+        document.getElementById('bookmark-modal').classList.remove('show');
+        pendingBookmarkData = null;
+    }
+
+    function confirmBookmark() {
+        if (!pendingBookmarkData) return;
+        const note = document.getElementById('bm-note-input').value.trim();
+        const bookmarks = getBookmarks();
+        const existingIdx = bookmarks.findIndex(b => b.qId === pendingBookmarkData.qId && b.examId === pendingBookmarkData.examId);
+
+        const entry = {
+            ...pendingBookmarkData,
+            note,
+            savedAt: new Date().toLocaleString('ar-EG', {
+                hour: '2-digit', minute: '2-digit',
+                day: '2-digit', month: '2-digit', year: 'numeric', hour12: true
+            })
+        };
+
+        if (existingIdx >= 0) {
+            bookmarks[existingIdx] = entry;
+        } else {
+            bookmarks.unshift(entry);
+        }
+        saveBookmarks(bookmarks);
+        closeBookmarkModal();
+
+        // Visual feedback on the bookmark button
+        const btn = document.getElementById('exp-bookmark-btn');
+        if (btn) {
+            btn.classList.add('saved');
+            btn.innerHTML = '<i class="fa-solid fa-bookmark"></i> محفوظ ✓';
+        }
+
+        // Update question block bookmark icon
+        const block = document.getElementById('qblock-' + pendingBookmarkData.qIndex);
+        if (block) {
+            const blockBmBtn = block.querySelector('.btn-q-bookmark');
+            if (blockBmBtn) {
+                blockBmBtn.innerHTML = '<i class="fa-solid fa-bookmark" style="color:#f59e0b"></i>';
+                blockBmBtn.title = 'محفوظ ✓';
+            }
+        }
+
+        showToast('✅ تم الحفظ في محفوظاتك! راجعها من الصفحة الرئيسية.');
+    }
+
+    function deleteBookmarkFromModal() {
+        if (!pendingBookmarkData) return;
+        let bookmarks = getBookmarks();
+        bookmarks = bookmarks.filter(b => !(b.qId === pendingBookmarkData.qId && b.examId === pendingBookmarkData.examId));
+        saveBookmarks(bookmarks);
+        closeBookmarkModal();
+
+        // Visual feedback on explanation panel bookmark button
+        const btn = document.getElementById('exp-bookmark-btn');
+        if (btn) {
+            btn.classList.remove('saved');
+            btn.innerHTML = '<i class="fa-regular fa-bookmark"></i> احفظ للمراجعة';
+        }
+
+        // Visual feedback on question block bookmark button
+        const block = document.getElementById('qblock-' + pendingBookmarkData.qIndex);
+        if (block) {
+            const blockBmBtn = block.querySelector('.btn-q-bookmark');
+            if (blockBmBtn) {
+                blockBmBtn.innerHTML = '<i class="fa-regular fa-bookmark"></i>';
+                blockBmBtn.title = 'احفظ للمراجعة';
+            }
+        }
+
+        showToast('🗑️ تم الحذف من محفوظاتك.');
+    }
+
+    function showToast(msg) {
+        let toast = document.getElementById('bm-toast');
+        if (!toast) {
+            toast = document.createElement('div');
+            toast.id = 'bm-toast';
+            toast.style.cssText = 'position:fixed;bottom:2rem;left:50%;transform:translateX(-50%) translateY(100px);background:#0f172a;color:white;padding:0.75rem 1.5rem;border-radius:50px;font-family:Cairo,sans-serif;font-weight:700;font-size:0.85rem;z-index:99999;transition:transform 0.4s cubic-bezier(0.34,1.56,0.64,1);white-space:nowrap;box-shadow:0 8px 30px rgba(0,0,0,0.3);';
+            document.body.appendChild(toast);
+        }
+        toast.textContent = msg;
+        requestAnimationFrame(() => { toast.style.transform = 'translateX(-50%) translateY(0)'; });
+        setTimeout(() => { toast.style.transform = 'translateX(-50%) translateY(100px)'; }, 3000);
+    }
+
+    </script>
+
+    <!-- ===== BOOKMARK MODAL ===== -->
+    <div id="bookmark-modal">
+        <div class="bookmark-modal-box">
+            <div class="bookmark-modal-header">
+                <div class="bookmark-modal-icon"><i class="fa-solid fa-bookmark"></i></div>
+                <div>
+                    <h3>احفظ للمراجعة لاحقاً</h3>
+                    <p>اكتب ملاحظتك اللي بتحتاج تراجعها</p>
+                </div>
+            </div>
+            <span class="bookmark-note-label"><i class="fa-solid fa-tag" style="color:#f59e0b"></i> رقم السؤال</span>
+            <div style="font-size:0.8rem;font-weight:700;color:#4f46e5;margin-bottom:0.75rem;" id="bm-q-num"></div>
+            <span class="bookmark-note-label"><i class="fa-solid fa-file-lines"></i> السؤال</span>
+            <div class="bookmark-preview" id="bm-q-preview"></div>
+            <span class="bookmark-note-label"><i class="fa-solid fa-pen" style="color:#f59e0b"></i> ملاحظتك (اختياري)</span>
+            <textarea class="bookmark-note-input" id="bm-note-input" placeholder="اكتب هنا الجزء اللي مش فاهمه أو ملاحظة سريعة..."></textarea>
+            <div class="bookmark-modal-btns">
+                <button class="btn btn-primary" style="flex:1;" id="bm-save-btn" onclick="confirmBookmark()">
+                    <i class="fa-solid fa-bookmark"></i> حفظ للمراجعة
+                </button>
+                <button class="btn btn-danger" id="bm-delete-btn" onclick="deleteBookmarkFromModal()" style="display:none; padding:0.75rem 1rem;">
+                    <i class="fa-solid fa-trash-can"></i> حذف
+                </button>
+                <button class="btn btn-outline" onclick="closeBookmarkModal()">
+                    <i class="fa-solid fa-xmark"></i> إلغاء
+                </button>
+    </div>
+
+    <!-- Footer -->
+    <footer style="background: #0f172a; color: #94a3b8; padding: 2.5rem 1.5rem; text-align: center; font-family: 'Cairo', sans-serif; margin-top: 5rem; border-top: 4px solid #008e5c; z-index: 10; position: relative;">
+        <div style="max-w-6xl mx-auto flex flex-col items-center justify-center gap-2">
+            <p style="font-size: 1.25rem; font-weight: 800; color: #10b981; margin: 0; display: flex; align-items: center; justify-content: center; gap: 0.6rem; text-shadow: 0 2px 4px rgba(0,0,0,0.15);">
+                <i class="fa-solid fa-heart animate-pulse text-red-500"></i> صلّ على الحبيب قلبك يطيب <i class="fa-solid fa-heart animate-pulse text-red-500"></i>
+            </p>
+            <p style="font-size: 0.85rem; margin: 0; color: #64748b; font-weight: 600; margin-top: 0.5rem;">منصة محاسبة التكاليف التفاعلية &copy; 2026</p>
+        </div>
+    </footer>
+
+</body>
+</html>

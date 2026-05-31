@@ -1249,6 +1249,126 @@
             .ai-btn { font-size: 12px; padding: 6px 12px; }
             #ai-toast { font-size: 13px; padding: 12px 18px; white-space: normal; max-width: 90vw; text-align: center; }
         }
+    
+        /* Bookmarks Modal Styles */
+        #bookmarks-modal-overlay {
+            display: none;
+            position: fixed;
+            inset: 0;
+            background: rgba(15, 23, 42, 0.6);
+            z-index: 9999;
+            align-items: center;
+            justify-content: center;
+            backdrop-filter: blur(8px);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        #bookmarks-modal-overlay.show-modal {
+            display: flex;
+            opacity: 1;
+        }
+        #bookmarks-modal-content {
+            background: #f8fafc;
+            width: 95%;
+            max-width: 850px;
+            max-height: 85vh;
+            border-radius: 24px;
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+            transform: scale(0.95);
+            opacity: 0;
+            transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1), opacity 0.3s ease;
+        }
+        #bookmarks-modal-overlay.show-modal #bookmarks-modal-content {
+            transform: scale(1);
+            opacity: 1;
+        }
+    
+        /* Bookmark Button and Modal Styles */
+        .lec-bookmark-btn {
+            position: absolute;
+            top: 12px;
+            left: 110px;
+            z-index: 20;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            border: 1.5px solid #fcd34d;
+            background: #fefce8;
+            color: #b45309;
+            cursor: pointer;
+            opacity: 0;
+            transform: translateY(-6px) scale(0.92);
+            transition: opacity 0.22s ease, transform 0.22s ease, background-color 0.2s, color 0.2s;
+            pointer-events: none;
+            box-shadow: 0 4px 16px rgba(245,158,11,0.2);
+            font-size: 13px;
+        }
+
+        .acc-card:hover .lec-bookmark-btn {
+            opacity: 1;
+            transform: translateY(0) scale(1);
+            pointer-events: auto;
+        }
+
+        .lec-bookmark-btn.saved {
+            background: #fef9c3;
+            border-color: #ca8a04;
+            color: #713f12;
+        }
+        
+        .lec-bookmark-btn:hover {
+            background: #fef08a;
+            transform: scale(1.08) !important;
+        }
+
+        #bookmarks-modal-overlay {
+            display: none;
+            position: fixed;
+            inset: 0;
+            background: rgba(15, 23, 42, 0.6);
+            z-index: 9999;
+            align-items: center;
+            justify-content: center;
+            backdrop-filter: blur(8px);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        #bookmarks-modal-overlay.show-modal {
+            display: flex;
+            opacity: 1;
+        }
+        #bookmarks-modal-content {
+            background: #f8fafc;
+            width: 95%;
+            max-width: 850px;
+            max-height: 85vh;
+            border-radius: 24px;
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+            transform: scale(0.95);
+            opacity: 0;
+            transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1), opacity 0.3s ease;
+        }
+        #bookmarks-modal-overlay.show-modal #bookmarks-modal-content {
+            transform: scale(1);
+            opacity: 1;
+        }
+
+        @media (max-width: 600px) {
+            .ai-ask-btn { font-size: 11px; padding: 5px 10px; }
+            .lec-bookmark-btn { left: 95px; width: 28px; height: 28px; font-size: 11px; top: 11px; }
+            .ai-picker-wrap { padding: 12px 14px; gap: 7px; }
+            .ai-btn { font-size: 12px; padding: 6px 12px; }
+            #ai-toast { font-size: 13px; padding: 12px 18px; white-space: normal; max-width: 90vw; text-align: center; }
+        }
     </style>
 </head>
 
@@ -1321,6 +1441,86 @@
                     </button>
                 </div>
             </section>
+
+            <!-- ============================
+                 DASHBOARD CARDS
+            ============================= -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-10">
+                <!-- Exams Card -->
+                <a href="Exams.html" class="group bg-gradient-to-br from-emerald-500 to-teal-600 rounded-2xl shadow-md p-6 flex flex-col justify-between text-white transform hover:-translate-y-1 transition-all duration-200 cursor-pointer overflow-hidden relative" style="text-decoration: none;">
+                    <div class="absolute -bottom-6 -right-6 text-white opacity-10 text-9xl z-0 pointer-events-none transform group-hover:scale-110 transition-transform duration-300">
+                        <i class="fa-solid fa-graduation-cap"></i>
+                    </div>
+                    <div class="z-10">
+                        <div class="w-12 h-12 bg-white/20 rounded-xl flex items-center justify-center text-xl mb-4">
+                            <i class="fa-solid fa-file-signature text-amber-300"></i>
+                        </div>
+                        <h4 class="text-xl sm:text-2xl font-extrabold mb-2" style="font-family:'Cairo',sans-serif;">بنك الامتحانات والتدريبات</h4>
+                        <p class="text-white/90 text-xs sm:text-sm leading-relaxed" style="font-family:'Cairo',sans-serif;">اختبر نفسك وحل أسئلة الامتحانات التفاعلية مع التصحيح التلقائي والشرح التفصيلي للحلول.</p>
+                    </div>
+                    <div class="mt-6 flex items-center gap-2 text-xs sm:text-sm font-bold bg-white/10 hover:bg-white/20 py-2.5 px-4 rounded-xl self-start z-10 transition-colors" style="font-family:'Cairo',sans-serif;">
+                        ابدأ التدريب الآن <i class="fa-solid fa-arrow-left"></i>
+                    </div>
+                </a>
+
+                <!-- Bookmarks Card -->
+                <div onclick="openBookmarksModal()" class="group bg-gradient-to-br from-purple-500 to-indigo-600 rounded-2xl shadow-md p-6 flex flex-col justify-between text-white transform hover:-translate-y-1 transition-all duration-200 cursor-pointer overflow-hidden relative">
+                    <div class="absolute -bottom-6 -right-6 text-white opacity-10 text-9xl z-0 pointer-events-none transform group-hover:scale-110 transition-transform duration-300">
+                        <i class="fa-solid fa-bookmark"></i>
+                    </div>
+                    <div class="z-10 bg-transparent">
+                        <div class="w-12 h-12 bg-white/20 rounded-xl flex items-center justify-center text-xl mb-4 relative">
+                            <i class="fa-solid fa-bookmark text-amber-300"></i>
+                            <span id="bm-badge-count" class="absolute -top-1.5 -right-1.5 bg-amber-400 text-slate-900 text-[10px] font-black w-5 h-5 rounded-full flex items-center justify-center border-2 border-purple-500 hidden">0</span>
+                        </div>
+                        <h4 class="text-xl sm:text-2xl font-extrabold mb-2" style="font-family:'Cairo',sans-serif;">محفوظاتي للمراجعة</h4>
+                        <p class="text-white/90 text-xs sm:text-sm leading-relaxed" style="font-family:'Cairo',sans-serif;">الأجزاء والتعريفات التي قمت بحفظها أثناء الشرح لمراجعتها والتفاعل معها لاحقاً.</p>
+                    </div>
+                    <div class="mt-6 flex items-center gap-2 text-xs sm:text-sm font-bold bg-white/10 hover:bg-white/20 py-2.5 px-4 rounded-xl self-start z-10 transition-colors" style="font-family:'Cairo',sans-serif;">
+                        عرض المحفوظات <i class="fa-solid fa-folder-open"></i>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Bookmarks Modal Overlay -->
+            <div id="bookmarks-modal-overlay">
+                <div id="bookmarks-modal-content">
+                    <!-- Modal Header -->
+                    <div class="bg-gradient-to-r from-purple-600 to-indigo-600 text-white px-6 py-4 flex items-center justify-between shadow-md z-10">
+                        <div class="flex items-center gap-3">
+                            <span class="w-10 h-10 bg-white/20 rounded-xl flex items-center justify-center text-lg">
+                                <i class="fa-solid fa-bookmark text-amber-300"></i>
+                            </span>
+                            <div>
+                                <h3 class="font-bold text-base sm:text-lg" style="font-family:'Cairo',sans-serif; margin:0;">محفوظاتي للمراجعة</h3>
+                                <p class="text-xs text-purple-200 font-medium" id="bm-modal-subtitle" style="font-family:'Cairo',sans-serif; margin:0;">0 عناصر محفوظة</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <!-- Clear all -->
+                            <button onclick="clearAllBookmarks()" class="text-xs font-bold bg-red-500/20 hover:bg-red-500/30 border border-red-400/40 text-red-200 py-1.5 px-3 rounded-lg flex items-center gap-1.5 transition-colors cursor-pointer" style="font-family:'Cairo',sans-serif;">
+                                <i class="fa-solid fa-trash-can"></i> مسح الكل
+                            </button>
+                            <!-- Close -->
+                            <button onclick="closeBookmarksModal()" class="w-9 h-9 rounded-full bg-white/10 hover:bg-white/20 text-white flex items-center justify-center transition-colors cursor-pointer border-none">
+                                <i class="fa-solid fa-xmark text-lg"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <!-- Modal Body -->
+                    <div class="flex-1 overflow-y-auto p-4 sm:p-6">
+                        <div id="bookmarks-modal-list" class="flex flex-col gap-4"></div>
+                        <!-- Empty State -->
+                        <div id="bookmarks-modal-empty" class="hidden flex-col items-center justify-center py-16 text-center">
+                            <div class="w-20 h-20 bg-purple-100 text-purple-600 rounded-full flex items-center justify-center text-3xl mb-4 animate-bounce">
+                                <i class="fa-solid fa-folder-open"></i>
+                            </div>
+                            <h4 class="text-lg font-bold text-slate-800 mb-1" style="font-family:'Cairo',sans-serif;">لا توجد محفوظة بعد</h4>
+                            <p class="text-slate-500 text-xs sm:text-sm max-w-sm" style="font-family:'Cairo',sans-serif;">أثناء المذاكرة، اضغط على زر الحفظ (🔖) في بطاقات الشرح أو أسئلة الامتحانات لتظهر لك هنا للرجوع إليها.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
 
             <!-- Lectures Grid -->
             <h3 id="lectures"
@@ -4237,7 +4437,7 @@
                                                     كاملة في الخلايا. أما الـ 200 ألف وحدة تحت التشغيل آخر الشهر بنحسبها
                                                     بنسبة إتمامها: المواد (100%) = 200 ألف خامات، والتشكيل (60%) نضرب:
                                                     <div class="overflow-x-auto w-full my-2">
-                                                        $$\text{Ending WIP CC (EU)} = 200,000 \times 60% = 120,000\text{
+                                                        $$\text{Ending WIP CC (EU)} = 200,000 \times 60\% = 120,000\text{
                                                         units}$$
                                                     </div>
                                                     نجمع التام مع آخر المدة فينتج إجمالي وحدات المواد 900 ألف، وإجمالي
@@ -4412,8 +4612,8 @@
                                                             مواد). وكانوا واخدين 70% تشكيل، يبقى هنكمل النسبة المتبقية
                                                             المكملة بس (30%):
                                                             <div class="overflow-x-auto w-full my-2">
-                                                                $$\text{Beg. WIP CC (EU)} = 100,000 \times (100% - 70%)
-                                                                = 100,000 \times 30% = 30,000\text{ units}$$
+                                                                $$\text{Beg. WIP CC (EU)} = 100,000 \times (100\% - 70\%)
+                                                                = 100,000 \times 30\% = 30,000\text{ units}$$
                                                             </div>
                                                         </li>
                                                         <li><strong>بدأ وانتهى خلال الشهر (Started &amp;
@@ -5709,7 +5909,7 @@
                                      الـ rendering بيحتاج مكتبة زي MathJax أو KaTeX تكون محملة في الصفحة
                                 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ -->
                                 <div class="overflow-x-auto w-full my-2">
-                                    $\text{Total Production} = 25{,}000\text{ gal} + 75{,}000\text{ gal} = 100{,}000\text{ gallons}$
+                                    $$\text{Total Production} = 25{,}000\text{ gal} + 75{,}000\text{ gal} = 100{,}000\text{ gallons}$$
                                 </div>
                             </li>
                             <li>
@@ -5971,7 +6171,7 @@
                                 <strong class="text-red-800 block mb-1">فخ تكلفة الإنتاج الكلية (Total Production Cost):</strong>
                                 الدكتور ممكن يطلب منك في البابل شيت "Total Production cost" للزبدة مثلاً. إياك تقوله الـ 110,000 وبس! دي التكلفة المشتركة الموزعة بس، لازم تجمع معاها التكلفة الإضافية القابلة للفصل عشان تجيب الرقم الصح:
                                 <div class="overflow-x-auto w-full my-2">
-                                    $\text{Total Cost (Buttercream)} = \$110{,}000\text{ (Joint)} + \$280{,}000\text{ (Separable)} = \$390{,}000$
+                                    $$\text{Total Cost (Buttercream)} = \$110{,}000\text{ (Joint)} + \$280{,}000\text{ (Separable)} = \$390{,}000$$
                                 </div>
                             </div>
                         </div>
@@ -6175,13 +6375,13 @@
                                 <strong>1. كيفية حساب نسبة مجمل الربح الإجمالية (25%):</strong>
                                 <p class="text-xs text-slate-600 font-normal mt-1">دي البداية دايماً؛ بنجمع مبيعات كل المنتجات النهائية المطورة ونطرح منها كل التكاليف (المشتركة وقابلة للفصل):</p>
                                 <div class="overflow-x-auto w-full my-2">
-                                    $\text{Total Sales Value} = \$500{,}000\text{ (Cream)} + \$1{,}100{,}000\text{ (Skim)} = \$1{,}600{,}000$
+                                    $$\text{Total Sales Value} = \$500{,}000\text{ (Cream)} + \$1{,}100{,}000\text{ (Skim)} = \$1{,}600{,}000$$
                                 </div>
                                 <div class="overflow-x-auto w-full my-2">
-                                    $\text{Total Cost} = \$400{,}000 + \$280{,}000 + \$520{,}000 = \$1{,}200{,}000$
+                                    $$\text{Total Cost} = \$400{,}000 + \$280{,}000 + \$520{,}000 = \$1{,}200{,}000$$
                                 </div>
                                 <div class="overflow-x-auto w-full my-2">
-                                    $\text{Gross Margin \%} = \frac{\$1{,}600{,}000 - \$1{,}200{,}000}{\$1{,}600{,}000} = 25\%$
+                                    $$\text{Gross Margin \%} = \frac{\$1{,}600{,}000 - \$1{,}200{,}000}{\$1{,}600{,}000} = 25\%$$
                                 </div>
                             </li>
                             <li>
@@ -6428,9 +6628,9 @@
     </main>
 
     <!-- Footer -->
-    <footer class="bg-slate-800 text-slate-400 py-8 text-center mt-12">
+    <!-- <footer class="bg-slate-800 text-slate-400 py-8 text-center mt-12">
         <p class="text-sm mt-2">صل على الحبيب قلبك يطيب</p>
-    </footer>
+    </footer> -->
 
     <!-- JavaScript for interactivity -->
     <script>
@@ -6795,26 +6995,521 @@ ${fullContent}
             }, 300);
         }
 
-        // ── Inject AI Ask Button into every acc-card ──────────────
-        function injectAIButtons() {
+        // BOOKMARKS SYSTEM DATA & HELPERS
+        const BOOKMARKS_KEY = 'cost_bookmarks';
+
+        function getBookmarks() {
+            try { return JSON.parse(localStorage.getItem(BOOKMARKS_KEY)) || []; }
+            catch(e) { return []; }
+        }
+
+        function toggleLectureBookmark(card, btn) {
+            const cardId = card.id; // e.g. "l1-acc1"
+            const lecNum = cardId.split('-')[0].replace('l', '');
+            const lectureId = `lecture-${lecNum}-content`;
+            const lectureSection = document.getElementById(lectureId);
+            const lectureTitle = lectureSection ? lectureSection.querySelector('.lecture-hero-title')?.textContent.trim() : `المحاضرة ${lecNum}`;
+            const cardTitleEl = card.querySelector('.acc-title');
+            const cardTitle = cardTitleEl ? cardTitleEl.firstChild.textContent.trim() : 'قسم المحاضرة';
+            const enEl = card.querySelector('.content-en');
+            const enText = enEl ? enEl.innerHTML : '';
+            const arEl = card.querySelector('.content-ar');
+            const arText = arEl ? arEl.innerHTML : '';
+            
+            let bookmarks = getBookmarks();
+            const existingIdx = bookmarks.findIndex(b => b.type === 'lecture' && b.cardId === cardId);
+            
+            if (existingIdx >= 0) {
+                bookmarks.splice(existingIdx, 1);
+                localStorage.setItem(BOOKMARKS_KEY, JSON.stringify(bookmarks));
+                btn.classList.remove('saved');
+                btn.innerHTML = '<i class="fa-regular fa-bookmark"></i>';
+                btn.title = 'احفظ للمراجعة';
+                showToast('تم الحذف من محفوظاتك.');
+            } else {
+                const entry = {
+                    type: 'lecture',
+                    lectureId: `lecture-${lecNum}`,
+                    lectureTitle,
+                    cardId,
+                    cardTitle,
+                    enText,
+                    arText,
+                    savedAt: new Date().toLocaleString('ar-EG', {
+                        hour: '2-digit', minute: '2-digit',
+                        day: '2-digit', month: '2-digit', year: 'numeric', hour12: true
+                    })
+                };
+                bookmarks.unshift(entry);
+                localStorage.setItem(BOOKMARKS_KEY, JSON.stringify(bookmarks));
+                btn.classList.add('saved');
+                btn.innerHTML = '<i class="fa-solid fa-bookmark"></i>';
+                btn.title = 'محفوظ ✓';
+                showToast('تم الحفظ في محفوظاتك! راجعها في الصفحة الرئيسية.');
+            }
+            renderBookmarks();
+        }
+
+        function navigateToLectureCard(lectureId, cardId) {
+            const cardEl = document.querySelector(`[data-target="${lectureId}"]`);
+            if (cardEl) {
+                cardEl.click();
+                setTimeout(() => {
+                    scrollToAcc(cardId, null);
+                }, 150);
+            }
+        }
+
+        function deleteBookmark(qId, examId, isLecture = false, cardId = null) {
+            let bookmarks = getBookmarks();
+            if (isLecture) {
+                bookmarks = bookmarks.filter(b => !(b.type === 'lecture' && b.cardId === cardId));
+                const btn = document.querySelector(`#${cardId} .lec-bookmark-btn`);
+                if (btn) {
+                    btn.classList.remove('saved');
+                    btn.innerHTML = '<i class="fa-regular fa-bookmark"></i>';
+                    btn.title = 'احفظ للمراجعة';
+                }
+            } else {
+                bookmarks = bookmarks.filter(b => !(b.qId === qId && b.examId === examId));
+            }
+            localStorage.setItem(BOOKMARKS_KEY, JSON.stringify(bookmarks));
+            renderBookmarks();
+        }
+
+        function clearAllBookmarks() {
+            if (!confirm('هل أنت متأكد من مسح جميع المحفوظات؟ لا يمكن التراجع.')) return;
+            
+            const bookmarks = getBookmarks();
+            bookmarks.forEach(bm => {
+                if (bm.type === 'lecture') {
+                    const btn = document.querySelector(`#${bm.cardId} .lec-bookmark-btn`);
+                    if (btn) {
+                        btn.classList.remove('saved');
+                        btn.innerHTML = '<i class="fa-regular fa-bookmark"></i>';
+                        btn.title = 'احفظ للمراجعة';
+                    }
+                }
+            });
+
+            localStorage.removeItem(BOOKMARKS_KEY);
+            renderBookmarks();
+        }
+
+        // Inject AI and Bookmark buttons into each acc-card
+        function injectCardActions() {
             document.querySelectorAll('.acc-card').forEach(card => {
-                if (card.querySelector('.ai-ask-btn')) return; // already injected
-                const btn = document.createElement('button');
-                btn.className = 'ai-ask-btn';
-                btn.setAttribute('aria-label', 'اسأل AI عن هذا القسم');
-                btn.innerHTML = '<span class="ai-ask-icon">✦</span> اسأل AI';
-                btn.addEventListener('click', (e) => {
-                    e.stopPropagation();
-                    openAIChat(card);
-                });
-                card.appendChild(btn);
+                // 1. Inject AI button
+                if (!card.querySelector('.ai-ask-btn')) {
+                    const btn = document.createElement('button');
+                    btn.className = 'ai-ask-btn';
+                    btn.setAttribute('aria-label', 'اسأل AI عن هذا القسم');
+                    btn.innerHTML = '<span class="ai-ask-icon">✦</span> اسأل AI';
+                    btn.addEventListener('click', (e) => {
+                        e.stopPropagation();
+                        openAIChat(card);
+                    });
+                    card.appendChild(btn);
+                }
+
+                // 2. Inject Bookmark button
+                if (!card.querySelector('.lec-bookmark-btn')) {
+                    const btn = document.createElement('button');
+                    btn.className = 'lec-bookmark-btn';
+                    btn.setAttribute('aria-label', 'حفظ هذا القسم للمراجعة');
+                    
+                    const cardId = card.id;
+                    const bookmarks = getBookmarks();
+                    const isSaved = bookmarks.some(b => b.type === 'lecture' && b.cardId === cardId);
+                    
+                    if (isSaved) {
+                        btn.classList.add('saved');
+                        btn.innerHTML = '<i class="fa-solid fa-bookmark"></i>';
+                        btn.title = 'محفوظ ✓';
+                    } else {
+                        btn.innerHTML = '<i class="fa-regular fa-bookmark"></i>';
+                        btn.title = 'احفظ للمراجعة';
+                    }
+                    
+                    btn.addEventListener('click', (e) => {
+                        e.stopPropagation();
+                        toggleLectureBookmark(card, btn);
+                    });
+                    card.appendChild(btn);
+                }
             });
         }
 
-        // Inject on DOM ready (all cards are already in DOM)
-        injectAIButtons();
+        function toggleBookmarkCard(id) {
+            const body = document.getElementById('bm-body-' + id);
+            const chevron = document.getElementById('bm-chevron-' + id);
+            if (!body) return;
+            const isOpen = body.style.display !== 'none';
+            body.style.display = isOpen ? 'none' : 'block';
+            if (chevron) chevron.style.transform = isOpen ? 'rotate(0deg)' : 'rotate(180deg)';
+        }
+
+        function renderBookmarks() {
+            const list = document.getElementById('bookmarks-modal-list');
+            const badge = document.getElementById('bm-badge-count');
+            const subtitle = document.getElementById('bm-modal-subtitle');
+            const emptyState = document.getElementById('bookmarks-modal-empty');
+            const bookmarks = getBookmarks();
+
+            if (badge) {
+                if (bookmarks.length > 0) {
+                    badge.textContent = bookmarks.length;
+                    badge.classList.remove('hidden');
+                } else {
+                    badge.classList.add('hidden');
+                }
+            }
+
+            if (subtitle) {
+                subtitle.textContent = bookmarks.length + ' عناصر محفوظة للمراجعة';
+            }
+
+            if (!list) return;
+
+            if (bookmarks.length === 0) {
+                list.innerHTML = '';
+                if (emptyState) emptyState.classList.remove('hidden');
+                return;
+            }
+
+            if (emptyState) emptyState.classList.add('hidden');
+            list.innerHTML = '';
+
+            bookmarks.forEach((bm, idx) => {
+                const card = document.createElement('div');
+                const isLec = (bm.type === 'lecture');
+                const borderHex = isLec ? '#a855f7' : '#fcd34d';
+                const hoverShadow = isLec ? '0 8px 24px rgba(168,85,247,0.12)' : '0 8px 24px rgba(245,158,11,0.12)';
+                const headerBg = isLec ? '#faf5ff' : '#fffbeb';
+                const mainIcon = isLec ? 'fa-solid fa-graduation-cap' : 'fa-solid fa-bookmark';
+                const mainIconColor = isLec ? '#7e22ce' : '#b45309';
+                const mainIconBg = isLec ? '#f3e8ff' : '#fef9c3';
+                const mainIconBorder = isLec ? '#e9d5ff' : '#fcd34d';
+
+                card.style.cssText = `background:white; border-radius:1.25rem; border:2px solid ${borderHex}; overflow:hidden; box-shadow:0 4px 16px rgba(0,0,0,0.04); transition: box-shadow 0.2s;`;
+                card.onmouseover = () => card.style.boxShadow = hoverShadow;
+                card.onmouseout = () => card.style.boxShadow = '0 4px 16px rgba(0,0,0,0.04)';
+
+                if (isLec) {
+                    const cleanTitle = (bm.lectureTitle || '').replace('المحاضرة ', 'محاضرة ');
+                    
+                    card.innerHTML = `
+                        <div onclick="toggleBookmarkCard(${idx})" style="display:flex; align-items:center; justify-content:space-between; gap:0.75rem; padding:1rem 1.25rem; cursor:pointer; background:${headerBg};">
+                            <div style="display:flex; align-items:center; gap:0.75rem; min-width:0; flex:1;">
+                                <div style="width:2.2rem; height:2.2rem; background:${mainIconBg}; border:1.5px solid ${mainIconBorder}; border-radius:0.6rem; display:flex; align-items:center; justify-content:center; color:${mainIconColor}; font-size:0.95rem; flex-shrink:0;">
+                                    <i class="${mainIcon}"></i>
+                                </div>
+                                <div style="flex:1; min-width:0;">
+                                    <div style="display:flex; align-items:center; gap:0.5rem; margin-bottom:0.2rem; flex-wrap:wrap;">
+                                        <span style="font-size:0.7rem; font-weight:900; background:#f3e8ff; color:#6b21a8; padding:0.15rem 0.5rem; border-radius:0.35rem;">شرح للمراجعة</span>
+                                        <span style="font-size:0.7rem; font-weight:800; background:#f0fdf4; color:#166534; padding:0.15rem 0.5rem; border-radius:0.35rem; border:1px solid #86efac;">${cleanTitle}</span>
+                                        <span style="font-size:0.68rem; color:#94a3b8; font-weight:600;">${bm.savedAt || ''}</span>
+                                    </div>
+                                    <div style="font-size:0.9rem; font-weight:800; color:#1e293b; direction:rtl; text-align:right; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; max-width:100%;">${bm.cardTitle || ''}</div>
+                                </div>
+                            </div>
+                            <div style="display:flex; align-items:center; gap:0.5rem; flex-shrink:0;">
+                                <button onclick="event.stopPropagation(); navigateToLectureCardByIdx(${idx})" title="عرض في المحاضرة" style="width:1.9rem; height:1.9rem; border-radius:0.5rem; border:1.5px solid #c084fc; background:#faf5ff; color:#7e22ce; cursor:pointer; display:flex; align-items:center; justify-content:center; font-size:0.8rem; transition:all 0.15s;" onmouseover="this.style.background='#f3e8ff'" onmouseout="this.style.background='#faf5ff'">
+                                    <i class="fa-solid fa-eye"></i>
+                                </button>
+                                <button onclick="event.stopPropagation(); openAIChatForBookmarkByIdx(${idx})" title="اسأل AI" style="width:1.9rem; height:1.9rem; border-radius:0.5rem; border:1.5px solid #10b981; background:#ecfdf5; color:#047857; cursor:pointer; display:flex; align-items:center; justify-content:center; font-size:0.8rem; transition:all 0.15s;" onmouseover="this.style.background='#d1fae5'" onmouseout="this.style.background='#ecfdf5'">
+                                    <i class="fa-solid fa-robot"></i>
+                                </button>
+                                <button onclick="event.stopPropagation(); deleteBookmarkByIdx(${idx})" title="حذف" style="width:1.9rem; height:1.9rem; border-radius:0.5rem; border:1.5px solid #fca5a5; background:#fff5f5; color:#dc2626; cursor:pointer; display:flex; align-items:center; justify-content:center; font-size:0.8rem; transition:all 0.15s;" onmouseover="this.style.background='#fee2e2'" onmouseout="this.style.background='#fff5f5'">
+                                    <i class="fa-solid fa-trash-can"></i>
+                                </button>
+                                <i id="bm-chevron-${idx}" class="fa-solid fa-chevron-down" style="color:#94a3b8; font-size:0.85rem; transition:transform 0.3s; margin-right:0.25rem;"></i>
+                            </div>
+                        </div>
+                        <div id="bm-body-${idx}" style="display:none; padding:1.25rem; border-top:1.5px solid #f3e8ff; background:#fff; direction:ltr; text-align:left;">
+                            ${bm.enText ? `
+                            <div class="content-en" style="background:#f8fafc; border:1px solid #e2e8f0; border-radius:0.75rem; padding:1rem; font-size:0.85rem; font-weight:600; color:#334155; line-height:1.7; overflow-x:auto;">
+                                ${bm.enText}
+                            </div>` : ''}
+                            ${bm.arText ? `
+                            <div class="content-ar" style="background:#fffbeb; border:1px solid #fde68a; border-radius:0.75rem; padding:1rem; font-size:0.85rem; font-weight:700; color:#78350f; line-height:1.75; direction:rtl; text-align:right; margin-top:0.75rem;">
+                                ${bm.arText}
+                            </div>` : ''}
+                        </div>
+                    `;
+                } else {
+                    const examBg = bm.examId === 'cost_1_s' ? '#e0e7ff' : '#ede9fe';
+                    const examColor = bm.examId === 'cost_1_s' ? '#3730a3' : '#5b21b6';
+
+                    card.innerHTML = `
+                        <div onclick="toggleBookmarkCard(${idx})" style="display:flex; align-items:center; justify-content:space-between; gap:0.75rem; padding:1rem 1.25rem; cursor:pointer; background:${headerBg};">
+                            <div style="display:flex; align-items:center; gap:0.75rem; min-width:0; flex:1;">
+                                <div style="width:2.2rem; height:2.2rem; background:${mainIconBg}; border:1.5px solid ${mainIconBorder}; border-radius:0.6rem; display:flex; align-items:center; justify-content:center; color:${mainIconColor}; font-size:0.95rem; flex-shrink:0;">
+                                    <i class="${mainIcon}"></i>
+                                </div>
+                                <div style="flex:1; min-width:0;">
+                                    <div style="display:flex; align-items:center; gap:0.5rem; margin-bottom:0.2rem; flex-wrap:wrap;">
+                                        <span style="font-size:0.7rem; font-weight:900; background:${examBg}; color:${examColor}; padding:0.15rem 0.5rem; border-radius:0.35rem;">${bm.examTitle || bm.examId}</span>
+                                        <span style="font-size:0.7rem; font-weight:800; background:#f0fdf4; color:#166534; padding:0.15rem 0.5rem; border-radius:0.35rem; border:1px solid #86efac;">سؤال ${(bm.qIndex || 0) + 1}</span>
+                                        <span style="font-size:0.68rem; color:#94a3b8; font-weight:600;">${bm.savedAt || ''}</span>
+                                    </div>
+                                    <div style="font-size:0.85rem; font-weight:700; color:#1e293b; direction:ltr; text-align:left; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; max-width:100%;">${(bm.qText || '').replace(/<[^>]+>/g,'').slice(0,120)}${(bm.qText||'').length > 120 ? '...' : ''}</div>
+                                    ${bm.note ? `<div style="font-size:0.75rem; color:#92400e; font-weight:700; margin-top:0.2rem; direction:rtl; text-align:right;"><i class="fa-solid fa-pen" style="font-size:0.65rem;"></i> ${bm.note}</div>` : ''}
+                                </div>
+                            </div>
+                            <div style="display:flex; align-items:center; gap:0.5rem; flex-shrink:0;">
+                                <button onclick="event.stopPropagation(); openAIChatForBookmarkByIdx(${idx})" title="اسأل AI" style="width:1.9rem; height:1.9rem; border-radius:0.5rem; border:1.5px solid #10b981; background:#ecfdf5; color:#047857; cursor:pointer; display:flex; align-items:center; justify-content:center; font-size:0.8rem; transition:all 0.15s;" onmouseover="this.style.background='#d1fae5'" onmouseout="this.style.background='#ecfdf5'">
+                                    <i class="fa-solid fa-robot"></i>
+                                </button>
+                                <button onclick="event.stopPropagation(); deleteBookmarkByIdx(${idx})" title="حذف" style="width:1.9rem; height:1.9rem; border-radius:0.5rem; border:1.5px solid #fca5a5; background:#fff5f5; color:#dc2626; cursor:pointer; display:flex; align-items:center; justify-content:center; font-size:0.8rem; transition:all 0.15s;" onmouseover="this.style.background='#fee2e2'" onmouseout="this.style.background='#fff5f5'">
+                                    <i class="fa-solid fa-trash-can"></i>
+                                </button>
+                                <i id="bm-chevron-${idx}" class="fa-solid fa-chevron-down" style="color:#94a3b8; font-size:0.85rem; transition:transform 0.3s; margin-right:0.25rem;"></i>
+                            </div>
+                        </div>
+                        <div id="bm-body-${idx}" style="display:none; padding:1rem 1.25rem; border-top:1.5px solid #fef3c7; background:#fff; direction:ltr; text-align:left;">
+                            <div style="background:#f0fdf4; border:1px solid #86efac; border-radius:0.75rem; padding:0.65rem 0.9rem; margin-bottom:0.75rem; font-size:0.82rem; font-weight:700; color:#166534; direction:ltr; text-align:left;">
+                                <strong>الإجابة الصحيحة:</strong> ${bm.correctText || bm.correct || ''}
+                            </div>
+                            <div class="content-en" style="background:#f8fafc; border:1px solid #e2e8f0; border-radius:0.75rem; padding:0.85rem; font-size:0.82rem; font-weight:600; color:#475569; line-height:1.7; overflow-x:auto; max-height:300px; overflow-y:auto;">
+                                <div style="font-size:0.78rem; font-weight:800; color:#4f46e5; display:flex; align-items:center; gap:0.35rem; margin-bottom:0.5rem;">
+                                    <i class="fa-solid fa-chalkboard-user"></i> الشرح التفصيلي:
+                                </div>
+                                ${bm.explanation || ''}
+                            </div>
+                            ${bm.note ? `
+                            <div style="background:#fef9c3; border:1.5px solid #fcd34d; border-radius:0.75rem; padding:0.65rem 0.9rem; margin-top:0.75rem; font-size:0.85rem; font-weight:700; color:#92400e; direction:rtl; text-align:right;">
+                                <i class="fa-solid fa-pen" style="margin-left:0.3rem;"></i> ملاحظتي: ${bm.note}
+                            </div>` : ''}
+                        </div>
+                    `;
+                }
+                list.appendChild(card);
+            });
+
+            if (typeof MathJax !== 'undefined' && MathJax.typesetPromise) {
+                MathJax.typesetPromise([list]);
+            }
+        }
+
+        // Bookmark Index Event Handlers
+        function navigateToLectureCardByIdx(idx) {
+            const bm = getBookmarks()[idx];
+            if (bm) {
+                closeBookmarksModal();
+                let targetLectureId = bm.lectureId;
+                if (!targetLectureId.startsWith('lecture-')) {
+                    const lecNum = targetLectureId.replace('l', '');
+                    targetLectureId = 'lecture-' + lecNum;
+                }
+                navigateToLectureCard(targetLectureId + '-content', bm.cardId);
+            }
+        }
+
+        function deleteBookmarkByIdx(idx) {
+            const bm = getBookmarks()[idx];
+            if (bm) {
+                if (bm.type === 'lecture') {
+                    deleteBookmark(null, null, true, bm.cardId);
+                } else {
+                    deleteBookmark(bm.qId, bm.examId);
+                }
+            }
+        }
+
+        function openAIChatForBookmarkByIdx(idx) {
+            const bm = getBookmarks()[idx];
+            if (bm) {
+                openAIChatForBookmark(bm);
+            }
+        }
+
+        // Modal triggers
+        function openBookmarksModal() {
+            const overlay = document.getElementById('bookmarks-modal-overlay');
+            overlay.classList.add('show-modal');
+            renderBookmarks();
+        }
+
+        function closeBookmarksModal() {
+            const overlay = document.getElementById('bookmarks-modal-overlay');
+            overlay.classList.remove('show-modal');
+        }
+
+        // Prompt builder & AI triggers for bookmarks
+        function buildPromptForBookmark(bm) {
+            if (bm.type === 'lecture') {
+                const lectureName = bm.lectureTitle || 'محاضرة في محاسبة التكاليف';
+                const title = bm.cardTitle || 'جزء من الشرح';
+                const cleanEn = (bm.enText || '').replace(/<[^>]+>/g, '').trim();
+                const cleanAr = (bm.arText || '').replace(/<[^>]+>/g, '').trim();
+                const fullContent = [cleanEn, cleanAr].filter(Boolean).join('\n\n');
+                
+                return `أنا طالب في مقرر محاسبة التكاليف.
+هذا جزء من ${lectureName}:
+
+العنوان: ${title}
+
+${fullContent}
+
+المطلوب: اشرح لي هذا الجزء شرحاً تفصيلياً وبأسلوب مبسط وواضح كأنك تشرح لطالب للمرة الأولى. استخدم أمثلة إضافية إن أمكن.`;
+            } else {
+                const examName = bm.examTitle || 'امتحان محاسبة تكاليف';
+                const cleanQ = (bm.qText || '').replace(/<[^>]+>/g, '').trim();
+                const cleanCorrect = (bm.correctText || bm.correct || '').replace(/<[^>]+>/g, '').trim();
+                const cleanExp = (bm.explanation || '').replace(/<[^>]+>/g, '').trim();
+                
+                return `أنا طالب في مقرر محاسبة التكاليف.
+هذا سؤال من ${examName}:
+
+السؤال:
+${cleanQ}
+
+الإجابة الصحيحة:
+${cleanCorrect}
+
+الشرح المتوفر:
+${cleanExp}
+
+المطلوب: اشرح لي هذا السؤال وحله بالتفصيل وبأسلوب مبسط، ووضح لماذا هذه الإجابة هي الصحيحة وكيف تم التوصل إليها.`;
+            }
+        }
+
+        function openAIChatForBookmark(bm) {
+            const prompt = buildPromptForBookmark(bm);
+
+            const copyPromise = navigator.clipboard ? 
+                navigator.clipboard.writeText(prompt) : 
+                Promise.reject('no clipboard API');
+
+            copyPromise.catch(() => {
+                try {
+                    const ta = document.createElement('textarea');
+                    ta.value = prompt;
+                    ta.style.position = 'fixed'; ta.style.opacity = '0';
+                    document.body.appendChild(ta);
+                    ta.focus(); ta.select();
+                    document.execCommand('copy');
+                    document.body.removeChild(ta);
+                } catch(e) {}
+            });
+
+            const titleEl = document.getElementById('ai-overlay-title');
+            const descEl = document.getElementById('ai-overlay-desc');
+            const btnEl = document.getElementById('ai-overlay-btn');
+
+            let aiName = 'Gemini';
+            let chatUrl = 'https://gemini.google.com/app';
+            let btnGradient = 'linear-gradient(135deg,#1a73e8,#4285f4)';
+
+            if (selectedAI === 'chatgpt') {
+                aiName = 'ChatGPT';
+                chatUrl = 'https://chatgpt.com/';
+                btnGradient = 'linear-gradient(135deg,#10a37f,#0d8a6a)';
+            } else if (selectedAI === 'claude') {
+                aiName = 'Claude';
+                chatUrl = 'https://claude.ai/new';
+                btnGradient = 'linear-gradient(135deg,#d97706,#b45309)';
+            }
+
+            titleEl.textContent = `فتحنا ${aiName} في تاب جديد!`;
+            descEl.innerHTML = `الرسالة اتنسخت تلقائياً للمحفوظة.<br>افتح التاب الجديد والصق الرسالة بالزرار ده:`;
+            btnEl.innerHTML = `<i class="fa-solid fa-arrow-up-right-from-square ml-1"></i> افتح ${aiName} الآن`;
+            btnEl.style.background = btnGradient;
+            
+            btnEl.onclick = function() {
+                window.open(chatUrl, '_blank', 'noopener,noreferrer');
+                closePasteOverlay();
+            };
+
+            setTimeout(() => {
+                document.getElementById('ai-paste-overlay').classList.add('show');
+            }, 300);
+        }
+
+        // Lecture navigation & dynamic bottom buttons
+        function navigateToLecture(lecNum) {
+            const card = document.querySelector(`.lecture-card[data-target="lecture-${lecNum}-content"]`);
+            if (card) {
+                card.click();
+            } else if (lecNum === 0) {
+                showHomeView();
+            }
+        }
+
+        function injectLectureNavButtons() {
+            const sections = document.querySelectorAll('.lecture-content-section');
+            sections.forEach((section, idx) => {
+                const lecNum = idx + 1;
+                const contentCol = section.querySelector('.lecture-content-col');
+                if (!contentCol) return;
+                
+                const existingBackBlock = contentCol.querySelector('.mt-8.flex.justify-center');
+                if (existingBackBlock) {
+                    existingBackBlock.remove();
+                }
+                
+                const navRow = document.createElement('div');
+                navRow.className = 'mt-10 pt-6 border-t border-slate-200 flex flex-wrap items-center justify-between gap-4 w-full';
+                
+                let prevHtml = '';
+                if (lecNum > 1) {
+                    prevHtml = `
+                        <button onclick="navigateToLecture(${lecNum - 1})" class="px-5 py-3 rounded-xl font-bold text-slate-700 border-2 border-slate-200 hover:border-slate-300 hover:bg-slate-50 transition-all flex items-center gap-2 cursor-pointer text-sm sm:text-base">
+                            <i class="fa-solid fa-arrow-right"></i> المحاضرة السابقة
+                        </button>
+                    `;
+                } else {
+                    prevHtml = `<div class="hidden sm:block w-32"></div>`;
+                }
+                
+                const homeHtml = `
+                    <button onclick="showHomeView()" class="px-6 py-3 rounded-xl font-bold text-white bg-slate-800 hover:bg-slate-900 shadow-md transition-all flex items-center gap-2 cursor-pointer text-sm sm:text-base">
+                        <i class="fa-solid fa-house"></i> الرئيسية
+                    </button>
+                `;
+                
+                let nextHtml = '';
+                if (lecNum < 9) {
+                    nextHtml = `
+                        <button onclick="navigateToLecture(${lecNum + 1})" class="px-5 py-3 rounded-xl font-bold text-white bg-gradient-to-r from-emerald-600 to-teal-600 hover:from-emerald-700 hover:to-teal-700 shadow-lg transform hover:-translate-y-0.5 transition-all flex items-center gap-2 cursor-pointer text-sm sm:text-base">
+                            المحاضرة التالية <i class="fa-solid fa-arrow-left"></i>
+                        </button>
+                    `;
+                } else {
+                    nextHtml = `<div class="hidden sm:block w-32"></div>`;
+                }
+                
+                navRow.innerHTML = prevHtml + homeHtml + nextHtml;
+                contentCol.appendChild(navRow);
+            });
+        }
+
+        // Inject actions on DOM ready
+        injectCardActions();
+        injectLectureNavButtons();
+
+        // Close bookmarks modal on backdrop click
+        document.addEventListener('click', function(e) {
+            const overlay = document.getElementById('bookmarks-modal-overlay');
+            if (overlay && e.target === overlay) {
+                closeBookmarksModal();
+            }
+        });
+        
+        // Initial render on load
+        renderBookmarks();
 
     </script>
+    <!-- Footer -->
+    <footer style="background: #0f172a; color: #94a3b8; padding: 2.5rem 1.5rem; text-align: center; font-family: 'Cairo', sans-serif; margin-top: 5rem; border-top: 4px solid #008e5c; z-index: 10; position: relative;">
+        <div style="max-w-6xl mx-auto flex flex-col items-center justify-center gap-2">
+            <p style="font-size: 1.25rem; font-weight: 800; color: #10b981; margin: 0; display: flex; align-items: center; justify-content: center; gap: 0.6rem; text-shadow: 0 2px 4px rgba(0,0,0,0.15);">
+                <i class="fa-solid fa-heart animate-pulse text-red-500"></i> صلّ على الحبيب قلبك يطيب <i class="fa-solid fa-heart animate-pulse text-red-500"></i>
+            </p>
+            <!-- <p style="font-size: 0.85rem; margin: 0; color: #64748b; font-weight: 600; margin-top: 0.5rem;">منصة محاسبة التكاليف التفاعلية &copy; 2026</p> -->
+        </div>
+    </footer>
 </body>
 
 </html>
