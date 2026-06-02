@@ -336,12 +336,13 @@
 
         /* Exam layout: Split view */
         .exam-layout {
-            display: grid;
-            grid-template-columns: 1fr;
+            display: flex;
+            flex-direction: column-reverse; /* Questions on top, Explanation at bottom on mobile */
             gap: 1.25rem;
         }
         @media(min-width: 1024px) {
             .exam-layout {
+                display: grid;
                 grid-template-columns: 5fr 7fr;
             }
         }
@@ -591,15 +592,20 @@
 
         .question-block-header {
             padding: 0.9rem 1.1rem;
-            display: flex;
-            align-items: flex-start;
+            display: grid;
+            grid-template-areas: 
+                "badge . bookmark status"
+                "text text text text";
+            grid-template-columns: auto 1fr auto auto;
             gap: 0.75rem;
+            align-items: center;
             cursor: default;
             background: var(--slate-50);
         }
         .question-block.is-current .question-block-header { background: var(--secondary-light); }
 
         .q-badge {
+            grid-area: badge;
             flex-shrink: 0;
             background: var(--slate-200);
             color: var(--slate-600);
@@ -614,14 +620,24 @@
         .question-block.is-wrong .q-badge { background: var(--danger); color: white; }
         .question-block.is-bypassed .q-badge { background: var(--warning); color: white; }
 
+        .btn-q-bookmark {
+            grid-area: bookmark;
+        }
+
+        .q-status-icon {
+            grid-area: status;
+        }
+
         .q-text {
+            grid-area: text;
             font-size: 0.92rem;
             font-weight: 700;
             color: var(--slate-800);
             line-height: 1.55;
             direction: ltr;
             text-align: left;
-            flex: 1;
+            word-break: break-word;
+            overflow-wrap: break-word;
         }
 
         .question-block-body {
@@ -1054,6 +1070,20 @@
             .result-stats { grid-template-columns: 1fr 1fr; }
         }
 
+        /* ===== MathJax & Formulas Responsive ===== */
+        mjx-container {
+            max-width: 100% !important;
+            overflow-x: auto !important;
+            overflow-y: hidden !important;
+            -webkit-overflow-scrolling: touch;
+            padding: 0.2rem 0;
+        }
+        mjx-container[display="true"] {
+            display: block !important;
+            margin: 1rem auto !important;
+            text-align: center;
+        }
+
         /* ===== ASK AI BUTTON ===== */
         .btn-ask-ai {
             display: inline-flex;
@@ -1399,6 +1429,60 @@
                         </div>
                     </div>
                 </div>
+
+                <!-- Card 3 -->
+                <div class="exam-card">
+                    <div class="exam-card-header" style="background: linear-gradient(135deg, #ec4899, #f43f5e);">
+                        <div class="bg-icon"><i class="fa-solid fa-graduation-cap"></i></div>
+                        <div class="exam-card-icon"><i class="fa-solid fa-receipt"></i></div>
+                        <div class="exam-card-title">امتحان التكاليف 2025</div>
+                        <div class="exam-card-sub">cost_2025</div>
+                    </div>
+                    <div class="exam-card-body">
+                        <div class="exam-stats">
+                            <div class="exam-stat">
+                                <i class="fa-solid fa-list-ol" style="color:#ec4899"></i>
+                                <div class="label">الأسئلة</div>
+                                <div class="value">50 سؤال</div>
+                            </div>
+                        </div>
+                        <div class="exam-btns">
+                            <button class="btn btn-primary" onclick="startExam('cost_2025', false)">
+                                <i class="fa-solid fa-rocket"></i> اختبر نفسك
+                            </button>
+                            <button class="btn btn-dark" onclick="startExam('cost_2025', true)">
+                                <i class="fa-solid fa-chalkboard-user"></i> دراسة وشرح
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 4 -->
+                <div class="exam-card">
+                    <div class="exam-card-header" style="background: linear-gradient(135deg, #f59e0b, #ea580c);">
+                        <div class="bg-icon"><i class="fa-solid fa-award"></i></div>
+                        <div class="exam-card-icon"><i class="fa-solid fa-file-invoice-dollar"></i></div>
+                        <div class="exam-card-title">الامتحان الثاني Q2</div>
+                        <div class="exam-card-sub">cost_2q</div>
+                    </div>
+                    <div class="exam-card-body">
+                        <div class="exam-stats">
+                            <div class="exam-stat">
+                                <i class="fa-solid fa-list-ol" style="color:#f59e0b"></i>
+                                <div class="label">الأسئلة</div>
+                                <div class="value">50 سؤال</div>
+                            </div>
+                        </div>
+                        <div class="exam-btns">
+                            <button class="btn btn-primary" onclick="startExam('cost_2q', false)">
+                                <i class="fa-solid fa-rocket"></i> اختبر نفسك
+                            </button>
+                            <button class="btn btn-dark" onclick="startExam('cost_2q', true)">
+                                <i class="fa-solid fa-chalkboard-user"></i> دراسة وشرح
+                            </button>
+                        </div>
+                    </div>
+                </div>
             </div>
 
             <!-- History -->
@@ -1600,6 +1684,29 @@
             { label: "بيانات Blitzer Enterprises - ABC مقابل معدل موحد", ids: [34,35,36,37,38] },
             { label: "بيانات Astel - Target Costing والتسعير", ids: [39,40,41] },
             { label: "بيانات MDF & Boards & Lumber - NRV وتوزيع مشترك", ids: [42,43,44,45,46,47,48] },
+        ],
+        "cost_2025": [
+            { label: "أسئلة المفاهيم والتوصيل المشترك", ids: [1,2,3,4,5] },
+            { label: "أسئلة الأوامر والتحميل", ids: [6,7,8,9,10,11,12,13,14,15] },
+            { label: "أسئلة مداخل التحميل والتوالف", ids: [16,17,18,19,20,21,22,23,24,25,26,27] },
+            { label: "أسئلة النظري وتطبيق مسألة مدرسة ميرنا", ids: [28,29,30,31,32,33,34] },
+            { label: "أسئلة تكاليف المراحل لـ Mixing Dept", ids: [35,36,37,38,39,40] },
+            { label: "أسئلة التكاليف المشتركة لشركة Marshal Inc", ids: [41,42,43,44,45] },
+            { label: "أسئلة المسألة الشاملة الأخيرة المتقدمة", ids: [46,47,48,49,50] }
+        ],
+        "cost_2q": [
+            { label: "حسابات التحميل والفروق (Overhead & Variances)", ids: [1,2,3,4,5] },
+            { label: "مفاهيم وعقود الإنتاج (Job & Joint Basics)", ids: [6,7,8,9,10] },
+            { label: "إعادة التشغيل والأجور (Rework & Wages)", ids: [11,12,13] },
+            { label: "طرق التحميل (Actual vs Normal)", ids: [14,15] },
+            { label: "معالجة الخردة (Scrap Accounting)", ids: [16,17,18] },
+            { label: "معالجة التالف (Spoilage Accounting)", ids: [19,20,21,22] },
+            { label: "تعريفات التكاليف المشتركة والتشكيل", ids: [23,24,25,26,27] },
+            { label: "مفاهيم التكاليف العامة", ids: [28,29,30] },
+            { label: "بيانات شغلانة مدرسة مايز (Maize Job)", ids: [31,32,33,34] },
+            { label: "بيانات قسم الخلط (Mixing Dept - July)", ids: [35,36,37,38,39,40] },
+            { label: "بيانات شركة Marshal Inc - توزيع التكاليف المشتركة", ids: [41,42,43,44,45] },
+            { label: "بيانات يناير - معدلات التحميل والفروق الشاملة", ids: [46,47,48,49,50] }
         ]
     };
 

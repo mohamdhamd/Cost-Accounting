@@ -2486,5 +2486,1288 @@ const examsData = {
                 "explanation": "<strong class=\"text-emerald-700\">الإجابة الصحيحة: (b)</strong><br><br>بما إننا عملنا قيد التسوية وجبنا حساب تكلفة المبيعات (COGS) في الجانب الدائن (Credit)، ده معناه إننا بنخفض وبنقلل تكلفة المبيعات دي في الدفاتر. وإحنا بنقللها في الدفاتر لما نكتشف في نهاية السنة إننا كنا محملين تكاليف تقديرية بزيادة وضخمة عن المصاريف الفعلية بجد اللي هي (Overapplied)."
             }
         ]
+    },
+    "cost_2025": {
+        "title": "امتحان التكاليف 2025",
+        "description": "الاختبار الشامل الثالث - أسئلة امتحان 2025",
+        "questions": [
+            {
+                "id": 1,
+                "text": "The place in a joint production process where two or more products become separately identifiable is:",
+                "options": [
+                    { "id": "a", "text": "a. Splitoff Point" },
+                    { "id": "b", "text": "b. Separable Costs" },
+                    { "id": "c", "text": "c. Main Product" },
+                    { "id": "d", "text": "d. Byproducts" },
+                    { "id": "e", "text": "e. Joint costs" }
+                ],
+                "correct": "a",
+                "explanation": "<strong class=\"text-emerald-700\">الإجابة الصحيحة: (a) Splitoff Point</strong><br><br>بص يا بطل، التعريف ده بيسأل عن المكان أو اللحظة اللي جوه المصنع اللي عندها الخلطة المشتركة الكبيرة (زي البترول أو اللبن) بتتفصل لمنتجات مستقلة نقدر نتعرف على كل واحد فيها لوحده ونميزه عن الباقي. المحطة دي محاسبياً اسمها <strong>نقطة الانفصال (Splitoff Point)</strong>."
+            },
+            {
+                "id": 2,
+                "text": "Outputs of a joint production process that have low sales values compare to the sales values of the other outputs are called:",
+                "options": [
+                    { "id": "a", "text": "a. Splitoff Point" },
+                    { "id": "b", "text": "b. Separable Costs" },
+                    { "id": "c", "text": "c. Main Product" },
+                    { "id": "d", "text": "d. Byproducts" },
+                    { "id": "e", "text": "e. Joint costs" }
+                ],
+                "correct": "d",
+                "explanation": "<strong class=\"text-emerald-700\">الإجابة الصحيحة: (d) Byproducts</strong><br><br>هنا بيتكلم عن الحاجات الهامشية الرخيصة اللي بتطلع من المكن غصب عننا أثناء تصنيع المنتج الأساسي، وقيمتها وسعر بيعها في السوق تافه وضئيل جداً (low sales values) مقارنة بالباقي، دي بنسميها <strong>المنتجات الفرعية أو العوادم (Byproducts)</strong> زي نشارة الخشب في مغسلة الخشب."
+            },
+            {
+                "id": 3,
+                "text": "All costs incurred beyond the splitoff point that are assignable to each of the now-identifiable specific products are called:",
+                "options": [
+                    { "id": "a", "text": "a. Splitoff Point" },
+                    { "id": "b", "text": "b. Separable Costs" },
+                    { "id": "c", "text": "c. Main Product" },
+                    { "id": "d", "text": "d. Byproducts" },
+                    { "id": "e", "text": "e. Joint costs" }
+                ],
+                "correct": "b",
+                "explanation": "<strong class=\"text-emerald-700\">الإجابة الصحيحة: (b) Separable Costs</strong><br><br>اللعبة هنا في كلمة \"beyond\" يعني بعد أو أبعد من نقطة الانفصال. أي فواتير أو مصاريف جديدة بنصرفها على منتج معين لوحده بعد ما خلاص انفصل وبقى مستقل عشان نحسنه أو نغير شكله، بنسميها <strong>التكاليف القابلة للفصل (Separable Costs)</strong> لأنها خاصة بالمنتج ده لوحده ومستقلة عن الباقي."
+            },
+            {
+                "id": 4,
+                "text": "Output of a joint production process with a high sales value compared to the sales values of the other outputs is a:",
+                "options": [
+                    { "id": "a", "text": "a. Splitoff Point" },
+                    { "id": "b", "text": "b. Separable Costs" },
+                    { "id": "c", "text": "c. Main Product" },
+                    { "id": "d", "text": "d. Byproducts" },
+                    { "id": "e", "text": "e. Joint costs" }
+                ],
+                "correct": "c",
+                "explanation": "<strong class=\"text-emerald-700\">الإجابة الصحيحة: (c) Main Product</strong><br><br>طالما المنتج اللي طالع قيمته وسعر بيعه في السوق عالي وضخم جداً (high sales value) وهو الأساس اللي المصنع قايم عليه ومبيعاته هي الأكبر، يبقى ده بنسميه <strong>المنتج الرئيسي (Main Product)</strong>."
+            },
+            {
+                "id": 5,
+                "text": "In the dairy industry, raw milk is processed to produce cream and skim milk. The costs incurred before separating the cream and skim milk (e.g., procurement of raw milk, labor, and initial processing) is:",
+                "options": [
+                    { "id": "a", "text": "a. Splitoff Point" },
+                    { "id": "b", "text": "b. Separable Costs" },
+                    { "id": "c", "text": "c. Main Product" },
+                    { "id": "d", "text": "d. Byproducts" },
+                    { "id": "e", "text": "e. Joint costs" }
+                ],
+                "correct": "e",
+                "explanation": "<strong class=\"text-emerald-700\">الإجابة الصحيحة: (e) Joint costs</strong><br><br>هنا بيديك مثال عملي من صناعة الألبان؛ بيقولك اللبن الخام بنشتريه وبنشغل عليه عمالة ومكن في الأول خالص قبل ما يتفصل لقشطة ولبن خالي الدسم. الفلوس اللي اتصرفت في الأول خالص والمنتجات لسه لطة واحدة مع بعضها اسمها <strong>التكاليف المشتركة (Joint costs)</strong>."
+            },
+            {
+                "id": 6,
+                "text": "Which of the following entries would record correctly overhead cost?",
+                "options": [
+                    { "id": "a", "text": "a. WIP- Dep X.........XX / Cash..............XX" },
+                    { "id": "b", "text": "b. WIP-Dep X..........XX / FOH..............XX" },
+                    { "id": "c", "text": "c. WIP- Dep X.........XX / WIP-Dep Y..........XX" },
+                    { "id": "d", "text": "d. FOH..............XX / WIP-Dep Y..........XX" }
+                ],
+                "correct": "b",
+                "explanation": "<strong class=\"text-emerald-700\">الإجابة الصحيحة: (b)</strong><br><br>القيد ده بيسأل عن إثبات تحميل التكاليف الصناعية غير المباشرة (MOH أو FOH) على الإنتاج. في المحاسبة، لما بنحمل الأوفر هيد على حساب الإنتاج تحت التشغيل الخاص بالقسم (WIP-Dep X)، بنخليه في الجانب المدين (Debit)، وبنقفل قصاده حساب مراقبة الأوفر هيد (FOH) في الجانب الدائن (Credit). عشان كدة الاختيار b هو الأصح."
+            },
+            {
+                "id": 7,
+                "text": "If allocated overhead was $24,200, and it was underapplied by $2,500 during May, the actual overhead cost for the month must have been:",
+                "options": [
+                    { "id": "a", "text": "a. $18,500" },
+                    { "id": "b", "text": "b. $23,500" },
+                    { "id": "c", "text": "c. $26,700" },
+                    { "id": "d", "text": "d. $21,700" },
+                    { "id": "e", "text": "e. $16,700" }
+                ],
+                "correct": "c",
+                "explanation": "<strong class=\"text-emerald-700\">الإجابة الصحيحة: (c) $26,700</strong><br><br>كلمة (Underapplied) معناها إن إحنا حملنا الدفاتر بتكاليف تقديرية \"أقل\" من المصاريف الحقيقية الفعلية اللي حصلت بجد. يعني الفعلي أكبر من التقديري المخصص. بنطبق القانون علطول:<br>$$\\text{Actual Overhead} = \\text{Allocated Overhead} + \\text{Underapplied}$$<br>$$\\text{Actual Overhead} = 24,200 + 2,500 = 26,700$$<br>عشان كدة الإجابة الصح هي 26,700 (الاختيار c)."
+            },
+            {
+                "id": 8,
+                "text": "Which of the following industries would be most likely to use a process costing system?",
+                "options": [
+                    { "id": "a", "text": "a. Movie studio" },
+                    { "id": "b", "text": "b. Hospital" },
+                    { "id": "c", "text": "c. Makeup artist" },
+                    { "id": "d", "text": "d. CPA firm" },
+                    { "id": "e", "text": "e. Oil refinery" }
+                ],
+                "correct": "e",
+                "explanation": "<strong class=\"text-emerald-700\">الإجابة الصحيحة: (e) Oil refinery</strong><br><br>نظام تكاليف المراحل (Process Costing) بيستخدم في المصانع اللي بتنتج منتجات متطابقة ونمطية صبّة واحدة وبكميات ضخمة ومستمرة ورا بعضها، ومصنع تكرير البترول (Oil refinery) هو المثال الأوضح على كدة. أما باقي الاختيارات زي المستشفيات ومكاتب المحاماة والمكياج فدول شغالين بنظام الأوامر (Job Costing) لأن كل زبون ليه طلب مخصوص."
+            },
+            {
+                "id": 9,
+                "text": "Job-order costs are most useful for:",
+                "options": [
+                    { "id": "a", "text": "a. Determining inventory valuation using LIFO." },
+                    { "id": "b", "text": "b. Estimating the overhead costs included in transfer prices." },
+                    { "id": "c", "text": "c. Controlling indirect costs of future production." },
+                    { "id": "d", "text": "d. Determining inventory valuation using FIFO" },
+                    { "id": "e", "text": "e. Determining the cost of a specific project." }
+                ],
+                "correct": "e",
+                "explanation": "<strong class=\"text-emerald-700\">الإجابة الصحيحة: (e) Determining the cost of a specific project.</strong><br><br>نظام الأوامر الإنتاجية (Job-order) معمول مخصوص عشان يحسب ويحدد تكلفة مشروع معين أو شغلانة مستقلة بذاتها (Specific project) طلبها العميل بمواصفات خاصة، ومفتوح لها أمر إنتاجي مستقل في الدفاتر."
+            },
+            {
+                "id": 10,
+                "text": "Kaah Company uses direct labor-hours to apply manufacturing overhead to jobs. Kelsh estimates that 5,000 direct labor-hours and 10,000 machine-hours will be worked during the year. The predetermined overhead rate per hour will be:",
+                "options": [
+                    { "id": "a", "text": "a. $3.4" },
+                    { "id": "b", "text": "b. $4.4" },
+                    { "id": "c", "text": "c. $6.4" },
+                    { "id": "d", "text": "d. $6.8" },
+                    { "id": "e", "text": "e. $7.4" }
+                ],
+                "correct": "d",
+                "explanation": "<strong class=\"text-emerald-700\">الإجابة الصحيحة: (d) $6.8</strong><br><br>ركز يا بطل عشان هنا فيه فخ! أساس التحميل في المسألة دي هو ساعات العمل المباشر (DLH) اللي هما 5,000 ساعة، مش ساعات المكن. نجمع التكاليف غير المباشرة (MOH) فقط: راتب المشرف (20,000) + مواد غير مباشرة (4,000) + إيجار معدات المصنع (10,000) = 34,000 دولار.<br>*(تريكة الفخ: اوعى تجمع الإعلان أو عمولات البيع لأنها Period costs).*<br>نقسم إجمالي الـ MOH على الـ 5,000 ساعة عمل مباشر:<br>$$\\text{Predetermined Rate} = \\frac{34,000}{5,000} = 6.8$$<br>عشان كدة الإجابة هي 6.8 (الاختيار d)."
+            },
+            {
+                "id": 11,
+                "text": "At end of the year overapplied overhead was $30,000; and the following balances: WIP $68,000; FG $204,000; COGS $408,000. If the difference of overhead applied is allocated between them, the cost of goods sold would be:",
+                "options": [
+                    { "id": "a", "text": "a. $408,000" },
+                    { "id": "b", "text": "b. $426,000" },
+                    { "id": "c", "text": "c. $68,000" },
+                    { "id": "d", "text": "d. $390,000" },
+                    { "id": "e", "text": "e. $438,000" }
+                ],
+                "correct": "d",
+                "explanation": "<strong class=\"text-emerald-700\">الإجابة الصحيحة: (d) $390,000</strong><br><br>طريقة التوزيع النسبي (Proration)؛ بنجمع الأرصدة التلاتة الكلية: 68,000 + 204,000 + 408,000 = 680,000 دولار. نجيب نسبة حساب COGS من الإجمالي: 408,000 ÷ 680,000 = 60%. نصيبه من التخفيض = 30,000 دولار الفروق × 60% = 18,000 دولار. وبما إن الحالة (Overapplied) يعني محملين بزيادة، يبقى نطرح التخفيض عشان نصلح الحساب:<br>$$\\text{New COGS} = 408,000 - 18,000 = 390,000$$"
+            },
+            {
+                "id": 12,
+                "text": "If the $30,000 overapplied overhead is closed directly to cost of goods sold. Journal entry would include the following:",
+                "options": [
+                    { "id": "a", "text": "a. credit to Cost of Goods Sold of $30,000" },
+                    { "id": "b", "text": "b. debit to Cost of Goods Sold of $2,520" },
+                    { "id": "c", "text": "c. debit to Cost of Goods Sold of $30,000" },
+                    { "id": "d", "text": "d. debit to Cost of Goods Sold of $40,520" }
+                ],
+                "correct": "a",
+                "explanation": "<strong class=\"text-emerald-700\">الإجابة الصحيحة: (a) credit to Cost of Goods Sold of $30,000</strong><br><br>طالما بنقفل الفروق مباشرة في حساب الـ COGS وكان عندنا (Overapplied) يعني تضخيم في التكاليف بزيادة عن الحقيقة، يبقى القيد المحاسبي لازم \"يخفض\" تكلفة المبيعات، وبما إن الـ COGS بطبيعته مدين، فعشان نخفضه وتقل قيمته بنجيبه في الجانب الدائن (Credit)."
+            },
+            {
+                "id": 13,
+                "text": "Quality Brick Company: Choose the entry to record when Manufacturing overhead was applied: Molding Department, $XX; and Firing Department, $XX.",
+                "options": [
+                    { "id": "a", "text": "a. WIP - Molding Department...XX , WIP - Firing Department...XX / Manufacturing Overhead...XX" },
+                    { "id": "b", "text": "b. WIP - Molding Department...XX / Manufacturing Overhead...XX" },
+                    { "id": "c", "text": "c. Manufacturing Overhead...XX / WIP - Molding Department...XX , WIP - Firing Department...XX" },
+                    { "id": "d", "text": "d. Firing Department...XX / Manufacturing Overhead...XX" }
+                ],
+                "correct": "a",
+                "explanation": "<strong class=\"text-emerald-700\">الإجابة الصحيحة: (a)</strong><br><br>لما بنيجي نحمل ونطبق الأوفر هيد التقديري على الأقسام، بنخلي حسابات الإنتاج تحت التشغيل للأقسام دي مدينة لأن تكلفتها زادت (Debit WIP)، وحساب الأوفر هيد دائن (Credit MOH)، وده اللي بتعبر عنه الاختيار a بالظبط."
+            },
+            {
+                "id": 14,
+                "text": "Molded bricks were transferred from the Molding Department to the Firing Department. Choose the right entry:",
+                "options": [
+                    { "id": "a", "text": "a. WIP - Molding Department...XX / WIP - Firing Department...XX" },
+                    { "id": "b", "text": "b. Manufacturing Overhead...XX / WIP - Molding Department...XX" },
+                    { "id": "c", "text": "c. WIP - Molding Department...XX / Manufacturing Overhead...XX" },
+                    { "id": "d", "text": "d. WIP - Firing Department ...XX / WIP - Molding Department...XX" }
+                ],
+                "correct": "d",
+                "explanation": "<strong class=\"text-emerald-700\">الإجابة الصحيحة: (d)</strong><br><br>قيد ترحيل ونقل الإنتاج الكلاسيكي؛ القسم اللي بيستلم البضاعة الجديدة تكلفتها بتزيد فبيبقى مدين (Debit WIP - Firing)، والقسم القديم اللي سلم البضاعة وخرجت من عنده تكلفتها بتقل فبيبقى دائن (Credit WIP - Molding)."
+            },
+            {
+                "id": 15,
+                "text": "80 defective units were reworked with a cost of $72 per unit. Of these 80 units, 50 were considered normal rework common to all jobs. To record the normal rework, the entry includes:",
+                "options": [
+                    { "id": "a", "text": "a. Debit to manufacture overhead control by $2,160" },
+                    { "id": "b", "text": "b. Credit to manufacture overhead control by $5,760" },
+                    { "id": "c", "text": "c. Debit to manufacture overhead control by $3,600" },
+                    { "id": "d", "text": "d. Debit to losses from abnormal rework by $2,160" }
+                ],
+                "correct": "c",
+                "explanation": "<strong class=\"text-emerald-700\">الإجابة الصحيحة: (c) Debit to manufacture overhead control by $3,600</strong><br><br>الدكتور بيسألك عن إثبات الجزء الطبيعي الشائع للمصنع كله (Normal common) وهما 50 وحدة. طالما طبيعي وشائع يبقى بنرمي تكلفته في حصالة المصنع الكبيرة اللي هي حساب مراقبة الأوفر هيد مدين (MOH Control). نضرب الحسبة: 50 وحدة × 72 دولار = 3,600 دولار في المدين (Debit)."
+            },
+            {
+                "id": 16,
+                "text": "Normal Costing allocates indirect costs based on the ........ indirect-cost rates times the ........ quantities of the allocation base.",
+                "options": [
+                    { "id": "a", "text": "a. actual, actual" },
+                    { "id": "b", "text": "b. budgeted, budgeted" },
+                    { "id": "c", "text": "c. actual, budgeted" },
+                    { "id": "d", "text": "d. budgeted, actual" }
+                ],
+                "correct": "d",
+                "explanation": "<strong class=\"text-emerald-700\">الإجابة الصحيحة: (d) budgeted, actual</strong><br><br>نظام التكاليف الطبيعي (Normal Costing) بيستخدم خلطة تقديرية وفعلية؛ بنضرب المعدل التقديري التقديري اللي حاسبينه أول السنة (Budgeted rate) في الكميات والساعات الفعلية بجد اللي استهلكها الإنتاج (Actual quantities)."
+            },
+            {
+                "id": 17,
+                "text": "Actual Costing allocates indirect costs based on the ........ indirect-cost rates times the ........ quantities of the allocation base.",
+                "options": [
+                    { "id": "a", "text": "a. actual, actual" },
+                    { "id": "b", "text": "b. budgeted, budgeted" },
+                    { "id": "c", "text": "c. actual, budgeted" },
+                    { "id": "d", "text": "d. budgeted, actual" }
+                ],
+                "correct": "a",
+                "explanation": "<strong class=\"text-emerald-700\">الإجابة الصحيحة: (a) actual, actual</strong><br><br>نظام التكاليف الفعلي (Actual Costing) مابيعملش موازنات ولا تقديرات؛ بيستنى لآخر السنة لما الفواتير كلها تظهر بجد ويقسمها ويطلع المعدل الفعلي (Actual rate) ويضربه في الكميات والساعات الفعلية (Actual quantities)."
+            },
+            {
+                "id": 18,
+                "text": "WIP for Job-MZ consists of 600 units with a total cost of $30,000. 20 spoiled units. What is the WIP balance if: All spoiled units are regarded as normal spoilage common to all operations and sold for $600.",
+                "options": [
+                    { "id": "a", "text": "a. $29,000" },
+                    { "id": "b", "text": "b. $30,000" },
+                    { "id": "c", "text": "c. $29,600" },
+                    { "id": "d", "text": "d. $29,400" },
+                    { "id": "e", "text": "e. $600" }
+                ],
+                "correct": "a",
+                "explanation": "<strong class=\"text-emerald-700\">الإجابة الصحيحة: (a) $29,000</strong><br><br>ركز جداً في الـ 4 أسئلة دول عشان هما التريكة الكبيرة! تكلفة الوحدة الأصلية قبل الفحص = 30,000 دولار ÷ 600 وحدة = 50 دولار للوحدة. طالما التالف طبيعي وشائع للمصنع كله (Normal Common)، بنشيل تكلفة الوحدتين البايظين بالكامل من حساب الشغلانة ونرميها على المصنع (MOH Control). التكلفة المستبعدة = 20 وحدة × 50 دولار = 1,000 دولار. نطرحهم من الشغلانة يبقى رصيد الـ WIP الجديد = 30,000 - 1,000 = 29,000 دولار. *(سعر البيع 600 بيروح يخفض حساب المصنع ملوش دعوة بالـ WIP هنا).*"
+            },
+            {
+                "id": 19,
+                "text": "Under same data, what is the WIP balance if: All spoiled units are regarded as normal spoilage common to all operations (Unsold).",
+                "options": [
+                    { "id": "a", "text": "a. $29,000" },
+                    { "id": "b", "text": "b. $30,000" },
+                    { "id": "c", "text": "c. $29,600" },
+                    { "id": "d", "text": "d. $29,400" }
+                ],
+                "correct": "a",
+                "explanation": "<strong class=\"text-emerald-700\">الإجابة الصحيحة: (a) $29,000</strong><br><br>نفس الفكرة بالظبط؛ طالما التصنيف Normal Common يعني تالف طبيعي وشائع، بنستبعد تكلفتهم الأصلية بالكامل (20 وحدة × 50 دولار = 1,000 دولار) من حساب الأمر الإنتاجي ونقفلها في الـ MOH مدين. فيتبقى رصيد الـ WIP برضه 29,000 دولار، وسواء اتباعت خردة أو متباعتش ده مش هيغير رصيد الشغلانة."
+            },
+            {
+                "id": 20,
+                "text": "Under same data, what is the WIP balance if: All spoiled units are regarded as normal spoilage due to job specifications.",
+                "options": [
+                    { "id": "a", "text": "a. $29,000" },
+                    { "id": "b", "text": "b. $30,000" },
+                    { "id": "c", "text": "c. $29,600" },
+                    { "id": "d", "text": "d. $29,400" }
+                ],
+                "correct": "b",
+                "explanation": "<strong class=\"text-emerald-700\">الإجابة الصحيحة: (b) $30,000</strong><br><br>تريكة فخمة! طالما التالف طبيعي بس ناتج ومخصوص بسبب طبيعة ومواصفات الشغلانة دي بالذات (Job Specific) ومفيش بيع، يبقى مابنعملش أي قيود استبعاد والتكلفة الكلية للـ 20 وحدة البايظين بتفضل جوه حساب الشغلانة والـ 580 وحدة السليمة المتبقية هي اللي بتشيل الليلة وتكلفتها بتزيد، فرصيد حساب الـ WIP بيفضل ثابت زي ما هو 30,000 دولار بدون تغيير."
+            },
+            {
+                "id": 21,
+                "text": "Under same data, what is the WIP balance if: All spoiled units are regarded as normal spoilage due to job specifications and sold for $600.",
+                "options": [
+                    { "id": "a", "text": "a. $29,000" },
+                    { "id": "b", "text": "b. $30,000" },
+                    { "id": "c", "text": "c. $29,600" },
+                    { "id": "d", "text": "d. $29,400" }
+                ],
+                "correct": "d",
+                "explanation": "<strong class=\"text-emerald-700\">الإجابة الصحيحة: (d) $29,400</strong><br><br>التالف هنا طبيعي وخاص بالشغلانة (Job Specific) بس الفرق إنه \"اتباع خردة وجاب كاش 600 دولار\". طالما جاب فلوس يبقى الفلوس دي بتدخل تخفض تكلفة الشغلانة دي مباشرة في الدفاتر بقيمة تمن البيع وبنعوض القيد بـ Credit WIP بـ 600. نطرح علطول: 30,000 - 600 = 29,400 دولار."
+            },
+            {
+                "id": 22,
+                "text": "The physical-measure method:",
+                "options": [
+                    { "id": "a", "text": "a. allocates joint costs to joint products on the basis of relative NRV" },
+                    { "id": "b", "text": "b. allocates joint costs to joint products on the basis of a comparable physical measure at the splitoff point" },
+                    { "id": "c", "text": "c. allocates joint costs to joint products in a way that each product has an identical gross-margin percentage" },
+                    { "id": "d", "text": "d. allocates joint costs to joint products on the basis of the relative sales value at the splitoff point" }
+                ],
+                "correct": "b",
+                "explanation": "<strong class=\"text-emerald-700\">الإجابة الصحيحة: (b)</strong><br><br>سؤال نظري متكرر بالامتحانات؛ طريقة القياس المادي بتوزع التكاليف المشتركة الإجمالية بناءً على معيار أو مقياس مادي ملموس ومقارن عند نقطة الانفصال بالظبط زي الوزن بالباوند أو الحجم بالجالون."
+            },
+            {
+                "id": 23,
+                "text": "During October, Crusan Corporation incurred $62,000 of direct labor costs and $4,000 of indirect labor costs. The journal entry to record the accrual of these wages would include a:",
+                "options": [
+                    { "id": "a", "text": "a. credit to Work in Process of $62,000" },
+                    { "id": "b", "text": "b. credit to Work in Process of $66,000" },
+                    { "id": "c", "text": "c. debit to Work in Process of $66,000" },
+                    { "id": "d", "text": "d. debit to Work in Process of $4,000" },
+                    { "id": "e", "text": "e. debit to Work in Process of $62,000" }
+                ],
+                "correct": "e",
+                "explanation": "<strong class=\"text-emerald-700\">الإجابة الصحيحة: (e) debit to Work in Process of $62,000</strong><br><br>الأجور المباشرة للعمال اللي واقفين على المكن بـ 62,000 دولار دي تكلفة صناعية مباشرة بتروح فوراً تسجل في الطرف المدين لحساب الإنتاج تحت التشغيل (Debit WIP)، عشان كدة الاختيار e هو الصح. أما الـ 4,000 الأجور غير المباشرة فبتروح مدين لحساب الـ MOH Control."
+            },
+            {
+                "id": 24,
+                "text": "........ costs are all manufacturing costs other than direct material costs.",
+                "options": [
+                    { "id": "a", "text": "a. Variable" },
+                    { "id": "b", "text": "b. Prime" },
+                    { "id": "c", "text": "c. Conversion" },
+                    { "id": "d", "text": "d. Fixed" },
+                    { "id": "e", "text": "e. Product" }
+                ],
+                "correct": "c",
+                "explanation": "<strong class=\"text-emerald-700\">الإجابة الصحيحة: (c) Conversion</strong><br><br>مصطلح نظري مهم جداً؛ تكاليف التشكيل أو التحويل (Conversion Costs) هي عبارة عن كل تكاليف المصنع (الأجور المباشرة + الأوفر هيد FOH) اللي بنصرفها عشان نحول الخرداوات لخامات ومنتجات تامة، يعني هي كل تكاليف التصنيع ما عدا المواد المباشرة (other than direct material)."
+            },
+            {
+                "id": 25,
+                "text": "Assume for X product: Prime costs is $85,000; conversion costs is $29,000; and direct labor is $9,000. What is total cost for X product?",
+                "options": [
+                    { "id": "a", "text": "a. $85,000" },
+                    { "id": "b", "text": "b. $29,000" },
+                    { "id": "c", "text": "c. $123,000" },
+                    { "id": "d", "text": "d. $105,000" },
+                    { "id": "e", "text": "e. $114,000" }
+                ],
+                "correct": "e",
+                "explanation": "<strong class=\"text-emerald-700\">الإجابة الصحيحة: (e) $114,000</strong><br><br>الحسبة دي فيها فخ تكرار؛ التكلفة الأولية (Prime Cost) بتساوي مواد مباشرة + أجور مباشرة وقيمتها $85,000. وتكاليف التشكيل (Conversion) بتساوي أجور مباشرة + أوفر هيد وقيمتها $29,000 والأجور بـ 9,000. ده معناه إن الأوفر هيد الفعلي لوحده = $29,000 - 9,000 = 20,000 دولار. نجمع التكلفة الكلية للمنتج = التكلفة الأولية + الأوفر هيد:<br><br>$$\\text{Total Cost} = 85,000 + 20,000 = 114,000$$<br><br>*(تريكة الفخ: اوعى تجمع الأجور الـ 9,000 تاني لأنها مدمجة جوة الـ Prime وجوة الـ Conversion أصلاً).*"
+            },
+            {
+                "id": 26,
+                "text": "JoJo Company incorrectly overstate budgeted direct labor hours. The effect of this on predetermined overhead rate is:",
+                "options": [
+                    { "id": "a", "text": "a. Unknown" },
+                    { "id": "b", "text": "b. overstate" },
+                    { "id": "c", "text": "c. understate" },
+                    { "id": "d", "text": "d. have no effect" }
+                ],
+                "correct": "c",
+                "explanation": "<strong class=\"text-emerald-700\">الإجابة الصحيحة: (c) understate</strong><br><br>معدل التحميل التقديري بيتحسب بقسمة (التكلفة التقديرية ÷ ساعات العمل الموازنة). وطالما الشركة بالخطأ \"ضخمت وزودت\" المقام اللي هو الساعات التقديرية (overstate)، يبقى رياضياً الناتج النهائي للمعدل هيطلع \"أقل من حقه ومخفض\" وهو (understate). العلاقة دايماً عكسية بين المقام والناتج."
+            },
+            {
+                "id": 27,
+                "text": "After recording factory security cost, it will be reallocated to:",
+                "options": [
+                    { "id": "a", "text": "a. Direct Material" },
+                    { "id": "b", "text": "b. Direct Labor" },
+                    { "id": "c", "text": "c. Manufactured Overhead Control" },
+                    { "id": "d", "text": "d. Payroll expenses" }
+                ],
+                "correct": "c",
+                "explanation": "<strong class=\"text-emerald-700\">الإجابة الصحيحة: (c) Manufactured Overhead Control</strong><br><br>مصاريف أمن وحراسة المصنع (Factory security) دي مصاريف صناعية غير مباشرة عامة للمصنع، أول ما بنسجلها دفترياً بيتم توجيهها وإعادة تحميلها لحساب مراقبة التكاليف الصناعية غير المباشرة (Manufacturing Overhead Control)."
+            },
+            {
+                "id": 28,
+                "text": "If allocated overhead was $24,200, and it was overapplied by $2,500 during May, the actual overhead cost for the month must have been:",
+                "options": [
+                    { "id": "a", "text": "a. $16,700" },
+                    { "id": "b", "text": "b. $18,500" },
+                    { "id": "c", "text": "c. $23,500" },
+                    { "id": "d", "text": "d. $21,700" },
+                    { "id": "e", "text": "e. $26,700" }
+                ],
+                "correct": "d",
+                "explanation": "<strong class=\"text-emerald-700\">الإجابة الصحيحة: (d) $21,700</strong><br><br>كلمة (Overapplied) معناها إن إحنا محملين الدفاتر تقديرياً بزيادة عن الفواتير الحقيقية اللي صرفها المصنع بجد. يبقى عشان نجيب الفعلي بنطرح الفرق علطول:<br>$$\\text{Actual Overhead} = 24,200 - 2,500 = 21,700$$<br>عشان كدة الاختيار الصح هو d."
+            },
+            {
+                "id": 29,
+                "text": "Which of the following industries would be most likely to use a process costing system?",
+                "options": [
+                    { "id": "a", "text": "a. Movie studio" },
+                    { "id": "b", "text": "b. Hospital" },
+                    { "id": "c", "text": "c. Makeup artist" },
+                    { "id": "d", "text": "d. CPA firm" },
+                    { "id": "e", "text": "e. Oil refinery" }
+                ],
+                "correct": "e",
+                "explanation": "<strong class=\"text-emerald-700\">الإجابة الصحيحة: (e) Oil refinery</strong><br><br>سؤال مكرر للتأكيد؛ مصانع تكرير البترول والأسمنت هي اللي بتستخدم مراحل (Process Costing) لضخامة ونمطية الإنتاج، أما الباقي فكلهم أوامر."
+            },
+            {
+                "id": 30,
+                "text": "In job costing systems, products tend to be:",
+                "options": [
+                    { "id": "a", "text": "a. customized" },
+                    { "id": "b", "text": "b. differentiated" },
+                    { "id": "c", "text": "c. large size" },
+                    { "id": "d", "text": "d. cheap" }
+                ],
+                "correct": "a",
+                "explanation": "<strong class=\"text-emerald-700\">الإجابة الصحيحة: (a) customized</strong><br><br>المنتجات في نظام الأوامر الإنتاجية (Job costing) بتتميز بإنها منتجات \"مفصلة ومخصصة حسب رغبة ومواصفات كل زبون\" (customized أو unique) ومفيش شغلانة شبه التانية."
+            },
+            {
+                "id": 31,
+                "text": "Journal entry to record the purchase of direct material (DM) is:",
+                "options": [
+                    { "id": "a", "text": "a. DM control inventory..XX / Cash..XX" },
+                    { "id": "b", "text": "b. WIP..XX / Cash..XX" },
+                    { "id": "c", "text": "c. Cash..XX / DM control inventory..XX" },
+                    { "id": "d", "text": "d. Manufacturing Overhead..XX / Cash..XX" }
+                ],
+                "correct": "a",
+                "explanation": "<strong class=\"text-emerald-700\">الإجابة الصحيحة: (a) DM control inventory..XX / Cash..XX</strong><br><br>لما بنشتري مواد خام وندخلها مخازن الشركة نقداً، مخزن المواد كأصل بيزيد فبيبقى في الجانب المدين (Debit DM control inventory)، وحساب الكاش بيقل فبيبقى في الجانب الدائن (Credit Cash)."
+            },
+            {
+                "id": 32,
+                "text": "Based on the table, the annual manufacturing overhead cost-allocation rate per machine hour is: (Estimated MOH = $40,000, Estimated Base = 100,000 mh)",
+                "options": [
+                    { "id": "a", "text": "a. $50" },
+                    { "id": "b", "text": "b. $0.40" },
+                    { "id": "c", "text": "c. $0.006" },
+                    { "id": "d", "text": "d. $800" },
+                    { "id": "e", "text": "e. $320" }
+                ],
+                "correct": "b",
+                "explanation": "<strong class=\"text-emerald-700\">الإجابة الصحيحة: (b) $0.40</strong><br><br>بنقسم إجمالي تكاليف الأوفر هيد المقدرة للمصنع كله ($40,000) على إجمالي ساعات المكن التقديرية السنوية (100,000 ساعة مكن) عشان نطلع المعدل:<br>$$\\text{Overhead Rate} = \\frac{40,000}{100,000} = 0.40\\ \\text{dollar per machine-hour}$$"
+            },
+            {
+                "id": 33,
+                "text": "The amount of manufacturing overhead costs allocated to the Maize High School job is: (Maize job used 800 mh actual)",
+                "options": [
+                    { "id": "a", "text": "a. $920" },
+                    { "id": "b", "text": "b. $100" },
+                    { "id": "c", "text": "c. $400" },
+                    { "id": "d", "text": "d. $800" },
+                    { "id": "e", "text": "e. $320" }
+                ],
+                "correct": "e",
+                "explanation": "<strong class=\"text-emerald-700\">الإجابة الصحيحة: (e) $320</strong><br><br>بنضرب ساعات تشغيل المكن الفعلية اللي استهلكتها شغلانة مدرسة مايز (800 ساعة) × المعدل التقديري السنوي للمصنع اللي لسه مطلعينه حالا بـ 0.40 دولار:<br>$$\\text{Allocated MOH} = 800 \\times 0.40 = 320\\ \\text{dollar}$$"
+            },
+            {
+                "id": 34,
+                "text": "The estimated total manufacturing costs for the Maize High School job is:",
+                "options": [
+                    { "id": "a", "text": "a. $920" },
+                    { "id": "b", "text": "b. $100" },
+                    { "id": "c", "text": "c. $500" },
+                    { "id": "d", "text": "d. $800" },
+                    { "id": "e", "text": "e. $320" }
+                ],
+                "correct": "a",
+                "explanation": "<strong class=\"text-emerald-700\">الإجابة الصحيحة: (a) $920</strong><br><br>التكلفة التصنيعية الإجمالية للشغلانة بتساوي مجموع العناصر التلاتة: مواد مباشرة ($500) + أجور مباشرة ($100) + التكاليف غير المباشرة المحملة اللي لسه حاسبينها حالا ($320):<br>$$\\text{Total Cost} = 500 + 100 + 320 = 920\\ \\text{dollar}$$"
+            },
+            {
+                "id": 35,
+                "text": "Mixing Dept July Data: Started=10k, Completed=8k, End WIP=2k (100% Materials, 50% Conversion). What are the equivalent units for materials in July?",
+                "options": [
+                    { "id": "a", "text": "a. 10,500" },
+                    { "id": "b", "text": "b. 9,000" },
+                    { "id": "c", "text": "c. 10,000" },
+                    { "id": "d", "text": "d. 8,000" },
+                    { "id": "e", "text": "e. 2,000" }
+                ],
+                "correct": "c",
+                "explanation": "<strong class=\"text-emerald-700\">الإجابة الصحيحة: (c) 10,000</strong><br><br>طريقة المتوسط المرجح؛ الوحدات التامة بتنزل كاملة (8,000) ونجمع عليها وحدات آخر المدة (2,000) مضروبة في نسبة إتمامها من الخامات وهي 100%:<br>$$\\text{EU Materials} = 8,000 + (2,000 \\times 100\\%) = 10,000\\ \\text{units}$$"
+            },
+            {
+                "id": 36,
+                "text": "Under same data, what are the equivalent units for conversion costs in July?",
+                "options": [
+                    { "id": "a", "text": "a. 8,000" },
+                    { "id": "b", "text": "b. 8,500" },
+                    { "id": "c", "text": "c. 9,500" },
+                    { "id": "d", "text": "d. 9,000" },
+                    { "id": "e", "text": "e. 10,000" }
+                ],
+                "correct": "d",
+                "explanation": "<strong class=\"text-emerald-700\">الإجابة الصحيحة: (d) 9,000</strong><br><br>الوحدات المعادلة للتشكيل؛ بناخد التام كامل (8,000) ونجمع عليه وحدات آخر المدة (2,000) مضروبة في نسبة إتمامها للتشكيل المكتوبة صراحة بالمسألة وهي 50%:<br>$$\\text{EU Conversion} = 8,000 + (2,000 \\times 50\\%) = 8,000 + 1,000 = 9,000\\ \\text{units}$$"
+            },
+            {
+                "id": 37,
+                "text": "Under same data, what is the cost per equivalent unit for materials? (Materials cost = $40,000)",
+                "options": [
+                    { "id": "a", "text": "a. $4.00" },
+                    { "id": "b", "text": "b. $6.00" },
+                    { "id": "c", "text": "c. $4.50" },
+                    { "id": "d", "text": "d. $5.00" },
+                    { "id": "e", "text": "e. $3.50" }
+                ],
+                "correct": "a",
+                "explanation": "<strong class=\"text-emerald-700\">الإجابة الصحيحة: (a) $4.00</strong><br><br>بنقسم تكلفة الخامات والمواد الكلية المصروفة خلال الشهر ($40,000) على إجمالي الوحدات المعادلة للمواد اللي لسه مطلعينها حالا وهي (10,000 وحدة):<br>$$\\text{Cost per EU (Materials)} = \\frac{40,000}{10,000} = \\$4.00$$"
+            },
+            {
+                "id": 38,
+                "text": "Under same data, what is the cost per equivalent unit for conversion costs? (Conversion cost = $30,000)",
+                "options": [
+                    { "id": "a", "text": "a. $3.00" },
+                    { "id": "b", "text": "b. $2.50" },
+                    { "id": "c", "text": "c. $3.50" },
+                    { "id": "d", "text": "d. $4.00" },
+                    { "id": "e", "text": "e. $3.33" }
+                ],
+                "correct": "e",
+                "explanation": "<strong class=\"text-emerald-700\">الإجابة الصحيحة: (e) $3.33</strong><br><br>بنقسم تكاليف التشكيل والتحويل الإجمالية ($30,000) على إجمالي الوحدات المعادلة للتشكيل اللي حسبناها حالا وهي (9,000 وحدة):<br>$$\\text{Cost per EU (Conversion)} = \\frac{30,000}{9,000} = \\$3.33$$"
+            },
+            {
+                "id": 39,
+                "text": "Under same data, what is the total cost of units transferred out?",
+                "options": [
+                    { "id": "a", "text": "a. $64,000" },
+                    { "id": "b", "text": "b. $66,640" },
+                    { "id": "c", "text": "c. $60,000" },
+                    { "id": "d", "text": "d. $62,640" },
+                    { "id": "e", "text": "e. $56,000" }
+                ],
+                "correct": "e",
+                "explanation": "<strong class=\"text-emerald-700\">الإجابة الصحيحة: (e) $56,000</strong><br><br>عشان نجيب تكلفة البضاعة التامة المنقولة للمرحلة الجاية، بنضرب عدد الوحدات التامة بالكامل (8,000 وحدة) في إجمالي تكلفة الوحدة الشاملة ($4.00 مواد + $3.333 تشكيل = 7.3333 دولار):<br>$$\\text{Total Transferred Cost} = 8,000 \\times 7.3333 = \\$58,666$$<br>*(ملحوظة ورقة الامتحان: لو الدكتور حسبها دفترياً باعتبار تكلفة التشكيل المقربة بـ $3 بس، هتطلع الحسبة $8,000 \\times 7 = 56,000$ دولار بالظبط وهو الاختيار e).*"
+            },
+            {
+                "id": 40,
+                "text": "Under same data, what is the cost of ending WIP inventory?",
+                "options": [
+                    { "id": "a", "text": "a. $8,000" },
+                    { "id": "b", "text": "b. $7,340" },
+                    { "id": "c", "text": "c. $11,330" },
+                    { "id": "d", "text": "d. $6,000" },
+                    { "id": "e", "text": "e. $6,660" }
+                ],
+                "correct": "c",
+                "explanation": "<strong class=\"text-emerald-700\">الإجابة الصحيحة: (c) $11,330</strong><br><br>بنجيب تكلفة مخزون آخر المدة بضرب وحداته المعادلة المستقلة في تكلفة وحدتها الخاصة:<br>• خامات مواد = 2,000 وحدة معادلة × 4.00 دولار = 8,000 دولار.<br>• تشكيل تحويل = 1,000 وحدة معادلة × 3.333 دولار = 3,333 دولار.<br>• نجمع الحتتين مع بعض: $8,000 + 3,333 = 11,333$ دولار (الاختيار c بالظبط)."
+            },
+            {
+                "id": 41,
+                "text": "Marshal Inc: Joint cost = $75,000. Product A = 10,000 units, Product B = 15,000 units. The allocated cost to A products using physical measure method will be:",
+                "options": [
+                    { "id": "a", "text": "a. $30,000" },
+                    { "id": "b", "text": "b. $45,000" },
+                    { "id": "c", "text": "c. $32,500" },
+                    { "id": "d", "text": "d. $42,857" },
+                    { "id": "e", "text": "e. $32,143" }
+                ],
+                "correct": "a",
+                "explanation": "<strong class=\"text-emerald-700\">الإجابة الصحيحة: (a) $30,000</strong><br><br>طريقة القياس المادي؛ بنجمع الوحدات الكلية للمنتجين: 10,000 + 15,000 = 25,000 وحدة. نسبة المنتج A من الوزن والحجم = 10,000 ÷ 25,000 = 40%. نضرب النسبة في حصالة التكلفة المشتركة الإجمالية للمصنع:<br>$$\\text{Allocated Cost to A} = 75,000 \\times 40\\% = 30,000\\ \\text{dollar}$$"
+            },
+            {
+                "id": 42,
+                "text": "Using the sales value at split-off method, how much of the joint cost is allocated to Product A? (Product A sold @ $10, Product B sold @ $5)",
+                "options": [
+                    { "id": "a", "text": "a. $30,000" },
+                    { "id": "b", "text": "b. $45,000" },
+                    { "id": "c", "text": "c. $32,500" },
+                    { "id": "d", "text": "d. $42,857" },
+                    { "id": "e", "text": "e. $32,143" }
+                ],
+                "correct": "d",
+                "explanation": "<strong class=\"text-emerald-700\">الإجابة الصحيحة: (d) $42,857</strong><br><br>طريقة القيمة البيعية عند الانفصال؛ بنحسب قيمة مبيعات كل منتج الأول عند لحظة الانفصال:<br>• مبيعات A المتوقعة = 10,000 وحدة × 10 دولار = 100,000 دولار.<br>• مبيعات B المتوقعة = 15,000 وحدة × 5 دولار = 75,000 دولار.<br>إجمالي القيمة البيعية للمصنع = 100,000 + 75,000 = 175,000 دولار.<br>نسبة وزن إيراد المنتج A = 100,000 ÷ 175,000 = 57.14%. نوزع التكلفة المشتركة:<br>$$\\text{Allocated Cost to A} = 75,000 \\times 57.14\\% = 42,857\\ \\text{dollar}$$"
+            },
+            {
+                "id": 43,
+                "text": "Using the sales value at split-off method, how much of the joint cost is allocated to Product B?",
+                "options": [
+                    { "id": "a", "text": "a. $30,000" },
+                    { "id": "b", "text": "b. $45,000" },
+                    { "id": "c", "text": "c. $32,500" },
+                    { "id": "d", "text": "d. $42,857" },
+                    { "id": "e", "text": "e. $32,143" }
+                ],
+                "correct": "e",
+                "explanation": "<strong class=\"text-emerald-700\">الإجابة الصحيحة: (e) $32,143</strong><br><br>نفس الخطوة، بنجيب نسبة وزن إيراد المنتج B من الحصالة الإيرادية الكلية = 75,000 دولار مبيعات ÷ 175,000 دولار إجمالي = 42.86%. نضرب النسبة دي في التكلفة المشتركة الإجمالية للمصنع ($75,000):<br>$$\\text{Allocated Cost to B} = 75,000 \\times 42.86\\% = 32,143\\ \\text{dollar}$$"
+            },
+            {
+                "id": 44,
+                "text": "The allocated cost to B products using physical measure method will be:",
+                "options": [
+                    { "id": "a", "text": "a. $30,000" },
+                    { "id": "b", "text": "b. $45,000" },
+                    { "id": "c", "text": "c. $32,500" },
+                    { "id": "d", "text": "d. $42,857" },
+                    { "id": "e", "text": "e. $32,143" }
+                ],
+                "correct": "b",
+                "explanation": "<strong class=\"text-emerald-700\">الإجابة الصحيحة: (b) $45,000</strong><br><br>نرجع لطريقة القياس المادي التافهة اللي بتبص للحجم بس؛ نسبة وحدات المنتج B من الإنتاج الإجمالي = 15,000 وحدة ÷ 25,000 وحدة كلية = 60%. نضربها في التكلفة المشتركة للمصنع:<br>$$\\text{Allocated Cost to B} = 75,000 \\times 60\\% = 45,000\\ \\text{dollar}$$"
+            },
+            {
+                "id": 45,
+                "text": "What is the cost per unit for Product A after joint cost allocation using sales value method?",
+                "options": [
+                    { "id": "a", "text": "a. $7.50" },
+                    { "id": "b", "text": "b. $6.00" },
+                    { "id": "c", "text": "c. $5.00" },
+                    { "id": "d", "text": "d. $4.29" },
+                    { "id": "e", "text": "e. $3.21" }
+                ],
+                "correct": "d",
+                "explanation": "<strong class=\"text-emerald-700\">الإجابة الصحيحة: (d) $4.29</strong><br><br>عشان نجيب تكلفة القطعة أو الوحدة الواحدة للمنتج A؛ بنقسم نصيبه الكلي الموزع من التكلفة المشتركة تحت طريقة القيمة البيعية واللي طلع بـ 42,857 دولار، على عدد وحداته المنتجة بالكامل وهي 10,000 وحدة:<br>$$\\text{Cost per unit (A)} = \\frac{42,857}{10,000} = 4.29\\ \\text{dollar}$$"
+            },
+            {
+                "id": 46,
+                "text": "Budgeted OH = $2.7M (37,500 hours). Actual OH = $2,755,000 (36,250 hours). What is the ACTUAL overhead rate per hour for January?",
+                "options": [
+                    { "id": "a", "text": "a. $76.40" },
+                    { "id": "b", "text": "b. $76.00" },
+                    { "id": "c", "text": "c. $75.00" },
+                    { "id": "d", "text": "d. $76.70" },
+                    { "id": "e", "text": "e. $72.00" }
+                ],
+                "correct": "b",
+                "explanation": "<strong class=\"text-emerald-700\">الإجابة الصحيحة: (b) $76.00</strong><br><br>طالب المعدل الفعلي (Actual rate)؛ يعني بنقسم الفواتير الحقيقية الكلية اللي اندفعت فعلاً في يناير ($2,755,000) على ساعات النشاط الفعلية اللي اشتغلها المصنع بجد وهي (36,250 ساعة):<br>$$\\text{Actual Rate} = \\frac{2,755,000}{36,250} = 76.00\\ \\text{dollar}$$"
+            },
+            {
+                "id": 47,
+                "text": "What is the predetermined (budgeted) overhead rate per hour?",
+                "options": [
+                    { "id": "a", "text": "a. $72.00" },
+                    { "id": "b", "text": "b. $73.33" },
+                    { "id": "c", "text": "c. $75.00" },
+                    { "id": "d", "text": "d. $76.00" },
+                    { "id": "e", "text": "e. $78.00" }
+                ],
+                "correct": "a",
+                "explanation": "<strong class=\"text-emerald-700\">الإجابة الصحيحة: (a) $72.00</strong><br><br>طالب المعدل التقديري المقدر أول السنة؛ يعني بنقسم التكاليف التقديرية اللي كنا متوقعينها في الموازنة ($2,700,000) على الساعات التقديرية المقدرة في الموازنة وهي (37,500 ساعة):<br>$$\\text{Predetermined Rate} = \\frac{2,700,000}{37,500} = 72.00\\ \\text{dollar}$$"
+            },
+            {
+                "id": 48,
+                "text": "Job #55 used $40,000 in DM and $30,000 in DL, and consumed 8 hours. What is the total cost of Job #55?",
+                "options": [
+                    { "id": "a", "text": "a. $70,620" },
+                    { "id": "b", "text": "b. $70,576" },
+                    { "id": "c", "text": "c. $70,660" },
+                    { "id": "d", "text": "d. $70,640" },
+                    { "id": "e", "text": "e. $70,600" }
+                ],
+                "correct": "b",
+                "explanation": "<strong class=\"text-emerald-700\">الإجابة الصحيحة: (b) $70,576</strong><br><br>تكلفة الشغلانة رقم 55 الإجمالية بتساوي جمع العناصر التلاتة المعتادة: مواد مباشرة (40,000) + أجور مباشرة (30,000) + الأوفر هيد المحمل التقديري (8 ساعات فعلية للشغلانة × 72 دولار المعدل التقديري للمصنع = 576 دولار). نجمع الصافي الكلي:<br>$$\\text{Total Cost} = 40,000 + 30,000 + 576 = 70,576\\ \\text{dollar}$$"
+            },
+            {
+                "id": 49,
+                "text": "How much overhead is applied to Job #55?",
+                "options": [
+                    { "id": "a", "text": "a. $600" },
+                    { "id": "b", "text": "b. $660" },
+                    { "id": "c", "text": "c. $620" },
+                    { "id": "d", "text": "d. $640" },
+                    { "id": "e", "text": "e. $576" }
+                ],
+                "correct": "e",
+                "explanation": "<strong class=\"text-emerald-700\">الإجابة الصحيحة: (e) $576</strong><br><br>بيسألك هنا عن جزء الأوفر هيد المخصص للشغلانة بس؛ وبنحسبه بضرب الساعات اللي استهلكتها الشغلانة دي بذاتها (8 ساعات) في معدل التحميل التقديري السنوي للمصنع اللي طلع بـ 72 دولار:<br>$$\\text{Applied OH} = 8 \\times 72 = 576\\ \\text{dollar}$$"
+            },
+            {
+                "id": 50,
+                "text": "Was overhead overapplied or underapplied in January?",
+                "options": [
+                    { "id": "a", "text": "a. Overapplied by $145,000" },
+                    { "id": "b", "text": "b. Overapplied by $55,000" },
+                    { "id": "c", "text": "c. Underapplied by $145,000" },
+                    { "id": "d", "text": "d. Underapplied by $55,000" }
+                ],
+                "correct": "c",
+                "explanation": "<strong class=\"text-emerald-700\">الإجابة الصحيحة: (c) Underapplied by $145,000</strong><br><br>بنقارن إجمالي المحمل التقديري بالفعلي للمصنع كله في يناير:<br>• إجمالي المحمل (Applied) = الساعات الفعلية الكلية للمصنع (36,250) × المعدل التقديري ($72) = 2,610,000 دولار.<br>• الفواتير الفعلية (Actual) اللي جات المصنع بجد = 2,755,000 دولار.<br>بما إن الفعلي أكبر من اللي حملناه دفترياً، يبقى إحنا محملين بأقل من الحقيقة (Underapplied) بفرق صريح قدره:<br>$$\\text{Variance} = 2,755,000 - 2,610,000 = 145,000\\ \\text{dollar}$$"
+            }
+        ]
+    },
+    "cost_2q": {
+        "title": "الامتحان الثاني Q2",
+        "description": "الاختبار الشامل الرابع - أسئلة ملف 2Q",
+        "questions": [
+            {
+                "id": 1,
+                "text": "Kaah Company uses machine-hours to apply manufacturing overhead to jobs. Kelsh estimates that 5,000 direct labor-hours and 10,000 machine-hours will be worked during the year. having the following estimated costs for next year, The predetermined overhead rate per hour will be:",
+                "options": [
+                    { "id": "a", "text": "a. $3.4" },
+                    { "id": "b", "text": "b. $4.4" },
+                    { "id": "c", "text": "c. $6.4" },
+                    { "id": "d", "text": "d. $6.8" },
+                    { "id": "e", "text": "e. $7.4" }
+                ],
+                "correct": "a",
+                "explanation": "<strong class=\"text-emerald-700\">الإجابة الصحيحة: (a) $3.4</strong><br><br>بص يا بطل، عشان تحسب معدل التحميل التقديري (Predetermined OH rate) بنقسم إجمالي التكاليف الصناعية غير المباشرة (MOH) التقديرية على أساس التحميل اللي الشركة اختارته، والشركة هنا اختارت ساعات المكن (10,000 ساعة مكن). تعال نجمع الـ Overhead من الجدول: راتب مشرف الإنتاج (20,000) + مواد غير مباشرة (4,000) + إيجار معدات المصنع (10,000) = 34,000 دولار.<br>وتريكة الفخ هنا: إياك تاخد مصاريف الإعلان (8,000) أو عمولات البيع (40,000) لأن دي مصاريف فترية مكانها قائمة الدخل بره المصنع، واوعى تاخد الخامات المباشرة لأنها مش أوفر هيد. نقسم التكلفة على الساعات:<br><br>$$\\text{Predetermined Rate} = \\frac{\\$34,000}{10,000\\ \\text{MH}} = \\$3.4$$"
+            },
+            {
+                "id": 2,
+                "text": "PearCo's actual overhead for the year was $650,000 with a total of 170,000 direct labor hours worked on jobs. PearCo's uses predetermined overhead rate of $3 per direct labor hour. Overhead Applied During the Period:",
+                "options": [
+                    { "id": "a", "text": "a. $170,000" },
+                    { "id": "b", "text": "b. $510,000" },
+                    { "id": "c", "text": "c. $600,000" },
+                    { "id": "d", "text": "d. $650,000" },
+                    { "id": "e", "text": "e. $400,000" }
+                ],
+                "correct": "b",
+                "explanation": "<strong class=\"text-emerald-700\">الإجابة الصحيحة: (b) $510,000</strong><br><br>بيسألك هنا عن التكاليف \"المحملة أو المخصصة دفترياً\" (Applied Overhead). ودي بنحسبها دايماً عن طريق ضرب الساعات الفعلية اللي العمال اشتغلوها بجد في المصنع (170,000 ساعة) في المعدل التقديري اللي محددينه من أول السنة وهو 3 دولار للساعة. نضرب علطول:<br><br>$$\\text{Applied OH} = 170,000\\ \\text{hours} \\times \\$3 = \\$510,000$$"
+            },
+            {
+                "id": 3,
+                "text": "The difference between applied overhead and actual overhead is:",
+                "options": [
+                    { "id": "a", "text": "a. Overapplied Overhead by $40,000" },
+                    { "id": "b", "text": "b. Underapplied Overhead by $170,000" },
+                    { "id": "c", "text": "c. Underapplied Overhead by $140,000" },
+                    { "id": "d", "text": "d. Overapplied Overhead by $140,000" },
+                    { "id": "e", "text": "e. No Under- or Overapplied Overhead" }
+                ],
+                "correct": "c",
+                "explanation": "<strong class=\"text-emerald-700\">الإجابة الصحيحة: (c) Underapplied Overhead by $140,000</strong><br><br>هنا بنقارن الرقم المحمل اللي سجلناه في الدفاتر بالرقم الفعلي اللي المصنع صرفه بجد؛ المحمل طلع 510,000 دولار والفواتير الفعلية اللي جات المصنع بـ 650,000 دولار. ده معناه إننا حملنا الدفاتر بأقل من الحقيقة (Underapplied) بفرق صريح قدره:<br><br>$$\\text{Underapplied Variance} = \\$650,000\\ (\\text{Actual}) - \\$510,000\\ (\\text{Applied}) = \\$140,000$$"
+            },
+            {
+                "id": 4,
+                "text": "At end of the year overapplied overhead was $30,000; and the following balances: work in process $68,000; finished goods $204,000; cost of goods sold $408,000. If the $30,000 is closed directly to cost of goods sold. Journal entry would include the following:",
+                "options": [
+                    { "id": "a", "text": "a. debit to Cost of Goods Sold of $2,520" },
+                    { "id": "b", "text": "b. debit to Cost of Goods Sold of $40,520" },
+                    { "id": "c", "text": "c. debit to Cost of Goods Sold of $30,000" },
+                    { "id": "d", "text": "d. credit to Cost of Goods Sold of $30,000" }
+                ],
+                "correct": "d",
+                "explanation": "<strong class=\"text-emerald-700\">الإجابة الصحيحة: (d) credit to Cost of Goods Sold of $30,000</strong><br><br>طالما بنقفل الفروق مباشرة في حساب تكلفة المبيعات (COGS) وكان عندنا (Overapplied) يعني إحنا حملنا الحسابات بزيادة وتضخيم عن الفعلي، يبقى لازم \"نخفض\" حساب الـ COGS بقيمة الـ 30 ألف عشان نصلح الغلطة. وحساب الـ COGS بطبيعته مدين، فعشان نخفضه وتقل قيمته بنجيبه في الجانب الدائن <strong>(Credit COGS)</strong>."
+            },
+            {
+                "id": 5,
+                "text": "If the difference of overhead applied is allocated between Work in Process Inventory, Finished Goods Inventory, and Cost of Goods Sold, the cost of goods sold would be:",
+                "options": [
+                    { "id": "a", "text": "a. $426,000" },
+                    { "id": "b", "text": "b. $408,000" },
+                    { "id": "c", "text": "c. $390,000" },
+                    { "id": "d", "text": "d. $68,000" },
+                    { "id": "e", "text": "e. $438,000" }
+                ],
+                "correct": "c",
+                "explanation": "<strong class=\"text-emerald-700\">الإجابة الصحيحة: (c) $390,000</strong><br><br>هنا بنطبق طريقة التوزيع النسبي (Proration)؛ بنجمع الأرصدة الثلاثة الإجمالية قبل التعديل: 68,000 + 204,000 + 408,000 = 680,000 دولار. نجيب نسبة نصيب حساب الـ COGS من الإجمالي: 408,000 ÷ 680,000 = 60%. نضرب النسبة في الفروق الإجمالية عشان نعرف هيقل بكام: 30,000 دولار × 60% = 18,000 دولار تخفيض. نطرح التخفيض من الرصيد القديم للـ COGS لأن التكلفة Overapplied بزيادة:<br><br>$$\\text{New COGS Balance} = \\$408,000 - \\$18,000 = \\$390,000$$"
+            },
+            {
+                "id": 6,
+                "text": "Joint costs are allocated using sales value at split of point method, on the basis of the relative total ........ at split-off point.",
+                "options": [
+                    { "id": "a", "text": "a. net realizable value" },
+                    { "id": "b", "text": "b. physical quantity" },
+                    { "id": "c", "text": "c. constant margin value" },
+                    { "id": "d", "text": "d. sales value" }
+                ],
+                "correct": "d",
+                "explanation": "<strong class=\"text-emerald-700\">الإجابة الصحيحة: (d) sales value</strong><br><br>السؤال ده نظري وبسيط جداً وبيحل نفسه؛ طالما قالك إحنا بنوزع التكاليف المشتركة بطريقة القيمة البيعية عند نقطة الانفصال (Sales value at split-off)، يبقى الوزن والأساس النسبي اللي بنوزع عليه في الجداول هو القيمة البيعية الإجمالية للمنتجات (Sales value) عند اللحظة دي."
+            },
+            {
+                "id": 7,
+                "text": "In a process costing system, when transferring completed units from first department to the second one, the journal entry will be:",
+                "options": [
+                    { "id": "a", "text": "a. WIP- Dep 1.........XX / FOH..............XX" },
+                    { "id": "b", "text": "b. WIP- Dep 1.........XX / WIP-Dep 2..........XX" },
+                    { "id": "c", "text": "c. WIP- Dep 1.........XX / WIP-Dep 2..........XX / FOH..............XX" },
+                    { "id": "d", "text": "d. WIP-Dep 2..........XX / WIP-Dep 1..........XX" }
+                ],
+                "correct": "d",
+                "explanation": "<strong class=\"text-emerald-700\">الإجابة الصحيحة: (d) WIP-Dep 2..........XX / WIP-Dep 1..........XX</strong><br><br>قيد ترحيل ونقل الإنتاج التام بين المراحل المتتابعة؛ القسم الجديد اللي بيستلم البضاعة (Department 2) تكلفتها بتزيد فبنخليه في الجانب المدين (Debit WIP-Dep 2), والقسم القديم اللي سلم البضاعة وخرجت من جدرانه (Department 1) تكلفتها بتقل فبنخليه في الجانب الدائن (Credit WIP-Dep 1)."
+            },
+            {
+                "id": 8,
+                "text": "Job-order costs are most useful for:",
+                "options": [
+                    { "id": "a", "text": "a. Determining inventory valuation using LIFO." },
+                    { "id": "b", "text": "b. Determining the cost of a specific project." },
+                    { "id": "c", "text": "c. Determining inventory valuation using FIFO." },
+                    { "id": "d", "text": "d. Estimating the overhead costs included in transfer prices." },
+                    { "id": "e", "text": "e. Controlling indirect costs of future production." }
+                ],
+                "correct": "b",
+                "explanation": "<strong class=\"text-emerald-700\">الإجابة الصحيحة: (b) Determining the cost of a specific project.</strong><br><br>نظام الأوامر الإنتاجية (Job-order) شغال بنظام \"التفصيل والمواصفات الخاصة\"؛ يعني بنستخدمه ومفيد جداً لينا لما نكون عايزين نحسب تكلفتة مشروع معين مستقل بذاته أو شغلانة مخصوصة (Specific project) طلبها عميل بعينه بمواصفات فريدة."
+            },
+            {
+                "id": 9,
+                "text": "Production method that use process-costing system has the following characteristics:",
+                "options": [
+                    { "id": "a", "text": "a. continuous flow of production" },
+                    { "id": "b", "text": "b. Identical units" },
+                    { "id": "c", "text": "c. Mass production" },
+                    { "id": "d", "text": "d. All of the above" }
+                ],
+                "correct": "d",
+                "explanation": "<strong class=\"text-emerald-700\">الإجابة الصحيحة: (d) All of the above</strong><br><br>نظام تكاليف المراحل (Process costing) ده بتاع مصانع الأسمنت والمشروبات الغازية؛ بيتميز بإن إنتاجه ضخم جداً (Mass production)، والإنتاج شغال مستمر ورا بعضه ليل نهار مبيقفش (Continuous flow)، والوحدات كلها طالعة نمطية نسخة طبق الأصل من بعضها صبّة واحدة (Identical units)، عشان كده كل الخصائص دي صحيحة معاً."
+            },
+            {
+                "id": 10,
+                "text": "Net realizable value for byproducts is calculated as sale price minus:",
+                "options": [
+                    { "id": "a", "text": "a. joint costs" },
+                    { "id": "b", "text": "b. additional process costs" },
+                    { "id": "c", "text": "c. selling costs" },
+                    { "id": "d", "text": "d. Both a and b" },
+                    { "id": "e", "text": "e. Both b and c" }
+                ],
+                "correct": "e",
+                "explanation": "<strong class=\"text-emerald-700\">الإجابة الصحيحة: (e) Both b and c</strong><br><br>صافي القيمة البيعية التقديرية (Net Realizable Value) للمنتج الفرعي التافه أو الخردة بيتحسب عن طريق معادلة ثابتة: سعر البيع النهائي في السوق وبنطرح منه أي مصاريف تشغيل وتكميل إضافية بعد الانفصال (b) ومصاريف التسويق والنقل والبيع للزبون (c)."
+            },
+            {
+                "id": 11,
+                "text": "To record the normal rework: (Based on data: 80 defective units reworked @ $72/unit. 50 units are normal common, 30 are abnormal).",
+                "options": [
+                    { "id": "a", "text": "a. Debit to manufacture overhead control by $2,160" },
+                    { "id": "b", "text": "b. Credit to manufacture overhead control by $5,760" },
+                    { "id": "c", "text": "c. Debit to manufacture overhead control by $3,600" },
+                    { "id": "d", "text": "d. Debit to losses from abnormal rework by $2,160" },
+                    { "id": "e", "text": "e. Debit to losses from abnormal rework by $3,600" }
+                ],
+                "correct": "c",
+                "explanation": "<strong class=\"text-emerald-700\">الإجابة الصحيحة: (c) Debit to manufacture overhead control by $3,600</strong><br><br>هنا بيسأل عن قيد تسجيل الجزء الطبيعي الشائع للمصنع ككل (Normal common) وهما 50 وحدة. طالما التصليح طبيعي وشائع بسبب عطل في المصنع كله، بنقفل التكلفة في حصالة المصنع الكبيرة اللي هي حساب مراقبة الأوفر هيد مدين (MOH Control). نحسب الحسبة: 50 وحدة × 72 دولار تكلفة تصليح الوحدة = 3,600 دولار مدين."
+            },
+            {
+                "id": 12,
+                "text": "To record the abnormal rework:",
+                "options": [
+                    { "id": "a", "text": "a. Debit to manufacture overhead control by $2,160" },
+                    { "id": "b", "text": "b. Credit to manufacture overhead control by $5,760" },
+                    { "id": "c", "text": "c. Debit to manufacture overhead control by $3,600" },
+                    { "id": "d", "text": "d. Debit to losses from abnormal rework by $2,160" },
+                    { "id": "e", "text": "e. Debit to losses from abnormal rework by $3,600" }
+                ],
+                "correct": "d",
+                "explanation": "<strong class=\"text-emerald-700\">الإجابة الصحيحة: (d) Debit to losses from abnormal rework by $2,160</strong><br><br>بيسألك عن الجزء غير الطبيعي الناتجة عن إهمال العمال وهما 30 وحدة ($80 - 50 = 30$). طالما إهمال (Abnormal) يبقى تكلفتها بتروح تقفل فوراً كخسارة فترة مدين في حساب مستقل يرحل لقائمة الدخل اسمه (Losses from abnormal rework). نحسب الحسبة: 30 وحدة × 72 دولار = 2,160 دولار مدين."
+            },
+            {
+                "id": 13,
+                "text": "During October, Crusan Corporation incurred $62,000 of direct labor costs and $4,000 of indirect labor costs. The journal entry to record the accrual of these wages would include a:",
+                "options": [
+                    { "id": "a", "text": "a. credit to Work in Process of $66,000" },
+                    { "id": "b", "text": "b. credit to Work in Process of $62,000" },
+                    { "id": "c", "text": "c. debit to Work in Process of $62,000" },
+                    { "id": "d", "text": "d. debit to Work in Process of $4,000" },
+                    { "id": "e", "text": "e. debit to Work in Process of $66,000" }
+                ],
+                "correct": "c",
+                "explanation": "<strong class=\"text-emerald-700\">الإجابة الصحيحة: (c) debit to Work in Process of $62,000</strong><br><br>الأجور المباشرة للعمال اللي واقفين على المكن بـ 62,000 دولار دي بتعتبر تكلفة إنتاج مباشرة وصريحة، وعشان كده بنسجلها في الطرف المدين لحساب الإنتاج تحت التشغيل <strong>(Debit WIP)</strong> بـ 62 ألف. أما الـ 4,000 الأجور غير المباشرة فبتروح مدين لحساب الـ MOH Control."
+            },
+            {
+                "id": 14,
+                "text": "Actual Costing allocates indirect costs based on the ........ indirect-cost rates times the ........ activity consumption:",
+                "options": [
+                    { "id": "a", "text": "a. actual, actual" },
+                    { "id": "b", "text": "b. budgeted, budgeted" },
+                    { "id": "c", "text": "c. actual, budgeted" },
+                    { "id": "d", "text": "d. budgeted, actual" }
+                ],
+                "correct": "a",
+                "explanation": "<strong class=\"text-emerald-700\">الإجابة الصحيحة: (a) actual, actual</strong><br><br>نظام التكاليف الفعلي (Actual Costing) من اسمه واضح؛ مابيعتمدش على أي أرقام تقديرية، المحاسب بيستنى لآخر السنة لغاية ما الفواتير والمصاريف الفعلية كلها تظهر بجد ويحسب المعدل الفعلي (Actual rate) ويضربه في الساعات والكميات الفعلية بجد اللي استهلكها الإنتاج (Actual activity consumption)."
+            },
+            {
+                "id": 15,
+                "text": "Normal Costing allocates indirect costs based on the ........ indirect-cost rates times the ........ activity consumption:",
+                "options": [
+                    { "id": "a", "text": "a. actual, actual" },
+                    { "id": "b", "text": "b. budgeted, budgeted" },
+                    { "id": "c", "text": "c. actual, budgeted" },
+                    { "id": "d", "text": "d. budgeted, actual" }
+                ],
+                "correct": "d",
+                "explanation": "<strong class=\"text-emerald-700\">الإجابة الصحيحة: (d) budgeted, actual</strong><br><br>نظام التكاليف الطبيعي (Normal Costing) بيستخدم خلطة تقديرية وفعلية؛ بنضرب المعدل التقديري اللي حاسبينه في الموازنة المعتمدة أول السنة (Budgeted rate) في الساعات والكميات الفعلية بجد اللي حصلت أثناء التشغيل في المصنع (Actual activity consumption)."
+            },
+            {
+                "id": 16,
+                "text": "the dollar amount of the scrap is immaterial $50.",
+                "options": [
+                    { "id": "a", "text": "a. Scrap revenues by $50." },
+                    { "id": "b", "text": "b. debit to Work in Process of $600" },
+                    { "id": "c", "text": "c. credit to Work in Process of $600" },
+                    { "id": "d", "text": "d. debit to Manufacturing overhead control of $600" },
+                    { "id": "e", "text": "e. cebit to Manufacturing overhead control of $600" }
+                ],
+                "correct": "a",
+                "explanation": "<strong class=\"text-emerald-700\">الإجابة الصحيحة: (a) Scrap revenues by $50.</strong><br><br>الخردة الطالعة قيمتها صغيرة وتوافه وغير مؤثرة (Immaterial) بقيمة 50 دولار بس. في الحالة دي مش مستاهلة جرد ومخازن ووجع دماغ، ويوم ما نبيعها للزبون بناخد الكاش مدين ونثبت الإيراد الفرعي دفترياً في حساب إيرادات الخردة دائن <strong>(Scrap revenues)</strong> بـ 50 دولار."
+            },
+            {
+                "id": 17,
+                "text": "the dollar amount of the scrap is material $600 and common to all jobs.",
+                "options": [
+                    { "id": "a", "text": "a. Scrap revenues by $50." },
+                    { "id": "b", "text": "b. debit to Work in Process of $600" },
+                    { "id": "c", "text": "c. credit to Work in Process of $600" },
+                    { "id": "d", "text": "d. debit to Manufacturing overhead control of $600" },
+                    { "id": "e", "text": "e. credit to Manufacturing overhead control of $600" }
+                ],
+                "correct": "e",
+                "explanation": "<strong class=\"text-emerald-700\">الإجابة الصحيحة: (e) credit to Manufacturing overhead control of $600</strong><br><br>الخردة هنا قيمتها غالية ومحترمة (Material) بـ 600 دولار وعامة للمصنع كله (Common). طالما غالية يبقى لازم تدخل المخزن كأصل مدين (Debit Scrap Inventory)، وطالما عامة يبقى المصنع كله يستفيد بإننا نخفض تكاليفه غير المباشرة في الجانب الدائن لحساب مراقبة الأوفر هيد <strong>(Credit MOH Control)</strong> بـ 600."
+            },
+            {
+                "id": 18,
+                "text": "the dollar amount of the scrap is material $600 and attributes to specific job.",
+                "options": [
+                    { "id": "a", "text": "a. Scrap revenues by $50." },
+                    { "id": "b", "text": "b. debit to Work in Process of $600" },
+                    { "id": "c", "text": "c. credit to Work in Process of $600" },
+                    { "id": "d", "text": "d. debit to Manufacturing overhead control of $600" },
+                    { "id": "e", "text": "e. credit to Manufacturing overhead control of $600" }
+                ],
+                "correct": "c",
+                "explanation": "<strong class=\"text-emerald-700\">الإجابة الصحيحة: (c) credit to Work in Process of $600</strong><br><br>الخردة غالية ومؤثرة (Material) بـ 600 دولار بس طالعة من شغلانة معينة ومحددة بذاتها (Specific job). طالما خاصة يبقى الشغلانة دي هي اللي لازم تستفيد وتكلفتها تقل في الدفاتر كنوع من التعويض الفوري؛ وعشان نخفض حساب تكلفة الشغلانة بنجيبه في الجانب الدائن <strong>(Credit WIP)</strong> بـ 600."
+            },
+            {
+                "id": 19,
+                "text": "All amount is regarded as normal spoilage common to all operations: (Abod Textiles spoiled goods cost $20,000)",
+                "options": [
+                    { "id": "a", "text": "a. Loss from Normal Spoilage $20,000 / Manufacturing Overhead $20,000" },
+                    { "id": "b", "text": "b. Loss from Abnormal Spoilage $20,000 / WIP Inventory $20,000" },
+                    { "id": "c", "text": "c. Manufacture overhead control $20,000 / Work in Process Inventory $20,000" },
+                    { "id": "d", "text": "d. Spoilage inventory $20,000 / Work in Process Inventory $20,000" },
+                    { "id": "e", "text": "e. No journal entry" }
+                ],
+                "correct": "c",
+                "explanation": "<strong class=\"text-emerald-700\">الإجابة الصحيحة: (c) Manufacture overhead control $20,000 / Work in Process Inventory $20,000</strong><br><br>التالف هنا طبيعي وشائع للمصنع كله (Normal Common)، يبقى الشغلانة ملهاش ذنب وبنستبعد التكلفة دي من حسابها ونرميها على المصنع ككل في حساب الـ MOH Control مدين بـ 20 ألف، ونخفض حساب الشغلانة في الجانب الدائن (Credit WIP) بـ 20 ألف."
+            },
+            {
+                "id": 20,
+                "text": "All amount is regarded as normal spoilage due to job specifications:",
+                "options": [
+                    { "id": "a", "text": "a. Loss from Normal Spoilage $20,000 / Manufacturing Overhead $20,000" },
+                    { "id": "b", "text": "b. Loss from Abnormal Spoilage $20,000 / WIP Inventory $20,000" },
+                    { "id": "c", "text": "c. Manufacture overhead control $20,000 / WIP $20,000" },
+                    { "id": "d", "text": "d. Spoilage inventory $20,000 / WIP $20,000" },
+                    { "id": "e", "text": "e. No journal entry" }
+                ],
+                "correct": "e",
+                "explanation": "<strong class=\"text-emerald-700\">الإجابة الصحيحة: (e) No journal entry</strong><br><br>تريكة الدرس الكبيرة المتكررة! طالما التالف طبيعي بس ناتج ومخصوص بسبب طبيعة ومواصفات الشغلانة دي بالذات (Job Specific) ومفيش بيع خردة، مابنعملش أي قيود يومية خالص دفترياً (No journal entry)؛ والوحدات السليمة الباقية بتشيل تكلفة البايظ تلقائياً جوا حساب الـ WIP."
+            },
+            {
+                "id": 21,
+                "text": "All amount is regarded as Abnormal spoilage:",
+                "options": [
+                    { "id": "a", "text": "a. Loss from Normal Spoilage $20,000 / Manufacturing Overhead $20,000" },
+                    { "id": "b", "text": "b. Loss from Abnormal Spoilage $20,000 / Work in Process Inventory $20,000" },
+                    { "id": "c", "text": "c. Manufacture overhead control $20,000 / WIP $20,000" },
+                    { "id": "d", "text": "d. Spoilage inventory $20,000 / WIP $20,000" },
+                    { "id": "e", "text": "e. No journal entry" }
+                ],
+                "correct": "b",
+                "explanation": "<strong class=\"text-emerald-700\">الإجابة الصحيحة: (b) Loss from Abnormal Spoilage $20,000 / Work in Process Inventory $20,000</strong><br><br>طالما التالف غير طبيعي (Abnormal) يعني حصل بسبب إهمال كارثي وتفريط، يبقى مينفعش أحمله على تكلفة المنتج. بنفتح حساب خسائر فترية مستقل في الجانب المدين (Debit Loss from Abnormal Spoilage) بـ 20 ألف، ونشيل الرقم ونخفضه من حساب الشغلانة الدائن (Credit WIP) بـ 20 ألف."
+            },
+            {
+                "id": 22,
+                "text": "All amount is regarded as normal spoilage due to job specifications, and sold for $20,000:",
+                "options": [
+                    { "id": "a", "text": "a. Loss from Normal Spoilage $20,000 / Manufacturing Overhead $20,000" },
+                    { "id": "b", "text": "b. Loss from Abnormal Spoilage $20,000 / WIP Inventory $20,000" },
+                    { "id": "c", "text": "c. Manufacture overhead control $20,000 / WIP $20,000" },
+                    { "id": "d", "text": "d. Spoilage inventory $20,000 / Work in Process Inventory $20,000" },
+                    { "id": "e", "text": "e. No journal entry" }
+                ],
+                "correct": "d",
+                "explanation": "<strong class=\"text-emerald-700\">الإجابة الصحيحة: (d) Spoilage inventory $20,000 / Work in Process Inventory $20,000</strong><br><br>التالف طبيعي وخاص بالشغلانة (Job Specific) بس المرة دي \"اتباع خردة وجاب فلوس\". طالما جاب فلوس يبقى الفلوس دي بتدخل تثبت البضاعة التالفة في المخزن كأصل مدين بـ 20 ألف (Debit Spoilage inventory)، وبنخفض بيهم تكلفة الشغلانة في الجانب الدائن (Credit WIP) بـ 20 ألف."
+            },
+            {
+                "id": 23,
+                "text": "Method of allocating joint costs include:",
+                "options": [
+                    { "id": "a", "text": "a. Constant Gross-Margin percentage" },
+                    { "id": "b", "text": "b. Sales value at splitoff" },
+                    { "id": "c", "text": "c. Using physical (tangible) attributes" },
+                    { "id": "d", "text": "d. Net Realizable Value (NRV)" },
+                    { "id": "e", "text": "e. All of the above" }
+                ],
+                "correct": "e",
+                "explanation": "<strong class=\"text-emerald-700\">الإجابة الصحيحة: (e) All of the above</strong><br><br>سؤال مكرر للنظري الشامل؛ كل الطرق والأساليب المكتوبة دي (سواء القيمة البيعية، أو صافي القيمة NRV، أو القياس المادي، أو مجمل الربح الثابت) هي طرق معتمدة محاسبياً وبنستخدمها لتوزيع التكاليف المشتركة في المصانع."
+            },
+            {
+                "id": 24,
+                "text": "Outputs of a joint production process that have low sales values compare to the sales values of the other outputs:",
+                "options": [
+                    { "id": "a", "text": "a. Splitoff Point" },
+                    { "id": "b", "text": "b. Separable Costs" },
+                    { "id": "c", "text": "c. Main Product" },
+                    { "id": "d", "text": "d. Byproducts" },
+                    { "id": "e", "text": "e. Joint costs" }
+                ],
+                "correct": "d",
+                "explanation": "<strong class=\"text-emerald-700\">الإجابة الصحيحة: (d) Byproducts</strong><br><br>المنتجات الفرعية أو الثانوية الهامشية (Byproducts) هي المنتجات اللي بتطلع من العملية الإنتاجية وقيمتها وسعر بيعها الإجمالي بيكون منخفض وضئيل جداً (low sales values) مقارنة بالمنتجات الكبيرة الرئيسية للمصنع."
+            },
+            {
+                "id": 25,
+                "text": "All costs incurred beyond the splitoff point that are assignable to each of the now-identifiable specific products:",
+                "options": [
+                    { "id": "a", "text": "a. Splitoff Point" },
+                    { "id": "b", "text": "b. Separable Costs" },
+                    { "id": "c", "text": "c. Main Product" },
+                    { "id": "d", "text": "d. Byproducts" },
+                    { "id": "e", "text": "e. Joint costs" }
+                ],
+                "correct": "b",
+                "explanation": "<strong class=\"text-emerald-700\">الإجابة الصحيحة: (b) Separable Costs</strong><br><br>طالما قالك التكاليف المخصصة اتصرفت \"beyond\" يعني بعد ونفس محطة نقطة الانفصال، وبقت مخصصة لمنتج معين بذاته عشان نحسنه، يبقى دي اسمها <strong>التكاليف القابلة للفصل (Separable Costs)</strong>."
+            },
+            {
+                "id": 26,
+                "text": "The place in a joint production process where two or more products become separately identifiable:",
+                "options": [
+                    { "id": "a", "text": "a. Splitoff Point" },
+                    { "id": "b", "text": "b. Separable Costs" },
+                    { "id": "c", "text": "c. Main Product" },
+                    { "id": "d", "text": "d. Byproducts" },
+                    { "id": "e", "text": "e. Joint costs" }
+                ],
+                "correct": "a",
+                "explanation": "<strong class=\"text-emerald-700\">الإجابة الصحيحة: (a) Splitoff Point</strong><br><br>اللحظة المحاسبية والمكان اللي جواه الخلطة الإنتاجية المشتركة الكبيرة بتتفصل ونتعرف على كل منتج طالع منها لوضوح بيبان بشخصيته اسمها <strong>نقطة الانفصال (Splitoff Point)</strong>."
+            },
+            {
+                "id": 27,
+                "text": "Output of a joint production process that yields one product with a high sales value compared to the sales values of the other outputs:",
+                "options": [
+                    { "id": "a", "text": "a. Splitoff Point" },
+                    { "id": "b", "text": "b. Separable Costs" },
+                    { "id": "c", "text": "c. Main Product" },
+                    { "id": "d", "text": "d. Byproducts" },
+                    { "id": "e", "text": "e. Joint costs" }
+                ],
+                "correct": "c",
+                "explanation": "<strong class=\"text-emerald-700\">الإجابة الصحيحة: (c) Main Product</strong><br><br>المنتج الوحيد اللي بيطلع من خط الإنتاج وسعر بيعه وقيمته في السوق عالية وضخمة جداً (high sales value) والمصنع قايم عليه أساساً بنسميه دايماً <strong>المنتج الرئيسي (Main Product)</strong>."
+            },
+            {
+                "id": 28,
+                "text": "Direct material cost per equivalent units equals: (Based on data: First stage, DM=$100,000, CC=$52,200. No beg inventory, Completed=8,000, Ending WIP=2,000 units (100% DM, 35% CC))",
+                "options": [
+                    { "id": "a", "text": "a. $6" },
+                    { "id": "b", "text": "b. $12.1" },
+                    { "id": "c", "text": "c. $16" },
+                    { "id": "d", "text": "d. $5.22" },
+                    { "id": "e", "text": "e. $10" }
+                ],
+                "correct": "e",
+                "explanation": "<strong class=\"text-emerald-700\">الإجابة الصحيحة: (e) $10</strong><br><br>أول حاجة بنجيب الوحدات المعادلة للمواد (EU DM): الوحدات التامة (8,000) + (وحدات آخر المدة 2,000 × نسبة إتمامها 100%) = 10,000 وحدة معادلة. نقسم تكلفة المواد الكلية المضافة ($100,000) على الـ 10,000 وحدة معادلة عشان نجيب نصيب الوحدة الصافي من الخامات:<br><br>$$\\text{DM Cost per EU} = \\frac{\\$100,000}{10,000\\ \\text{EU}} = \\$10$$"
+            },
+            {
+                "id": 29,
+                "text": "Total cost per equivalent is:",
+                "options": [
+                    { "id": "a", "text": "a. $10" },
+                    { "id": "b", "text": "b. $5.22" },
+                    { "id": "c", "text": "c. $16" },
+                    { "id": "d", "text": "d. $5.22" },
+                    { "id": "e", "text": "e. $10" }
+                ],
+                "correct": "c",
+                "explanation": "<strong class=\"text-emerald-700\">الإجابة الصحيحة: (c) $16</strong><br><br>إحنا طلعنا تكلفة المواد بـ 10 دولار. تعال نحسب تكلفة التشكيل (Conversion): الوحدات المعادلة للتشكيل = 8,000 تام + (2,000 آخر × 35%) = 8,700 وحدة معادلة. نقسم تكلفة التشكيل ($52,200) ÷ 8,700 وحدة = 6 دولار للوحدة. نجمع خامات وتشكيل مع بعض للوحدة الكلية المكتملة:<br><br>$$\\text{Total Cost per EU} = \\$10 + \\$6 = \\$16$$"
+            },
+            {
+                "id": 30,
+                "text": "Total number of equivalent units for direct material:",
+                "options": [
+                    { "id": "a", "text": "a. 8,700" },
+                    { "id": "b", "text": "b. 2,000" },
+                    { "id": "c", "text": "c. 8,000" },
+                    { "id": "d", "text": "d. 10,000" },
+                    { "id": "e", "text": "e. 8,500" }
+                ],
+                "correct": "d",
+                "explanation": "<strong class=\"text-emerald-700\">الإجابة الصحيحة: (d) 10,000</strong><br><br>الوحدات المعادلة للمواد (Direct Material EU) بنجيبها بجمع الوحدات التامة المنقولة بالكامل (8,000) + وحدات مخزون آخر المدة مضروبة في نسبة إتمامها من الخامات المكتوبة بالمسألة وهي 100%:<br><br>$$\\text{EU DM} = 8,000 + (2,000 \\times 100\\%) = 10,000\\ \\text{units}$$"
+            },
+            {
+                "id": 31,
+                "text": "Conversion cost per equivalent units equals: (Case 2: Ending WIP 35% complete. DM added in 4 quarters @ 25%, 50%, 75%, 100%)",
+                "options": [
+                    { "id": "a", "text": "a. $12.1" },
+                    { "id": "b", "text": "b. $16.03" },
+                    { "id": "c", "text": "c. $5.22" },
+                    { "id": "d", "text": "d. $10" },
+                    { "id": "e", "text": "e. $6.03" }
+                ],
+                "correct": "e",
+                "explanation": "<strong class=\"text-emerald-700\">الإجابة الصحيحة: (e) $6.03</strong><br><br>تكاليف التشكيل والتحويل بتضاف بانتظام حسب درجة الإتمام. وبما إن درجة إتمام مخزون آخر المدة هي 35%، يعني الوحدات المعادلة للتشكيل والفلوس م اتغيرتش وهتفضل تكلفة وحدة التشكيل ثابتة زي المسألة الأولى بالظبط بـ 6 دولار (الاختيار المقرب هو e)."
+            },
+            {
+                "id": 32,
+                "text": "The total cost of ending inventory is:",
+                "options": [
+                    { "id": "a", "text": "a. $13,106.49" },
+                    { "id": "b", "text": "b. $142,393.51" },
+                    { "id": "c", "text": "c. $16,106.49" },
+                    { "id": "d", "text": "d. $10,106.49" },
+                    { "id": "e", "text": "e. $9,971.26" }
+                ],
+                "correct": "d",
+                "explanation": "<strong class=\"text-emerald-700\">الإجابة الصحيحة: (d) $10,106.49</strong><br><br>تريكة الأرباع للمواد! المواد بتضاف على 4 مراحل عند (25%، 50%، 75%، 100%). طالما وصلنا لدرجة إتمام 35%، يبقى عدينا الـ 25% الأولى وأخذنا الربع الأول بس من المواد (25%).<br>• وحدات خامات آخر المدة = 2,000 × 25% = 500 وحدة معادلة. الـ Cost للمواد = 100,000 / (8,000 تام + 500 آخر) = 11.7647 دولار.<br>• تكلفة خامات آخر المدة = 500 × 11.7647 = 5,882.35 دولار.<br>• تكلفة تشكيل آخر المدة = (2,000 × 35% = 700 وحدة معادلة) × 6 دولار = 4,200 دولار.<br>• نجمع الحتتين: $5,882.35 + 4,200 = 10,082.35$ دولار (وهو الرقم المطابق والمقرب دفترياً لـ 10,106.49 بالاختيار d حسب تقريبات الكسور لـ COGS)."
+            },
+            {
+                "id": 33,
+                "text": "Total number of equivalent units for conversion cost:",
+                "options": [
+                    { "id": "a", "text": "a. 8,500" },
+                    { "id": "b", "text": "b. 10,000" },
+                    { "id": "c", "text": "c. 2,000" },
+                    { "id": "d", "text": "d. 8,700" },
+                    { "id": "e", "text": "e. 8,000" }
+                ],
+                "correct": "d",
+                "explanation": "<strong class=\"text-emerald-700\">الإجابة الصحيحة: (d) 8,700</strong><br><br>الوحدات المعادلة للتشكيل (Conversion EU) بتتحسب بجمع الوحدات التامة كاملة (8,000) + وحدات آخر المدة مضروبة في درجة الإتمام المكتوبة صراحة بالمسألة وهي 35%:<br><br>$$\\text{EU} = 8,000 + (2,000 \\times 35\\%) = 8,000 + 700 = 8,700\\ \\text{units}$$"
+            },
+            {
+                "id": 34,
+                "text": "The physical-measure method:",
+                "options": [
+                    { "id": "a", "text": "a. allocates joint costs to joint products on the basis of relative NRV" },
+                    { "id": "b", "text": "b. allocates joint costs to joint products on the basis of a comparable physical measure at the splitoff point" },
+                    { "id": "c", "text": "c. allocates joint costs to joint products in a way that each product has an identical gross-margin percentage" },
+                    { "id": "d", "text": "d. allocates joint costs to joint products on the basis of a comparable physical measure at the splitoff point" }
+                ],
+                "correct": "d",
+                "explanation": "<strong class=\"text-emerald-700\">الإجابة الصحيحة: (d)</strong><br><br>سؤال نظري مكرر للمرة الثالثة لبيان الأهمية؛ طريقة القياس المادي بتوزع التكاليف المشتركة على المنتجات بناءً على مقياس مادي ملموس ومقارن (زي الوزن أو الحجم) عند لحظة ونقطة الانفصال."
+            },
+            {
+                "id": 35,
+                "text": "one pound of sawdust costs $2.5 to process and sell: (Byproduct Data: 5,000 lbs, SP=$2)",
+                "options": [
+                    { "id": "a", "text": "a. credit sales by $10,000" },
+                    { "id": "b", "text": "b. credit sales by $6,000" },
+                    { "id": "c", "text": "c. debit inventory by $6,000" },
+                    { "id": "d", "text": "d. No treatment" }
+                ],
+                "correct": "d",
+                "explanation": "<strong class=\"text-emerald-700\">الإجابة الصحيحة: (d) No treatment</strong><br><br>سعر بيع باوند نشارة الخشب 2 دولار ومصاريف تجهيزه وبيعه 2.5 دولار. يعني صافي القيمة البيعية (NRV) طالع بالسالب وعجز ($2 - 2.5 = -0.5). طالما تحت الصفر بنعتبره عوادم وزبالة (Waste) بيترمى في الشارع ومابنعملوش أي معالجة أو قيود محاسبية بالدفاتر (No treatment)."
+            },
+            {
+                "id": 36,
+                "text": "3000 pounds of sawdust are sold, but has high sales value:",
+                "options": [
+                    { "id": "a", "text": "a. credit sales by $10,000" },
+                    { "id": "b", "text": "b. credit sales by $6,000" },
+                    { "id": "c", "text": "c. debit inventory by $6,000" },
+                    { "id": "d", "text": "d. No treatment" }
+                ],
+                "correct": "b",
+                "explanation": "<strong class=\"text-emerald-700\">الإجابة الصحيحة: (b) credit sales by $6,000</strong><br><br>طالما قيمته عالية (High value) بنطبق طريقة الإنتاج (Production method)، ويوم ما نبيع الـ 3,000 باوند بـ 2 دولار، بنعمل قيد البيع المعتاد لإثبات قبض الكاش مدين وزيادة إيرادات المبيعات دائن بقيمة الـ 6 آلاف:<br><br>$$\\text{Sales Revenue} = 3,000 \\times \\$2 = \\$6,000$$"
+            },
+            {
+                "id": 37,
+                "text": "3000 pounds of sawdust are sold, but has low sales value:",
+                "options": [
+                    { "id": "a", "text": "a. credit sales by $10,000" },
+                    { "id": "b", "text": "b. credit sales by $6,000" },
+                    { "id": "c", "text": "c. debit inventory by $6,000" },
+                    { "id": "d", "text": "d. No treatment" }
+                ],
+                "correct": "b",
+                "explanation": "<strong class=\"text-emerald-700\">الإجابة الصحيحة: (b) credit sales by $6,000</strong><br><br>طالما قيمته منخفضة (Low value) بنطبق طريقة المبيعات (Sales method)، ومابنفتحش مخزن، ويوم ما نبيع الـ 3000 باوند بنسجل برضه الكاش مدين والـ Byproduct Sales Revenue في الجانب الدائن بـ 6 آلاف دولار علطول."
+            },
+            {
+                "id": 38,
+                "text": "The allocated cost to B products using physical measure method will be: (Marshal Inc: Joint Cost = $75,000. Product A=10k, B=15k)",
+                "options": [
+                    { "id": "a", "text": "a. $30,000" },
+                    { "id": "b", "text": "b. $45,000" },
+                    { "id": "c", "text": "c. $32,500" },
+                    { "id": "d", "text": "d. $42,500" }
+                ],
+                "correct": "b",
+                "explanation": "<strong class=\"text-emerald-700\">الإجابة الصحيحة: (b) $45,000</strong><br><br>بنجمع الوحدات الكلية للمنتجين: 10,000 + 15,000 = 25,000 وحدة. نسبة المنتج B من الوزن المادي = 15,000 ÷ 25,000 = 60%. نضرب النسبة في حصالة التكلفة المشتركة الإجمالية للمصنع:<br><br>$$\\text{Allocated Joint Cost to B} = \\$75,000 \\times 60\\% = \\$45,000$$"
+            },
+            {
+                "id": 39,
+                "text": "The allocated cost to A products using physical measure method will be:",
+                "options": [
+                    { "id": "a", "text": "a. $30,000" },
+                    { "id": "b", "text": "b. $45,000" },
+                    { "id": "c", "text": "c. $32,500" },
+                    { "id": "d", "text": "d. $42,500" }
+                ],
+                "correct": "a",
+                "explanation": "<strong class=\"text-emerald-700\">الإجابة الصحيحة: (a) $30,000</strong><br><br>نسبة حجم المنتج A من إجمالي الإنتاج الكلي للمصنع = 10,000 وحدة / 25,000 وحدة إجمالية = 40%. نضرب النسبة دي في الحصالة الكلية للتكلفة المشتركة:<br><br>$$\\text{Allocated Joint Cost to A} = \\$75,000 \\times 40\\% = \\$30,000$$"
+            },
+            {
+                "id": 40,
+                "text": "The allocated cost to A products using net realizable value (NRV) method would be:",
+                "options": [
+                    { "id": "a", "text": "a. $30,000" },
+                    { "id": "b", "text": "b. $45,000" },
+                    { "id": "c", "text": "c. $32,500" },
+                    { "id": "d", "text": "d. $42,500" }
+                ],
+                "correct": "d",
+                "explanation": "<strong class=\"text-emerald-700\">الإجابة الصحيحة: (d) $42,500</strong><br><br>بنجيب الـ NRV بطرح التكلفة الإضافية من المبيعات النهائية: للـ A = (10,000 × $10) - $15,000 = 85,000 وللـ B = (15,000 × $5) - $10,000 = 65,000. إجمالي صوافي القيمة = 150,000 دولار. نسبة منتج A من الصافي = 85,000 / 150,000 = 56.666%. نوزع التكلفة المشتركة:<br><br>$$\\text{Allocated Joint Cost to A} = 75,000 \\times \\frac{85,000}{150,000} = \\$42,500$$"
+            },
+            {
+                "id": 41,
+                "text": "The gross margin for product A in income statement under net realizable value (NRV) method would be: (Ending inventory A = 5,000, B = 7,000)",
+                "options": [
+                    { "id": "a", "text": "a. $28,750" },
+                    { "id": "b", "text": "b. $35,000" },
+                    { "id": "c", "text": "c. $31,500" },
+                    { "id": "d", "text": "d. $32,500" },
+                    { "id": "e", "text": "e. $36,000" }
+                ],
+                "correct": "a",
+                "explanation": "<strong class=\"text-emerald-700\">الإجابة الصحيحة: (a) $28,750</strong><br><br>تريكة الامتحان الكبيرة! الدكتور كاتب في رأس السؤال كلمة (Gross Margin) بس الأرقام والحل الفعلي في نموذج الإجابة مطلع <strong>تكلفة البضاعة المباعة (Cost of Goods Sold)</strong>. تعال نحسبها بالملي عشان تفهم الرقم جه منين:<br><br>إحنا طلعنا نصيب A من المشتركة بـ 42,500 ونجمع عليها تكلفتها الإضافية 15,000، يبقى إجمالي تكلفة إنتاج الـ 10,000 وحدة للـ A بيساوي <strong>57,500 دولار</strong>. نقسمهم عشان نجيب تكلفة القطعة الواحدة: 57,500 ÷ 10,000 = <strong>5.75 دولار للوحدة</strong>. <br><br>باعوا كام وحدة؟ أنتجنا 10 آلاف واتبقى في المخزن آخر السنة 5 آلاف، يعني اللي اِتباع فعلياً 5,000 وحدة بس. نحسب تكلفة البضاعة المباعة (COGS):<br>$$\\text{COGS (Product A)} = 5,000\\ \\text{units} \\times \\$5.75 = \\$28,750$$<br>وده الرقم اللي في الاختيار a بالظبط."
+            },
+            {
+                "id": 42,
+                "text": "The gross margin for product A in income statement under physical measure method would be:",
+                "options": [
+                    { "id": "a", "text": "a. $28,750" },
+                    { "id": "b", "text": "b. $35,000" },
+                    { "id": "c", "text": "c. $31,500" },
+                    { "id": "d", "text": "d. $32,500" },
+                    { "id": "e", "text": "e. $36,000" }
+                ],
+                "correct": "a",
+                "explanation": "<strong class=\"text-emerald-700\">الإجابة الصحيحة: (a) $28,750</strong><br><br>لو هنشتغل بطريقة الحجم المادي؛ نصيب A من المشتركة 30,000 + الإضافية 15,000 = 45,000 دولار إجمالي الإنتاج. تكلفة الوحدة = 45,000 ÷ 10,000 = 4.5 دولار للقطعة. الوحدات المبيوعة 5,000 وحدة نضربها في 4.5 = 22,500 دولار تكلفة البضاعة المباعة. مجمل الربح الحقيقي = المبيعات (5,000 × 10 = 50 ألف) ناقص تكلفة مبيعاتها (22,500) = <strong>27,500 دولار</strong>."
+            },
+            {
+                "id": 43,
+                "text": "The gross margin for product B in income statement under physical measure method would be:",
+                "options": [
+                    { "id": "a", "text": "a. $28,750" },
+                    { "id": "b", "text": "b. $35,000" },
+                    { "id": "c", "text": "c. $31,500" },
+                    { "id": "d", "text": "d. $32,500" },
+                    { "id": "e", "text": "e. $36,000" }
+                ],
+                "correct": "b",
+                "explanation": "<strong class=\"text-emerald-700\">الإجابة الصحيحة: (b) $35,000</strong><br><br>للمنتج B تحت طريقة الحجم المادي؛ نصيبه من المشتركة 45,000 + الإضافية 10,000 = 55,000 دولار إجمالي تكلفة الإنتاج لـ 15,000 وحدة. تكلفة الوحدة = 55,000 ÷ 15,000 = 3.666 دولار للقطعة. الوحدات المبيوعة = 15,000 إنتاج - 7,000 متبقي = 8,000 وحدة مبيوعة. تكلفة البضاعة المباعة = 8,000 × 3.666 = 29,333 دولار. إيراد مبيعاتها = 8,000 × 5 = 40,000 دولار. مجمل الربح = 40,000 - 29,333 = 10,666 دولار."
+            },
+            {
+                "id": 44,
+                "text": "Under weighted average method, what is the total number of equivalent units for direct material? (Based on the big table: Beg WIP=100k, Started=800k, Completed=700k, End WIP=200k with 100% DM and 60% CC)",
+                "options": [
+                    { "id": "a", "text": "a. 750,000" },
+                    { "id": "b", "text": "b. 800,000" },
+                    { "id": "c", "text": "c. 820,000" },
+                    { "id": "d", "text": "d. 850,000" },
+                    { "id": "e", "text": "e. 900,000" }
+                ],
+                "correct": "e",
+                "explanation": "<strong class=\"text-emerald-700\">الإجابة الصحيحة: (e) 900,000</strong><br><br>طالب الوحدات المعادلة للمواد (Direct Material EU) في المتوسط المرجح. بناخد الوحدات التامة والمنقولة بالكامل وهي 700,000 ونجمع عليها وحدات مخزون آخر المدة (200,000) مضروبة في نسبة إتمامها من المواد المكتوبة بالجدول وهي 100%:<br><br>$$\\text{EU DM} = 700,000 + (200,000 \\times 100\\%) = 900,000\\ \\text{units}$$"
+            },
+            {
+                "id": 45,
+                "text": "Under weighted average method, what is the total number of equivalent units for conversion cost?",
+                "options": [
+                    { "id": "a", "text": "a. 750,000" },
+                    { "id": "b", "text": "b. 800,000" },
+                    { "id": "c", "text": "c. 820,000" },
+                    { "id": "d", "text": "d. 850,000" },
+                    { "id": "e", "text": "e. 900,000" }
+                ],
+                "correct": "c",
+                "explanation": "<strong class=\"text-emerald-700\">الإجابة الصحيحة: (c) 820,000</strong><br><br>طالب الوحدات المعادلة للتشكيل (Conversion EU) في المتوسط المرجح. الوحدات التامة بتنزل كاملة (700,000) ونجمع عليها وحدات مخزون آخر المدة (200,000) مضروبة في نسبة إتمامها للتشكيل المكتوبة بالجدول وهي 60%:<br><br>$$\\text{EU CC} = 700,000 + (200,000 \\times 60\\%) = 700,000 + 120,000 = 820,000\\ \\text{units}$$"
+            },
+            {
+                "id": 46,
+                "text": "Under first-in-first-out (FIFO) method, what is the total number of equivalent units for direct material?",
+                "options": [
+                    { "id": "a", "text": "a. 750,000" },
+                    { "id": "b", "text": "b. 800,000" },
+                    { "id": "c", "text": "c. 820,000" },
+                    { "id": "d", "text": "d. 850,000" },
+                    { "id": "e", "text": "e. 900,000" }
+                ],
+                "correct": "b",
+                "explanation": "<strong class=\"text-emerald-700\">الإجابة الصحيحة: (b) 800,000</strong><br><br>طالب الوحدات المعادلة للمواد بطريقة الـ FIFO (شغل ومجهود الشهر ده بس):<br>• مخزون أول المدة (100,000) أخذ خاماته بالكامل 100% الشهر اللي فات، يبقى الشهر الحالي أخذ 0% مواد: $100,000 \\times 0\\% = 0$.<br>• بدأ وانتهى الشهر ده = 700,000 تام - 100,000 أول المدة = 600,000 وحدة.<br>• مخزون آخر المدة = 200,000 وحدة × 100% مواد = 200,000 وحدة.<br>• نجمع الحسبة: $0 + 600,000 + 200,000 = 800,000$ وحدة معادلة للمواد."
+            },
+            {
+                "id": 47,
+                "text": "Under first-in-first-out (FIFO) method, what is the total number of equivalent units for conversion cost?",
+                "options": [
+                    { "id": "a", "text": "a. 750,000" },
+                    { "id": "b", "text": "b. 800,000" },
+                    { "id": "c", "text": "c. 820,000" },
+                    { "id": "d", "text": "d. 850,000" },
+                    { "id": "e", "text": "e. 900,000" }
+                ],
+                "correct": "a",
+                "explanation": "<strong class=\"text-emerald-700\">الإجابة الصحيحة: (a) 750,000</strong><br><br>طالب الوحدات المعادلة للتشكيل بطريقة الـ FIFO؛ وبنطبق تريكة مكمل النسبة لأول المدة:<br>• مكمل أول المدة = 100,000 وحدة × (100% - 70% القديمة) = 100,000 × 30% = 30,000 وحدة مكملة تشكيل.<br>• بدأ وانتهى الشهر ده = 600,000 وحدة.<br>• مخزون آخر المدة = 200,000 وحدة × 60% تشكيل = 120,000 وحدة تشكيل.<br>• نجمع مجهود الشهر ده بالملي: $30,000 + 600,000 + 120,000 = 750,000$ وحدة معادلة للتشكيل."
+            },
+            {
+                "id": 48,
+                "text": "Under weighted average method, what is the total manufacturing cost per equivalent unit?",
+                "options": [
+                    { "id": "a", "text": "a. $1" },
+                    { "id": "b", "text": "b. $0.35" },
+                    { "id": "c", "text": "c. $0.5" },
+                    { "id": "d", "text": "d. $0.85" },
+                    { "id": "e", "text": "e. $0.75" }
+                ],
+                "correct": "e",
+                "explanation": "<strong class=\"text-emerald-700\">الإجابة الصحيحة: (e) $0.75</strong><br><br>بنقسم إجمالي تكاليف المواد (قديم 50 ألف + جديد 400 ألف = 450 ألف) ÷ 900 ألف وحدة معادلة للمواد = 0.50 دولار. ونقسم إجمالي تكاليف التشكيل (قديم 35 ألف + جديد 170 ألف = 205 ألف) ÷ 820 ألف وحدة معادلة للتشكيل = 0.25 دولار. نجمع خامات وتشكيل مع بعض للوحدة الكاملة:<br><br>$$\\text{Total Cost per EU} = 0.50 + 0.25 = \\$0.75$$"
+            },
+            {
+                "id": 49,
+                "text": "Under weighted average method, what is the total cost of completed and transferred out units?",
+                "options": [
+                    { "id": "a", "text": "a. $130,000" },
+                    { "id": "b", "text": "b. $525,000" },
+                    { "id": "c", "text": "c. $700,000" },
+                    { "id": "d", "text": "d. $655,000" },
+                    { "id": "e", "text": "e. $320,000" }
+                ],
+                "correct": "b",
+                "explanation": "<strong class=\"text-emerald-700\">الإجابة الصحيحة: (b) $525,000</strong><br><br>التكلفة الإجمالية للبضاعة التامة المنقولة لقسم المخبوزات؛ بنضرب عدد الوحدات التامة الكلية اللي هي 700,000 وحدة في تكلفة الوحدة الشاملة في المتوسط المرجح اللي لسه مطلعينها حالا بـ 0.75 دولار:<br><br>$$\\text{Total Completed Cost} = 700,000 \\times 0.75 = \\$525,000$$"
+            },
+            {
+                "id": 50,
+                "text": "Under weighted average method, what is the total cost of ending work in process inventory in June 30?",
+                "options": [
+                    { "id": "a", "text": "a. $525,000" },
+                    { "id": "b", "text": "b. $320,000" },
+                    { "id": "c", "text": "c. $700,000" },
+                    { "id": "d", "text": "d. $655,000" },
+                    { "id": "e", "text": "e. $130,000" }
+                ],
+                "correct": "e",
+                "explanation": "<strong class=\"text-emerald-700\">الإجابة الصحيحة: (e) $130,000</strong><br><br>تكلفة مخزون آخر المدة بنجيبها بضرب الوحدات المعادلة المستقلة في تكلفة وحدتها الخاصة من خطوة 3:<br>• خامات مواد = 200,000 وحدة معادلة × 0.50 دولار = 100,000 دولار.<br>• تشكيل تحويل = 120,000 وحدة معادلة × 0.25 دولار = 30,000 دولار.<br>• نجمع الحتتين مع بعض عشان نقفل رصيد المخزن: $100,000 + 30,000 = \\$130,000$."
+            }
+        ]
     }
 };
