@@ -3769,5 +3769,1367 @@ const examsData = {
                 "explanation": "<strong class=\"text-emerald-700\">الإجابة الصحيحة: (e) $130,000</strong><br><br>تكلفة مخزون آخر المدة بنجيبها بضرب الوحدات المعادلة المستقلة في تكلفة وحدتها الخاصة من خطوة 3:<br>• خامات مواد = 200,000 وحدة معادلة × 0.50 دولار = 100,000 دولار.<br>• تشكيل تحويل = 120,000 وحدة معادلة × 0.25 دولار = 30,000 دولار.<br>• نجمع الحتتين مع بعض عشان نقفل رصيد المخزن: $100,000 + 30,000 = \\$130,000$."
             }
         ]
+    },
+    "cost_model_1_2026": {
+        "title": "Cost Accounting Systems - Model 1 (2026)",
+        "description": "امتحان نظم تكاليف - نموذج 1 (50 سؤال كامل مع الحل النموذجي وشرح بالبلدي)",
+        "questions": [
+            {
+                "id": 1,
+                "text": "Normal Costing allocates indirect costs based on the _______ indirect-cost rates times the _______ activity consumption.",
+                "options": [
+                    {
+                        "id": "a",
+                        "text": "a. actual, actual"
+                    },
+                    {
+                        "id": "b",
+                        "text": "b. budgeted, budgeted"
+                    },
+                    {
+                        "id": "c",
+                        "text": "c. actual, budgeted"
+                    },
+                    {
+                        "id": "d",
+                        "text": "d. budgeted, actual"
+                    }
+                ],
+                "correct": "d",
+                "explanation": "<strong class=\"text-emerald-700\">الإجابة الصحيحة: (d) budgeted, actual</strong><br><br>الخلاصة بالبلدي: نظام التكاليف الطبيعي (Normal Costing) بيضرب المعدل التقديري المحسوب من الموازنة أول السنة (Budgeted rate) في الساعات أو الكميات الفعلية المستهلكة في الشغل (Actual consumption)."
+            },
+            {
+                "id": 2,
+                "text": "Actual Costing allocates indirect costs based on the _______ indirect-cost rates times the _______ activity consumption.",
+                "options": [
+                    {
+                        "id": "a",
+                        "text": "a. actual, actual"
+                    },
+                    {
+                        "id": "b",
+                        "text": "b. budgeted, budgeted"
+                    },
+                    {
+                        "id": "c",
+                        "text": "c. actual, budgeted"
+                    },
+                    {
+                        "id": "d",
+                        "text": "d. budgeted, actual"
+                    }
+                ],
+                "correct": "a",
+                "explanation": "<strong class=\"text-emerald-700\">الإجابة الصحيحة: (a) actual, actual</strong><br><br>الخلاصة بالبلدي: نظام التكاليف الفعلي (Actual Costing) من اسمه شغال على الفعلي في الفعلي؛ بيضرب المعدل الفعلي الحقيقي (Actual rate) في الاستهلاك الفعلي الحقيقي (Actual consumption)."
+            },
+            {
+                "id": 3,
+                "text": "If allocated overhead was $24,200, and it was overapplied by $2,500 during May, the actual overhead cost for the month must have been:",
+                "options": [
+                    {
+                        "id": "a",
+                        "text": "a. $18,500"
+                    },
+                    {
+                        "id": "b",
+                        "text": "b. $23,500"
+                    },
+                    {
+                        "id": "c",
+                        "text": "c. $26,700"
+                    },
+                    {
+                        "id": "d",
+                        "text": "d. $21,700"
+                    },
+                    {
+                        "id": "e",
+                        "text": "e. $16,700"
+                    }
+                ],
+                "correct": "d",
+                "explanation": "<strong class=\"text-emerald-700\">الإجابة الصحيحة: (d) $21,700</strong><br><br>الخلاصة بالبلدي: لما يقولك Overapplied يعني المحمل دفترياً أكبر من الفعلي بالفرق ده ($2,500). يبقى الفعلي = المحمل - الزيادة: $24,200 - $2,500 = $21,700."
+            },
+            {
+                "id": 4,
+                "text": "After recording factory insurance cost, it will be reallocated to:",
+                "options": [
+                    {
+                        "id": "a",
+                        "text": "a. Direct Material"
+                    },
+                    {
+                        "id": "b",
+                        "text": "b. Direct Labor"
+                    },
+                    {
+                        "id": "c",
+                        "text": "c. Manufactured Overhead Control"
+                    },
+                    {
+                        "id": "d",
+                        "text": "d. Payroll expenses"
+                    },
+                    {
+                        "id": "e",
+                        "text": "e. General Expenses"
+                    }
+                ],
+                "correct": "c",
+                "explanation": "<strong class=\"text-emerald-700\">الإجابة الصحيحة: (c) Manufactured Overhead Control</strong><br><br>الخلاصة بالبلدي: تأمين مبنى المصنع تكلفة صناعية غير مباشرة، فأول ما بنسجلها بتتقفل وتروح لحساب مراقبة التكاليف الصناعية غير المباشرة (MOH Control) تمهيداً لتحميلها."
+            },
+            {
+                "id": 5,
+                "text": "Which statement is correct?",
+                "options": [
+                    {
+                        "id": "a",
+                        "text": "a. The accounting for abnormal spoilage will not affect the unit cost of good units."
+                    },
+                    {
+                        "id": "b",
+                        "text": "b. If management not operate a production process that will yield a perfect product 100% of the time, it will be changed."
+                    },
+                    {
+                        "id": "c",
+                        "text": "c. Abnormal spoilage is usually considered a part of the cost of production."
+                    },
+                    {
+                        "id": "d",
+                        "text": "d. All spoilage is abnormal; therefore its cost must always be expensed and never included in product cost."
+                    }
+                ],
+                "correct": "a",
+                "explanation": "<strong class=\"text-emerald-700\">الإجابة الصحيحة: (a)</strong><br><br>الخلاصة بالبلدي: التالف غير الطبيعي (Abnormal Spoilage) بنعتبره خسارة فترة وإهمال وبيروح قائمة الدخل مباشرة، وبالتالي مبيأثرش على تكلفة الوحدة السليمة نهائياً (على عكس التالف الطبيعي اللي بيتحمل ع السليم)."
+            },
+            {
+                "id": 6,
+                "text": "Job Z (2,000 handsaws): DM=$5, DL=$4, FOH applied at 150% of DL=$6. 100 defective saws were reworked at: $0 DM, $2 DL, plus overhead at predetermined rate. The total rework cost is:",
+                "options": [
+                    {
+                        "id": "a",
+                        "text": "a. $200"
+                    },
+                    {
+                        "id": "b",
+                        "text": "b. $500"
+                    },
+                    {
+                        "id": "c",
+                        "text": "c. $300"
+                    },
+                    {
+                        "id": "d",
+                        "text": "d. $250"
+                    },
+                    {
+                        "id": "e",
+                        "text": "e. $450"
+                    }
+                ],
+                "correct": "b",
+                "explanation": "<strong class=\"text-emerald-700\">الإجابة الصحيحة: (b) $500</strong><br><br>الخلاصة بالبلدي: تكلفة إعادة تشغيل الوحدة = خامات $0 + أجور $2 + تكاليف غير مباشرة (150% × $2 = $3) = $5 للوحدة. إجمالي تكلفة الـ 100 وحدة المعيبة = 100 × $5 = $500."
+            },
+            {
+                "id": 7,
+                "text": "Based on Job Z data, if rework is considered abnormal, the journal entry to record this will contain:",
+                "options": [
+                    {
+                        "id": "a",
+                        "text": "a. Work in process - JobZ"
+                    },
+                    {
+                        "id": "b",
+                        "text": "b. Loss from abnormal rework"
+                    },
+                    {
+                        "id": "c",
+                        "text": "c. Factory Overhead Control"
+                    },
+                    {
+                        "id": "d",
+                        "text": "d. No journal entry"
+                    }
+                ],
+                "correct": "b",
+                "explanation": "<strong class=\"text-emerald-700\">الإجابة الصحيحة: (b) Loss from abnormal rework</strong><br><br>الخلاصة بالبلدي: طالما إعادة التشغيل غير طبيعية (Abnormal)، يبقى ناتجة عن إهمال وبنقفل تكلفتها في حساب خسائر مستقل مدين (Loss from Abnormal Rework)."
+            },
+            {
+                "id": 8,
+                "text": "Based on Job Z data, if rework is considered normal and attributed to job-X (specific job), the journal entry to record this will contain:",
+                "options": [
+                    {
+                        "id": "a",
+                        "text": "a. Work in process - JobZ"
+                    },
+                    {
+                        "id": "b",
+                        "text": "b. Loss from abnormal rework"
+                    },
+                    {
+                        "id": "c",
+                        "text": "c. Factory Overhead Control"
+                    },
+                    {
+                        "id": "d",
+                        "text": "d. No journal entry"
+                    }
+                ],
+                "correct": "a",
+                "explanation": "<strong class=\"text-emerald-700\">الإجابة الصحيحة: (a) Work in process - JobZ</strong><br><br>الخلاصة بالبلدي: لما إعادة التشغيل تكون طبيعية ومواصفات خاصة بطلبية معينة (Specific Job)، بنحمل تكلفتها مباشرة على حساب مراقبة التشغيل الخاص بنفس الشغلانة (Debit WIP)."
+            },
+            {
+                "id": 9,
+                "text": "On Apr 6, Almerinda purchases 60,000 raw material units @ $12 on account. Journalize the entry on April 6 to record the purchase of raw material:",
+                "options": [
+                    {
+                        "id": "a",
+                        "text": "a. Materials...720,000 / Accounts Payable... 720,000"
+                    },
+                    {
+                        "id": "b",
+                        "text": "b. Work in Process...324,000 / Materials.........324,000"
+                    },
+                    {
+                        "id": "c",
+                        "text": "c. Materials...324,000,000 / Accounts Payable... 324,000,000"
+                    },
+                    {
+                        "id": "d",
+                        "text": "d. Work in Process... 720,000 / Materials.........720,000"
+                    }
+                ],
+                "correct": "a",
+                "explanation": "<strong class=\"text-emerald-700\">الإجابة الصحيحة: (a) Materials 720,000 / Accounts Payable 720,000</strong><br><br>الخلاصة بالبلدي: اشترينا خامات على الحساب بقيمة: 60,000 وحدة × $12 = $720,000. القيد: مدين حساب الخامات (Materials) ودائن حساب الموردين (Accounts Payable)."
+            },
+            {
+                "id": 10,
+                "text": "On Apr 21, 27,000 units are requisitioned to Job 51 (from materials purchased @ $12). Journalize the entry on April 21 to record the requisition:",
+                "options": [
+                    {
+                        "id": "a",
+                        "text": "a. Materials...720,000 / Accounts Payable... 720,000"
+                    },
+                    {
+                        "id": "b",
+                        "text": "b. Work in Process...324,000 / Materials.........324,000"
+                    },
+                    {
+                        "id": "c",
+                        "text": "c. Materials...324,000,000 / Accounts Payable... 324,000,000"
+                    },
+                    {
+                        "id": "d",
+                        "text": "d. Work in Process... 720,000 / Materials.........720,000"
+                    }
+                ],
+                "correct": "b",
+                "explanation": "<strong class=\"text-emerald-700\">الإجابة الصحيحة: (b) Work in Process 324,000 / Materials 324,000</strong><br><br>الخلاصة بالبلدي: صرفنا خامات للإنتاج بقيمة: 27,000 وحدة × $12 = $324,000. الخامات خرجت من المخزن وراحت للتشغيل، يبقى مدين WIP ودائن Materials."
+            },
+            {
+                "id": 11,
+                "text": "Filling Department: Beg WIP=4,000 oz (70% complete), Completed=42,800 oz, End WIP=6,200 oz (40% complete). Under weighted average, what are the total equivalent units for direct materials if materials are added at the BEGINNING of the process?",
+                "options": [
+                    {
+                        "id": "a",
+                        "text": "a. 45,000"
+                    },
+                    {
+                        "id": "b",
+                        "text": "b. 42,480"
+                    },
+                    {
+                        "id": "c",
+                        "text": "c. 49,000"
+                    },
+                    {
+                        "id": "d",
+                        "text": "d. 41,280"
+                    },
+                    {
+                        "id": "e",
+                        "text": "e. 6,200"
+                    }
+                ],
+                "correct": "c",
+                "explanation": "<strong class=\"text-emerald-700\">الإجابة الصحيحة: (c) 49,000</strong><br><br>الخلاصة بالبلدي: في المتوسط المرجح، التام بينزل كامل 100% (42,800) + وحدات آخر المدة أخدت خاماتها كاملة في أول العملية (6,200 × 100% = 6,200). المجموع = 42,800 + 6,200 = 49,000 وحدة."
+            },
+            {
+                "id": 12,
+                "text": "Filling Department: Under weighted average, what are the total equivalent units for direct materials if materials are added at the MIDDLE of the process (50% on production line)?",
+                "options": [
+                    {
+                        "id": "a",
+                        "text": "a. 45,000"
+                    },
+                    {
+                        "id": "b",
+                        "text": "b. 42,480"
+                    },
+                    {
+                        "id": "c",
+                        "text": "c. 49,000"
+                    },
+                    {
+                        "id": "d",
+                        "text": "d. 42,800"
+                    },
+                    {
+                        "id": "e",
+                        "text": "e. 41,280"
+                    }
+                ],
+                "correct": "d",
+                "explanation": "<strong class=\"text-emerald-700\">الإجابة الصحيحة: (d) 42,800</strong><br><br>الخلاصة بالبلدي: وحدات آخر المدة واصلة لنسبة 40% بس، ولسه ما وصلتش لمحطة الـ 50% اللي بنضيف عندها الخامات، فما أخدتش أي خامات (0%). الوحدات المعادلة = 42,800 تام + (6,200 × 0%) = 42,800 وحدة."
+            },
+            {
+                "id": 13,
+                "text": "Filling Department: Under weighted average, what are the total equivalent units for conversion costs?",
+                "options": [
+                    {
+                        "id": "a",
+                        "text": "a. 45,000"
+                    },
+                    {
+                        "id": "b",
+                        "text": "b. 42,480"
+                    },
+                    {
+                        "id": "c",
+                        "text": "c. 49,000"
+                    },
+                    {
+                        "id": "d",
+                        "text": "d. 41,280"
+                    },
+                    {
+                        "id": "e",
+                        "text": "e. 45,280"
+                    }
+                ],
+                "correct": "e",
+                "explanation": "<strong class=\"text-emerald-700\">الإجابة الصحيحة: (e) 45,280</strong><br><br>الخلاصة بالبلدي: تكاليف التشكيل في المتوسط المرجح = تام (42,800) + آخر المدة بنسبة إتمامه للتشكيل (6,200 × 40% = 2,480) = 42,800 + 2,480 = 45,280 وحدة."
+            },
+            {
+                "id": 14,
+                "text": "Filling Department: Under FIFO cost flow method, what are the total equivalent units for conversion costs?",
+                "options": [
+                    {
+                        "id": "a",
+                        "text": "a. 45,000"
+                    },
+                    {
+                        "id": "b",
+                        "text": "b. 42,480"
+                    },
+                    {
+                        "id": "c",
+                        "text": "c. 49,000"
+                    },
+                    {
+                        "id": "d",
+                        "text": "d. 6,200"
+                    },
+                    {
+                        "id": "e",
+                        "text": "e. 48,000"
+                    }
+                ],
+                "correct": "b",
+                "explanation": "<strong class=\"text-emerald-700\">الإجابة الصحيحة: (b) 42,480</strong><br><br>الخلاصة بالبلدي: بطريقة FIFO بنحسب مجهود الفترة الحالية فقط: مكمل أول المدة (4,000 × 30% متبقي = 1,200) + بدأ وانتهى (42,800 - 4,000 = 38,800) + آخر المدة (6,200 × 40% = 2,480) = 1,200 + 38,800 + 2,480 = 42,480 وحدة."
+            },
+            {
+                "id": 15,
+                "text": "Filling Department: Under FIFO cost flow method, what are the total equivalent units for direct materials if materials are added at the BEGINNING of the process?",
+                "options": [
+                    {
+                        "id": "a",
+                        "text": "a. 45,000"
+                    },
+                    {
+                        "id": "b",
+                        "text": "b. 42,480"
+                    },
+                    {
+                        "id": "c",
+                        "text": "c. 49,000"
+                    },
+                    {
+                        "id": "d",
+                        "text": "d. 6,200"
+                    },
+                    {
+                        "id": "e",
+                        "text": "e. 48,000"
+                    }
+                ],
+                "correct": "a",
+                "explanation": "<strong class=\"text-emerald-700\">الإجابة الصحيحة: (a) 45,000</strong><br><br>الخلاصة بالبلدي: في FIFO، أول المدة أخد خاماته 100% الشهر اللي فات فبياخد (0%) الشهر ده + بدأ وانتهى (38,800) + آخر المدة أخد خاماته كاملة (6,200 × 100% = 6,200). المجموع = 0 + 38,800 + 6,200 = 45,000 وحدة."
+            },
+            {
+                "id": 16,
+                "text": "Which of the following production operations would be most likely to employ a process cost system?",
+                "options": [
+                    {
+                        "id": "a",
+                        "text": "a. Makeup artist"
+                    },
+                    {
+                        "id": "b",
+                        "text": "b. Cinema"
+                    },
+                    {
+                        "id": "c",
+                        "text": "c. Crude oil refiner"
+                    },
+                    {
+                        "id": "d",
+                        "text": "d. Homebuilder"
+                    }
+                ],
+                "correct": "c",
+                "explanation": "<strong class=\"text-emerald-700\">الإجابة الصحيحة: (c) Crude oil refiner</strong><br><br>الخلاصة بالبلدي: نظام تكاليف المراحل (Process costing) بيناسب الصناعات ذات الإنتاج الضخم والمستمر والمتطابق زي تكرير البترول، أما باقي الاختيارات فشغل تفصيل وطلبيات خاصة (Job costing)."
+            },
+            {
+                "id": 17,
+                "text": "Red Co. had 6,000 units in process at beginning of month in Dept A. During the month 14,000 units were placed into process. Ending WIP was 4,200 units. Units transferred to Department B equals:",
+                "options": [
+                    {
+                        "id": "a",
+                        "text": "a. 15,800"
+                    },
+                    {
+                        "id": "b",
+                        "text": "b. 16,000"
+                    },
+                    {
+                        "id": "c",
+                        "text": "c. 24,200"
+                    },
+                    {
+                        "id": "d",
+                        "text": "d. 20,000"
+                    },
+                    {
+                        "id": "e",
+                        "text": "e. 14,000"
+                    }
+                ],
+                "correct": "a",
+                "explanation": "<strong class=\"text-emerald-700\">الإجابة الصحيحة: (a) 15,800</strong><br><br>الخلاصة بالبلدي: إجمالي الوحدات = أول المدة (6,000) + الجديد (14,000) = 20,000 وحدة. نطرح مخزون آخر المدة (4,200) يدينا الوحدات التامة والمحولة: 20,000 - 4,200 = 15,800 وحدة."
+            },
+            {
+                "id": 18,
+                "text": "Bottling Department (FIFO): DM cost=$22,800 (EU=28,500), CC=$8,790 (EU=29,300), Beg WIP cost=$1,860. The cost per equivalent unit for direct materials is:",
+                "options": [
+                    {
+                        "id": "a",
+                        "text": "a. $0.80"
+                    },
+                    {
+                        "id": "b",
+                        "text": "b. $0.30"
+                    },
+                    {
+                        "id": "c",
+                        "text": "c. $1.10"
+                    },
+                    {
+                        "id": "d",
+                        "text": "d. $0.38"
+                    },
+                    {
+                        "id": "e",
+                        "text": "e. $0.84"
+                    }
+                ],
+                "correct": "a",
+                "explanation": "<strong class=\"text-emerald-700\">الإجابة الصحيحة: (a) $0.80</strong><br><br>الخلاصة بالبلدي: في FIFO بنقسم تكاليف الفترة الحالية فقط على وحداتها المعادلة: $22,800 ÷ 28,500 = $0.80 للوحدة."
+            },
+            {
+                "id": 19,
+                "text": "Bottling Department (FIFO): The cost per equivalent unit for conversion costs is:",
+                "options": [
+                    {
+                        "id": "a",
+                        "text": "a. $0.80"
+                    },
+                    {
+                        "id": "b",
+                        "text": "b. $0.30"
+                    },
+                    {
+                        "id": "c",
+                        "text": "c. $1.10"
+                    },
+                    {
+                        "id": "d",
+                        "text": "d. $0.38"
+                    },
+                    {
+                        "id": "e",
+                        "text": "e. $1.18"
+                    }
+                ],
+                "correct": "b",
+                "explanation": "<strong class=\"text-emerald-700\">الإجابة الصحيحة: (b) $0.30</strong><br><br>الخلاصة بالبلدي: بنقسم تكاليف التشكيل للفترة الحالية فقط على وحداتها المعادلة: $8,790 ÷ 29,300 = $0.30 للوحدة."
+            },
+            {
+                "id": 20,
+                "text": "Bottling Department (FIFO): The total cost of units transferred out is:",
+                "options": [
+                    {
+                        "id": "a",
+                        "text": "a. $343.55"
+                    },
+                    {
+                        "id": "b",
+                        "text": "b. $1,470"
+                    },
+                    {
+                        "id": "c",
+                        "text": "c. $21,600"
+                    },
+                    {
+                        "id": "d",
+                        "text": "d. $31,906.45"
+                    },
+                    {
+                        "id": "e",
+                        "text": "e. $31,980"
+                    }
+                ],
+                "correct": "e",
+                "explanation": "<strong class=\"text-emerald-700\">الإجابة الصحيحة: (e) $31,980</strong><br><br>الخلاصة بالبلدي: تكلفة الوحدات المحولة = رصيد أول المدة ($1,860) + تكلفة استكماله تشكيل (1,400 × $0.30 = $420) + تكلفة الوحدات التي بدأت وتمت (27,000 × $1.10 = $29,700) = 1,860 + 420 + 29,700 = $31,980."
+            },
+            {
+                "id": 21,
+                "text": "Bottling Department (FIFO): The cost of the ending work in process inventory is:",
+                "options": [
+                    {
+                        "id": "a",
+                        "text": "a. $31,906.45"
+                    },
+                    {
+                        "id": "b",
+                        "text": "b. $31,980"
+                    },
+                    {
+                        "id": "c",
+                        "text": "c. $21,600"
+                    },
+                    {
+                        "id": "d",
+                        "text": "d. $1,470"
+                    },
+                    {
+                        "id": "e",
+                        "text": "e. $343.55"
+                    }
+                ],
+                "correct": "d",
+                "explanation": "<strong class=\"text-emerald-700\">الإجابة الصحيحة: (d) $1,470</strong><br><br>الخلاصة بالبلدي: تكلفة مخزون آخر المدة = خامات (1,500 وحدة × $0.80 = $1,200) + تشكيل (900 وحدة × $0.30 = $270) = $1,200 + $270 = $1,470."
+            },
+            {
+                "id": 22,
+                "text": "LCR Company: Predetermined rate=$20/DLH (20,000 DLH). Rent=$140k, Insurance=$80k, Misc plant=$20k, Depreciation=$180k, Sales comm=$60k, Admin=$100k. The actual manufacturing overhead costs incurred in October total:",
+                "options": [
+                    {
+                        "id": "a",
+                        "text": "a. $480,000"
+                    },
+                    {
+                        "id": "b",
+                        "text": "b. $460,000"
+                    },
+                    {
+                        "id": "c",
+                        "text": "c. $400,000"
+                    },
+                    {
+                        "id": "d",
+                        "text": "d. $420,000"
+                    },
+                    {
+                        "id": "e",
+                        "text": "e. $620,000"
+                    }
+                ],
+                "correct": "d",
+                "explanation": "<strong class=\"text-emerald-700\">الإجابة الصحيحة: (d) $420,000</strong><br><br>الخلاصة بالبلدي: بنجمع التكاليف غير المباشرة الخاصة بالمصنع فقط: إيجار المصنع ($140k) + تأمين المصنع ($80k) + مصاريف مصنع متنوعة ($20k) + إهلاك الآلات ($180k) = $420,000. (بنستبعد العمولات والمصاريف الإدارية لأنها مصاريف فترية بره المصنع)."
+            },
+            {
+                "id": 23,
+                "text": "LCR Company: The amount of manufacturing overhead costs applied to all jobs during October total:",
+                "options": [
+                    {
+                        "id": "a",
+                        "text": "a. $480,000"
+                    },
+                    {
+                        "id": "b",
+                        "text": "b. $460,000"
+                    },
+                    {
+                        "id": "c",
+                        "text": "c. $400,000"
+                    },
+                    {
+                        "id": "d",
+                        "text": "d. $420,000"
+                    },
+                    {
+                        "id": "e",
+                        "text": "e. $620,000"
+                    }
+                ],
+                "correct": "c",
+                "explanation": "<strong class=\"text-emerald-700\">الإجابة الصحيحة: (c) $400,000</strong><br><br>الخلاصة بالبلدي: التكاليف المحملة (Applied) = الساعات الفعلية × المعدل التقديري = 20,000 ساعة × $20 = $400,000."
+            },
+            {
+                "id": 24,
+                "text": "Assume for X product: Prime costs is $85,000; Factory overhead is $29,000; and direct labor is $9,000. What is total cost for X product?",
+                "options": [
+                    {
+                        "id": "a",
+                        "text": "a. $85,000"
+                    },
+                    {
+                        "id": "b",
+                        "text": "b. $29,000"
+                    },
+                    {
+                        "id": "c",
+                        "text": "c. $123,000"
+                    },
+                    {
+                        "id": "d",
+                        "text": "d. $105,000"
+                    },
+                    {
+                        "id": "e",
+                        "text": "e. $114,000"
+                    }
+                ],
+                "correct": "e",
+                "explanation": "<strong class=\"text-emerald-700\">الإجابة الصحيحة: (e) $114,000</strong><br><br>الخلاصة بالبلدي: التكلفة الأولية (Prime cost) بتشمل المواد المباشرة والأجور المباشرة معاً ($85,000). بنضيف عليها التكاليف غير المباشرة ($29,000): $85,000 + $29,000 = $114,000."
+            },
+            {
+                "id": 25,
+                "text": "Wood Manufacturing estimates MOH=$30,000 and 100,000 machine-hours. What is the annual manufacturing overhead cost driver rate per machine hour?",
+                "options": [
+                    {
+                        "id": "a",
+                        "text": "a. $0.60"
+                    },
+                    {
+                        "id": "b",
+                        "text": "b. $0.30"
+                    },
+                    {
+                        "id": "c",
+                        "text": "c. $0.80"
+                    },
+                    {
+                        "id": "d",
+                        "text": "d. $0.36"
+                    },
+                    {
+                        "id": "e",
+                        "text": "e. $33.33"
+                    }
+                ],
+                "correct": "b",
+                "explanation": "<strong class=\"text-emerald-700\">الإجابة الصحيحة: (b) $0.30</strong><br><br>الخلاصة بالبلدي: معدل التحميل = إجمالي التكاليف التقديرية ÷ إجمالي ساعات التشغيل التقديرية = $30,000 ÷ 100,000 = $0.30 لكل ساعة دوران ماكينة."
+            },
+            {
+                "id": 26,
+                "text": "Wood Manufacturing: Mirna Job used DM=$1,000, DL=$200, and 900 machine-hours. What amount of manufacturing overhead costs will be allocated to the Mirna job?",
+                "options": [
+                    {
+                        "id": "a",
+                        "text": "a. $540"
+                    },
+                    {
+                        "id": "b",
+                        "text": "b. $450"
+                    },
+                    {
+                        "id": "c",
+                        "text": "c. $30,000"
+                    },
+                    {
+                        "id": "d",
+                        "text": "d. $720"
+                    },
+                    {
+                        "id": "e",
+                        "text": "e. $270"
+                    }
+                ],
+                "correct": "e",
+                "explanation": "<strong class=\"text-emerald-700\">الإجابة الصحيحة: (e) $270</strong><br><br>الخلاصة بالبلدي: نصيب العملية من الـ Overhead = الساعات المستهلكة في العملية × المعدل = 900 ساعة × $0.30 = $270."
+            },
+            {
+                "id": 27,
+                "text": "What are the total manufacturing costs of Mirna High School Job?",
+                "options": [
+                    {
+                        "id": "a",
+                        "text": "a. $1,250"
+                    },
+                    {
+                        "id": "b",
+                        "text": "b. $1,470"
+                    },
+                    {
+                        "id": "c",
+                        "text": "c. $1,650"
+                    },
+                    {
+                        "id": "d",
+                        "text": "d. $1,700"
+                    },
+                    {
+                        "id": "e",
+                        "text": "e. $1,200"
+                    }
+                ],
+                "correct": "b",
+                "explanation": "<strong class=\"text-emerald-700\">الإجابة الصحيحة: (b) $1,470</strong><br><br>الخلاصة بالبلدي: إجمالي تكلفة تصنيع العملية = مواد مباشرة ($1,000) + أجور مباشرة ($200) + تكاليف غير مباشرة محملة ($270) = $1,470."
+            },
+            {
+                "id": 28,
+                "text": "What is the bid price for the Mirna High School Job if the company uses a 40% markup of total manufacturing costs?",
+                "options": [
+                    {
+                        "id": "a",
+                        "text": "a. $2,310"
+                    },
+                    {
+                        "id": "b",
+                        "text": "b. $1,680"
+                    },
+                    {
+                        "id": "c",
+                        "text": "c. $2,680"
+                    },
+                    {
+                        "id": "d",
+                        "text": "d. $2,058"
+                    },
+                    {
+                        "id": "e",
+                        "text": "e. $588"
+                    }
+                ],
+                "correct": "d",
+                "explanation": "<strong class=\"text-emerald-700\">الإجابة الصحيحة: (d) $2,058</strong><br><br>الخلاصة بالبلدي: سعر العطاء = التكلفة الإجمالية × (1 + نسبة الهامش) = $1,470 × 1.40 = $2,058."
+            },
+            {
+                "id": 29,
+                "text": "Which of the following is NOT a market-based approach to allocating costs?",
+                "options": [
+                    {
+                        "id": "a",
+                        "text": "a. sales value at splitoff"
+                    },
+                    {
+                        "id": "b",
+                        "text": "b. constant gross-margin percentage NRV"
+                    },
+                    {
+                        "id": "c",
+                        "text": "c. physical measures"
+                    },
+                    {
+                        "id": "d",
+                        "text": "d. net realizable value"
+                    }
+                ],
+                "correct": "c",
+                "explanation": "<strong class=\"text-emerald-700\">الإجابة الصحيحة: (c) physical measures</strong><br><br>الخلاصة بالبلدي: الطرق القائمة على السوق بتعتمد على أسعار البيع والقيمة البيعية، أما طريقة المقياس المادي (Physical measures) فبتعتمد على الوزن أو الحجم وليس أسعار السوق."
+            },
+            {
+                "id": 30,
+                "text": "The Job-Rok order had 90 good units at inspection, 5 units of normal spoilage (job-specific) and 5 units of normal spoilage (common). After recording adjustment entries, cost per good unit is $950. What was total manufacturing cost for Job-Rok before inspection?",
+                "options": [
+                    {
+                        "id": "a",
+                        "text": "a. $85,500"
+                    },
+                    {
+                        "id": "b",
+                        "text": "b. $100,000"
+                    },
+                    {
+                        "id": "c",
+                        "text": "c. $95,000"
+                    },
+                    {
+                        "id": "d",
+                        "text": "d. $90,000"
+                    },
+                    {
+                        "id": "e",
+                        "text": "e. $94,500"
+                    }
+                ],
+                "correct": "d",
+                "explanation": "<strong class=\"text-emerald-700\">الإجابة الصحيحة: (d) $90,000</strong><br><br>الخلاصة بالبلدي: التالف العام (5 وحدات) بنستبعده ونحمله للـ MOH، والتالف الخاص بالشغلانة (5 وحدات) بيفضل متحمل على الـ 90 وحدة السليمة. إجمالي تكلفة الـ 90 وحدة سليمة = 90 × $950 = $85,500، ودي بتمثل تكلفة 95 وحدة قبل الفحص ($85,500 ÷ 95 = $900 للوحدة). إذن تكلفة الـ 100 وحدة الأصلية قبل الفحص = 100 × $900 = $90,000."
+            },
+            {
+                "id": 31,
+                "text": "Estimated FOH=$420,000 and 16,000 DLH. A job had DM=$4,500 and DL=$3,000 (@ $15/hr). What is the factory overhead applied to this job?",
+                "options": [
+                    {
+                        "id": "a",
+                        "text": "a. $2,100"
+                    },
+                    {
+                        "id": "b",
+                        "text": "b. $5,250"
+                    },
+                    {
+                        "id": "c",
+                        "text": "c. $420,000"
+                    },
+                    {
+                        "id": "d",
+                        "text": "d. $3,000"
+                    },
+                    {
+                        "id": "e",
+                        "text": "e. $45,000"
+                    }
+                ],
+                "correct": "b",
+                "explanation": "<strong class=\"text-emerald-700\">الإجابة الصحيحة: (b) $5,250</strong><br><br>الخلاصة بالبلدي: معدل التحميل = $420,000 ÷ 16,000 = $26.25 لكل ساعة عمل. ساعات العمل للشغلانة = $3,000 ÷ $15 = 200 ساعة. التكاليف المحملة = 200 ساعة × $26.25 = $5,250."
+            },
+            {
+                "id": 32,
+                "text": "Risks of overpricing include all of the following except:",
+                "options": [
+                    {
+                        "id": "a",
+                        "text": "a. deter customers"
+                    },
+                    {
+                        "id": "b",
+                        "text": "b. decrease sales"
+                    },
+                    {
+                        "id": "c",
+                        "text": "c. loss of market share"
+                    },
+                    {
+                        "id": "d",
+                        "text": "d. inability to cover costs"
+                    }
+                ],
+                "correct": "d",
+                "explanation": "<strong class=\"text-emerald-700\">الإجابة الصحيحة: (d) inability to cover costs</strong><br><br>الخلاصة بالبلدي: التسعير الزائد عن اللزوم (Overpricing) بيطفش الزباين ويقلل المبيعات، لكن العجز عن تغطية التكاليف ده خطر بيحصل لما نسعر بأقل من اللازم (Underpricing)."
+            },
+            {
+                "id": 33,
+                "text": "Joint costs=$2,200 for 300 units of X (sold @ $10) and 250 units of Y (sold @ $8). What are respective joint costs assigned per unit using physical-volume method?",
+                "options": [
+                    {
+                        "id": "a",
+                        "text": "a. $2.96 and $4.44"
+                    },
+                    {
+                        "id": "b",
+                        "text": "b. $6.55 and $4.55"
+                    },
+                    {
+                        "id": "c",
+                        "text": "c. $4.00 and $4.00"
+                    },
+                    {
+                        "id": "d",
+                        "text": "d. $4.00 and $4.55"
+                    },
+                    {
+                        "id": "e",
+                        "text": "e. $4.55 and $3.20"
+                    }
+                ],
+                "correct": "c",
+                "explanation": "<strong class=\"text-emerald-700\">الإجابة الصحيحة: (c) $4.00 and $4.00</strong><br><br>الخلاصة بالبلدي: طريقة الحجم المادي بتتجاهل أسعار البيع وتوزع بناءً على عدد الوحدات؛ إجمالي الوحدات = 300 + 250 = 550 وحدة. تكلفة الوحدة = $2,200 ÷ 550 = $4.00 للوحدة لكلا المنتجين X و Y."
+            },
+            {
+                "id": 34,
+                "text": "Blitzer Enterprises: Supervision=$480k (800k DLH), Maintenance=$220k (550k MH), Rent=$260k (100k sq ft). If DLH is considered as the only overhead cost driver, what is the rate?",
+                "options": [
+                    {
+                        "id": "a",
+                        "text": "a. $0.60"
+                    },
+                    {
+                        "id": "b",
+                        "text": "b. $0.80"
+                    },
+                    {
+                        "id": "c",
+                        "text": "c. $1.20"
+                    },
+                    {
+                        "id": "d",
+                        "text": "d. $6"
+                    },
+                    {
+                        "id": "e",
+                        "text": "e. $2"
+                    }
+                ],
+                "correct": "c",
+                "explanation": "<strong class=\"text-emerald-700\">الإجابة الصحيحة: (c) $1.20</strong><br><br>الخلاصة بالبلدي: إجمالي التكاليف = 480 + 220 + 260 = $960,000. بنقسمها على ساعات العمل الكلية: $960,000 ÷ 800,000 = $1.20 لكل ساعة عمل مباشر."
+            },
+            {
+                "id": 35,
+                "text": "Blitzer Enterprises: Gergen job used 600 DLH, 2,100 MH, and 90 sq ft. Using DLH as the only overhead cost driver, what is the amount of overhead costs allocated to Gergen Job?",
+                "options": [
+                    {
+                        "id": "a",
+                        "text": "a. $320"
+                    },
+                    {
+                        "id": "b",
+                        "text": "b. $720"
+                    },
+                    {
+                        "id": "c",
+                        "text": "c. $1,200"
+                    },
+                    {
+                        "id": "d",
+                        "text": "d. 360"
+                    },
+                    {
+                        "id": "e",
+                        "text": "e. $230"
+                    }
+                ],
+                "correct": "b",
+                "explanation": "<strong class=\"text-emerald-700\">الإجابة الصحيحة: (b) $720</strong><br><br>الخلاصة بالبلدي: نصيب العملية بمعدل ساعات العمل = 600 DLH × $1.20 = $720."
+            },
+            {
+                "id": 36,
+                "text": "If Blitzer Enterprises uses ABC, what are the activity-cost driver rates for the supervision?",
+                "options": [
+                    {
+                        "id": "a",
+                        "text": "a. $0.60"
+                    },
+                    {
+                        "id": "b",
+                        "text": "b. $0.80"
+                    },
+                    {
+                        "id": "c",
+                        "text": "c. $1.20"
+                    },
+                    {
+                        "id": "d",
+                        "text": "d. $6"
+                    },
+                    {
+                        "id": "e",
+                        "text": "e. $2"
+                    }
+                ],
+                "correct": "a",
+                "explanation": "<strong class=\"text-emerald-700\">الإجابة الصحيحة: (a) $0.60</strong><br><br>الخلاصة بالبلدي: في نظام ABC كل نشاط بيتحسب لوحده؛ معدل الإشراف = تكلفة الإشراف ÷ ساعات العمل المباشر = $480,000 ÷ 800,000 = $0.60 لكل ساعة عمل."
+            },
+            {
+                "id": 37,
+                "text": "Using ABC, what is the amount of overhead costs allocated to the Gergen Job?",
+                "options": [
+                    {
+                        "id": "a",
+                        "text": "a. $1,434"
+                    },
+                    {
+                        "id": "b",
+                        "text": "b. $1,200"
+                    },
+                    {
+                        "id": "c",
+                        "text": "c. $1,400"
+                    },
+                    {
+                        "id": "d",
+                        "text": "d. $1,320"
+                    },
+                    {
+                        "id": "e",
+                        "text": "e. $230"
+                    }
+                ],
+                "correct": "a",
+                "explanation": "<strong class=\"text-emerald-700\">الإجابة الصحيحة: (a) $1,434</strong><br><br>الخلاصة بالبلدي: بنحسب نصيب العملية من كل مجمع تكلفة: إشراف (600 × $0.60 = $360) + صيانة (2,100 × $0.40 = $840) + إيجار (90 × $2.60 = $234). المجموع = 360 + 840 + 234 = $1,434."
+            },
+            {
+                "id": 38,
+                "text": "Which method of allocation probably best estimates actual overhead costs used for Blitzer Enterprises? Why?",
+                "options": [
+                    {
+                        "id": "a",
+                        "text": "a. Single direct labor-hours cost driver, because it is best to allocate total costs uniformly to individual jobs."
+                    },
+                    {
+                        "id": "b",
+                        "text": "b. Single direct labor-hours cost driver, because it is easiest to analyze and interpret."
+                    },
+                    {
+                        "id": "c",
+                        "text": "c. ABC because it best reflects the relative consumption of resources."
+                    },
+                    {
+                        "id": "d",
+                        "text": "d. ABC because product costs can be significantly cross-subsidized."
+                    }
+                ],
+                "correct": "c",
+                "explanation": "<strong class=\"text-emerald-700\">الإجابة الصحيحة: (c) ABC because it best reflects the relative consumption of resources.</strong><br><br>الخلاصة بالبلدي: نظام التكاليف على أساس الأنشطة (ABC) هو الأدق دائماً لأنه بيعكس الاستهلاك الفعلي الحقيقي لكل عملية من مختلف الموارد بدقة."
+            },
+            {
+                "id": 39,
+                "text": "To compete in 2026, Astel plans to cut the current selling price of $1,000 by 20%. What will be the new selling price per unit after reduction?",
+                "options": [
+                    {
+                        "id": "a",
+                        "text": "a. $900"
+                    },
+                    {
+                        "id": "b",
+                        "text": "b. $850"
+                    },
+                    {
+                        "id": "c",
+                        "text": "c. $890"
+                    },
+                    {
+                        "id": "d",
+                        "text": "d. $800"
+                    },
+                    {
+                        "id": "e",
+                        "text": "e. $780"
+                    }
+                ],
+                "correct": "d",
+                "explanation": "<strong class=\"text-emerald-700\">الإجابة الصحيحة: (d) $800</strong><br><br>الخلاصة بالبلدي: السعر الجديد بعد الخفض = $1,000 × (1 - 0.20) = $800."
+            },
+            {
+                "id": 40,
+                "text": "Astel aims for a 10% target operating income per unit at the new price ($800). What is the maximum allowable (target) cost per unit that enables Astel to earn its target operating income per unit?",
+                "options": [
+                    {
+                        "id": "a",
+                        "text": "a. $680"
+                    },
+                    {
+                        "id": "b",
+                        "text": "b. $850"
+                    },
+                    {
+                        "id": "c",
+                        "text": "c. $720"
+                    },
+                    {
+                        "id": "d",
+                        "text": "d. $700"
+                    },
+                    {
+                        "id": "e",
+                        "text": "e. $780"
+                    }
+                ],
+                "correct": "c",
+                "explanation": "<strong class=\"text-emerald-700\">الإجابة الصحيحة: (c) $720</strong><br><br>الخلاصة بالبلدي: الربح المستهدف = 10% × $800 = $80. التكلفة المستهدفة القصوى = سعر البيع - الربح = $800 - $80 = $720."
+            },
+            {
+                "id": 41,
+                "text": "Astel forecasts sales to be 200,000 units with $80 target operating income per unit. What would be the total annual target operating income?",
+                "options": [
+                    {
+                        "id": "a",
+                        "text": "a. $8,000,000"
+                    },
+                    {
+                        "id": "b",
+                        "text": "b. $12,000,000"
+                    },
+                    {
+                        "id": "c",
+                        "text": "c. $15,000,000"
+                    },
+                    {
+                        "id": "d",
+                        "text": "d. $16,000,000"
+                    },
+                    {
+                        "id": "e",
+                        "text": "e. $20,000,000"
+                    }
+                ],
+                "correct": "d",
+                "explanation": "<strong class=\"text-emerald-700\">الإجابة الصحيحة: (d) $16,000,000</strong><br><br>الخلاصة بالبلدي: إجمالي صافي الربح التشغيلي المستهدف = 200,000 وحدة × $80 ربح للوحدة = $16,000,000."
+            },
+            {
+                "id": 42,
+                "text": "MDF: 56,200 units sold @ $9, with further processing cost of $140,500. What is the estimated net realizable value of MDF at the splitoff point?",
+                "options": [
+                    {
+                        "id": "a",
+                        "text": "a. $365,300"
+                    },
+                    {
+                        "id": "b",
+                        "text": "b. $505,800"
+                    },
+                    {
+                        "id": "c",
+                        "text": "c. $585,000"
+                    },
+                    {
+                        "id": "d",
+                        "text": "d. $702,000"
+                    },
+                    {
+                        "id": "e",
+                        "text": "e. $170,900"
+                    }
+                ],
+                "correct": "a",
+                "explanation": "<strong class=\"text-emerald-700\">الإجابة الصحيحة: (a) $365,300</strong><br><br>الخلاصة بالبلدي: صافي القيمة البيعية (NRV) = القيمة البيعية النهائية - التكاليف الإضافية = (56,200 × $9) - $140,500 = $505,800 - $140,500 = $365,300."
+            },
+            {
+                "id": 43,
+                "text": "Boards: 39,000 units sold @ $18, with further processing cost of $117,000. What is the estimated net realizable value of Boards at the splitoff point?",
+                "options": [
+                    {
+                        "id": "a",
+                        "text": "a. $365,300"
+                    },
+                    {
+                        "id": "b",
+                        "text": "b. $505,800"
+                    },
+                    {
+                        "id": "c",
+                        "text": "c. $585,000"
+                    },
+                    {
+                        "id": "d",
+                        "text": "d. $702,000"
+                    },
+                    {
+                        "id": "e",
+                        "text": "e. $170,900"
+                    }
+                ],
+                "correct": "c",
+                "explanation": "<strong class=\"text-emerald-700\">الإجابة الصحيحة: (c) $585,000</strong><br><br>الخلاصة بالبلدي: صافي القيمة البيعية للـ Boards = (39,000 × $18) - $117,000 = $702,000 - $117,000 = $585,000."
+            },
+            {
+                "id": 44,
+                "text": "Joint cost processing=$144,480. Using estimated net realizable value (NRV Boards=$585,000, MDF=$365,300), what amount of joint costs would be allocated to MDF?",
+                "options": [
+                    {
+                        "id": "a",
+                        "text": "a. $88,942"
+                    },
+                    {
+                        "id": "b",
+                        "text": "b. $65,592"
+                    },
+                    {
+                        "id": "c",
+                        "text": "c. $78,888"
+                    },
+                    {
+                        "id": "d",
+                        "text": "d. $144,480"
+                    },
+                    {
+                        "id": "e",
+                        "text": "e. $55,539"
+                    }
+                ],
+                "correct": "e",
+                "explanation": "<strong class=\"text-emerald-700\">الإجابة الصحيحة: (e) $55,539</strong><br><br>الخلاصة بالبلدي: إجمالي صوافي القيمة البيعية = $585,000 + $365,300 = $950,300. نسبة MDF = $365,300 ÷ $950,300 ≈ 38.44%. نصيبه من التكلفة المشتركة = $144,480 × 38.44% = $55,539."
+            },
+            {
+                "id": 45,
+                "text": "Using the sales value at splitoff method (Lumber: 52,200 @ $3.50; Wood chips: 64,800 @ $2.50; Joint cost=$144,480), what amount of joint costs would be allocated to Lumber?",
+                "options": [
+                    {
+                        "id": "a",
+                        "text": "a. $78,888"
+                    },
+                    {
+                        "id": "b",
+                        "text": "b. $144,480"
+                    },
+                    {
+                        "id": "c",
+                        "text": "c. $65,592"
+                    },
+                    {
+                        "id": "d",
+                        "text": "d. $55,538"
+                    },
+                    {
+                        "id": "e",
+                        "text": "e. $76,578"
+                    }
+                ],
+                "correct": "e",
+                "explanation": "<strong class=\"text-emerald-700\">الإجابة الصحيحة: (e) $76,578</strong><br><br>الخلاصة بالبلدي: القيمة البيعية للخشب (Lumber) = 52,200 × $3.50 = $182,700. والقيمة البيعية لـ Wood chips = 64,800 × $2.50 = $162,000. الإجمالي = $344,700. نسبة Lumber = $182,700 ÷ $344,700 = 53%. نصيبه = $144,480 × 53% = $76,578."
+            },
+            {
+                "id": 46,
+                "text": "Using the sales value at splitoff method, what is the gross-margin for Lumber at the splitoff point?",
+                "options": [
+                    {
+                        "id": "a",
+                        "text": "a. $126,100"
+                    },
+                    {
+                        "id": "b",
+                        "text": "b. $106,122"
+                    },
+                    {
+                        "id": "c",
+                        "text": "c. $94,098"
+                    },
+                    {
+                        "id": "d",
+                        "text": "d. $52,200"
+                    },
+                    {
+                        "id": "e",
+                        "text": "e. $98,098"
+                    }
+                ],
+                "correct": "b",
+                "explanation": "<strong class=\"text-emerald-700\">الإجابة الصحيحة: (b) $106,122</strong><br><br>الخلاصة بالبلدي: مجمل الربح = القيمة البيعية عند الانفصال - التكلفة المشتركة الموزعة = $182,700 - $76,578 = $106,122."
+            },
+            {
+                "id": 47,
+                "text": "Using the sales value at splitoff method, what is the gross-margin percentage for Lumber at the splitoff point?",
+                "options": [
+                    {
+                        "id": "a",
+                        "text": "a. 47.3%"
+                    },
+                    {
+                        "id": "b",
+                        "text": "b. 21.1%"
+                    },
+                    {
+                        "id": "c",
+                        "text": "c. 55.1%"
+                    },
+                    {
+                        "id": "d",
+                        "text": "d. 58.1%"
+                    },
+                    {
+                        "id": "e",
+                        "text": "e. 38.2%"
+                    }
+                ],
+                "correct": "d",
+                "explanation": "<strong class=\"text-emerald-700\">الإجابة الصحيحة: (d) 58.1%</strong><br><br>الخلاصة بالبلدي: نسبة مجمل الربح = مجمل الربح ÷ القيمة البيعية = $106,122 ÷ $182,700 = 58.1%."
+            },
+            {
+                "id": 48,
+                "text": "Using the sales value at splitoff method, what is the gross-margin percentage for wood chips at the splitoff point?",
+                "options": [
+                    {
+                        "id": "a",
+                        "text": "a. 47.3%"
+                    },
+                    {
+                        "id": "b",
+                        "text": "b. 21.1%"
+                    },
+                    {
+                        "id": "c",
+                        "text": "c. 55.1%"
+                    },
+                    {
+                        "id": "d",
+                        "text": "d. 58.1%"
+                    },
+                    {
+                        "id": "e",
+                        "text": "e. 38.2%"
+                    }
+                ],
+                "correct": "d",
+                "explanation": "<strong class=\"text-emerald-700\">الإجابة الصحيحة: (d) 58.1%</strong><br><br>الخلاصة بالبلدي: قاعدة ذهبية في التكاليف! في طريقة القيمة البيعية عند الانفصال (Sales value at splitoff)، نسبة مجمل الربح (Gross margin %) بتكون متطابقة ومتساوية لجميع المنتجات المشتركة، يعني 58.1% زي الخشب بالظبط."
+            },
+            {
+                "id": 49,
+                "text": "In Cost-Plus Pricing Concept, if cost = $25 and markup = 20%, sale price would be:",
+                "options": [
+                    {
+                        "id": "a",
+                        "text": "a. $55"
+                    },
+                    {
+                        "id": "b",
+                        "text": "b. $35"
+                    },
+                    {
+                        "id": "c",
+                        "text": "c. $30"
+                    },
+                    {
+                        "id": "d",
+                        "text": "d. $20"
+                    },
+                    {
+                        "id": "e",
+                        "text": "e. $25"
+                    }
+                ],
+                "correct": "c",
+                "explanation": "<strong class=\"text-emerald-700\">الإجابة الصحيحة: (c) $30</strong><br><br>الخلاصة بالبلدي: سعر البيع = التكلفة + الهامش = $25 + (20% × $25) = $25 + $5 = $30."
+            },
+            {
+                "id": 50,
+                "text": "If cost of goods sold is credit in the closing entry for the difference between allocated and actual factory overhead account, applied factory overhead is said to be:",
+                "options": [
+                    {
+                        "id": "a",
+                        "text": "a. underapplied."
+                    },
+                    {
+                        "id": "b",
+                        "text": "b. overapplied."
+                    },
+                    {
+                        "id": "c",
+                        "text": "c. underabsorbed."
+                    },
+                    {
+                        "id": "d",
+                        "text": "d. in error."
+                    },
+                    {
+                        "id": "e",
+                        "text": "e. abnormal"
+                    }
+                ],
+                "correct": "b",
+                "explanation": "<strong class=\"text-emerald-700\">الإجابة الصحيحة: (b) overapplied.</strong><br><br>الخلاصة بالبلدي: طالما قفلنا الفرق في الجانب الدائن لحساب تكلفة المبيعات (Credit COGS) يعني بنخفض التكلفة، وده مبيحصلش إلا لما نكون محملين زيادة عن الحقيقة (Overapplied Overhead)."
+            }
+        ]
     }
 };
